@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bruce Gordon — Designer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black:   #0e0e0e;
+      --white:   #f5f3ef;
+      --mid:     #1c1c1c;
+      --subtle:  #2e2e2e;
+      --accent:  #c8a96e;   /* warm gold — professional, warm, distinctive */
+      --muted:   #888880;
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body:    'DM Sans', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: var(--font-body);
+      font-weight: 300;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── NOISE OVERLAY ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+      opacity: 0.035;
+      pointer-events: none;
+      z-index: 999;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 1.25rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(to bottom, rgba(14,14,14,0.95), transparent);
+    }
+
+    .nav-name {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    .nav-cta {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      text-decoration: none;
+      border: 1px solid var(--accent);
+      padding: 0.45rem 1rem;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .nav-cta:hover {
+      background: var(--accent);
+      color: var(--black);
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 6rem 2rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; right: -80px;
+      width: 420px; height: 420px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(200,169,110,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeUp 0.7s ease forwards 0.2s;
+    }
+
+    .hero-headline {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 12vw, 6.5rem);
+      font-weight: 700;
+      line-height: 1.0;
+      letter-spacing: -0.01em;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+      opacity: 0;
+      animation: fadeUp 0.7s ease forwards 0.35s;
+    }
+
+    .hero-headline em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .hero-sub {
+      font-size: clamp(0.85rem, 3vw, 1rem);
+      color: var(--muted);
+      max-width: 340px;
+      margin-bottom: 2.5rem;
+      margin-top: 1rem;
+      opacity: 0;
+      animation: fadeUp 0.7s ease forwards 0.5s;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 0.7s ease forwards 0.65s;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: var(--black);
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.85rem 1.75rem;
+      text-decoration: none;
+      transition: opacity 0.2s, transform 0.2s;
+      display: inline-block;
+    }
+
+    .btn-primary:hover { opacity: 0.85; transform: translateY(-1px); }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--white);
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.85rem 1.75rem;
+      text-decoration: none;
+      border: 1px solid var(--subtle);
+      transition: border-color 0.2s, transform 0.2s;
+      display: inline-block;
+    }
+
+    .btn-secondary:hover { border-color: var(--muted); transform: translateY(-1px); }
+
+    .hero-trust {
+      margin-top: 2.5rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      opacity: 0;
+      animation: fadeUp 0.7s ease forwards 0.8s;
+    }
+
+    .hero-trust span { color: var(--accent); margin-right: 0.4rem; }
+
+    /* ── DIVIDER ── */
+    .divider {
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--subtle), transparent);
+      margin: 0 2rem;
+    }
+
+    /* ── SECTION SHARED ── */
+    section { padding: 5rem 2rem; }
+
+    .section-label {
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 7vw, 3.2rem);
+      font-weight: 600;
+      line-height: 1.1;
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+
+    /* ── SERVICES ── */
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1px;
+      margin-top: 2.5rem;
+      border: 1px solid var(--subtle);
+    }
+
+    .service-card {
+      padding: 1.75rem;
+      background: var(--mid);
+      transition: background 0.25s;
+      position: relative;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 3px; height: 0;
+      background: var(--accent);
+      transition: height 0.3s ease;
+    }
+
+    .service-card:hover::before { height: 100%; }
+    .service-card:hover { background: #212121; }
+
+    .service-number {
+      font-family: var(--font-display);
+      font-size: 0.8rem;
+      color: var(--accent);
+      letter-spacing: 0.1em;
+      margin-bottom: 0.6rem;
+    }
+
+    .service-name {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 0.4rem;
+    }
+
+    .service-desc {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    /* ── WORK ── */
+    .work-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .work-card {
+      background: var(--mid);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .work-thumb {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: var(--subtle);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .work-thumb-inner {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+    }
+
+    /* placeholder gradients for mock projects */
+    .thumb-1 { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); }
+    .thumb-2 { background: linear-gradient(135deg, #1c1008 0%, #2d1f0a 50%, #3d2b0e 100%); }
+    .thumb-3 { background: linear-gradient(135deg, #0d1f0d 0%, #132613 50%, #1a3319 100%); }
+    .thumb-4 { background: linear-gradient(135deg, #1f0d1f 0%, #261326 50%, #331933 100%); }
+
+    .work-label {
+      font-family: var(--font-display);
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--accent);
+      opacity: 0.8;
+    }
+
+    .work-info {
+      padding: 1.25rem;
+    }
+
+    .work-title {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 0.25rem;
+    }
+
+    .work-type {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    /* ── WHY ── */
+    .why-list {
+      margin-top: 2rem;
+      display: grid;
+      gap: 1rem;
+    }
+
+    .why-item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .why-icon {
+      width: 28px;
+      height: 28px;
+      flex-shrink: 0;
+      border: 1px solid var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 0.1rem;
+    }
+
+    .why-icon svg {
+      width: 12px; height: 12px;
+      stroke: var(--accent);
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+    }
+
+    .why-text strong {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--white);
+      margin-bottom: 0.15rem;
+    }
+
+    .why-text span {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    /* ── CONTACT ── */
+    .contact-section {
+      background: var(--mid);
+      text-align: center;
+    }
+
+    .contact-section .section-title {
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-sub {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-bottom: 2rem;
+      max-width: 300px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .contact-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .contact-buttons .btn-primary,
+    .contact-buttons .btn-secondary {
+      width: 100%;
+      max-width: 280px;
+      text-align: center;
+    }
+
+    .contact-email {
+      margin-top: 1.5rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+    }
+
+    .contact-email a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 2rem;
+      text-align: center;
+      border-top: 1px solid var(--subtle);
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--accent); }
+
+    .footer-copy {
+      font-size: 0.7rem;
+      color: #555;
+      letter-spacing: 0.08em;
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── DESKTOP UPGRADES ── */
+    @media (min-width: 640px) {
+      nav { padding: 1.5rem 3rem; }
+      section { padding: 6rem 3rem; }
+      .divider { margin: 0 3rem; }
+
+      .services-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .work-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .contact-buttons {
+        flex-direction: row;
+        justify-content: center;
+      }
+
+      .contact-buttons .btn-primary,
+      .contact-buttons .btn-secondary {
+        width: auto;
+      }
+
+      .hero { padding: 7rem 3rem 5rem; }
+    }
+
+    @media (min-width: 1024px) {
+      nav { padding: 1.5rem 5rem; }
+      section { padding: 7rem 5rem; }
+      .divider { margin: 0 5rem; }
+      .hero { padding: 8rem 5rem 6rem; }
+      .hero-headline { max-width: 700px; }
+      .services-grid { grid-template-columns: repeat(4, 1fr); }
+      .work-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-name">Bruce Gordon</a>
+    <a href="#contact" class="nav-cta">Get In Touch</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <p class="hero-eyebrow">Freelance Designer · South Africa</p>
+    <h1 class="hero-headline">Design that<br/><em>means</em><br/>business.</h1>
+    <p class="hero-sub">Logos, websites and branding crafted to make your business look the part — without the agency price tag.</p>
+    <div class="hero-buttons">
+      <a href="https://wa.me/27621596082" class="btn-primary">WhatsApp Me</a>
+      <a href="#work" class="btn-secondary">View My Work</a>
+    </div>
+    <p class="hero-trust"><span>✦</span> Available for freelance · Fast turnaround · Local &amp; remote</p>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <p class="section-label reveal">What I Do</p>
+    <h2 class="section-title reveal">Services</h2>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <p class="service-number">01</p>
+        <h3 class="service-name">Logo Design</h3>
+        <p class="service-desc">Clean, memorable logos that communicate your brand at a glance.</p>
+      </div>
+      <div class="service-card reveal">
+        <p class="service-number">02</p>
+        <h3 class="service-name">Website Design</h3>
+        <p class="service-desc">Modern, mobile-first websites built to convert visitors into clients.</p>
+      </div>
+      <div class="service-card reveal">
+        <p class="service-number">03</p>
+        <h3 class="service-name">Branding</h3>
+        <p class="service-desc">Visual identity systems — colours, typography, and brand direction.</p>
+      </div>
+      <div class="service-card reveal">
+        <p class="service-number">04</p>
+        <h3 class="service-name">UI Design</h3>
+        <p class="service-desc">Interface layouts and digital visuals with a sharp, modern aesthetic.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- WORK -->
+  <section id="work">
+    <p class="section-label reveal">Selected Projects</p>
+    <h2 class="section-title reveal">Featured Work</h2>
+    <div class="work-grid">
+      <div class="work-card reveal">
+        <div class="work-thumb thumb-1">
+          <div class="work-thumb-inner">
+            <span class="work-label">Website Concept</span>
+          </div>
+        </div>
+        <div class="work-info">
+          <h3 class="work-title">Modern Barber Booking Site</h3>
+          <p class="work-type">Mobile-first landing page · UI Design</p>
+        </div>
+      </div>
+      <div class="work-card reveal">
+        <div class="work-thumb thumb-2">
+          <div class="work-thumb-inner">
+            <span class="work-label">Brand Identity</span>
+          </div>
+        </div>
+        <div class="work-info">
+          <h3 class="work-title">Coffee Shop Rebrand</h3>
+          <p class="work-type">Logo · Visual Identity · Colour System</p>
+        </div>
+      </div>
+      <div class="work-card reveal">
+        <div class="work-thumb thumb-3">
+          <div class="work-thumb-inner">
+            <span class="work-label">Website Concept</span>
+          </div>
+        </div>
+        <div class="work-info">
+          <h3 class="work-title">Tech Startup Landing Page</h3>
+          <p class="work-type">Responsive Homepage · UI Design</p>
+        </div>
+      </div>
+      <div class="work-card reveal">
+        <div class="work-thumb thumb-4">
+          <div class="work-thumb-inner">
+            <span class="work-label">Logo Design</span>
+          </div>
+        </div>
+        <div class="work-info">
+          <h3 class="work-title">Boutique Fashion Logo</h3>
+          <p class="work-type">Logo · Typography · Brand Direction</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- WHY -->
+  <section id="about">
+    <p class="section-label reveal">The Difference</p>
+    <h2 class="section-title reveal">Why Work<br/>With Me?</h2>
+    <div class="why-list">
+      <div class="why-item reveal">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div class="why-text">
+          <strong>Mobile-first by default</strong>
+          <span>Every design starts on mobile — where your clients actually are.</span>
+        </div>
+      </div>
+      <div class="why-item reveal">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div class="why-text">
+          <strong>Direct communication</strong>
+          <span>No account managers. You deal directly with the designer.</span>
+        </div>
+      </div>
+      <div class="why-item reveal">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div class="why-text">
+          <strong>Affordable for small business</strong>
+          <span>Professional quality without the agency overhead.</span>
+        </div>
+      </div>
+      <div class="why-item reveal">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div class="why-text">
+          <strong>Fast turnaround</strong>
+          <span>Focused, efficient delivery without cutting corners on quality.</span>
+        </div>
+      </div>
+      <div class="why-item reveal">
+        <div class="why-icon">
+          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div class="why-text">
+          <strong>Local &amp; remote friendly</strong>
+          <span>Based in South Africa. Open to clients anywhere.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact-section">
+    <p class="section-label reveal">Let's Talk</p>
+    <h2 class="section-title reveal">Ready to start<br/>something?</h2>
+    <p class="contact-sub reveal">Tell me about your project. I'll get back to you quickly.</p>
+    <div class="contact-buttons reveal">
+      <a href="https://wa.me/27621596082" class="btn-primary">WhatsApp Me</a>
+      <a href="mailto:bruce.gordon8403@gmail.com" class="btn-secondary">Send Email</a>
+    </div>
+    <p class="contact-email reveal">Or email directly: <a href="mailto:bruce.gordon8403@gmail.com">bruce.gordon8403@gmail.com</a></p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-links">
+      <a href="https://synonimity.vercel.app" target="_blank">Portfolio</a>
+      <a href="https://synontechsa-hub.github.io/synontech/index.html" target="_blank">SynonTech</a>
+      <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+    </div>
+    <p class="footer-copy">Designed &amp; developed by Bruce Gordon &nbsp;·&nbsp; South Africa</p>
+  </footer>
+
+  <script>
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
