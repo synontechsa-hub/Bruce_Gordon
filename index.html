@@ -345,13 +345,56 @@
     .why-list {
       margin-top: 2rem;
       display: grid;
-      gap: 1rem;
+      gap: 1.5rem;
     }
 
     .why-item {
       display: flex;
-      gap: 1rem;
+      gap: 1.25rem;
       align-items: flex-start;
+    }
+
+    /* ── PROCESS ── */
+    .process-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      margin-top: 3rem;
+    }
+
+    .process-step {
+      position: relative;
+    }
+
+    .process-number {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      line-height: 1;
+      color: var(--accent);
+      opacity: 0.15;
+      position: absolute;
+      top: -0.5rem;
+      left: -0.5rem;
+      z-index: 0;
+    }
+
+    .process-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .process-name {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+
+    .process-desc {
+      font-size: 0.9rem;
+      color: var(--muted);
+      max-width: 400px;
     }
 
     .why-icon {
@@ -494,6 +537,11 @@
         grid-template-columns: 1fr 1fr;
       }
 
+      .process-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+      }
+
       .contact-buttons {
         flex-direction: row;
         justify-content: center;
@@ -617,6 +665,37 @@
         <div class="work-info">
           <h3 class="work-title">Boutique Fashion Logo</h3>
           <p class="work-type">Logo · Typography · Brand Direction</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- PROCESS -->
+  <section id="process">
+    <p class="section-label reveal">The Method</p>
+    <h2 class="section-title reveal">How We Work</h2>
+    <div class="process-grid">
+      <div class="process-step reveal">
+        <span class="process-number">01</span>
+        <div class="process-content">
+          <h3 class="process-name">Discovery</h3>
+          <p class="process-desc">We start with a conversation to understand your business goals, target audience, and vision. We define the strategy before we touch a single pixel.</p>
+        </div>
+      </div>
+      <div class="process-step reveal">
+        <span class="process-number">02</span>
+        <div class="process-content">
+          <h3 class="process-name">Design</h3>
+          <p class="process-desc">This is where your brand comes to life. I craft concepts and refine them based on your feedback until every detail is perfect and purposeful.</p>
+        </div>
+      </div>
+      <div class="process-step reveal">
+        <span class="process-number">03</span>
+        <div class="process-content">
+          <h3 class="process-name">Delivery</h3>
+          <p class="process-desc">You receive your polished brand assets or a live, high-performance website — ready to make a professional impact from day one.</p>
         </div>
       </div>
     </div>
