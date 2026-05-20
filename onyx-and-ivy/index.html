@@ -172,6 +172,20 @@
             .gallery { padding: 5rem 10%; }
         }
 
+        footer {
+            padding: 8rem 0;
+            text-align: center;
+            border-top: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .footer-copy {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 2rem;
+            opacity: 0.6;
+        }
+
     </style>
 </head>
 <body>
@@ -224,7 +238,13 @@
 
     </main>
 
+    <footer>
+        <p class="footer-copy">&copy; <span id="year"></span> Onyx & Ivy &nbsp;·&nbsp; Bespoke Floristry</p>
+        <img src="../assets/Powered_by_light_background.png" alt="Powered by synontech" style="height: 25px; opacity: 0.6;">
+    </footer>
+
     <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {

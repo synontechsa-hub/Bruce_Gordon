@@ -253,6 +253,21 @@
             animation: pulse 1.5s infinite;
         }
 
+        footer {
+            grid-column: span 12;
+            padding: 4rem 2rem 8rem;
+            text-align: center;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-copy {
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            color: #666;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
     </style>
 </head>
 <body>
@@ -285,9 +300,14 @@
         </section>
 
         <!-- SPACER FOR SCROLLING -->
-        <div style="grid-column: span 12; height: 100vh; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: center; color: #333; text-transform: uppercase; letter-spacing: 1em; font-size: 0.7rem;">
-            Scrolling Experience Active
+        <div style="grid-column: span 12; height: 50vh; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: center; color: #333; text-transform: uppercase; letter-spacing: 1em; font-size: 0.7rem;">
+            Experience Active
         </div>
+
+        <footer>
+            <p class="footer-copy">&copy; <span id="year"></span> Cape & Blade &nbsp;·&nbsp; Precision Grooming</p>
+            <img src="../assets/Powered_by_black_background.png" alt="Powered by synontech" style="height: 25px; opacity: 0.5;">
+        </footer>
 
     </div>
 
@@ -299,6 +319,10 @@
         </div>
         <a href="#" class="check-in-btn">Check In Live</a>
     </div>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 
 </body>
 </html>
