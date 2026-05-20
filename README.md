@@ -1,4 +1,4 @@
-# Bruce Gordon — Freelance Designer
+# Bruce Gordon | Freelance Designer
 
 A high-end, minimal portfolio website for Bruce Gordon, a freelance designer based in South Africa. This site showcases logo design, branding, and mobile-first web development services.
 
@@ -19,8 +19,8 @@ This is a single-page, responsive website built with modern HTML5 and CSS3. It f
 
 ## 📁 Project Structure
 
-- `bruce-gordon.html`: The main entry point (to be renamed to `index.html` for deployment).
-- `assets/`: (Planned) Directory for logos, mock-ups, and project images.
+- `index.html`: The main entry point.
+- `assets/`: Directory for logos, mock-ups, and project images.
 
 ## 📝 License
 
