@@ -324,6 +324,14 @@
       background: var(--mid);
       overflow: hidden;
       position: relative;
+      display: block;
+      text-decoration: none;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .work-card:hover {
+      transform: translateY(-5px);
+      background: #212121;
     }
 
     .work-thumb {
@@ -350,10 +358,10 @@
     }
 
     /* placeholder gradients for mock projects */
-    .thumb-1 { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); }
-    .thumb-2 { background: linear-gradient(135deg, #1c1008 0%, #2d1f0a 50%, #3d2b0e 100%); }
-    .thumb-3 { background: linear-gradient(135deg, #0d1f0d 0%, #132613 50%, #1a3319 100%); }
-    .thumb-4 { background: linear-gradient(135deg, #1f0d1f 0%, #261326 50%, #331933 100%); }
+    .thumb-1 { background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%); }
+    .thumb-2 { background: linear-gradient(135deg, #1e2420 0%, #0d0f0e 100%); }
+    .thumb-3 { background: linear-gradient(135deg, #050505 0%, #1a1a2e 100%); }
+    .thumb-4 { background: linear-gradient(135deg, #2d1f0a 0%, #1c1008 100%); }
 
     .work-label {
       font-family: var(--font-display);
@@ -672,50 +680,50 @@
     <p class="section-label reveal">Selected Projects</p>
     <h2 class="section-title reveal">Featured Work</h2>
     <div class="work-grid">
-      <div class="work-card reveal">
+      <a href="cape-and-blade/index.html" class="work-card reveal">
         <div class="work-thumb thumb-1">
           <div class="work-thumb-inner">
-            <span class="work-label">Website Concept</span>
+            <img src="assets/Cape_&_Blade/Cape_&_Blade_logo_white.png" alt="Cape & Blade Logo" style="width: 60%; max-width: 280px; height: auto;">
           </div>
         </div>
         <div class="work-info">
-          <h3 class="work-title">Modern Barber Booking Site</h3>
+          <h3 class="work-title">Cape & Blade</h3>
           <p class="work-type">Mobile-first landing page · UI Design</p>
         </div>
-      </div>
-      <div class="work-card reveal">
+      </a>
+      <a href="onyx-and-ivy/index.html" class="work-card reveal">
         <div class="work-thumb thumb-2">
           <div class="work-thumb-inner">
-            <span class="work-label">Brand Identity</span>
+            <img src="assets/Onyx_&_Ivy/Onyx_&_Ivy_logo.png" alt="Onyx & Ivy Logo" style="width: 55%; height: auto;">
           </div>
         </div>
         <div class="work-info">
-          <h3 class="work-title">Coffee Shop Rebrand</h3>
-          <p class="work-type">Logo · Visual Identity · Colour System</p>
+          <h3 class="work-title">Onyx & Ivy</h3>
+          <p class="work-type">Floral Studio · Brand Identity · Editorial Design</p>
         </div>
-      </div>
-      <div class="work-card reveal">
+      </a>
+      <a href="veloce-systems/index.html" class="work-card reveal">
         <div class="work-thumb thumb-3">
           <div class="work-thumb-inner">
-            <span class="work-label">Website Concept</span>
+            <img src="assets/Veloce/Veloce_logo.png" alt="Veloce Logo" style="width: 50%; height: auto;">
           </div>
         </div>
         <div class="work-info">
-          <h3 class="work-title">Tech Startup Landing Page</h3>
-          <p class="work-type">Responsive Homepage · UI Design</p>
+          <h3 class="work-title">Veloce Systems</h3>
+          <p class="work-type">SaaS Landing Page · UI/UX · Fintech</p>
         </div>
-      </div>
-      <div class="work-card reveal">
+      </a>
+      <a href="origin-root/index.html" class="work-card reveal">
         <div class="work-thumb thumb-4">
           <div class="work-thumb-inner">
-            <span class="work-label">Logo Design</span>
+            <img src="assets/Origin_Root/Origin_Root_logo.png" alt="Origin Root Logo" style="width: 60%; height: auto;">
           </div>
         </div>
         <div class="work-info">
-          <h3 class="work-title">Boutique Fashion Logo</h3>
-          <p class="work-type">Logo · Typography · Brand Direction</p>
+          <h3 class="work-title">Origin Root</h3>
+          <p class="work-type">Specialty Coffee · Logo · Brand Direction</p>
         </div>
-      </div>
+      </a>
     </div>
   </section>
 
