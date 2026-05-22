@@ -85,9 +85,18 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 6rem 2rem 4rem;
+  padding: 5rem 2rem 3rem; /* Tightened for mobile focus */
   position: relative;
   overflow: hidden;
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding-top: 4rem; /* Even tighter for QR scans */
+  }
+  .hero-headline {
+    font-size: clamp(2.8rem, 15vw, 4rem); /* Ensure buttons are visible on small screens */
+  }
 }
 
 .hero::after {
@@ -129,9 +138,9 @@ nav {
 }
 
 .hero-sub {
-  font-size: clamp(0.85rem, 3vw, 1rem);
-  color: var(--muted);
-  max-width: 340px;
+  font-size: clamp(0.9rem, 3.5vw, 1.1rem); /* Slightly larger for readability */
+  color: #ccc; /* Higher contrast than var(--muted) for quick reading */
+  max-width: 420px; /* Allow more text per line for better flow */
   margin-bottom: 2.5rem;
   margin-top: 1rem;
   opacity: 0;
@@ -199,7 +208,11 @@ nav {
 }
 
 /* ── SECTION SHARED ── */
-section { padding: 5rem 2rem; }
+section { padding: 4rem 1.5rem; } /* Tightened for mobile momentum */
+
+@media (min-width: 640px) {
+  section { padding: 6rem 3rem; }
+}
 
 .section-label {
   font-size: 0.65rem;
