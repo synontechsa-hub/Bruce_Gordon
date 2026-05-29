@@ -334,13 +334,27 @@ section { padding: 4rem 1.5rem; } /* Tightened for mobile momentum */
   margin-top: 2.5rem;
 }
 
+@media (min-width: 768px) {
+  .work-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .work-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 .work-card {
   background: var(--mid);
   overflow: hidden;
   position: relative;
-  display: block;
+  display: flex;
+  flex-direction: column;
   text-decoration: none;
   transition: transform 0.3s ease, background 0.3s ease;
+  height: 100%;
 }
 
 .work-card:hover {
@@ -350,7 +364,7 @@ section { padding: 4rem 1.5rem; } /* Tightened for mobile momentum */
 
 .work-thumb {
   width: 100%;
-  aspect-ratio: 16/9;
+  aspect-ratio: 16/10;
   background: var(--subtle);
   display: flex;
   align-items: center;
@@ -369,6 +383,13 @@ section { padding: 4rem 1.5rem; } /* Tightened for mobile momentum */
   font-size: 1.2rem;
   color: var(--muted);
   letter-spacing: 0.08em;
+  padding: 2rem;
+}
+
+.work-thumb-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 /* placeholder gradients for mock projects */
@@ -376,18 +397,14 @@ section { padding: 4rem 1.5rem; } /* Tightened for mobile momentum */
 .thumb-2 { background: linear-gradient(135deg, #1e2420 0%, #0d0f0e 100%); }
 .thumb-3 { background: linear-gradient(135deg, #050505 0%, #1a1a2e 100%); }
 .thumb-4 { background: linear-gradient(135deg, #fdfcf9 0%, #EFEAD8 100%); }
-
-.work-label {
-  font-family: var(--font-display);
-  font-size: 0.65rem;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--accent);
-  opacity: 0.8;
-}
+.thumb-5 { background: linear-gradient(135deg, #F9F7F2 0%, #E5E1D8 100%); } /* Solstice */
+.thumb-6 { background: linear-gradient(135deg, #F4F7FA 0%, #D1D9E6 100%); } /* Vela */
+.thumb-7 { background: linear-gradient(135deg, #1a1a1a 0%, #333 100%); background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1000'); background-size: cover; background-position: center; } /* Forma */
+.thumb-8 { background: linear-gradient(135deg, #0F2B5B 0%, #051635 100%); } /* NexusAI */
 
 .work-info {
   padding: 1.25rem;
+  flex-grow: 1;
 }
 
 .work-title {
@@ -569,6 +586,79 @@ section { padding: 4rem 1.5rem; } /* Tightened for mobile momentum */
 .contact-email a {
   color: var(--accent);
   text-decoration: none;
+}
+
+/* ── ENGINEERING ── */
+.engineering-section {
+  padding-top: 0;
+}
+
+.engineering-card {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr;
+  background: var(--mid);
+  overflow: hidden;
+}
+
+@media (min-width: 900px) {
+  .engineering-card {
+    grid-template-columns: 1.2fr 0.8fr;
+  }
+}
+
+.eng-slideshow {
+  position: relative;
+  height: 350px;
+  overflow: hidden;
+}
+
+@media (min-width: 900px) {
+  .eng-slideshow {
+    height: 500px;
+  }
+}
+
+.eng-slide {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.eng-slide.active {
+  opacity: 1;
+}
+
+.eng-content {
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.eng-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.eng-title {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--white);
+}
+
+.eng-desc {
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.6;
 }
 
 /* ── FOOTER ── */
