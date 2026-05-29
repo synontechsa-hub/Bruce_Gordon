@@ -4,10 +4,7 @@
   "description": "Bruce Gordon - Freelance Designer Portfolio",
   "main": "script.js",
   "type": "module",
-  "scripts": {
-    "build": "echo 'No build step required for static site'",
-    "lint": "echo 'No linter configured'"
-  },
+  "scripts": {},
   "keywords": [
     "portfolio",
     "design"
