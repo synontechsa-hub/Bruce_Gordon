@@ -20,10 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
       nav.style.padding = '0.8rem 2rem';
-      nav.style.background = 'rgba(14, 14, 14, 0.95)';
     } else {
       nav.style.padding = '1rem 2rem';
-      nav.style.background = 'rgba(14, 14, 14, 0.8)';
     }
   });
 
