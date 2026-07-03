@@ -419,3 +419,50 @@ footer {
 .reveal {
   opacity: 1; /* Temporarily disabled reveal animation to ensure visibility during redesign */
 }
+
+/* ── RESPONSIVE REFINE ── */
+@media (max-width: 768px) {
+  .hero {
+    min-height: calc(100svh - 72px);
+    padding: 3rem 1rem 4rem;
+  }
+  .hero-logo {
+    max-width: 160px;
+    margin-bottom: 1rem;
+  }
+  .hero-headline-img {
+    max-width: 95%;
+  }
+  .hero-sub {
+    font-size: 1.5rem;
+    max-width: 90%;
+    margin-bottom: 2rem;
+    padding: 0.4rem 1rem;
+  }
+  .btn-primary, .btn-secondary, .btn-blue {
+    font-size: 1.4rem;
+    padding: 0.6rem 2rem;
+    box-shadow: 6px 6px 0px var(--black);
+  }
+  .btn-primary:hover, .btn-secondary:hover, .btn-blue:hover {
+    box-shadow: 8px 8px 0px var(--black);
+  }
+  .hero-deco {
+    opacity: 0.6;
+  }
+  .deco-cloud {
+    width: 80px;
+  }
+  .deco-heart {
+    width: 70px;
+  }
+  .deco-paw {
+    width: 60px;
+  }
+  .deco-skull {
+    width: 70px;
+  }
+  .deco-x {
+    width: 50px;
+  }
+}
