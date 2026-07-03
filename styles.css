@@ -83,13 +83,13 @@ nav {
   min-height: 100svh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end; /* Move content towards the bottom per reference */
   align-items: center;
   text-align: center;
-  padding: 8rem 2rem 4rem;
+  padding: 8rem 2rem 10rem; /* Increased bottom padding for button placement */
   position: relative;
   overflow: hidden;
-  background-image: url('assets/new_design/backgrounds/Element - Background - Full 1.png');
+  background-image: url('assets/new_design/backgrounds/Website - Hero Screen.png');
   background-size: cover;
   background-position: center;
 }
@@ -100,6 +100,7 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 
 .hero-logo {
@@ -180,34 +181,36 @@ nav {
   background: var(--pink);
   color: var(--white);
   font-family: var(--font-display);
-  font-size: 1.5rem;
-  padding: 1rem 2.5rem;
+  font-size: 2rem; /* Matches the bold reference */
+  padding: 0.8rem 3rem;
   text-decoration: none;
-  transform: rotate(-1deg);
-  box-shadow: 5px 5px 0px var(--black);
+  transform: rotate(-2deg);
+  border: 3px solid var(--black);
+  box-shadow: 8px 8px 0px var(--black);
   transition: all 0.2s;
 }
 
 .btn-primary:hover {
   transform: rotate(0deg) translate(-2px, -2px);
-  box-shadow: 8px 8px 0px var(--black);
+  box-shadow: 12px 12px 0px var(--black);
 }
 
 .btn-secondary {
   background: var(--yellow);
   color: var(--black);
   font-family: var(--font-display);
-  font-size: 1.5rem;
-  padding: 1rem 2.5rem;
+  font-size: 2rem;
+  padding: 0.8rem 3rem;
   text-decoration: none;
-  transform: rotate(1.5deg);
-  box-shadow: 5px 5px 0px var(--black);
+  transform: rotate(2deg);
+  border: 3px solid var(--black);
+  box-shadow: 8px 8px 0px var(--black);
   transition: all 0.2s;
 }
 
 .btn-secondary:hover {
   transform: rotate(0deg) translate(-2px, -2px);
-  box-shadow: 8px 8px 0px var(--black);
+  box-shadow: 12px 12px 0px var(--black);
 }
 
 /* ── SECTION SHARED ── */
