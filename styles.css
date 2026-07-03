@@ -35,9 +35,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(244, 241, 234, 0.8);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: var(--cream);
   border-bottom: 2px solid var(--black);
 }
 
