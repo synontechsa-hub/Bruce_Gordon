@@ -80,8 +80,8 @@ nav {
 
 /* ── HERO ── */
 .hero {
-  min-height: calc(100svh - 80px); /* Adjust height for nav offset */
-  margin-top: 72px; /* Exact offset for the fixed navbar */
+  min-height: calc(100svh - 110px);
+  margin-top: 110px; /* Increased offset to 110px for more clearance */
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
