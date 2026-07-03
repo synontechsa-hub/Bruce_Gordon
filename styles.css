@@ -85,9 +85,9 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 4rem 2rem 6rem;
+  align-items: flex-start;
+  text-align: left;
+  padding: 4rem 6rem 6rem;
   position: relative;
   overflow: hidden;
   background-image: url('assets/new_design/backgrounds/Element - Background - Full 1.png');
@@ -100,8 +100,9 @@ nav {
   z-index: 10;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   width: 100%;
+  max-width: 900px;
 }
 
 .hero-logo {
@@ -139,7 +140,7 @@ nav {
   display: flex;
   gap: 1.5rem;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 /* ── HERO DECORATIONS ── */
@@ -424,7 +425,8 @@ footer {
 @media (max-width: 768px) {
   .hero {
     min-height: calc(100svh - 72px);
-    padding: 3rem 1rem 4rem;
+    padding: 3rem 2rem 4rem;
+    align-items: flex-start;
   }
   .hero-logo {
     max-width: 160px;
