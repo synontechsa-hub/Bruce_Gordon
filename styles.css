@@ -80,130 +80,93 @@ nav {
 
 /* ── HERO ── */
 .hero {
+  margin-top: 72px;
   min-height: calc(100svh - 72px);
-  margin-top: 72px; /* Offset to match navbar height */
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  padding: 4rem 2rem 5rem;
-  position: relative;
-  overflow: hidden;
+  justify-content: center;
   background-image: url('assets/website/hero_screen/Hero Screen - Background.png');
   background-size: cover;
   background-position: center;
+  overflow: hidden;
 }
 
-.hero-layout {
+/* 
+ * The canvas holds all SVG layers in the same 1920x1080 coordinate space.
+ * Width is clamped so it fills the viewport, maintaining 16:9 aspect ratio.
+ */
+.hero-canvas {
   width: 100%;
-  max-width: 1200px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2.5rem;
+  /* Limit height to the available viewport so it doesn't overflow the screen */
+  max-height: calc(100svh - 72px);
+  /* Intrinsic 1920x1080 ratio */
+  aspect-ratio: 1920 / 1080;
   position: relative;
-  z-index: 10;
 }
 
-.hero-main-grid {
+/* Every SVG is a transparent layer over the full canvas */
+.hero-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  display: grid;
-  grid-template-columns: 1.1fr 100px 1.3fr;
-  align-items: center;
-  gap: 1.5rem;
+  height: 100%;
+  object-fit: fill; /* stretch to exactly fill — SVG handles its own scaling */
+  pointer-events: none;
+  user-select: none;
 }
 
-.hero-left-col {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2.5rem;
+/* Floating animations on Cloud and Heart layers */
+@keyframes float-cloud {
+  0%, 100% { transform: translateY(0px);  }
+  50%       { transform: translateY(-10px); }
+}
+@keyframes float-heart {
+  0%, 100% { transform: translateY(0px) scale(1);      }
+  50%       { transform: translateY(-8px)  scale(1.04); }
 }
 
-.hero-bruce-logo {
-  width: 100%;
-  max-width: 480px;
-  height: auto;
+.hero-anim-cloud {
+  animation: float-cloud 6s ease-in-out infinite;
+}
+.hero-anim-heart {
+  animation: float-heart 4s ease-in-out infinite 0.6s;
 }
 
-.hero-float-cloud {
-  width: 85%;
-  max-width: 320px;
-  height: auto;
-  --rot: 0deg;
-  animation: float-gentle 6s ease-in-out infinite;
+/* ── BUTTON OVERLAYS ──
+ * Invisible <a> tags placed as % of the 1920x1080 canvas.
+ * Positions match the button locations visible in the mock-up.
+ */
+.hero-btn-overlay {
+  position: absolute;
+  cursor: pointer;
+  z-index: 20;
+  /* Debug helper: uncomment to see hit areas */
+  /* background: rgba(255,0,0,0.25); */
 }
 
-.hero-mid-col {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* "HIRE ME" — pink button, bottom-center-left area */
+.hero-btn-hire {
+  left:  26%;
+  top:   83%;
+  width:  9%;
+  height: 8%;
 }
 
-.hero-float-heart {
-  width: 100%;
-  max-width: 80px;
-  height: auto;
-  --rot: 0deg;
-  animation: float-gentle 4s ease-in-out infinite 0.5s;
+/* "VIEW WORK" — yellow button, bottom-center */
+.hero-btn-view {
+  left:  35.5%;
+  top:   83%;
+  width:  9%;
+  height: 8%;
 }
 
-.hero-right-col {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.hero-design-headline {
-  width: 100%;
-  max-width: 580px;
-  height: auto;
-}
-
-.hero-bottom-area {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-  width: 100%;
-  margin-top: 1rem;
-}
-
-.hero-subtitle-bar {
-  width: 100%;
-  max-width: 520px;
-  height: auto;
-}
-
-.hero-svg-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-}
-
-.hero-svg-buttons .svg-btn {
-  display: inline-block;
-  transition: transform 0.2s ease, filter 0.2s ease;
-  width: 190px;
-  height: auto;
-}
-
-.hero-svg-buttons .svg-btn img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.hero-svg-buttons .svg-btn:hover {
-  transform: scale(1.06) translateY(-3px);
-  filter: drop-shadow(0 10px 15px rgba(0,0,0,0.2));
-}
-
-@keyframes float-gentle {
-  0% { transform: translateY(0px) rotate(var(--rot, 0deg)); }
-  50% { transform: translateY(-12px) rotate(calc(var(--rot, 0deg) + 2deg)); }
-  100% { transform: translateY(0px) rotate(var(--rot, 0deg)); }
+/* "ALL WORK" — teal button, bottom-center-right */
+.hero-btn-all {
+  left:  45%;
+  top:   83%;
+  width:  9%;
+  height: 8%;
 }
 
 .btn-primary {
