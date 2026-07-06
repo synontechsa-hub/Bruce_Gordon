@@ -26,13 +26,12 @@ viewBox="0 0 1920 600"
  </defs>
  <g id="Layer_x0020_1">
   <metadata id="CorelCorpID_0Corel-Layer"/>
-  <g id="_1816211504000">
+  <g id="_1816197835248">
    <rect fill="black" transform="matrix(0.99962 0.0275774 -0.0275774 0.99962 1463.77 172.26)" width="151.098" height="70.5886"/>
    <rect fill="#F6B402" stroke="black" stroke-width="1.99961" transform="matrix(0.99962 0.0275774 -0.0275774 0.99962 1458.43 167.704)" width="151.098" height="70.5886"/>
    <g transform="matrix(0.9996 0.0282711 -0.0282711 0.9996 541.631 -116.031)">
     <text x="960" y="300"  fill="#373435" font-weight="normal" font-size="23.9327px" font-family="Road Rage">SUPPORT ME</text>
    </g>
   </g>
-  <rect fill="none" width="1920" height="600"/>
  </g>
 </svg>

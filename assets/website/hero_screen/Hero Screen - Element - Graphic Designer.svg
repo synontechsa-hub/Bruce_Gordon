@@ -31,13 +31,12 @@ viewBox="0 0 1920 1080"
  </defs>
  <g id="Layer_x0020_1">
   <metadata id="CorelCorpID_0Corel-Layer"/>
-  <g id="_1816207155776">
+  <g id="_1816499903232">
    <rect fill="black" transform="matrix(0.999675 -0.0254831 0.0254831 0.999675 735.804 797.119)" width="449.626" height="77.1508"/>
    <rect fill="#F6B402" transform="matrix(0.999675 -0.0254831 0.0254831 0.999675 731.311 793.592)" width="449.626" height="77.1508"/>
    <g transform="matrix(0.9996 -0.0282706 0.0282706 0.9996 -180.914 331.03)">
     <text x="960" y="540"  fill="#373435" font-weight="normal" font-size="43.1917px" font-family="Road Rage">GRAPHIC AND WEB DESIGNER</text>
    </g>
   </g>
-  <rect fill="none" width="1920" height="1080"/>
  </g>
 </svg>

@@ -5,7 +5,7 @@
 viewBox="0 0 1920 1080"
  xmlns:xlink="http://www.w3.org/1999/xlink">
  <defs>
-  <font id="FontID1" horiz-adv-x="702" font-variant="normal" fill-rule="nonzero" font-style="normal" font-weight="400">
+  <font id="FontID1" horiz-adv-x="702" font-variant="normal" fill-rule="nonzero" font-weight="400">
 	<font-face 
 		font-family="Permanent Marker">
 		<font-face-src>
@@ -51,8 +51,7 @@ viewBox="0 0 1920 1080"
  </defs>
  <g id="Layer_x0020_1">
   <metadata id="CorelCorpID_0Corel-Layer"/>
-  <rect fill="none" width="1920" height="1080"/>
-  <g id="_1816457879888">
+  <g id="_1816655696832">
    <rect fill="#F6B402" transform="matrix(0.994619 0.0432692 -0.0430968 0.990656 160.679 370.576)" width="368" height="379"/>
    <rect fill="#F6EDE0" stroke="black" stroke-width="2.3622" transform="matrix(0.994619 0.0432692 -0.0430968 0.990656 150.258 359.192)" width="368" height="379"/>
    <rect id="Insert_x0020_Solstice_x0020_Preview_x0020_Picture_x0020_here" fill="none" stroke="black" stroke-width="2.3622" transform="matrix(0.896339 0.0389937 -0.0283105 0.650767 167.546 377.919)" width="368" height="379"/>

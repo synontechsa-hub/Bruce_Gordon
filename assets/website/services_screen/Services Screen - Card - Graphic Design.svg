@@ -5,7 +5,7 @@
 viewBox="0 0 1920 600"
  xmlns:xlink="http://www.w3.org/1999/xlink">
  <defs>
-  <font id="FontID1" horiz-adv-x="666" font-variant="normal" fill-rule="nonzero" font-style="normal" font-weight="400">
+  <font id="FontID1" horiz-adv-x="666" font-variant="normal" fill-rule="nonzero" font-weight="400">
 	<font-face 
 		font-family="Arial">
 		<font-face-src>
@@ -61,7 +61,7 @@ viewBox="0 0 1920 600"
  </defs>
  <g id="Layer_x0020_1">
   <metadata id="CorelCorpID_0Corel-Layer"/>
-  <g id="_1816295146432">
+  <g id="_1816316404496">
    <rect fill="#F6EDE0" stroke="black" stroke-width="2.99882" x="366" y="257" width="273" height="302"/>
    <text x="399" y="418"  fill="black" font-weight="normal" font-size="33.3331px" font-family="Road Rage">G</text>
    <text x="410" y="418"  fill="black" font-weight="normal" font-size="33.3331px" font-family="Road Rage">R</text>
@@ -87,6 +87,5 @@ viewBox="0 0 1920 600"
     <text x="960" y="351"  fill="black" font-weight="normal" font-size="16.5815px" font-family="Arial">flyers &amp; more.</text>
    </g>
   </g>
-  <rect fill="none" width="1920" height="600"/>
  </g>
 </svg>

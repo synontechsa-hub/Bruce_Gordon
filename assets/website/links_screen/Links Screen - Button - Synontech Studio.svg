@@ -29,13 +29,12 @@ viewBox="0 0 1920 600"
  </defs>
  <g id="Layer_x0020_1">
   <metadata id="CorelCorpID_0Corel-Layer"/>
-  <g id="_1816295171584">
+  <g id="_1816298899216">
    <polygon fill="black" points="429,274 732,272 732,335 429,337 "/>
    <polygon fill="#019EAA" stroke="black" stroke-width="2.3622" points="420,265 723,263 723,326 420,328 "/>
    <g transform="matrix(0.999983 -0.00588457 0.00588457 0.999983 -507.199 15.3929)">
     <text x="960" y="300"  fill="#373435" font-weight="normal" font-size="45.8339px" font-family="Road Rage">SYNONTECH STUDIO</text>
    </g>
   </g>
-  <rect fill="none" width="1920" height="600"/>
  </g>
 </svg>

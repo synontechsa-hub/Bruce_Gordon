@@ -23,13 +23,12 @@ viewBox="0 0 1920 600"
  </defs>
  <g id="Layer_x0020_1">
   <metadata id="CorelCorpID_0Corel-Layer"/>
-  <g id="_1816211491648">
+  <g id="_1816311221104">
    <rect fill="black" transform="matrix(0.999904 -0.0138838 0.0138838 0.999904 1306.61 174.732)" width="131.263" height="70.8413"/>
    <rect fill="#ED2F5A" stroke="black" stroke-width="1.99961" transform="matrix(0.999904 -0.0138838 0.0138838 0.999904 1301.14 170.565)" width="131.263" height="70.8413"/>
    <g transform="matrix(0.9996 -0.0282706 0.0282706 0.9996 376.444 -60.1749)">
     <text x="960" y="300"  fill="#373435" font-weight="normal" font-size="23.9327px" font-family="Road Rage">GITHUB</text>
    </g>
   </g>
-  <rect fill="none" width="1920" height="600"/>
  </g>
 </svg>

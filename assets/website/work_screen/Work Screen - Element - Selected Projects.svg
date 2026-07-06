@@ -28,7 +28,7 @@ viewBox="0 0 1920 1080"
  </defs>
  <g id="Layer_x0020_1">
   <metadata id="CorelCorpID_0Corel-Layer"/>
-  <g id="_1816458017328">
+  <g id="_1816655712384">
    <rect fill="black" transform="matrix(0.999282 -0.0378806 0.0378806 0.999282 756.22 202.513)" width="399" height="118"/>
    <rect fill="#EC1A3F" stroke="black" stroke-width="1.99961" transform="matrix(0.999282 -0.0378806 0.0378806 0.999282 751.044 198.053)" width="399" height="118"/>
    <text x="788" y="274"  fill="#373435" font-weight="normal" font-size="61.9453px" font-family="Road Rage"><tspan rotate="358">S</tspan></text>
@@ -49,6 +49,5 @@ viewBox="0 0 1920 1080"
    <text x="1079" y="263"  fill="#373435" font-weight="normal" font-size="61.9453px" font-family="Road Rage"><tspan rotate="358">T</tspan></text>
    <text x="1097" y="262"  fill="#373435" font-weight="normal" font-size="61.9453px" font-family="Road Rage"><tspan rotate="358">S</tspan></text>
   </g>
-  <rect fill="none" width="1920" height="1080"/>
  </g>
 </svg>

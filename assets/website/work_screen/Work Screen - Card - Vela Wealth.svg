@@ -5,7 +5,7 @@
 viewBox="0 0 1920 1080"
  xmlns:xlink="http://www.w3.org/1999/xlink">
  <defs>
-  <font id="FontID1" horiz-adv-x="702" font-variant="normal" fill-rule="nonzero" font-weight="400">
+  <font id="FontID1" horiz-adv-x="702" font-variant="normal" fill-rule="nonzero" font-style="normal" font-weight="400">
 	<font-face 
 		font-family="Permanent Marker">
 		<font-face-src>
@@ -48,8 +48,7 @@ viewBox="0 0 1920 1080"
  </defs>
  <g id="Layer_x0020_1">
   <metadata id="CorelCorpID_0Corel-Layer"/>
-  <rect fill="none" width="1920" height="1080"/>
-  <g id="_1816461086368">
+  <g id="_1816310926656">
    <rect fill="#EC1A3F" transform="matrix(0.99547 0.0133573 -0.0133041 0.991503 998.808 380.271)" width="368" height="379"/>
    <rect fill="#F6EDE0" stroke="black" stroke-width="2.3622" transform="matrix(0.99547 0.0133573 -0.0133041 0.991503 988.049 369.206)" width="368" height="379"/>
    <rect id="Insert_x0020_Vela_x0020_Preview_x0020_Picture_x0020_here" fill="none" stroke="black" stroke-width="2.3622" transform="matrix(0.897106 0.0120374 -0.00873951 0.651324 1005.89 387.405)" width="368" height="379"/>
