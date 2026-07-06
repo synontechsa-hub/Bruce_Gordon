@@ -428,6 +428,16 @@ footer {
 }
 
 /* ── RESPONSIVE REFINE ── */
+@media (max-width: 1280px) {
+  .about-section {
+    height: auto;
+  }
+  .about-canvas {
+    width: 100%;
+    height: auto;
+  }
+}
+
 @media (max-width: 768px) {
   .hero {
     padding: 3rem 1rem 4rem;
