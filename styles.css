@@ -97,11 +97,10 @@ nav {
  */
 .hero-canvas {
   width: 100%;
-  /* Limit height to the available viewport so it doesn't overflow the screen */
   max-height: calc(100svh - 72px);
-  /* Intrinsic 1920x1080 ratio */
   aspect-ratio: 1920 / 1080;
   position: relative;
+  margin-top: -80px;
 }
 
 /* Every SVG is a transparent layer over the full canvas */
