@@ -178,14 +178,15 @@ nav {
   background-position: center;
   overflow: hidden;
   padding: 0;
+  height: 720px; /* Constrained to 720px high */
 }
 
 /*
- * Same 1920x1080 canvas approach as the hero.
+ * Same 1920x1080 canvas approach as the hero, but constrained to 720px height.
  * All card/heading SVGs are layered at full canvas size.
  */
 .about-canvas {
-  width: 100%;
+  height: 100%;
   aspect-ratio: 1920 / 1080;
   position: relative;
 }
