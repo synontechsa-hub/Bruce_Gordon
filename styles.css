@@ -189,6 +189,7 @@ nav {
   height: 100%;
   aspect-ratio: 1920 / 1080;
   position: relative;
+  transform: scale(1.25); /* Scale up all elements together by 25% */
 }
 
 .about-layer {
