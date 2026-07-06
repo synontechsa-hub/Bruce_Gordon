@@ -267,49 +267,34 @@ section { padding: 5rem 2rem; position: relative; }
 
 /* ── SERVICES ── */
 .services-section {
-  background-image: url('assets/new_design/backgrounds/Element - Background - Full 2.png');
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('assets/website/services_screen/Services Screen - Background.jpg');
   background-size: cover;
   background-position: center;
-  position: relative;
+  overflow: hidden;
+  padding: 0;
   border-top: 4px solid var(--black);
   border-bottom: 4px solid var(--black);
+  height: 720px; /* Constrained to 720px high to match the about section */
 }
 
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.service-card {
-  background: var(--white);
-  border: 3px solid var(--black);
-  padding: 2rem;
+.services-canvas {
+  height: 100%;
+  aspect-ratio: 1920 / 1080;
   position: relative;
-  transition: transform 0.3s;
 }
 
-.service-card:hover {
-  transform: translateY(-10px) rotate(1deg);
-}
-
-.service-icon {
-  width: 60px;
-  height: 60px;
-  margin-bottom: 1.5rem;
-}
-
-.service-name {
-  font-family: var(--font-display);
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.service-desc {
-  font-size: 1rem;
-  color: var(--black);
+.services-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  pointer-events: none;
+  user-select: none;
 }
 
 /* ── WORK ── */
@@ -430,10 +415,10 @@ footer {
 
 /* ── RESPONSIVE REFINE ── */
 @media (max-width: 1280px) {
-  .about-section {
+  .about-section, .services-section {
     height: auto;
   }
-  .about-canvas {
+  .about-canvas, .services-canvas {
     width: 100%;
     height: auto;
   }
