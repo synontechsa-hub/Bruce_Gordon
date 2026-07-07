@@ -83,37 +83,33 @@
   </section>
 
   <!-- WORK -->
-  <section id="work">
-    <div style="text-align: center; margin-bottom: 4rem;">
-      <h2 style="font-family: var(--font-display); font-size: 4rem; transform: rotate(-2deg); display: inline-block; background: var(--pink); color: white; padding: 0.5rem 2rem;">SELECTED PROJECTS</h2>
-    </div>
-    <div class="work-grid">
-      <!-- Project cards updated with new style -->
-      <a href="Solstice-website/index.html" class="work-card">
-        <div class="work-thumb">
-          <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=800" alt="Solstice">
-        </div>
-        <h3 class="work-title">SOLSTICE GOODS</h3>
-        <p class="work-type">E-COMMERCE • UX</p>
-      </a>
-      <a href="Vela-website/index.html" class="work-card" style="transform: rotate(1deg);">
-        <div class="work-thumb">
-          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800" alt="Vela">
-        </div>
-        <h3 class="work-title">VELA WEALTH</h3>
-        <p class="work-type">FINTECH • DATA</p>
-      </a>
-      <a href="Forma-website/index.html" class="work-card">
-        <div class="work-thumb">
-          <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800" alt="Forma">
-        </div>
-        <h3 class="work-title">FORMA STUDIO</h3>
-        <p class="work-type">ARCHITECTURE</p>
-      </a>
-    </div>
+  <section id="work" class="work-section">
+    <div class="work-canvas">
+      <!-- Background & Heading Layers -->
+      <img src="assets/website/work_screen/Work Screen - Element - Selected Projects.svg" class="work-layer" alt="Selected Projects">
+      
+      <!-- Polaroid Card Layers -->
+      <img src="assets/website/work_screen/Work Screen - Card - Solstice Goods.svg" class="work-layer" alt="">
+      <img src="assets/website/work_screen/Work Screen - Card - Cape & Blade.svg"   class="work-layer" alt="">
+      <img src="assets/website/work_screen/Work Screen - Card - Vela Wealth.svg"    class="work-layer" alt="">
+      <img src="assets/website/work_screen/Work Screen - Card - Forma Studio.svg"   class="work-layer" alt="">
 
-    <div style="text-align: center; margin-top: 5rem;">
-      <a href="projects.html" class="btn-primary" style="background: var(--yellow); color: var(--black); border: 2px solid var(--black);">VIEW THE FULL ARCHIVE →</a>
+      <!-- Web Previews positioned inside the Polaroid frame slot coordinates -->
+      <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=800" class="work-screenshot work-screenshot-solstice" alt="Solstice Goods Preview">
+      <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&q=80&w=800" class="work-screenshot work-screenshot-cape"     alt="Cape & Blade Preview">
+      <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800" class="work-screenshot work-screenshot-vela"     alt="Vela Wealth Preview">
+      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=800" class="work-screenshot work-screenshot-forma"    alt="Forma Studio Preview">
+
+      <!-- View Full Archive Button SVG -->
+      <img src="assets/website/work_screen/Work Screen - Button - View Full Archive.svg" class="work-layer" alt="">
+
+      <!-- Invisible clickable overlays for the cards and view full archive button -->
+      <a href="Solstice-website/index.html" class="work-card-overlay work-overlay-solstice" aria-label="Solstice Goods"></a>
+      <a href="https://capeandblade.com" target="_blank" class="work-card-overlay work-overlay-cape" aria-label="Cape & Blade"></a>
+      <a href="Vela-website/index.html" class="work-card-overlay work-overlay-vela" aria-label="Vela Wealth"></a>
+      <a href="Forma-website/index.html" class="work-card-overlay work-overlay-forma" aria-label="Forma Studio"></a>
+      
+      <a href="side-projects.html" class="work-btn-overlay" aria-label="View Full Archive"></a>
     </div>
   </section>
 
