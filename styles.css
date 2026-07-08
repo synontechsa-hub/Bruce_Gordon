@@ -471,9 +471,9 @@ section { padding: 5rem 2rem; position: relative; }
   bottom: 4%;
   right: 1.5%;
   font-family: var(--font-hand);
-  font-size: clamp(0.55rem, 0.9vw, 0.8rem);
-  color: var(--black);
-  opacity: 0.55;
+  font-size: clamp(0.8rem, 1.2vw, 1.1rem);
+  color: rgb(0, 0, 0);
+  opacity: 1;
   margin: 0;
   pointer-events: none;
   user-select: none;
