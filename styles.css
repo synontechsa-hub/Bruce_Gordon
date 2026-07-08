@@ -465,6 +465,22 @@ section { padding: 5rem 2rem; position: relative; }
 /* Powered by Synontech logo */
 .footer-link-poweredby { left: 2.3%; top: 77%; width: 8.2%; height: 13%; }
 
+/* Copyright notice — bottom right */
+.footer-copyright {
+  position: absolute;
+  bottom: 4%;
+  right: 1.5%;
+  font-family: var(--font-hand);
+  font-size: clamp(0.55rem, 0.9vw, 0.8rem);
+  color: var(--black);
+  opacity: 0.55;
+  margin: 0;
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+  z-index: 5;
+}
+
 /* ── UTILITIES ── */
 .splat {
   position: absolute;
