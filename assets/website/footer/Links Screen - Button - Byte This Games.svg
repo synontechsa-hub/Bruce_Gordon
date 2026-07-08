@@ -28,11 +28,11 @@ viewBox="0 0 1920 400"
  </defs>
  <g id="Layer_x0020_1">
   <metadata id="CorelCorpID_0Corel-Layer"/>
-  <g id="_3028349483536">
+  <g id="_3028584441168">
    <polygon fill="black" points="439,205 743,209 742,272 439,268 "/>
    <polygon fill="#F6B402" stroke="black" stroke-width="2.3622" points="430,195 733,200 732,263 429,258 "/>
    <g transform="matrix(0.999885 0.0151866 -0.0151866 0.999885 -480.651 26.4031)">
-    <text x="960" y="200"  fill="#373435" font-weight="normal" font-size="45.8339px" font-family="Road Rage">BYTE THIS GAMES</text>
+    <text x="960" y="200"  fill="black" font-weight="normal" font-size="45.8339px" font-family="Road Rage">BYTE THIS GAMES</text>
    </g>
   </g>
  </g>

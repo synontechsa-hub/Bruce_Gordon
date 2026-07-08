@@ -28,11 +28,11 @@ viewBox="0 0 1920 400"
  </defs>
  <g id="Layer_x0020_1">
   <metadata id="CorelCorpID_0Corel-Layer"/>
-  <g id="_3028585785776">
+  <g id="_3028618793872">
    <polygon fill="black" points="1188,201 1491,213 1488,276 1185,264 "/>
    <polygon fill="#019EAA" stroke="black" stroke-width="2.3622" points="1179,192 1482,203 1479,266 1177,255 "/>
    <g transform="matrix(0.999328 0.0366504 -0.0366504 0.999328 257.366 3.17232)">
-    <text x="960" y="200"  fill="#373435" font-weight="normal" font-size="45.8339px" font-family="Road Rage">KERFSUITE WEBSITE</text>
+    <text x="960" y="200"  fill="black" font-weight="normal" font-size="45.8339px" font-family="Road Rage">KERFSUITE WEBSITE</text>
    </g>
   </g>
  </g>
