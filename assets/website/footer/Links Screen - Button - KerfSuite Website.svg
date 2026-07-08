@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <!-- Creator: CorelDRAW X7 -->
-<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1920px" height="600px" version="1.1" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd"
-viewBox="0 0 1920 600"
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="1920px" height="400px" version="1.1" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd"
+viewBox="0 0 1920 400"
  xmlns:xlink="http://www.w3.org/1999/xlink">
  <defs>
-  <font id="FontID0" horiz-adv-x="323" font-variant="normal" fill-rule="nonzero" font-weight="400">
+  <font id="FontID0" horiz-adv-x="323" font-variant="normal" fill-rule="nonzero" font-style="normal" font-weight="400">
 	<font-face 
 		font-family="Road Rage">
 		<font-face-src>
@@ -28,11 +28,11 @@ viewBox="0 0 1920 600"
  </defs>
  <g id="Layer_x0020_1">
   <metadata id="CorelCorpID_0Corel-Layer"/>
-  <g id="_1816469639760">
-   <polygon fill="black" points="430,372 733,383 731,446 428,435 "/>
-   <polygon fill="#F6B402" stroke="black" stroke-width="2.3622" points="421,362 724,374 722,436 419,425 "/>
-   <g transform="matrix(0.999328 0.0366504 -0.0366504 0.999328 -496.53 73.6556)">
-    <text x="960" y="300"  fill="#373435" font-weight="normal" font-size="45.8339px" font-family="Road Rage">KERFSUITE WEBSITE</text>
+  <g id="_3028468316896">
+   <polygon fill="black" points="1188,201 1491,213 1488,276 1185,264 "/>
+   <polygon fill="#019EAA" stroke="black" stroke-width="2.3622" points="1179,192 1482,203 1479,266 1177,255 "/>
+   <g transform="matrix(0.999328 0.0366504 -0.0366504 0.999328 257.366 3.17232)">
+    <text x="960" y="200"  fill="#373435" font-weight="normal" font-size="45.8339px" font-family="Road Rage">KERFSUITE WEBSITE</text>
    </g>
   </g>
  </g>

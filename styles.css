@@ -329,54 +329,6 @@ section { padding: 5rem 2rem; position: relative; }
   user-select: none;
 }
 
-/* ── PREVIEW SCREENSHOT SLOTS ──
- * Coordinates derived from CorelDRAW transform matrix specs translated to percentage ratios
- */
-.work-screenshot {
-  position: absolute;
-  object-fit: cover;
-  z-index: 5;
-  pointer-events: none;
-  transform-origin: 0 0;
-  transition: transform 0.3s ease, filter 0.3s ease;
-}
-
-/* Solstice Goods Preview Slot */
-.work-screenshot-solstice {
-  left: 8.726%;
-  top: 34.992%;
-  width: 19.166%;
-  height: 35.092%;
-  transform: matrix(0.896339, 0.0389937, -0.0283105, 0.650767, 0, 0);
-}
-
-/* Cape & Blade Preview Slot */
-.work-screenshot-cape {
-  left: 30.541%;
-  top: 36.509%;
-  width: 19.166%;
-  height: 35.092%;
-  transform: matrix(0.897027, -0.0169272, 0.0122896, 0.651266, 0, 0);
-}
-
-/* Vela Wealth Preview Slot */
-.work-screenshot-vela {
-  left: 52.390%;
-  top: 35.870%;
-  width: 19.166%;
-  height: 35.092%;
-  transform: matrix(0.897106, 0.0120374, -0.00873951, 0.651324, 0, 0);
-}
-
-/* Forma Studio Preview Slot */
-.work-screenshot-forma {
-  left: 73.782%;
-  top: 36.627%;
-  width: 19.166%;
-  height: 35.092%;
-  transform: matrix(0.896839, -0.0249829, 0.0181383, 0.65113, 0, 0);
-}
-
 /* ── OVERLAYS ── */
 .work-card-overlay {
   position: absolute;
@@ -403,24 +355,6 @@ section { padding: 5rem 2rem; position: relative; }
   top: 82%;
   width: 19%;
   height: 7%;
-}
-
-/* ── HOVER ANIMATION INTERACTIONS ── */
-.work-card-overlay:hover ~ .work-screenshot {
-  filter: brightness(1.08) contrast(1.02);
-}
-
-.work-overlay-solstice:hover ~ .work-screenshot-solstice {
-  transform: matrix(0.92, 0.0389937, -0.0283105, 0.67, 0, -4);
-}
-.work-overlay-cape:hover ~ .work-screenshot-cape {
-  transform: matrix(0.92, -0.0169272, 0.0122896, 0.67, 0, -4);
-}
-.work-overlay-vela:hover ~ .work-screenshot-vela {
-  transform: matrix(0.92, 0.0120374, -0.00873951, 0.67, 0, -4);
-}
-.work-overlay-forma:hover ~ .work-screenshot-forma {
-  transform: matrix(0.92, -0.0249829, 0.0181383, 0.67, 0, -4);
 }
 
 /* ── CTA ── */
