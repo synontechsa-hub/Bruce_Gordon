@@ -140,8 +140,8 @@ nav {
   position: absolute;
   cursor: pointer;
   z-index: 20;
-  /* Debug helper: uncomment to see hit areas */
-  /* background: rgba(255,0,0,0.25); */
+  background: rgba(255, 0, 0, 0.35); /* DEBUG — remove when done */
+  outline: 2px solid red;
 }
 
 /* "HIRE ME" — pink button, bottom-center-left area */
@@ -334,7 +334,8 @@ section { padding: 5rem 2rem; position: relative; }
   position: absolute;
   cursor: pointer;
   z-index: 10;
-  /* background: rgba(0, 255, 0, 0.15); /* Debug highlight */
+  background: rgba(0, 255, 0, 0.35); /* DEBUG — remove when done */
+  outline: 2px solid lime;
   width: 21%;
   height: 43%;
   top: 32%;
