@@ -151,10 +151,14 @@
       <a href="https://github.com/synontechsa-hub" target="_blank" class="footer-link-overlay footer-link-synontech" aria-label="Synontech Studio"></a>
       <a href="#" class="footer-link-overlay footer-link-kerfsuite" aria-label="KerfSuite Website"></a>
       
-      <!-- Powered By Synontech logo overlay -->
-      <a href="https://github.com/synontechsa-hub" target="_blank" class="footer-link-overlay footer-link-poweredby" aria-label="Powered by Synontech"></a>
+      <!-- Copyright — bottom right corner -->
+      <p class="footer-copyright">&copy; <span id="footer-year"></span> Synontech</p>
     </div>
   </footer>
+
+  <script>
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+  </script>
 
 </body>
 </html>
