@@ -146,7 +146,7 @@ nav {
 
 /* "HIRE ME" — pink button */
 .hero-btn-hire {
-  left: 38.05%;
+  left: 38.85%;
   top: 84.2%;
   width: 6.84%;
   height: 6.56%;
@@ -162,7 +162,7 @@ nav {
 
 /* "ALL WORK" — teal button / PORTFOLIO */
 .hero-btn-all {
-  left: 55.35%;
+  left: 54.35%;
   top: 84.2%;
   width: 6.84%;
   height: 6.56%;
@@ -415,8 +415,8 @@ section { padding: 5rem 2rem; position: relative; }
   outline: 2px solid red;
 }
 
-.cta-btn-email    { left: 53%; top: 22%; }
-.cta-btn-whatsapp { left: 53%; top: 54%; }
+.cta-btn-email    { left: 54.84%; top: 34.67%; width: 13.80%; height: 10.50%; }
+.cta-btn-whatsapp { left: 53.91%; top: 52.17%; width: 15.78%; height: 11.17%; }
 
 /* ── FOOTER ── */
 .footer-section {
@@ -468,7 +468,7 @@ section { padding: 5rem 2rem; position: relative; }
 .footer-link-kerfsuite { left: 61.0%; top: 50%; width: 16.5%; height: 20%; }
 
 /* Powered by Synontech logo */
-.footer-link-poweredby { left: 2.3%; top: 77%; width: 8.2%; height: 13%; }
+.footer-link-poweredby { left: 5.05%; top: 77.5%; width: 9.53%; height: 12.5%; }
 
 /* Copyright notice — bottom right */
 .footer-copyright {
