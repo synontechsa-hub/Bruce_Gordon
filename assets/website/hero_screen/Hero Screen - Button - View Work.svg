@@ -5,7 +5,7 @@
 viewBox="0 0 1920 1080"
  xmlns:xlink="http://www.w3.org/1999/xlink">
  <defs>
-  <font id="FontID0" horiz-adv-x="323" font-variant="normal" fill-rule="nonzero" font-style="normal" font-weight="400">
+  <font id="FontID0" horiz-adv-x="323" font-variant="normal" fill-rule="nonzero" font-weight="400">
 	<font-face 
 		font-family="Road Rage">
 		<font-face-src>
@@ -25,11 +25,11 @@ viewBox="0 0 1920 1080"
  </defs>
  <g id="Layer_x0020_1">
   <metadata id="CorelCorpID_0Corel-Layer"/>
-  <g id="_1816499922688">
+  <g id="_3028452833936">
    <rect fill="black" transform="matrix(0.99962 0.0275774 -0.0275774 0.99962 887.77 906.924)" width="151.098" height="70.5886"/>
    <rect fill="#F6B402" transform="matrix(0.99962 0.0275774 -0.0275774 0.99962 882.431 902.367)" width="151.098" height="70.5886"/>
    <g transform="matrix(0.9996 0.0282711 -0.0282711 0.9996 -23.1383 379.059)">
-    <text x="960" y="540"  fill="#373435" font-weight="normal" font-size="23.9327px" font-family="Road Rage">VIEW WORK</text>
+    <text x="960" y="540"  fill="black" font-weight="normal" font-size="23.9327px" font-family="Road Rage">VIEW WORK</text>
    </g>
   </g>
  </g>
