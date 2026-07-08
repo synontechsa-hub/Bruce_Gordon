@@ -144,28 +144,28 @@ nav {
   outline: 2px solid red;
 }
 
-/* "HIRE ME" — pink button, bottom-center-left area */
+/* "HIRE ME" — pink button */
 .hero-btn-hire {
-  left:  26%;
-  top:   83%;
-  width:  9%;
-  height: 8%;
+  left: 38.05%;
+  top: 84.2%;
+  width: 6.84%;
+  height: 6.56%;
 }
 
-/* "VIEW WORK" — yellow button, bottom-center */
+/* "VIEW WORK" — yellow button */
 .hero-btn-view {
-  left:  35.5%;
-  top:   83%;
-  width:  9%;
-  height: 8%;
+  left: 46.24%;
+  top: 83.97%;
+  width: 7.87%;
+  height: 6.54%;
 }
 
-/* "ALL WORK" — teal button, bottom-center-right */
+/* "ALL WORK" — teal button / PORTFOLIO */
 .hero-btn-all {
-  left:  45%;
-  top:   83%;
-  width:  9%;
-  height: 8%;
+  left: 55.35%;
+  top: 84.2%;
+  width: 6.84%;
+  height: 6.56%;
 }
 
 /* ── ABOUT ── */
