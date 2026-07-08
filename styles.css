@@ -140,8 +140,6 @@ nav {
   position: absolute;
   cursor: pointer;
   z-index: 20;
-  background: rgba(255, 0, 0, 0.35); /* DEBUG — remove when done */
-  outline: 2px solid red;
 }
 
 /* "HIRE ME" — pink button */
@@ -334,8 +332,6 @@ section { padding: 5rem 2rem; position: relative; }
   position: absolute;
   cursor: pointer;
   z-index: 10;
-  background: rgba(0, 255, 0, 0.35); /* DEBUG — remove when done */
-  outline: 2px solid lime;
   width: 21%;
   height: 43%;
   top: 32%;
@@ -351,8 +347,6 @@ section { padding: 5rem 2rem; position: relative; }
   position: absolute;
   cursor: pointer;
   z-index: 10;
-  background: rgba(255, 0, 0, 0.35); /* DEBUG — remove when done */
-  outline: 2px solid red;
   left: 40.93%;
   top: 76.39%;
   width: 17.35%;
@@ -411,8 +405,6 @@ section { padding: 5rem 2rem; position: relative; }
   z-index: 10;
   height: 18%;
   width: 18%;
-  background: rgba(255, 0, 0, 0.35); /* DEBUG — remove when done */
-  outline: 2px solid red;
 }
 
 .cta-btn-email    { left: 54.84%; top: 34.67%; width: 13.80%; height: 10.50%; }
@@ -452,8 +444,6 @@ section { padding: 5rem 2rem; position: relative; }
   position: absolute;
   cursor: pointer;
   z-index: 10;
-  background: rgba(0, 0, 255, 0.35); /* DEBUG — remove when done */
-  outline: 2px solid blue;
 }
 
 /* Top Row buttons */
