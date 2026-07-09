@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -16,7 +16,7 @@
 
   <style>
     body {
-      background-image: url('assets/new_design/backgrounds/Element - Background - Textured.png');
+      background-image: url('assets/website/work_screen/Work Screen - Background.jpg');
       background-attachment: fixed;
       background-size: cover;
     }
@@ -122,6 +122,19 @@
     /* RESPONSIVE */
     @media (max-width: 900px) { .portfolio-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 560px) { .portfolio-grid { grid-template-columns: 1fr; } }
+    
+    /* Onyx & Ivy Logo card styling */
+    #proj-onyx .proj-thumb {
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #proj-onyx .proj-thumb img {
+      object-fit: contain;
+      width: 85%;
+      height: 85%;
+    }
   </style>
 </head>
 <body>
@@ -199,7 +212,7 @@
 
     <a href="onyx-and-ivy/index.html" class="proj-card" id="proj-onyx">
       <div class="proj-thumb">
-        <img src="https://images.unsplash.com/photo-1490750967868-88df5691bb37?auto=format&fit=crop&q=80&w=800" alt="Onyx and Ivy">
+        <img src="assets/Onyx_&_Ivy/Onyx_&_Ivy_logo.png" alt="Onyx and Ivy">
       </div>
       <div class="proj-info">
         <h2 class="proj-name">Onyx &amp; Ivy</h2>

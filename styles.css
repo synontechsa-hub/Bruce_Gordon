@@ -17,7 +17,7 @@ html { scroll-behavior: smooth; }
 
 body {
   background-color: var(--cream);
-  background-image: url('assets/new_design/backgrounds/Element - Background - Textured.png');
+  background-image: url('assets/website/work_screen/Work Screen - Background.jpg');
   background-attachment: fixed;
   background-size: cover;
   color: var(--black);
