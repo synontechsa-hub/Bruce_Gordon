@@ -550,3 +550,45 @@ section { padding: 5rem 2rem; position: relative; }
     width: 140px;
   }
 }
+
+/* ── INTERACTIVE CANVAS HOVERS (GPU Accelerated Filters) ── */
+
+/* Hero buttons transition & hover highlights */
+.hero-btn-img-hire, .hero-btn-img-view, .hero-btn-img-all {
+  transition: filter 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.hero-canvas:has(.hero-btn-hire:hover) .hero-btn-img-hire { filter: brightness(1.22); }
+.hero-canvas:has(.hero-btn-view:hover) .hero-btn-img-view { filter: brightness(1.22); }
+.hero-canvas:has(.hero-btn-all:hover) .hero-btn-img-all { filter: brightness(1.22); }
+
+/* Work cards & Work Full Archive button transition & hovers */
+.work-card-img-solstice, .work-card-img-cape, .work-card-img-vela, .work-card-img-forma, .work-btn-img-archive {
+  transition: filter 0.25s ease-out;
+}
+.work-canvas:has(.work-overlay-solstice:hover) .work-card-img-solstice { filter: brightness(1.08) contrast(1.05); }
+.work-canvas:has(.work-overlay-cape:hover) .work-card-img-cape { filter: brightness(1.08) contrast(1.05); }
+.work-canvas:has(.work-overlay-vela:hover) .work-card-img-vela { filter: brightness(1.08) contrast(1.05); }
+.work-canvas:has(.work-overlay-forma:hover) .work-card-img-forma { filter: brightness(1.08) contrast(1.05); }
+.work-canvas:has(.work-btn-overlay:hover) .work-btn-img-archive { filter: brightness(1.22); }
+
+/* CTA buttons transition & hovers */
+.cta-btn-img-email, .cta-btn-img-whatsapp {
+  transition: filter 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.cta-canvas:has(.cta-btn-email:hover) .cta-btn-img-email { filter: brightness(1.22); }
+.cta-canvas:has(.cta-btn-whatsapp:hover) .cta-btn-img-whatsapp { filter: brightness(1.22); }
+
+/* Footer buttons transition & hovers */
+.footer-btn-img-about, .footer-btn-img-services, .footer-btn-img-work, .footer-btn-img-portfolio,
+.footer-btn-img-bytethis, .footer-btn-img-synontech, .footer-btn-img-kerfsuite, .footer-btn-img-poweredby {
+  transition: filter 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.footer-canvas:has(.footer-link-about:hover) .footer-btn-img-about { filter: brightness(1.22); }
+.footer-canvas:has(.footer-link-services:hover) .footer-btn-img-services { filter: brightness(1.22); }
+.footer-canvas:has(.footer-link-work:hover) .footer-btn-img-work { filter: brightness(1.22); }
+.footer-canvas:has(.footer-link-portfolio:hover) .footer-btn-img-portfolio { filter: brightness(1.22); }
+.footer-canvas:has(.footer-link-bytethis:hover) .footer-btn-img-bytethis { filter: brightness(1.22); }
+.footer-canvas:has(.footer-link-synontech:hover) .footer-btn-img-synontech { filter: brightness(1.22); }
+.footer-canvas:has(.footer-link-kerfsuite:hover) .footer-btn-img-kerfsuite { filter: brightness(1.22); }
+.footer-canvas:has(.footer-link-poweredby:hover) .footer-btn-img-poweredby { filter: brightness(1.22); }
+
