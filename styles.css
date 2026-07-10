@@ -665,23 +665,56 @@ section { padding: 5rem 2rem; position: relative; }
     width: 100%;
   }
 
+  .m-hero-top-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    max-width: 320px;
+    margin-bottom: 0.2rem;
+  }
+
   .m-hero-logo {
-    width: 65%;
-    max-width: 220px;
+    width: 60%;
     height: auto;
+    display: block;
+  }
+
+  .m-hero-cloud {
+    width: 35%;
+    height: auto;
+    display: block;
+  }
+
+  .m-hero-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    width: 100%;
+    max-width: 440px;
+    margin-bottom: 0.2rem;
+  }
+
+  .m-hero-heart {
+    width: 15%;
+    max-width: 60px;
+    height: auto;
+    display: block;
   }
 
   .m-hero-title-img {
-    width: 85%;
-    max-width: 440px;
+    width: 82%;
     height: auto;
+    display: block;
   }
 
   .m-hero-sub-img {
-    width: 70%;
-    max-width: 290px;
+    width: 68%;
+    max-width: 250px;
     height: auto;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.6rem;
   }
 
   .m-hero-buttons {
@@ -706,27 +739,6 @@ section { padding: 5rem 2rem; position: relative; }
     width: 100%;
     height: auto;
     display: block;
-  }
-
-  /* floating decorative elements */
-  .m-deco {
-    position: absolute;
-    pointer-events: none;
-    z-index: 1;
-  }
-  .m-deco-cloud {
-    width: 50%;
-    max-width: 200px;
-    top: 6%;
-    right: -6%;
-    opacity: 0.85;
-  }
-  .m-deco-heart {
-    width: 25%;
-    max-width: 100px;
-    bottom: 8%;
-    right: 2%;
-    opacity: 0.9;
   }
 
 
