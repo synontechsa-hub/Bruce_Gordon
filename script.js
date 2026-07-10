@@ -60,4 +60,35 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+
+  // --- HAMBURGER MENU ---
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav  = document.getElementById('mobile-nav');
+
+  if (hamburger && mobileNav) {
+    hamburger.addEventListener('click', () => {
+      const isOpen = mobileNav.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', isOpen);
+      hamburger.textContent = isOpen ? '✕' : '☰';
+    });
+
+    // Close when a link inside the mobile nav is tapped
+    mobileNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileNav.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', false);
+        hamburger.textContent = '☰';
+      });
+    });
+
+    // Close on outside tap
+    document.addEventListener('click', (e) => {
+      if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+        mobileNav.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', false);
+        hamburger.textContent = '☰';
+      }
+    });
+  }
+
 });

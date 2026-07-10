@@ -159,14 +159,26 @@
     <a href="index.html" class="nav-logo">
       <img src="assets/website/elements/Element - Bruce Gordon.svg" alt="Bruce Gordon">
     </a>
+    <!-- Desktop links -->
     <div class="nav-links">
       <a href="index.html#about">About</a>
       <a href="index.html#services">Services</a>
       <a href="index.html#work">Work</a>
       <a href="side-projects.html">Portfolio</a>
     </div>
-    <a href="index.html#contact" class="nav-cta">GET IN TOUCH</a>
+    <a href="index.html#contact" class="nav-cta desktop-only">GET IN TOUCH</a>
+    <!-- Hamburger (mobile only) -->
+    <button id="hamburger" class="hamburger mobile-only" aria-label="Open menu" aria-expanded="false">&#9776;</button>
   </nav>
+
+  <!-- Mobile nav drawer -->
+  <div id="mobile-nav" class="mobile-nav-drawer">
+    <a href="index.html#about">About</a>
+    <a href="index.html#services">Services</a>
+    <a href="index.html#work">Work</a>
+    <a href="side-projects.html">Portfolio</a>
+    <a href="index.html#contact" class="mobile-nav-cta">GET IN TOUCH</a>
+  </div>
 
   <header class="portfolio-header">
     <a href="index.html" class="back-home">&#8592; BACK TO HOME</a>
@@ -258,7 +270,28 @@
 
   </main>
 
-  <footer class="footer-section">
+  <!-- FOOTER (mobile) -->
+  <footer class="m-footer mobile-only">
+    <img src="assets/website/elements/Element - Bruce Gordon.svg" class="m-footer-logo" alt="Bruce Gordon">
+    <nav class="m-footer-nav">
+      <a href="index.html#about-m">About</a>
+      <a href="index.html#services-m">Services</a>
+      <a href="index.html#work-m">Work</a>
+      <a href="side-projects.html">Portfolio</a>
+    </nav>
+    <div class="m-footer-links">
+      <a href="https://byte-this-games.vercel.app/" target="_blank">Byte This Games</a>
+      <a href="https://synontech.vercel.app/" target="_blank">Synontech Studio</a>
+      <a href="https://kerfsuite.vercel.app/" target="_blank">KerfSuite</a>
+    </div>
+    <a href="https://github.com/synontechsa-hub" target="_blank" class="m-footer-powered">
+      <img src="assets/website/footer/Links Screen - Element - Powered By Synontech.svg" alt="Powered by Synontech">
+    </a>
+    <p class="m-footer-copy">&copy; <span id="footer-year-m"></span> Synontech</p>
+  </footer>
+
+  <!-- FOOTER (desktop canvas) -->
+  <footer class="footer-section desktop-only">
     <div class="footer-canvas">
       <!-- Background image layer -->
       <img src="assets/website/footer/Footer - Background.jpg" class="footer-layer" alt="">
@@ -299,7 +332,13 @@
     </div>
   </footer>
 
-  <script>document.getElementById('pf-year').textContent = new Date().getFullYear();</script>
+  <script src="script.js"></script>
+  <script>
+    const pfYear = document.getElementById('pf-year');
+    if (pfYear) pfYear.textContent = new Date().getFullYear();
+    const footerYearM = document.getElementById('footer-year-m');
+    if (footerYearM) footerYearM.textContent = new Date().getFullYear();
+  </script>
 
 </body>
 </html>

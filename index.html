@@ -58,18 +58,29 @@
     <a href="#" class="nav-logo">
       <img src="assets/website/elements/Element - Bruce Gordon.svg" alt="Bruce Gordon">
     </a>
+    <!-- Desktop links -->
     <div class="nav-links">
       <a href="#about">About</a>
       <a href="#services">Services</a>
       <a href="#work">Work</a>
       <a href="side-projects.html">Portfolio</a>
     </div>
-    <a href="#contact" class="nav-cta">GET IN TOUCH</a>
+    <a href="#contact" class="nav-cta desktop-only">GET IN TOUCH</a>
+    <!-- Hamburger (mobile only) -->
+    <button id="hamburger" class="hamburger mobile-only" aria-label="Open menu" aria-expanded="false">&#9776;</button>
   </nav>
 
-  <!-- HERO -->
-  <section class="hero" id="home">
-    <!-- All SVGs share the same 1920x1080 canvas; they layer on top of each other -->
+  <!-- Mobile nav drawer -->
+  <div id="mobile-nav" class="mobile-nav-drawer">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#work">Work</a>
+    <a href="side-projects.html">Portfolio</a>
+    <a href="#contact" class="mobile-nav-cta">GET IN TOUCH</a>
+  </div>
+
+  <!-- HERO (desktop canvas) -->
+  <section class="hero desktop-only" id="home">
     <div class="hero-canvas">
       <img src="assets/website/hero_screen/Hero Screen - Element - Bruce Gordon.svg"   class="hero-layer"             alt="Bruce Gordon">
       <img src="assets/website/hero_screen/Hero Screen - Element - Cloud.svg"           class="hero-layer hero-anim-cloud"  alt="">
@@ -79,16 +90,46 @@
       <img src="assets/website/hero_screen/Hero Screen - Button - Hire Me.svg"          class="hero-layer hero-btn-img-hire"   alt="">
       <img src="assets/website/hero_screen/Hero Screen - Button - View Work.svg"        class="hero-layer hero-btn-img-view"   alt="">
       <img src="assets/website/hero_screen/Hero Screen - Button - All Work.svg"         class="hero-layer hero-btn-img-all"    alt="">
-
-      <!-- Invisible clickable overlays positioned over each button in the canvas -->
       <a href="#contact"          class="hero-btn-overlay hero-btn-hire"  aria-label="Hire Me"></a>
       <a href="#work"             class="hero-btn-overlay hero-btn-view"  aria-label="View Work"></a>
       <a href="side-projects.html" class="hero-btn-overlay hero-btn-all"  aria-label="All Work"></a>
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section class="about-section" id="about">
+  <!-- HERO (mobile) -->
+  <section class="m-hero mobile-only" id="home-m">
+    <div class="m-hero-bg"></div>
+    <div class="m-hero-content">
+      <img src="assets/website/elements/Element - Bruce Gordon.svg" class="m-hero-logo" alt="Bruce Gordon">
+      <h1 class="m-hero-title">DESIGN<br>THAT HITS</h1>
+      <p class="m-hero-sub">Graphic &amp; Web Designer</p>
+      <div class="m-hero-buttons">
+        <a href="#contact-m"        class="m-btn m-btn-pink">HIRE ME</a>
+        <a href="#work-m"           class="m-btn m-btn-yellow">VIEW WORK</a>
+        <a href="side-projects.html" class="m-btn m-btn-teal">PORTFOLIO</a>
+      </div>
+    </div>
+    <!-- Floating decoratives -->
+    <img src="assets/website/hero_screen/Hero Screen - Element - Cloud.svg" class="m-deco m-deco-cloud hero-anim-cloud" alt="">
+    <img src="assets/website/hero_screen/Hero Screen - Element - Heart.svg" class="m-deco m-deco-heart hero-anim-heart" alt="">
+  </section>
+
+  <!-- ABOUT (mobile) -->
+  <section class="m-section m-about mobile-only" id="about-m">
+    <h2 class="m-section-title">About</h2>
+    <p class="m-section-sub">We build brands &amp; experiences that connect</p>
+    <div class="m-cards-grid">
+      <div class="m-card">&#127775; Client Focused</div>
+      <div class="m-card">&#9989; Reliable Service</div>
+      <div class="m-card">&#9889; Fast Delivery</div>
+      <div class="m-card">&#128161; Simple &amp; Easy</div>
+      <div class="m-card">&#128176; Fair Pricing</div>
+    </div>
+    <a href="#contact-m" class="m-cta-link">Work with me &#8594;</a>
+  </section>
+
+  <!-- ABOUT (desktop canvas) -->
+  <section class="about-section desktop-only" id="about">
     <div class="about-canvas">
       <img src="assets/website/about_screen/About Screen - Element - About.svg"          class="about-layer" alt="About">
       <img src="assets/website/about_screen/About Screen - Card - Fast Delivery.svg"     class="about-layer" alt="Quick Turnaround">
@@ -99,8 +140,33 @@
     </div>
   </section>
 
-  <!-- SERVICES -->
-  <section id="services" class="services-section">
+  <!-- SERVICES (mobile) -->
+  <section class="m-section m-services mobile-only" id="services-m">
+    <h2 class="m-section-title">Services</h2>
+    <p class="m-section-sub">What I bring to the table</p>
+    <div class="m-cards-grid">
+      <div class="m-card m-card-service">
+        <span class="m-service-icon">&#9997;&#65039;</span>
+        <span>Graphic Design</span>
+      </div>
+      <div class="m-card m-card-service">
+        <span class="m-service-icon">&#128187;</span>
+        <span>Web Design</span>
+      </div>
+      <div class="m-card m-card-service">
+        <span class="m-service-icon">&#127759;</span>
+        <span>UI / UX Design</span>
+      </div>
+      <div class="m-card m-card-service">
+        <span class="m-service-icon">&#128293;</span>
+        <span>Branding Solutions</span>
+      </div>
+    </div>
+    <a href="#contact-m" class="m-cta-link">Let&#39;s talk &#8594;</a>
+  </section>
+
+  <!-- SERVICES (desktop canvas) -->
+  <section id="services" class="services-section desktop-only">
     <div class="services-canvas">
       <img src="assets/website/services_screen/Services Screen - Element - Services I Offer.svg" class="services-layer" alt="Services I Offer">
       <img src="assets/website/services_screen/Services Screen - Card - Graphic Design.svg"       class="services-layer" alt="Graphic Design">
@@ -110,83 +176,137 @@
     </div>
   </section>
 
-  <!-- WORK -->
-  <section id="work" class="work-section">
+  <!-- WORK (mobile) -->
+  <section class="m-section m-work mobile-only" id="work-m">
+    <h2 class="m-section-title">Selected Work</h2>
+    <p class="m-section-sub">A few things I&#39;m proud of</p>
+    <div class="m-work-grid">
+      <a href="Solstice-website/index.html" class="m-work-card">
+        <div class="m-work-thumb">
+          <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=800" alt="Solstice Goods">
+        </div>
+        <div class="m-work-info">
+          <h3>SOLSTICE GOODS</h3>
+          <p>E-Commerce &bull; UX &bull; Interaction</p>
+        </div>
+      </a>
+      <a href="cape-and-blade/index.html" class="m-work-card">
+        <div class="m-work-thumb">
+          <img src="assets/website/photos/cape_and_blade.jpg" alt="Cape & Blade">
+        </div>
+        <div class="m-work-info">
+          <h3>CAPE &amp; BLADE</h3>
+          <p>Barber Shop &bull; Brand &bull; Web Design</p>
+        </div>
+      </a>
+      <a href="Vela-website/index.html" class="m-work-card">
+        <div class="m-work-thumb">
+          <img src="assets/website/photos/vela.jpg" alt="Vela Wealth">
+        </div>
+        <div class="m-work-info">
+          <h3>VELA WEALTH</h3>
+          <p>Fintech &bull; Data Visualization</p>
+        </div>
+      </a>
+      <a href="Forma-website/index.html" class="m-work-card">
+        <div class="m-work-thumb">
+          <img src="assets/website/photos/forma.jpg" alt="Forma Studio">
+        </div>
+        <div class="m-work-info">
+          <h3>FORMA STUDIO</h3>
+          <p>Architecture &bull; Spatial Design</p>
+        </div>
+      </a>
+    </div>
+    <a href="side-projects.html" class="m-cta-link">View full portfolio &#8594;</a>
+  </section>
+
+  <!-- WORK (desktop canvas) -->
+  <section id="work" class="work-section desktop-only">
     <div class="work-canvas">
-      <!-- Background & Heading Layers -->
       <img src="assets/website/work_screen/Work Screen - Element - Selected Projects.svg" class="work-layer" alt="Selected Projects">
-      
-      <!-- Polaroid Card Layers -->
       <img src="assets/website/work_screen/Work Screen - Card - Solstice Goods.svg" class="work-layer work-card-img-solstice" alt="">
       <img src="assets/website/work_screen/Work Screen - Card - Cape & Blade.svg"   class="work-layer work-card-img-cape"     alt="">
       <img src="assets/website/work_screen/Work Screen - Card - Vela Wealth.svg"    class="work-layer work-card-img-vela"     alt="">
       <img src="assets/website/work_screen/Work Screen - Card - Forma Studio.svg"   class="work-layer work-card-img-forma"    alt="">
-
-      <!-- View Full Archive Button SVG -->
       <img src="assets/website/work_screen/Work Screen - Button - View Full Archive.svg" class="work-layer work-btn-img-archive" alt="">
-
-      <!-- Invisible clickable overlays for the cards and view full archive button -->
       <a href="Solstice-website/index.html" class="work-card-overlay work-overlay-solstice" aria-label="Solstice Goods"></a>
       <a href="cape-and-blade/index.html" class="work-card-overlay work-overlay-cape" aria-label="Cape &amp; Blade"></a>
       <a href="Vela-website/index.html" class="work-card-overlay work-overlay-vela" aria-label="Vela Wealth"></a>
       <a href="Forma-website/index.html" class="work-card-overlay work-overlay-forma" aria-label="Forma Studio"></a>
-      
       <a href="side-projects.html" class="work-btn-overlay" aria-label="View Full Archive"></a>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="cta-section" id="contact">
+  <!-- CTA (mobile) -->
+  <section class="m-section m-cta mobile-only" id="contact-m">
+    <img src="assets/website/CTA_screen/CTA Screen - Element - Heart.svg" class="m-cta-heart cta-anim-heart" alt="">
+    <h2 class="m-section-title m-cta-title">LET&#39;S CREATE<br>SOMETHING<br>REMARKABLE</h2>
+    <p class="m-section-sub">together &#128293;</p>
+    <div class="m-cta-buttons">
+      <a href="mailto:bruce.gordon8403@gmail.com" class="m-cta-btn m-cta-btn-email">&#9993; EMAIL ME</a>
+      <a href="https://wa.me/27621596082" target="_blank" class="m-cta-btn m-cta-btn-whatsapp">&#128241; WHATSAPP ME</a>
+    </div>
+  </section>
+
+  <!-- CTA (desktop canvas) -->
+  <section class="cta-section desktop-only" id="contact">
     <div class="cta-canvas">
       <img src="assets/website/CTA_screen/CTA Screen - Element - Lets Create Something Remarkable Together.svg" class="cta-layer" alt="Lets Create Remarkable Together">
       <img src="assets/website/CTA_screen/CTA Screen - Element - Heart.svg"         class="cta-layer cta-anim-heart" alt="">
       <img src="assets/website/CTA_screen/CTA Screen - Button - Email Me.svg"       class="cta-layer cta-btn-img-email" alt="">
       <img src="assets/website/CTA_screen/CTA Screen - Button - Whatsapp Me.svg"    class="cta-layer cta-btn-img-whatsapp" alt="">
-
-      <!-- Invisible clickable overlays -->
       <a href="mailto:bruce.gordon8403@gmail.com" class="cta-btn-overlay cta-btn-email"    aria-label="Email Me"></a>
       <a href="https://wa.me/27621596082" target="_blank" class="cta-btn-overlay cta-btn-whatsapp" aria-label="WhatsApp Me"></a>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="footer-section">
+  <!-- FOOTER (mobile) -->
+  <footer class="m-footer mobile-only">
+    <img src="assets/website/elements/Element - Bruce Gordon.svg" class="m-footer-logo" alt="Bruce Gordon">
+    <nav class="m-footer-nav">
+      <a href="#about-m">About</a>
+      <a href="#services-m">Services</a>
+      <a href="#work-m">Work</a>
+      <a href="side-projects.html">Portfolio</a>
+    </nav>
+    <div class="m-footer-links">
+      <a href="https://byte-this-games.vercel.app/" target="_blank">Byte This Games</a>
+      <a href="https://synontech.vercel.app/" target="_blank">Synontech Studio</a>
+      <a href="https://kerfsuite.vercel.app/" target="_blank">KerfSuite</a>
+    </div>
+    <a href="https://github.com/synontechsa-hub" target="_blank" class="m-footer-powered">
+      <img src="assets/website/footer/Links Screen - Element - Powered By Synontech.svg" alt="Powered by Synontech">
+    </a>
+    <p class="m-footer-copy">&copy; <span id="footer-year-m"></span> Synontech</p>
+  </footer>
+
+  <!-- FOOTER (desktop canvas) -->
+  <footer class="footer-section desktop-only">
     <div class="footer-canvas">
-      <!-- Footer Button Layers -->
       <img src="assets/website/footer/Links Screen - Button - About.svg"             class="footer-layer footer-btn-img-about" alt="">
       <img src="assets/website/footer/Links Screen - Button - Services.svg"          class="footer-layer footer-btn-img-services" alt="">
       <img src="assets/website/footer/Links Screen - Button - Work.svg"              class="footer-layer footer-btn-img-work" alt="">
       <img src="assets/website/footer/Links Screen - Button - Portfolio.svg"         class="footer-layer footer-btn-img-portfolio" alt="">
-      
       <img src="assets/website/footer/Links Screen - Button - Byte This Games.svg"   class="footer-layer footer-btn-img-bytethis" alt="">
       <img src="assets/website/footer/Links Screen - Button - Synontech Studio.svg"   class="footer-layer footer-btn-img-synontech" alt="">
       <img src="assets/website/footer/Links Screen - Button - KerfSuite Website.svg" class="footer-layer footer-btn-img-kerfsuite" alt="">
-      
-      <!-- Bottom Left Brand Element -->
       <img src="assets/website/footer/Links Screen - Element - Powered By Synontech.svg" class="footer-layer footer-btn-img-poweredby" alt="">
-
-      <!-- Invisible Clickable Overlays -->
-      <!-- Top Row -->
       <a href="#about" class="footer-link-overlay footer-link-about" aria-label="About"></a>
       <a href="#services" class="footer-link-overlay footer-link-services" aria-label="Services"></a>
       <a href="#work" class="footer-link-overlay footer-link-work" aria-label="Work"></a>
       <a href="side-projects.html" class="footer-link-overlay footer-link-portfolio" aria-label="Portfolio"></a>
-
-      <!-- Bottom Row -->
       <a href="https://byte-this-games.vercel.app/" target="_blank" class="footer-link-overlay footer-link-bytethis" aria-label="Byte This Games"></a>
       <a href="https://synontech.vercel.app/" target="_blank" class="footer-link-overlay footer-link-synontech" aria-label="Synontech Studio"></a>
       <a href="https://kerfsuite.vercel.app/" target="_blank" class="footer-link-overlay footer-link-kerfsuite" aria-label="KerfSuite Website"></a>
-      
-      <!-- Powered By Synontech logo overlay -->
       <a href="https://github.com/synontechsa-hub" target="_blank" class="footer-link-overlay footer-link-poweredby" aria-label="Powered by Synontech"></a>
-
-      <!-- Copyright — bottom right corner -->
       <p class="footer-copyright">&copy; <span id="footer-year"></span> Synontech</p>
     </div>
   </footer>
 
   <script>
-    document.getElementById('footer-year').textContent = new Date().getFullYear();
+    document.getElementById('footer-year').textContent   = new Date().getFullYear();
+    document.getElementById('footer-year-m').textContent = new Date().getFullYear();
   </script>
 
 </body>
