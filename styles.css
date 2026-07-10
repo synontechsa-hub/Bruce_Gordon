@@ -561,7 +561,7 @@ section { padding: 5rem 2rem; position: relative; }
 
 /* ── SHOW / HIDE TOGGLES ── */
 .mobile-only  { display: none; }
-.desktop-only { display: block; }   /* flex / grid overrides below where needed */
+.desktop-only { } /* Inherits natural display property on desktop (flex, block, inline etc.) */
 
 @media (max-width: 768px) {
   .mobile-only  { display: block; }
