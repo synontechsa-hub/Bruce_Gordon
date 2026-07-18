@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 - Lost in the Clouds | Bruce Gordon</title>
+  <link rel="icon" type="image/png" href="assets/website/favicon/Favicon - Main.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Road+Rage&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .error-page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      background-image: url('assets/website/hero_screen/Website - Hero Screen.jpg');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .error-content {
+      position: relative;
+      z-index: 10;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(8px);
+      padding: 3rem;
+      border: 4px solid var(--black);
+      box-shadow: 12px 12px 0 var(--black);
+      max-width: 600px;
+    }
+
+    .error-title {
+      font-family: var(--font-display);
+      font-size: clamp(4rem, 15vw, 8rem);
+      line-height: 0.8;
+      margin-bottom: 1rem;
+      color: var(--black);
+    }
+
+    .error-text {
+      font-family: var(--font-hand);
+      font-size: clamp(1.2rem, 4vw, 2rem);
+      color: var(--pink);
+      margin-bottom: 2rem;
+      transform: rotate(-1deg);
+    }
+
+    .error-cloud {
+      position: absolute;
+      width: 250px;
+      z-index: 1;
+      opacity: 0.8;
+      pointer-events: none;
+    }
+
+    .error-heart {
+      position: absolute;
+      width: 80px;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .cloud-1 { top: 10%; left: 5%; animation: float-cloud 8s ease-in-out infinite; }
+    .cloud-2 { bottom: 15%; right: 5%; animation: float-cloud 10s ease-in-out infinite reverse; }
+    .heart-1 { top: 20%; right: 15%; animation: float-heart 5s ease-in-out infinite; }
+    .heart-2 { bottom: 20%; left: 15%; animation: float-heart 6s ease-in-out infinite 1s; }
+
+    .back-home-btn {
+      display: inline-block;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body class="error-body">
+
+  <main class="error-page">
+    <!-- Floating Elements -->
+    <img src="assets/website/hero_screen/Hero Screen - Element - Cloud.svg" class="error-cloud cloud-1" alt="">
+    <img src="assets/website/hero_screen/Hero Screen - Element - Cloud.svg" class="error-cloud cloud-2" alt="">
+    <img src="assets/website/hero_screen/Hero Screen - Element - Heart.svg" class="error-heart heart-1" alt="">
+    <img src="assets/website/hero_screen/Hero Screen - Element - Heart.svg" class="error-heart heart-2" alt="">
+
+    <div class="error-content">
+      <h1 class="error-title">404</h1>
+      <p class="error-text">Lost in the clouds...</p>
+      <a href="index.html" class="btn-primary back-home-btn">BACK TO HOME</a>
+    </div>
+  </main>
+
+</body>
+</html>

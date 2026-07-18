@@ -158,9 +158,9 @@ nav {
 /* "HIRE ME" — pink button */
 .hero-btn-hire {
   left: 38.85%;
-  top: 84.2%;
+  top: 84.1%;
   width: 6.84%;
-  height: 6.56%;
+  height: 6.8%;
 }
 
 /* "VIEW WORK" — yellow button */
@@ -168,15 +168,15 @@ nav {
   left: 46.24%;
   top: 83.97%;
   width: 7.87%;
-  height: 6.54%;
+  height: 6.8%;
 }
 
 /* "ALL WORK" — teal button / PORTFOLIO */
 .hero-btn-all {
   left: 54.35%;
-  top: 84.2%;
+  top: 84.1%;
   width: 6.84%;
-  height: 6.56%;
+  height: 6.8%;
 }
 
 /* ── ABOUT ── */
@@ -213,6 +213,56 @@ nav {
   object-fit: fill;
   pointer-events: none;
   user-select: none;
+}
+
+/* ── PHILOSOPHY [NEW] ── */
+.philosophy-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('assets/website/philosophy_screen/Background.jpg');
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  padding: 0;
+  height: 720px;
+  border-top: 4px solid var(--black);
+}
+
+.philosophy-canvas {
+  height: 100%;
+  aspect-ratio: 1920 / 1080;
+  position: relative;
+  transform: scale(1.1); /* Slight zoom for impact */
+}
+
+.philosophy-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Overlay for Fair Pricing Card in Philosophy Section */
+.phil-overlay-pricing {
+  position: absolute;
+  cursor: pointer;
+  z-index: 10;
+  left: 39%;
+  top: 55%;
+  width: 22%;
+  height: 38%;
+}
+
+.phil-card-img-pricing {
+  transition: filter 0.25s ease-out;
+}
+.philosophy-canvas:has(.phil-overlay-pricing:hover) .phil-card-img-pricing {
+  filter: brightness(1.08) contrast(1.05);
 }
 
 .btn-primary {
@@ -791,6 +841,19 @@ section { padding: 5rem 2rem; position: relative; }
   .m-about {
     background-color: var(--cream);
     background-image: url('assets/website/about_screen/About Screen - Background.jpg');
+  }
+
+  .m-about-text-img {
+    width: 90%;
+    max-width: 400px;
+    height: auto;
+    margin-bottom: 2rem;
+  }
+
+  /* ── MOBILE PHILOSOPHY ── */
+  .m-philosophy {
+    background-color: var(--cream);
+    background-image: url('assets/website/philosophy_screen/Background.jpg');
   }
 
   .m-cards-grid {
