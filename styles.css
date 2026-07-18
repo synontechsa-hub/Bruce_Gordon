@@ -189,19 +189,14 @@ nav {
   background-position: center;
   overflow: hidden;
   padding: 0;
-  height: 720px; /* Constrained to 720px high */
-  border-top: 4px solid var(--black); /* Black separator line */
+  height: 720px; /* Standard section height */
+  border-top: 4px solid var(--black);
 }
 
-/*
- * Same 1920x1080 canvas approach as the hero, but constrained to 720px height.
- * All card/heading SVGs are layered at full canvas size.
- */
 .about-canvas {
   height: 100%;
   aspect-ratio: 1920 / 1080;
   position: relative;
-  transform: scale(1.25); /* Scale up all elements together by 25% */
 }
 
 .about-layer {
@@ -231,9 +226,8 @@ nav {
 
 .philosophy-canvas {
   height: 100%;
-  aspect-ratio: 1920 / 1080;
+  aspect-ratio: 1920 / 720;
   position: relative;
-  transform: scale(1.1); /* Slight zoom for impact */
 }
 
 .philosophy-layer {
@@ -252,10 +246,10 @@ nav {
   position: absolute;
   cursor: pointer;
   z-index: 10;
-  left: 39%;
-  top: 55%;
-  width: 22%;
-  height: 38%;
+  left: 42.8%;
+  top: 35.7%;
+  width: 14.2%;
+  height: 42%;
 }
 
 .phil-card-img-pricing {
