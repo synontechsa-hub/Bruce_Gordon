@@ -504,8 +504,9 @@ section { padding: 5rem 2rem; position: relative; }
 }
 
 /* Top Row buttons */
-.footer-link-about     { left: 28.5%; top: 15%; width: 8%;   height: 20%; }
-.footer-link-services  { left: 39.0%; top: 15%; width: 8.5%; height: 20%; }
+.footer-link-about     { left: 24.5%; top: 15%; width: 6%;   height: 20%; }
+.footer-link-philosophy { left: 31.5%; top: 15%; width: 8%;   height: 20%; }
+.footer-link-services  { left: 41.0%; top: 15%; width: 8.5%; height: 20%; }
 .footer-link-work      { left: 51.0%; top: 15%; width: 7.5%; height: 20%; }
 .footer-link-portfolio { left: 62.5%; top: 15%; width: 8.5%; height: 20%; }
 
@@ -584,11 +585,12 @@ section { padding: 5rem 2rem; position: relative; }
 .cta-canvas:has(.cta-btn-whatsapp:hover) .cta-btn-img-whatsapp { filter: brightness(1.22); }
 
 /* Footer buttons transition & hovers */
-.footer-btn-img-about, .footer-btn-img-services, .footer-btn-img-work, .footer-btn-img-portfolio,
+.footer-btn-img-about, .footer-btn-img-philosophy, .footer-btn-img-services, .footer-btn-img-work, .footer-btn-img-portfolio,
 .footer-btn-img-bytethis, .footer-btn-img-synontech, .footer-btn-img-kerfsuite, .footer-btn-img-poweredby {
   transition: filter 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-canvas:has(.footer-link-about:hover) .footer-btn-img-about { filter: brightness(1.22); }
+.footer-canvas:has(.footer-link-philosophy:hover) .footer-btn-img-philosophy { filter: brightness(1.22); }
 .footer-canvas:has(.footer-link-services:hover) .footer-btn-img-services { filter: brightness(1.22); }
 .footer-canvas:has(.footer-link-work:hover) .footer-btn-img-work { filter: brightness(1.22); }
 .footer-canvas:has(.footer-link-portfolio:hover) .footer-btn-img-portfolio { filter: brightness(1.22); }
