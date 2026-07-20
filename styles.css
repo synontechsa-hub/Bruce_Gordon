@@ -974,6 +974,68 @@ section { padding: 5rem 2rem; position: relative; }
   }
 
 
+  /* ── MOBILE PRICING ── */
+  .m-pricing {
+    background-color: var(--cream);
+    background-image: url('assets/website/pricing_screen/Pricing Screen - Background.jpg');
+    padding: 4rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .m-pricing-title-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2.2rem;
+  }
+
+  .m-pricing-title-img {
+    width: 50%;
+    max-width: 220px;
+    height: auto;
+  }
+
+  .m-pricing-block {
+    width: 100%;
+    max-width: 480px;
+    margin-bottom: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .m-pricing-heading-img {
+    width: 70%;
+    max-width: 280px;
+    height: auto;
+    margin-bottom: 1.2rem;
+  }
+
+  .m-pricing-text-img {
+    width: 100%;
+    height: auto;
+  }
+
+  .m-pricing-disclaimer {
+    width: 100%;
+    max-width: 550px;
+    background: #f4f1ea;
+    border: 3.5px solid var(--black);
+    box-shadow: 8px 8px 0 var(--black);
+    padding: 1.5rem;
+    margin-bottom: 2.5rem;
+    transform: rotate(-0.5deg);
+  }
+
+  .m-pricing-disclaimer-img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+
   /* ── MOBILE CTA ── */
   .m-cta {
     background-color: var(--cream);
