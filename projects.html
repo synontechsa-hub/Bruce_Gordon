@@ -44,15 +44,32 @@
 
   <nav>
     <a href="index.html" class="nav-logo">
-      <img src="assets/new_design/branding/Bruce Gordon - Wordmark.svg" alt="Bruce Gordon">
+      <img src="assets/website/elements/Element - Bruce Gordon.svg" alt="Bruce Gordon">
     </a>
+    <!-- Desktop links -->
     <div class="nav-links">
       <a href="index.html#about">About</a>
+      <a href="index.html#philosophy">Philosophy</a>
       <a href="index.html#services">Services</a>
       <a href="index.html#work">Work</a>
+      <a href="404.html">Pricing</a>
+      <a href="side-projects.html">Portfolio</a>
     </div>
-    <a href="index.html#contact" class="nav-cta">GET IN TOUCH</a>
+    <a href="index.html#contact" class="nav-cta desktop-only">GET IN TOUCH</a>
+    <!-- Hamburger (mobile only) -->
+    <button id="hamburger" class="hamburger mobile-only" aria-label="Open menu" aria-expanded="false">&#9776;</button>
   </nav>
+
+  <!-- Mobile nav drawer -->
+  <div id="mobile-nav" class="mobile-nav-drawer">
+    <a href="index.html#about-m">About</a>
+    <a href="index.html#philosophy-m">Philosophy</a>
+    <a href="index.html#services-m">Services</a>
+    <a href="index.html#work-m">Work</a>
+    <a href="404.html">Pricing</a>
+    <a href="side-projects.html">Portfolio</a>
+    <a href="index.html#contact" class="mobile-nav-cta">GET IN TOUCH</a>
+  </div>
 
   <header class="projects-header">
     <a href="index.html" class="back-home">← BACK TO HOME</a>
@@ -138,5 +155,9 @@
     <p class="footer-copy">&copy; 2026 Bruce Gordon &nbsp;·&nbsp; DESIGN THAT HITS</p>
   </footer>
 
+  <script src="script.js"></script>
+  <script>
+    document.getElementById('footer-year').textContent   = new Date().getFullYear();
+  </script>
 </body>
 </html>
