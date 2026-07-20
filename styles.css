@@ -259,6 +259,37 @@ nav {
   filter: brightness(1.08) contrast(1.05);
 }
 
+/* ── PRICING ── */
+.pricing-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('assets/website/pricing_screen/Pricing Screen - Background.jpg');
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  padding: 0;
+  height: 1080px;
+  border-top: 4px solid var(--black);
+}
+
+.pricing-canvas {
+  height: 100%;
+  aspect-ratio: 1920 / 1080;
+  position: relative;
+}
+
+.pricing-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  pointer-events: none;
+  user-select: none;
+}
+
 .btn-primary {
   background: var(--pink);
   color: var(--white);
@@ -547,10 +578,10 @@ section { padding: 5rem 2rem; position: relative; }
 
 /* ── RESPONSIVE REFINE ── */
 @media (max-width: 1280px) {
-  .about-section, .services-section, .work-section, .cta-section, .footer-section {
+  .about-section, .philosophy-section, .services-section, .work-section, .pricing-section, .cta-section, .footer-section {
     height: auto;
   }
-  .about-canvas, .services-canvas, .work-canvas, .cta-canvas, .footer-canvas {
+  .about-canvas, .philosophy-canvas, .services-canvas, .work-canvas, .pricing-canvas, .cta-canvas, .footer-canvas {
     width: 100%;
     height: auto;
   }
