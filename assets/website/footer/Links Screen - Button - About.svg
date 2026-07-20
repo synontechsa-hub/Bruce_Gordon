@@ -22,10 +22,10 @@ viewBox="0 0 1920 400"
  </defs>
  <g id="Layer_x0020_1">
   <metadata id="CorelCorpID_0Corel-Layer"/>
-  <g id="_3028471664432">
-   <rect fill="black" transform="matrix(0.999925 -0.0122084 0.0122084 0.999925 559.965 65.5005)" width="131.263" height="70.8413"/>
-   <rect fill="#ED2F5A" stroke="black" stroke-width="1.99961" transform="matrix(0.999925 -0.0122084 0.0122084 0.999925 554.504 61.3245)" width="131.263" height="70.8413"/>
-   <g transform="matrix(0.999925 -0.012217 0.012217 0.999925 -375.897 -82.291)">
+  <g id="_1352164765184">
+   <rect fill="black" transform="matrix(0.999925 -0.0122084 0.0122084 0.999925 377.022 65.5005)" width="131.263" height="70.8413"/>
+   <rect fill="#ED2F5A" stroke="black" stroke-width="1.99961" transform="matrix(0.999925 -0.0122084 0.0122084 0.999925 371.561 61.3245)" width="131.263" height="70.8413"/>
+   <g transform="matrix(0.999925 -0.012217 0.012217 0.999925 -558.841 -82.291)">
     <text x="960" y="200"  fill="black" font-weight="normal" font-size="20.8335px" font-family="Permanent Marker">ABOUT</text>
    </g>
   </g>

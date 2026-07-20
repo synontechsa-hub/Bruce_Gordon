@@ -5,7 +5,7 @@
 viewBox="0 0 1920 400"
  xmlns:xlink="http://www.w3.org/1999/xlink">
  <defs>
-  <font id="FontID0" horiz-adv-x="702" font-variant="normal" fill-rule="nonzero" font-weight="400">
+  <font id="FontID0" horiz-adv-x="702" font-variant="normal" fill-rule="nonzero" font-style="normal" font-weight="400">
 	<font-face 
 		font-family="Permanent Marker">
 		<font-face-src>
@@ -21,10 +21,10 @@ viewBox="0 0 1920 400"
  </defs>
  <g id="Layer_x0020_1">
   <metadata id="CorelCorpID_0Corel-Layer"/>
-  <g id="_3028474703776">
-   <rect fill="black" transform="matrix(0.999816 -0.0191974 0.0191974 0.999816 989.434 65.944)" width="131.263" height="70.8413"/>
-   <rect fill="#F6B402" stroke="black" stroke-width="1.99961" transform="matrix(0.999816 -0.0191974 0.0191974 0.999816 983.944 61.8062)" width="131.263" height="70.8413"/>
-   <g transform="matrix(0.999816 -0.019206 0.019206 0.999816 53.4295 -75.5694)">
+  <g id="_1352164918560">
+   <rect fill="black" transform="matrix(0.999816 -0.0191974 0.0191974 0.999816 992.925 65.944)" width="131.263" height="70.8413"/>
+   <rect fill="#ED2F5A" stroke="black" stroke-width="1.99961" transform="matrix(0.999816 -0.0191974 0.0191974 0.999816 987.435 61.8062)" width="131.263" height="70.8413"/>
+   <g transform="matrix(0.999816 -0.019206 0.019206 0.999816 56.9209 -75.5694)">
     <text x="960" y="200"  fill="black" font-weight="normal" font-size="20.8335px" font-family="Permanent Marker">WORK</text>
    </g>
   </g>
