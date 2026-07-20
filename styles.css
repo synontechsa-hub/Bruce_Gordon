@@ -617,7 +617,8 @@ section { padding: 5rem 2rem; position: relative; }
 .cta-canvas:has(.cta-btn-whatsapp:hover) .cta-btn-img-whatsapp { filter: brightness(1.22); }
 
 /* Footer buttons transition & hovers */
-.footer-btn-img-about, .footer-btn-img-philosophy, .footer-btn-img-services, .footer-btn-img-work, .footer-btn-img-portfolio,
+.footer-btn-img-about, .footer-btn-img-philosophy, .footer-btn-img-services, .footer-btn-img-work,
+.footer-btn-img-pricing, .footer-btn-img-portfolio,
 .footer-btn-img-bytethis, .footer-btn-img-synontech, .footer-btn-img-kerfsuite, .footer-btn-img-poweredby {
   transition: filter 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -625,6 +626,7 @@ section { padding: 5rem 2rem; position: relative; }
 .footer-canvas:has(.footer-link-philosophy:hover) .footer-btn-img-philosophy { filter: brightness(1.22); }
 .footer-canvas:has(.footer-link-services:hover) .footer-btn-img-services { filter: brightness(1.22); }
 .footer-canvas:has(.footer-link-work:hover) .footer-btn-img-work { filter: brightness(1.22); }
+.footer-canvas:has(.footer-link-pricing:hover) .footer-btn-img-pricing { filter: brightness(1.22); }
 .footer-canvas:has(.footer-link-portfolio:hover) .footer-btn-img-portfolio { filter: brightness(1.22); }
 .footer-canvas:has(.footer-link-bytethis:hover) .footer-btn-img-bytethis { filter: brightness(1.22); }
 .footer-canvas:has(.footer-link-synontech:hover) .footer-btn-img-synontech { filter: brightness(1.22); }
