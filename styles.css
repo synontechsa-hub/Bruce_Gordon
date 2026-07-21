@@ -189,7 +189,7 @@ nav {
   background-position: center;
   overflow: hidden;
   padding: 0;
-  height: 720px; /* Standard section height */
+  height: 1080px; /* Redesigned for 1080p canvas */
   border-top: 4px solid var(--black);
 }
 
@@ -210,42 +210,35 @@ nav {
   user-select: none;
 }
 
-/* Cards animate up after section reveal */
-.about-layer-cards {
-  transition: opacity 0.6s ease 0.3s, transform 0.6s ease 0.3s;
-  opacity: 0;
-  transform: translateY(24px);
-}
-.about-section.visible .about-layer-cards {
-  opacity: 1;
-  transform: translateY(0);
+/* Button overlays — positioned from mock-up coordinates */
+.about-btn-overlay {
+  position: absolute;
+  cursor: pointer;
+  z-index: 20;
 }
 
-/* Floating cloud — drifts gently left-right */
-.about-deco-cloud {
-  opacity: 0.18;
-  animation: about-cloud-drift 9s ease-in-out infinite;
-  transform-origin: center;
+/* "Portfolio" button */
+.about-btn-portfolio {
+  left: 66.2%;
+  top: 27.31%;
+  width: 9.32%;
+  height: 16.57%;
 }
 
-/* Floating heart — bobs up and down */
-.about-deco-heart {
-  opacity: 0.13;
-  animation: about-heart-bob 6s ease-in-out infinite;
-  transform-origin: center;
+/* "CNC Work" button */
+.about-btn-cnc {
+  left: 66.2%;
+  top: 48.52%;
+  width: 9.32%;
+  height: 16.57%;
 }
 
-@keyframes about-cloud-drift {
-  0%   { transform: translateX(0px) scale(1);    }
-  50%  { transform: translateX(18px) scale(1.02); }
-  100% { transform: translateX(0px) scale(1);    }
+/* Interactive Hovers (GPU Accelerated Filters) */
+.about-btn-img-portfolio, .about-btn-img-cnc {
+  transition: filter 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-@keyframes about-heart-bob {
-  0%   { transform: translateY(0px) rotate(-2deg); }
-  50%  { transform: translateY(-14px) rotate(2deg); }
-  100% { transform: translateY(0px) rotate(-2deg); }
-}
+.about-canvas:has(.about-btn-portfolio:hover) .about-btn-img-portfolio { filter: brightness(1.22); }
+.about-canvas:has(.about-btn-cnc:hover) .about-btn-img-cnc { filter: brightness(1.22); }
 
 /* ── PHILOSOPHY [NEW] ── */
 .philosophy-section {
@@ -678,7 +671,7 @@ section { padding: 5rem 2rem; position: relative; }
 
 /* ── SHOW / HIDE TOGGLES ── */
 .mobile-only  { display: none; }
-.desktop-only { } /* Inherits natural display property on desktop (flex, block, inline etc.) */
+.desktop-only { }
 
 @media (max-width: 768px) {
   .mobile-only  { display: block; }
@@ -915,6 +908,26 @@ section { padding: 5rem 2rem; position: relative; }
     max-width: 400px;
     height: auto;
     margin-bottom: 2rem;
+  }
+
+  .m-about-buttons {
+    display: flex;
+    gap: 1.2rem;
+    justify-content: center;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 1.5rem;
+  }
+  .m-about-buttons a {
+    width: 30%;
+    transition: transform 0.15s;
+  }
+  .m-about-buttons a:active {
+    transform: scale(0.95);
+  }
+  .m-about-buttons img {
+    width: 100%;
+    height: auto;
   }
 
   /* ── MOBILE PHILOSOPHY ── */
