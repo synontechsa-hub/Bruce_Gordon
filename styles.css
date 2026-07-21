@@ -564,18 +564,18 @@ section { padding: 5rem 2rem; position: relative; }
   z-index: 10;
 }
 
-/* Top Row buttons */
-.footer-link-about      { left: 18.7%; top: 13%; width: 8.4%;  height: 22.9%; }
-.footer-link-philosophy { left: 28.6%; top: 13%; width: 9.0%;  height: 22.9%; }
-.footer-link-services   { left: 39.7%; top: 13%; width: 8.4%;  height: 22.9%; }
-.footer-link-work       { left: 50.7%; top: 13%; width: 8.4%;  height: 22.9%; }
-.footer-link-pricing    { left: 61.5%; top: 13%; width: 8.1%;  height: 22.9%; }
-.footer-link-portfolio  { left: 72.1%; top: 13%; width: 8.8%;  height: 22.9%; }
+/* Top Row buttons - Coordinates from Hitboxes.svg */
+.footer-link-work       { left: 18.70%; top: 12.0%; width: 8.38%;  height: 25.0%; } /* 359 / 1920, 48 / 400, 161 / 1920, 100 / 400 */
+.footer-link-cnc        { left: 28.59%; top: 12.0%; width: 9.06%;  height: 25.0%; } /* 549 / 1920 */
+.footer-link-websites   { left: 39.74%; top: 12.0%; width: 8.38%;  height: 25.0%; } /* 763 / 1920 */
+.footer-link-patreon    { left: 50.68%; top: 12.0%; width: 8.38%;  height: 25.0%; } /* 973 / 1920 */
+.footer-link-pricing    { left: 61.51%; top: 12.0%; width: 8.07%;  height: 25.0%; } /* 1181 / 1920 */
+.footer-link-contact    { left: 72.14%; top: 12.0%; width: 8.75%;  height: 25.0%; } /* 1385 / 1920 */
 
 /* Bottom Row buttons */
-.footer-link-bytethis  { left: 22.0%; top: 47%; width: 17.1%; height: 22.9%; }
-.footer-link-synontech { left: 41.5%; top: 47%; width: 17.1%; height: 22.9%; }
-.footer-link-kerfsuite { left: 60.9%; top: 47%; width: 17.1%; height: 22.9%; }
+.footer-link-bytethis  { left: 21.98%; top: 65.25%; width: 17.14%; height: 25.0%; } /* 422 / 1920, 261 / 400 */
+.footer-link-synontech { left: 41.46%; top: 65.25%; width: 17.14%; height: 25.0%; } /* 796 / 1920 */
+.footer-link-kerfsuite { left: 60.94%; top: 65.25%; width: 17.14%; height: 25.0%; } /* 1170 / 1920 */
 
 /* Powered by Synontech logo */
 .footer-link-poweredby { left: 5.05%; top: 77.5%; width: 9.53%; height: 12.5%; }
@@ -583,8 +583,8 @@ section { padding: 5rem 2rem; position: relative; }
 /* Copyright notice — bottom right */
 .footer-copyright {
   position: absolute;
-  bottom: 4%;
-  right: 1.5%;
+  left: 81.4%; /* 1563 / 1920 */
+  top: 77.75%; /* 311 / 400 */
   font-family: var(--font-hand);
   font-size: clamp(0.8rem, 1.2vw, 1.1rem);
   color: rgb(0, 0, 0);
@@ -662,6 +662,13 @@ section { padding: 5rem 2rem; position: relative; }
 .footer-canvas:has(.footer-link-synontech:hover) .footer-btn-img-synontech { filter: brightness(1.22); }
 .footer-canvas:has(.footer-link-kerfsuite:hover) .footer-btn-img-kerfsuite { filter: brightness(1.22); }
 .footer-canvas:has(.footer-link-poweredby:hover) .footer-btn-img-poweredby { filter: brightness(1.22); }
+
+.footer-btn-img-cnc, .footer-btn-img-websites, .footer-btn-img-patreon {
+  transition: filter 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.footer-canvas:has(.footer-link-cnc:hover) .footer-btn-img-cnc { filter: brightness(1.22); }
+.footer-canvas:has(.footer-link-websites:hover) .footer-btn-img-websites { filter: brightness(1.22); }
+.footer-canvas:has(.footer-link-patreon:hover) .footer-btn-img-patreon { filter: brightness(1.22); }
 
 
 /* ══════════════════════════════════════════════════════════
@@ -1024,6 +1031,66 @@ section { padding: 5rem 2rem; position: relative; }
     width: 100%;
     height: auto;
     display: block;
+  }
+
+  /* ── MOBILE CNC ── */
+  .m-cnc {
+    background-color: var(--black);
+    color: var(--cream);
+  }
+
+  .m-cnc-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 480px;
+  }
+
+  .m-cnc-slideshow {
+    width: 100%;
+    aspect-ratio: 900 / 506;
+    position: relative;
+    overflow: hidden;
+    background: #000;
+    border: 2px solid var(--cream);
+  }
+
+  .m-cnc-slideshow img {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+
+  .m-cnc-slideshow img.active {
+    opacity: 1;
+  }
+
+  .m-cnc-text-img {
+    width: 90%;
+    height: auto;
+  }
+
+  .m-cnc-visit-link {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    background: var(--cream);
+    color: var(--black);
+    text-align: center;
+    text-decoration: none;
+    font-family: var(--font-hand);
+    font-size: 1.2rem;
+    border: 3px solid var(--black);
+    box-shadow: 6px 6px 0px #333;
+    transition: transform 0.15s;
+  }
+  .m-cnc-visit-link:active {
+    transform: scale(0.98);
   }
 
 
