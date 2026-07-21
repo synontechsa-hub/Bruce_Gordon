@@ -46,6 +46,26 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
+  // --- CNC SLIDESHOW (Desktop & Mobile) ---
+  function initCncSlideshow(containerId) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+
+    const slides = container.querySelectorAll('img');
+    if (slides.length <= 1) return;
+
+    let currentSlide = 0;
+    setInterval(() => {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add('active');
+    }, 4000); // Change every 4 seconds
+  }
+
+  initCncSlideshow('cnc-slideshow');
+  initCncSlideshow('m-cnc-slideshow');
+
+
   // --- SMOOTH SCROLL FOR ANCHOR LINKS ---
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {

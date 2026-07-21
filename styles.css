@@ -639,6 +639,94 @@ section { padding: 5rem 2rem; position: relative; }
 .work-canvas:has(.work-overlay-forma:hover) .work-card-img-forma { filter: brightness(1.08) contrast(1.05); }
 .work-canvas:has(.work-btn-overlay:hover) .work-btn-img-archive { filter: brightness(1.22); }
 
+/* ── CNC ── */
+.cnc-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--black);
+  overflow: hidden;
+  padding: 0;
+  height: 1080px;
+  border-top: 4px solid var(--black);
+}
+
+.cnc-canvas {
+  height: 100%;
+  aspect-ratio: 1920 / 1080;
+  position: relative;
+}
+
+.cnc-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  pointer-events: none;
+  user-select: none;
+}
+
+.cnc-slideshow-container {
+  position: absolute;
+  left: 32.7%;
+  top: 33.6%;
+  width: 46.87%; /* 900 / 1920 */
+  height: 46.85%; /* 506 / 1080 */
+  overflow: hidden;
+  background: #000;
+  z-index: 5;
+}
+
+.cnc-slideshow-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.cnc-slideshow-container img.active {
+  opacity: 1;
+}
+
+.cnc-box {
+  position: absolute;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.cnc-name-box {
+  left: 20.15%; /* 387 / 1920 */
+  top: 63.7%; /* 688 / 1080 */
+  width: 15.2%; /* 292 / 1920 */
+  height: 14.6%; /* 158 / 1080 */
+}
+
+.cnc-description-box {
+  left: 20.15%; /* 387 / 1920 */
+  top: 35.64%; /* 385 / 1080 */
+  width: 15.2%; /* 292 / 1920 */
+  height: 27.03%; /* 292 / 1080 */
+}
+
+.cnc-btn-overlay {
+  position: absolute;
+  cursor: pointer;
+  z-index: 20;
+}
+
+.cnc-btn-alania {
+  left: 18.75%; /* 360 / 1920 */
+  top: 82.31%; /* 889 / 1080 */
+  width: 62.5%; /* 1200 / 1920 */
+  height: 14.81%; /* 160 / 1080 */
+}
+
 /* CTA buttons transition & hovers */
 .cta-btn-img-email, .cta-btn-img-whatsapp {
   transition: filter 0.2s cubic-bezier(0.4, 0, 0.2, 1);
