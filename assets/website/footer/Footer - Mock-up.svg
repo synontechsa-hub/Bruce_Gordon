@@ -5,7 +5,7 @@
 viewBox="0 0 1920 400"
  xmlns:xlink="http://www.w3.org/1999/xlink">
  <defs>
-  <font id="FontID1" horiz-adv-x="702" font-variant="normal" fill-rule="nonzero" font-style="normal" font-weight="400">
+  <font id="FontID1" horiz-adv-x="702" font-variant="normal" fill-rule="nonzero" font-weight="400">
 	<font-face 
 		font-family="Permanent Marker">
 		<font-face-src>
@@ -97,11 +97,11 @@ viewBox="0 0 1920 400"
  </defs>
  <g id="Layer_x0020_1">
   <metadata id="CorelCorpID_0Corel-Layer"/>
-  <g id="_2891614481840">
+  <g id="_2447994116352">
    <g>
    </g>
    <g clip-path="url(#id0)">
-    <g id="_2891614481936">
+    <g id="_2447994115232">
     </g>
     <g clip-path="url(#id1)">
      <image x="44" y="-320" width="1920" height="1080" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAwEAAAGxCAIAAAHCLx2IAAAACXBIWXMA
@@ -2050,7 +2050,7 @@ iEADAQAAAKAQgQYCAAAAQCECDQQAAACAQuS/AF8XnPCatxF3AAAAAElFTkSuQmCC"/>
    <polygon fill="none" points="1152,0 1920,0 1920,400 1152,400 "/>
    <polygon fill="#F6EDE0" points="0,0 1152,0 1152,400 0,400 "/>
    <g clip-path="url(#id3)">
-    <g id="_2891614483056">
+    <g id="_2447994116224">
     </g>
     <g clip-path="url(#id4)">
      <image x="0" y="-200" width="1920" height="1080" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAwEAAAGxCAIAAAHCLx2IAAAACXBIWXMA
@@ -6389,7 +6389,7 @@ QmCC"/>
    <rect id="hitbox_cnc_work" fill="none" stroke="lime" stroke-width="2.3622" x="549" y="48" width="173.51" height="91.4067"/>
    <rect id="hitbox_pricing" fill="none" stroke="lime" stroke-width="2.3622" x="1181" y="48" width="155.33" height="91.4067"/>
   </g>
-  <text x="413" y="233"  fill="#373435" font-weight="normal" font-size="45.8339px" font-family="Permanent Marker">Be sure to check out some of my other websites:</text>
+  <text x="413" y="233"  fill="black" font-weight="normal" font-size="45.8339px" font-family="Permanent Marker">Be sure to check out some of my other websites:</text>
   <rect id="copyright_location" fill="none" stroke="lime" stroke-width="2.3622" x="1563" y="311" width="328.126" height="64.8437"/>
  </g>
 </svg>
