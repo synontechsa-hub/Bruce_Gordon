@@ -233,6 +233,35 @@ nav {
   height: 16.57%;
 }
 
+/* Social Buttons */
+.about-btn-linkedin {
+  left: 36.09%;
+  top: 73.43%;
+  width: 5.21%;
+  height: 9.26%;
+}
+
+.about-btn-behance {
+  left: 43.49%;
+  top: 73.43%;
+  width: 5.21%;
+  height: 9.26%;
+}
+
+.about-btn-github {
+  left: 51.30%;
+  top: 73.43%;
+  width: 5.21%;
+  height: 9.26%;
+}
+
+.about-btn-whatsapp {
+  left: 58.70%;
+  top: 73.43%;
+  width: 5.21%;
+  height: 9.26%;
+}
+
 /* Interactive Hovers (GPU Accelerated Filters) */
 .about-btn-img-portfolio, .about-btn-img-cnc {
   transition: filter 0.2s cubic-bezier(0.4, 0, 0.2, 1);
