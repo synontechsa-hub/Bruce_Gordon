@@ -349,6 +349,324 @@ nav {
   user-select: none;
 }
 
+/* ── CNC WORK SCREEN ── */
+.cnc-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('assets/website/cnc_screen/CNC Screen - Background.jpg');
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  padding: 0;
+  height: 1080px;
+  border-top: 4px solid var(--black);
+}
+
+.cnc-canvas {
+  height: 100%;
+  aspect-ratio: 1920 / 1080;
+  position: relative;
+}
+
+.cnc-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Description Box (x=387, y=363, w=221, h=305) */
+.cnc-description-box {
+  position: absolute;
+  left: 20.156%;
+  top: 33.611%;
+  width: 11.510%;
+  height: 28.241%;
+  background: var(--black);
+  border-radius: 11px;
+  padding: 1.2rem 1rem;
+  color: var(--white);
+  font-family: var(--font-hand);
+  font-size: 0.92rem;
+  line-height: 1.35;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  z-index: 10;
+  box-shadow: 4px 4px 0 rgba(0,0,0,0.3);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Name & Location Box (x=387, y=688, w=292, h=158) */
+.cnc-name-box {
+  position: absolute;
+  left: 20.156%;
+  top: 63.704%;
+  width: 15.208%;
+  height: 14.630%;
+  background: var(--black);
+  border-radius: 11px;
+  padding: 1.1rem 1rem;
+  color: var(--white);
+  font-family: var(--font-hand);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 10;
+  box-shadow: 4px 4px 0 rgba(0,0,0,0.3);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.cnc-name-box h3 {
+  font-size: 1.15rem;
+  color: var(--white);
+  line-height: 1.2;
+  margin-bottom: 0.35rem;
+}
+
+.cnc-name-box p {
+  font-size: 0.88rem;
+  color: var(--yellow);
+  opacity: 0.95;
+  line-height: 1.2;
+}
+
+/* Slideshow Container Frame (x=628, y=363, w=900, h=506) */
+.cnc-slideshow-frame {
+  position: absolute;
+  left: 32.708%;
+  top: 33.611%;
+  width: 46.875%;
+  height: 46.852%;
+  border-radius: 19px;
+  border: 4px solid var(--black);
+  overflow: hidden;
+  background: #000;
+  z-index: 10;
+  box-shadow: 6px 6px 0 rgba(0,0,0,0.35);
+}
+
+.cnc-slideshow-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.cnc-slideshow-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+}
+
+.cnc-slideshow-container img.active {
+  opacity: 1;
+}
+
+/* Controls */
+.cnc-slide-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(26, 26, 26, 0.75);
+  color: var(--white);
+  border: 2px solid var(--white);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 15;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.cnc-slide-btn:hover {
+  background: var(--pink);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.cnc-prev-btn { left: 15px; }
+.cnc-next-btn { right: 15px; }
+
+.cnc-dots-container {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 15;
+}
+
+.cnc-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.5);
+  border: 1px solid var(--black);
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.cnc-dot.active {
+  background: var(--yellow);
+  transform: scale(1.25);
+}
+
+/* Visit Alania Callout Box (x=360, y=889, w=1200, h=160) */
+.cnc-alania-box {
+  position: absolute;
+  left: 18.75%;
+  top: 82.315%;
+  width: 62.5%;
+  height: 14.815%;
+  background: var(--black);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 10;
+  border: 3px solid var(--black);
+  box-shadow: 6px 6px 0 rgba(0,0,0,0.3);
+}
+
+.cnc-alania-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+}
+
+.cnc-alania-sub {
+  font-family: var(--font-hand);
+  color: var(--white);
+  font-size: 1.15rem;
+}
+
+.cnc-alania-link {
+  font-family: var(--font-hand);
+  color: var(--white);
+  font-size: 2.2rem;
+  text-decoration: none;
+  transition: color 0.2s, transform 0.2s;
+  display: inline-block;
+}
+
+.cnc-alania-link:hover {
+  color: var(--yellow);
+  transform: scale(1.03);
+}
+
+/* Mobile CNC Section */
+.m-cnc {
+  padding: 6rem 1.5rem 3rem;
+}
+
+.m-cnc-intro {
+  font-family: var(--font-hand);
+  font-size: 1.05rem;
+  color: var(--black);
+  text-align: center;
+  margin-bottom: 2rem;
+  line-height: 1.4;
+}
+
+.m-cnc-card {
+  background: var(--black);
+  color: var(--white);
+  border: 3px solid var(--black);
+  box-shadow: 6px 6px 0 var(--black);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.m-cnc-slideshow {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  position: relative;
+  overflow: hidden;
+}
+
+.m-cnc-slideshow img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.m-cnc-slideshow img.active {
+  opacity: 1;
+}
+
+.m-cnc-info {
+  padding: 1.25rem;
+  font-family: var(--font-hand);
+}
+
+.m-cnc-info h3 {
+  font-size: 1.3rem;
+  color: var(--white);
+  margin-bottom: 0.25rem;
+}
+
+.m-cnc-location {
+  font-size: 0.95rem;
+  color: var(--yellow);
+  margin-bottom: 0.75rem;
+}
+
+.m-cnc-desc {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: var(--cream);
+}
+
+.m-cnc-alania-card {
+  background: var(--black);
+  color: var(--white);
+  border: 3px solid var(--black);
+  box-shadow: 5px 5px 0 var(--black);
+  border-radius: 10px;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  font-family: var(--font-hand);
+}
+
+.m-cnc-alania-card p {
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+.m-cnc-alania-card a {
+  font-size: 1.4rem;
+  color: var(--yellow);
+  text-decoration: none;
+  display: inline-block;
+  transition: transform 0.2s;
+}
+
+.m-cnc-alania-card a:hover {
+  transform: scale(1.04);
+}
+
 .btn-primary {
   background: var(--pink);
   color: var(--white);

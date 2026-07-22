@@ -46,24 +46,107 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
-  // --- CNC SLIDESHOW (Desktop & Mobile) ---
-  function initCncSlideshow(containerId) {
-    const container = document.getElementById(containerId);
-    if (!container) return;
+  // --- CNC SLIDESHOW & DYNAMIC INFO SYNC ---
+  const cncProjects = [
+    {
+      name: 'Sandton City Tower',
+      location: 'Johannesburg, Gauteng',
+      description: 'External facade cladding installed to look like "lightning bolts" cut from 2mm solid aluminium powdercoated to match 4 colours'
+    },
+    {
+      name: 'Telesure Head Office',
+      location: 'Steyn City, Johannesburg',
+      description: 'High-precision CNC routed composite panels, custom architectural cladding, and illuminated corporate branding.'
+    },
+    {
+      name: '15 Alice Lane',
+      location: 'Sandton, Johannesburg',
+      description: 'Architectural exterior facade panels, precision CNC cut aluminium cladding, and custom building accents.'
+    },
+    {
+      name: 'BCX Headquarters',
+      location: 'Midrand, Gauteng',
+      description: 'Bespoke 3D metal signage, CNC routed wall features, and powdercoated exterior architectural cladding.'
+    },
+    {
+      name: 'Gateway West & PwC',
+      location: 'Waterfall City, Midrand',
+      description: 'Large-format exterior building cladding, CNC precision sheet metal fabrication, and premium architectural finishes.'
+    }
+  ];
 
-    const slides = container.querySelectorAll('img');
-    if (slides.length <= 1) return;
+  function setupCncShowcase() {
+    const desktopSlideshow = document.getElementById('cnc-slideshow');
+    const mobileSlideshow  = document.getElementById('m-cnc-slideshow');
+    if (!desktopSlideshow && !mobileSlideshow) return;
 
-    let currentSlide = 0;
+    const desktopSlides = desktopSlideshow ? desktopSlideshow.querySelectorAll('img') : [];
+    const mobileSlides  = mobileSlideshow ? mobileSlideshow.querySelectorAll('img') : [];
+    const dots          = document.querySelectorAll('.cnc-dot');
+    
+    // Text Targets Desktop
+    const nameTextEl = document.getElementById('cnc-name-text');
+    const locTextEl  = document.getElementById('cnc-location-text');
+    const descTextEl = document.getElementById('cnc-desc-text');
+
+    // Text Targets Mobile
+    const mNameEl = document.getElementById('m-cnc-name');
+    const mLocEl  = document.getElementById('m-cnc-location');
+    const mDescEl = document.getElementById('m-cnc-desc');
+
+    let currentIndex = 0;
+    const total = cncProjects.length;
+
+    function goToSlide(index) {
+      currentIndex = (index + total) % total;
+
+      // Update Desktop Slides
+      desktopSlides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === currentIndex);
+      });
+
+      // Update Mobile Slides
+      mobileSlides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === currentIndex);
+      });
+
+      // Update Dots
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentIndex);
+      });
+
+      // Update Text Content
+      const data = cncProjects[currentIndex];
+      if (nameTextEl) nameTextEl.textContent = data.name;
+      if (locTextEl)  locTextEl.textContent  = data.location;
+      if (descTextEl) descTextEl.textContent = data.description;
+
+      if (mNameEl) mNameEl.textContent = data.name;
+      if (mLocEl)  mLocEl.textContent  = data.location;
+      if (mDescEl) mDescEl.textContent = data.description;
+    }
+
+    // Controls
+    const prevBtn = document.getElementById('cnc-prev-btn');
+    const nextBtn = document.getElementById('cnc-next-btn');
+
+    if (prevBtn) prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
+    if (nextBtn) nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
+
+    dots.forEach((dot) => {
+      dot.addEventListener('click', (e) => {
+        const idx = parseInt(e.target.getAttribute('data-index'), 10);
+        goToSlide(idx);
+      });
+    });
+
+    // Auto Rotation
     setInterval(() => {
-      slides[currentSlide].classList.remove('active');
-      currentSlide = (currentSlide + 1) % slides.length;
-      slides[currentSlide].classList.add('active');
-    }, 4000); // Change every 4 seconds
+      goToSlide(currentIndex + 1);
+    }, 5000);
   }
 
-  initCncSlideshow('cnc-slideshow');
-  initCncSlideshow('m-cnc-slideshow');
+  setupCncShowcase();
 
 
   // --- SMOOTH SCROLL FOR ANCHOR LINKS ---
