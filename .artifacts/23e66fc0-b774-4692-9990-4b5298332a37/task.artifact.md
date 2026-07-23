@@ -3,3 +3,5 @@
 - [x] Add Social Links to Mobile About section
 - [x] Update Mobile Styling in `styles.css`
 - [x] Verify Mobile Readability and Link Functionality
+- [x] Integrate Social Media Button assets into Desktop About section
+- [ ] Final visual check

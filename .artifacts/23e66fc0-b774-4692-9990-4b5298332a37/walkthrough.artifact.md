@@ -13,9 +13,10 @@ I have optimized the "About" section for both readability and search engines, en
 - **Metadata Update**: Synced the `visually-hidden` SEO content with your actual professional history (22 years experience, AI/Automation focus).
 - **Alt Text Improvements**: Enhanced `alt` attributes on desktop SVG layers to provide meaningful descriptions for screen readers.
 
-### 3. Mobile Social Links
-- **New Socials Block**: Added LinkedIn, Behance, GitHub, and WhatsApp links to the mobile view.
-- **Consistent Design**: Styled these links with a high-contrast yellow background and shadow to match the overall site design.
+### 3. Social Media Buttons Integration
+- **Desktop Visuals**: Added the new SVG assets for LinkedIn, Behance, GitHub, and WhatsApp as visible layers in the desktop canvas.
+- **Interactive Effects**: Applied hover transitions and brightness filters to all social buttons to match the "Portfolio" and "CNC Work" buttons.
+- **Mobile Parity**: Added consistent text-based social links to the mobile view with high-contrast styling.
 
 ## Verification Results
 

@@ -263,11 +263,17 @@ nav {
 }
 
 /* Interactive Hovers (GPU Accelerated Filters) */
-.about-btn-img-portfolio, .about-btn-img-cnc {
+.about-btn-img-portfolio, .about-btn-img-cnc,
+.about-btn-img-linkedin, .about-btn-img-behance,
+.about-btn-img-github, .about-btn-img-whatsapp {
   transition: filter 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .about-canvas:has(.about-btn-portfolio:hover) .about-btn-img-portfolio { filter: brightness(1.22); }
 .about-canvas:has(.about-btn-cnc:hover) .about-btn-img-cnc { filter: brightness(1.22); }
+.about-canvas:has(.about-btn-linkedin:hover) .about-btn-img-linkedin { filter: brightness(1.22); }
+.about-canvas:has(.about-btn-behance:hover) .about-btn-img-behance   { filter: brightness(1.22); }
+.about-canvas:has(.about-btn-github:hover) .about-btn-img-github     { filter: brightness(1.22); }
+.about-canvas:has(.about-btn-whatsapp:hover) .about-btn-img-whatsapp { filter: brightness(1.22); }
 
 /* ── PHILOSOPHY [NEW] ── */
 .philosophy-section {
