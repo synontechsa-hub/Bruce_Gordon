@@ -160,13 +160,101 @@
     </a>
   </main>
 
-  <footer>
-    <p class="footer-copy">&copy; 2026 Bruce Gordon &nbsp;·&nbsp; DESIGN THAT HITS</p>
+  <!-- FOOTER (mobile) -->
+  <footer class="m-footer mobile-only">
+    <img src="assets/mobile_elements/header/element_bruce_gordon.svg" class="m-footer-logo" alt="Bruce Gordon Logo">
+
+    <div class="m-footer-nav">
+      <a href="index.html#work-m">
+        <img src="assets/website/footer/Footer - Button - Work.svg" alt="Work">
+      </a>
+      <a href="cnc.html">
+        <img src="assets/website/footer/Footer - Button - CNC Work.svg" alt="CNC Work">
+      </a>
+      <a href="index.html#services-m">
+        <img src="assets/website/footer/Footer - Button - Websites.svg" alt="Websites">
+      </a>
+      <a href="https://www.patreon.com/c/BruceGordon" target="_blank">
+        <img src="assets/website/footer/Footer - Button - Patreon.svg" alt="Patreon">
+      </a>
+      <a href="pricing.html">
+        <img src="assets/website/footer/Footer - Button - Pricing.svg" alt="Pricing">
+      </a>
+      <a href="index.html#contact-m">
+        <img src="assets/website/footer/Footer - Button - Contact.svg" alt="Contact">
+      </a>
+    </div>
+
+    <div class="m-about-socials">
+      <a href="https://www.linkedin.com/in/bruce-gordon-designs/" target="_blank" class="m-social-link">LinkedIn</a>
+      <a href="https://www.behance.net/brucegordon" target="_blank" class="m-social-link">Behance</a>
+      <a href="https://github.com/synontechsa-hub" target="_blank" class="m-social-link">GitHub</a>
+      <a href="https://wa.me/27621596082" target="_blank" class="m-social-link">WhatsApp</a>
+    </div>
+
+    <div class="m-footer-links-row">
+      <a href="https://byte-this-games.vercel.app/" target="_blank">
+        <img src="assets/website/footer/Footer - Link - Byte This Games.svg" alt="Byte This Games">
+      </a>
+      <a href="https://synontech.vercel.app/" target="_blank">
+        <img src="assets/website/footer/Footer - Link - Synontech Studio.svg" alt="Synontech Studio">
+      </a>
+      <a href="https://kerfsuite.vercel.app/" target="_blank">
+        <img src="assets/website/footer/Footer - Link - KerfSuite Website.svg" alt="KerfSuite Website">
+      </a>
+    </div>
+
+    <a href="https://github.com/synontechsa-hub" target="_blank" class="m-footer-powered">
+      <img src="assets/website/footer/Footer - Element - Powered By Synontech.svg" alt="Powered by Synontech">
+    </a>
+
+    <p class="m-footer-copy">&copy; <span id="footer-year-m"></span> Synontech</p>
   </footer>
 
-  <script src="script.js"></script>
+  <footer class="footer-section desktop-only">
+      <div class="footer-canvas">
+        <img src="assets/website/footer/Footer - Background.jpg" class="footer-layer" alt="">
+        <img src="assets/website/footer/Footer - Element - Text.svg" class="footer-layer" alt="">
+
+        <!-- Buttons -->
+        <img src="assets/website/footer/Footer - Button - Work.svg" class="footer-layer footer-btn-img-work" alt="">
+        <img src="assets/website/footer/Footer - Button - CNC Work.svg" class="footer-layer footer-btn-img-cnc" alt="">
+        <img src="assets/website/footer/Footer - Button - Websites.svg" class="footer-layer footer-btn-img-websites" alt="">
+        <img src="assets/website/footer/Footer - Button - Patreon.svg" class="footer-layer footer-btn-img-patreon" alt="">
+        <img src="assets/website/footer/Footer - Button - Pricing.svg" class="footer-layer footer-btn-img-pricing" alt="">
+        <img src="assets/website/footer/Footer - Button - Contact.svg" class="footer-layer footer-btn-img-contact" alt="">
+
+        <!-- Project Links -->
+        <img src="assets/website/footer/Footer - Link - Byte This Games.svg" class="footer-layer footer-btn-img-bytethis" alt="">
+        <img src="assets/website/footer/Footer - Link - Synontech Studio.svg" class="footer-layer footer-btn-img-synontech" alt="">
+        <img src="assets/website/footer/Footer - Link - KerfSuite Website.svg" class="footer-layer footer-btn-img-kerfsuite" alt="">
+
+        <!-- Branding -->
+        <img src="assets/website/footer/Footer - Element - Powered By Synontech.svg" class="footer-layer footer-btn-img-poweredby" alt="">
+
+        <!-- Overlays -->
+        <a href="index.html#work" class="footer-link-overlay footer-link-work" aria-label="Work"></a>
+        <a href="cnc.html" class="footer-link-overlay footer-link-cnc" aria-label="CNC Work"></a>
+        <a href="index.html#services" class="footer-link-overlay footer-link-websites" aria-label="Websites"></a>
+        <a href="https://www.patreon.com/c/BruceGordon" target="_blank" class="footer-link-overlay footer-link-patreon" aria-label="Patreon"></a>
+        <a href="pricing.html" class="footer-link-overlay footer-link-pricing" aria-label="Pricing"></a>
+        <a href="index.html#contact" class="footer-link-overlay footer-link-contact" aria-label="Contact"></a>
+
+        <a href="https://byte-this-games.vercel.app/" target="_blank" class="footer-link-overlay footer-link-bytethis" aria-label="Byte This Games"></a>
+        <a href="https://synontech.vercel.app/" target="_blank" class="footer-link-overlay footer-link-synontech" aria-label="Synontech Studio"></a>
+        <a href="https://kerfsuite.vercel.app/" target="_blank" class="footer-link-overlay footer-link-kerfsuite" aria-label="KerfSuite Website"></a>
+
+        <a href="https://github.com/synontechsa-hub" target="_blank" class="footer-link-overlay footer-link-poweredby" aria-label="Powered by Synontech"></a>
+
+        <p class="footer-copyright">&copy; <span id="footer-year"></span> Synontech</p>
+      </div>
+  </footer>
+
   <script>
-    document.getElementById('footer-year').textContent   = new Date().getFullYear();
+    const footerYear = document.getElementById('footer-year');
+    if (footerYear) footerYear.textContent = new Date().getFullYear();
+    const footerYearM = document.getElementById('footer-year-m');
+    if (footerYearM) footerYearM.textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
