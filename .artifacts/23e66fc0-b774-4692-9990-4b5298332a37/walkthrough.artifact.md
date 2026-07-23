@@ -18,6 +18,11 @@ I have optimized the "About" section for both readability and search engines, en
 - **Interactive Effects**: Applied hover transitions and brightness filters to all social buttons to match the "Portfolio" and "CNC Work" buttons.
 - **Mobile Parity**: Added consistent text-based social links to the mobile view with high-contrast styling.
 
+### 4. Decorative Canvas Elements
+- **New Layers**: Integrated `BG`, `Profile`, `Side Profile`, `Tablet`, `Pencil`, and `Code` SVGs into the About canvas.
+- **Dynamic Animations**: Added custom floating and scaling animations to the Pencil, Tablet, and Code elements to bring the section to life.
+- **Visual Depth**: Positioned these elements as background layers to create a layered, illustrative feel without interfering with the main content.
+
 ## Verification Results
 
 ### Manual Verification

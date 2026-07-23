@@ -1,47 +1,38 @@
-# Implementation Plan - About Section Optimization & SEO Sync
+# Implementation Plan - About Section Decorative Elements
 
-This plan addresses several issues in the "About" section, primarily focusing on mobile readability, SEO consistency, and feature parity between desktop and mobile.
+This plan outlines the integration of remaining decorative SVG elements into the "About" section to match the full design mock-up.
 
 ## User Review Required
 
 > [!IMPORTANT]
-> - I am proposing to switch the **mobile** About text from an SVG image to standard HTML text. This will use the same `Permanent Marker` font to maintain the aesthetic while ensuring it is readable on all screen sizes.
-> - I will sync the "hidden" SEO text with the actual visible content. Currently, they are completely different.
-
-## Open Questions
-
-> [!NOTE]
-> - Do you have specific social media icons (SVGs) for the mobile About section, or should I use the same "overlay" approach (which won't work well without a canvas) or generic icons?
-> - For now, I will add them as standard links with the signature styling.
+> - I am adding 6 new decorative SVG layers to the desktop "About" canvas.
+> - These elements will be layered behind the main text and buttons to ensure readability and interactivity are preserved.
+> - I will check if any of these are suitable for the mobile layout, although the current mobile layout is intentionally cleaner/text-focused.
 
 ## Proposed Changes
 
 ### Core Content
 
 #### [MODIFY] [index.html](file:///D:/Coding/Synontech/Websites/Bruce_Gordon/index.html)
-- **SEO Sync**: Update the `visually-hidden` div to match the 22-year professional experience text found in the About SVG.
-- **Mobile About Section**:
-    - Replace `About Screen - Element - Text.svg` with actual `<p>` tags containing the text.
-    - Add a new "Socials" block to the mobile section to include LinkedIn, Behance, GitHub, and WhatsApp links (matching desktop).
-- **Accessibility**: Update `alt` tags for About section elements.
-
----
+- **About Canvas**: Add the following elements as new layers:
+    - `About Screen - Element - BG.svg` (Decorative vector background overlay)
+    - `About Screen - Element - Profile.svg` (Character/Portrait element)
+    - `About Screen - Element - Side Profile.svg` (Secondary portrait element)
+    - `About Screen - Element - Tablet.svg` (Tech/Design element)
+    - `About Screen - Element - Pencil.svg` (Design element)
+    - `About Screen - Element - Code.svg` (Development element)
 
 ### Styles
 
 #### [MODIFY] [styles.css](file:///D:/Coding/Synontech/Websites/Bruce_Gordon/styles.css)
-- **Mobile Text Styling**: Add styles for `.m-about-text` to use `Permanent Marker`, appropriate line-height, and responsive font size.
-- **Mobile Socials**: Add styling for social buttons in the mobile About section to match the site's high-contrast, hand-drawn aesthetic.
+- **Z-Index Management**: Ensure proper stacking order so that the decorative elements don't obscure text or clickable buttons.
+- **Float Animations (Optional)**: If applicable, add subtle floating animations to tech elements (Pencil, Tablet, Code) to match the Hero section's vibe.
 
 ---
 
 ## Verification Plan
 
-### Automated Tests
-- N/A (Visual/Content fix)
-
 ### Manual Verification
-- **Mobile Readability**: Verify the "About" text is clearly legible on small screens (simulated mobile in browser).
-- **SEO/Accessibility**: Inspect the `visually-hidden` content and `alt` attributes to ensure they match the visible text.
-- **Feature Parity**: Verify social links are now present and working on both mobile and desktop.
-- **Visual Consistency**: Ensure the new HTML text on mobile matches the "vibe" of the desktop SVG.
+- **Visual Alignment**: Confirm that all elements appear in their intended positions according to the mock-up.
+- **Readability**: Ensure the main "About" text remains easy to read against the new background elements.
+- **Interactivity**: Verify that social buttons and portfolio links are still clickable and not covered by the new layers.

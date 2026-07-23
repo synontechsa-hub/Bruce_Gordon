@@ -4,4 +4,6 @@
 - [x] Update Mobile Styling in `styles.css`
 - [x] Verify Mobile Readability and Link Functionality
 - [x] Integrate Social Media Button assets into Desktop About section
-- [ ] Final visual check
+- [x] Add Decorative Element SVG layers to Desktop About section
+- [x] Add floating animations to tech elements (Pencil, Tablet, Code)
+- [x] Final visual check
