@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>All Projects | Bruce Gordon</title>
-  <link rel="icon" type="image/png" href="assets/new_design/favicon/Bruce-Gordon - Favicon.png">
+  <title>The Archive | Bruce Gordon</title>
+  <link rel="icon" type="image/png" href="assets/website/favicon/Favicon - Main.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,10 +13,12 @@
   <link rel="stylesheet" href="styles.css">
   <style>
     body {
-      background-image: url('assets/new_design/backgrounds/Element - Background - Quad 1.png');
+      background-image: url('assets/website/work_screen/Work Screen - Background.jpg');
+      background-attachment: fixed;
+      background-size: cover;
     }
     .projects-header {
-      padding: 10rem 2rem 4rem;
+      padding: 8rem 2rem 3rem;
       text-align: center;
     }
     .projects-grid-full {
@@ -29,18 +31,23 @@
     }
     .back-home {
       display: inline-block;
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
       font-family: var(--font-hand);
       color: var(--pink);
       text-decoration: none;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
+      transition: color 0.2s, transform 0.2s;
     }
-    .back-home:hover {
-      text-decoration: underline;
-    }
+    .back-home:hover { color: var(--black); transform: translateX(-5px); }
   </style>
 </head>
 <body>
+
+  <!-- Visually Hidden Semantic content for Google SEO & Screen Reader Accessibility -->
+  <div class="visually-hidden">
+    <h1>The Archive — Bruce Gordon | Visual Designer &amp; Full-Stack Developer</h1>
+    <p>Explore the project archive of Bruce Gordon, featuring a collection of branding, UI/UX, and web development mock-ups.</p>
+  </div>
 
   <nav>
     <a href="index.html" class="nav-logo">
@@ -52,8 +59,9 @@
       <a href="index.html#philosophy">Philosophy</a>
       <a href="index.html#services">Services</a>
       <a href="index.html#work">Work</a>
-      <a href="404.html">Pricing</a>
+      <a href="pricing.html">Pricing</a>
       <a href="side-projects.html">Portfolio</a>
+      <a href="cnc.html">CNC Work</a>
     </div>
     <a href="index.html#contact" class="nav-cta desktop-only">GET IN TOUCH</a>
     <!-- Hamburger (mobile only) -->
@@ -66,8 +74,9 @@
     <a href="index.html#philosophy-m">Philosophy</a>
     <a href="index.html#services-m">Services</a>
     <a href="index.html#work-m">Work</a>
-    <a href="404.html">Pricing</a>
+    <a href="pricing.html">Pricing</a>
     <a href="side-projects.html">Portfolio</a>
+    <a href="cnc.html">CNC Work</a>
     <a href="index.html#contact" class="mobile-nav-cta">GET IN TOUCH</a>
   </div>
 
