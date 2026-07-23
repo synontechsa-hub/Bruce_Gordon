@@ -1,38 +1,40 @@
-# Implementation Plan - About Section Decorative Elements
+# Implementation Plan - Site-Wide Mobile Optimization Audit
 
-This plan outlines the integration of remaining decorative SVG elements into the "About" section to match the full design mock-up.
+This plan addresses several responsiveness and readability issues found across all pages of the website to ensure a premium experience on mobile devices.
 
 ## User Review Required
 
 > [!IMPORTANT]
-> - I am adding 6 new decorative SVG layers to the desktop "About" canvas.
-> - These elements will be layered behind the main text and buttons to ensure readability and interactivity are preserved.
-> - I will check if any of these are suitable for the mobile layout, although the current mobile layout is intentionally cleaner/text-focused.
+> - **Pricing Section**: I am proposing to switch the mobile pricing lists from SVG images to HTML lists. This is critical because the text in the current SVGs is too small to read on phones.
+> - **Services & Philosophy Cards**: I will also refactor these into HTML components on mobile for better accessibility and clarity.
+> - **Bug Fix**: I found broken HTML code in the mobile section of `pricing.html` that needs immediate fixing.
 
 ## Proposed Changes
 
-### Core Content
+### 1. `index.html` Optimization
+- **Services Section (Mobile)**: Replace the 4 card SVGs with HTML/CSS cards using `Permanent Marker` font for titles and clean body text.
+- **Philosophy Section (Mobile)**: Replace the 5 philosophy card SVGs with HTML/CSS components.
+- **Visual Consistency**: Ensure all mobile section titles use the signature SVG headings consistently.
 
-#### [MODIFY] [index.html](file:///D:/Coding/Synontech/Websites/Bruce_Gordon/index.html)
-- **About Canvas**: Add the following elements as new layers:
-    - `About Screen - Element - BG.svg` (Decorative vector background overlay)
-    - `About Screen - Element - Profile.svg` (Character/Portrait element)
-    - `About Screen - Element - Side Profile.svg` (Secondary portrait element)
-    - `About Screen - Element - Tablet.svg` (Tech/Design element)
-    - `About Screen - Element - Pencil.svg` (Design element)
-    - `About Screen - Element - Code.svg` (Development element)
+### 2. `pricing.html` Refactor
+- **Fix Broken HTML**: Close the dangling `div` and fix the syntax error near the footer.
+- **HTML Pricing Lists**: Replace `Pricing Screen - Element - Text - Graphic Design.svg` and `Web Design.svg` with actual HTML `<ul>` lists on mobile. This ensures users can actually see the prices.
+- **Disclaimer**: Convert the disclaimer SVG to a styled HTML block.
 
-### Styles
+### 3. Site-Wide Consistency
+- **Unified Footers**: Synchronize the footer logic across `index.html`, `pricing.html`, `cnc.html`, and `side-projects.html`.
+- **Copyright Script**: Use a single consistent ID (`footer-year`) and script across all pages for the automatic year update.
 
-#### [MODIFY] [styles.css](file:///D:/Coding/Synontech/Websites/Bruce_Gordon/styles.css)
-- **Z-Index Management**: Ensure proper stacking order so that the decorative elements don't obscure text or clickable buttons.
-- **Float Animations (Optional)**: If applicable, add subtle floating animations to tech elements (Pencil, Tablet, Code) to match the Hero section's vibe.
+### 4. `styles.css` Updates
+- Add shared classes for mobile cards (`m-feature-card`) and lists to avoid code duplication.
+- Refine z-index for mobile navigation to prevent overlap issues.
 
 ---
 
 ## Verification Plan
 
 ### Manual Verification
-- **Visual Alignment**: Confirm that all elements appear in their intended positions according to the mock-up.
-- **Readability**: Ensure the main "About" text remains easy to read against the new background elements.
-- **Interactivity**: Verify that social buttons and portfolio links are still clickable and not covered by the new layers.
+- **Pricing Readability**: Verify that all prices are easily readable on a standard mobile screen size.
+- **Card Layouts**: Check that Services and Philosophy cards stack correctly on mobile.
+- **Bug Fix Check**: Ensure `pricing.html` no longer has rendering artifacts in the footer.
+- **Link Integrity**: Test navigation between all pages on mobile.

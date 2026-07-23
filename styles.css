@@ -1439,6 +1439,66 @@ section { padding: 5rem 2rem; position: relative; }
     box-shadow: 1px 1px 0 var(--black);
   }
 
+  /* ── MOBILE OPTIMIZED COMPONENTS ── */
+  .m-pricing-list {
+    list-style: none;
+    width: 100%;
+    max-width: 440px;
+    margin-bottom: 2rem;
+    font-family: var(--font-hand);
+    color: var(--black);
+  }
+
+  .m-pricing-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem 0;
+    border-bottom: 1px dashed rgba(0,0,0,0.2);
+    font-size: 1.1rem;
+  }
+
+  .m-pricing-list li span:last-child {
+    color: var(--pink);
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+
+  .m-feature-card {
+    background: var(--white);
+    border: 3px solid var(--black);
+    box-shadow: 6px 6px 0 var(--black);
+    padding: 1.5rem;
+    width: 100%;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .m-feature-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--black);
+    text-transform: uppercase;
+  }
+
+  .m-feature-card p {
+    font-family: var(--font-hand);
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.3;
+  }
+
+  .m-disclaimer-box {
+    background: var(--cream);
+    border: 2px solid var(--black);
+    padding: 1.2rem;
+    font-family: var(--font-hand);
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-top: 1rem;
+    box-shadow: 4px 4px 0 var(--black);
+  }
+
   /* ── MOBILE PHILOSOPHY ── */
   .m-philosophy {
     background-color: var(--cream);

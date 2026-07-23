@@ -110,21 +110,33 @@
 
     <div class="m-pricing-block">
       <img src="assets/website/pricing_screen/Pricing Screen - Element - Heading - Graphic Design.svg" class="m-pricing-heading-img" alt="Graphic Design">
-      <img src="assets/website/pricing_screen/Pricing Screen - Element - Text - Graphic Design.svg"    class="m-pricing-text-img" alt="Graphic Design Prices">
+      <ul class="m-pricing-list">
+        <li><span>Logo Design</span> <span>From R150</span></li>
+        <li><span>Business Cards</span> <span>From R100</span></li>
+        <li><span>Flyers / Posters</span> <span>From R100</span></li>
+        <li><span>Social Media</span> <span>From R100</span></li>
+      </ul>
     </div>
 
     <div class="m-pricing-block">
       <img src="assets/website/pricing_screen/Pricing Screen - Element - Heading - Web Design.svg" class="m-pricing-heading-img" alt="Web Design &amp; Development">
-      <img src="assets/website/pricing_screen/Pricing Screen - Element - Text - Web Design.svg"    class="m-pricing-text-img" alt="Web Design Prices">
+      <ul class="m-pricing-list">
+        <li><span>Landing Page</span> <span>From R1,500</span></li>
+        <li><span>3 Page Website</span> <span>From R2,500</span></li>
+        <li><span>5 Page Website</span> <span>From R3,500</span></li>
+        <li><span>Custom Apps</span> <span>Quoted</span></li>
+      </ul>
     </div>
 
-    <div class="m-pricing-disclaimer">
-      <img src="assets/website/pricing_screen/Pricing Screen - Element - Text - Disclaimer.svg" class="m-pricing-disclaimer-img" alt="Terms and Disclaimer">
+    <div class="m-disclaimer-box">
+      <p>Every website is delivered with fully written HTML, CSS, and JS. Hosting and maintenance available separately. The underlying design and code remain the intellectual property of Bruce Gordon.</p>
     </div>
 
     <div class="m-cta-link-wrap">
       <a href="index.html#contact-m" class="m-cta-link">Work with me &#8594;</a>
-    <  <!-- FOOTER (mobile) -->
+    </div>
+  </section>
+  <!-- FOOTER (mobile) -->
   <footer class="m-footer mobile-only">
     <img src="assets/mobile_elements/header/element_bruce_gordon.svg" class="m-footer-logo" alt="Bruce Gordon Logo">
     
@@ -204,13 +216,13 @@
 
         <a href="https://github.com/synontechsa-hub" target="_blank" class="footer-link-overlay footer-link-poweredby" aria-label="Powered by Synontech"></a>
 
-        <p class="footer-copyright">&copy; <span id="pf-year"></span> Synontech</p>
+        <p class="footer-copyright">&copy; <span id="footer-year"></span> Synontech</p>
       </div>
   </footer>
 
   <script>
-    const pfYear = document.getElementById('pf-year');
-    if (pfYear) pfYear.textContent = new Date().getFullYear();
+    const footerYear = document.getElementById('footer-year');
+    if (footerYear) footerYear.textContent = new Date().getFullYear();
     const footerYearM = document.getElementById('footer-year-m');
     if (footerYearM) footerYearM.textContent = new Date().getFullYear();
   </script>

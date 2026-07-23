@@ -214,20 +214,24 @@
     <div class="m-section-title-wrap">
       <img src="assets/mobile_elements/services_screen/element_services_i_offer.svg" class="m-section-title-img" alt="Services I Offer">
     </div>
-    <div class="m-cards-grid">
-      <div class="m-card">
-        <img src="assets/mobile_elements/services_screen/card_graphic_design.svg" alt="Graphic Design">
-      </div>
-      <div class="m-card">
-        <img src="assets/mobile_elements/services_screen/card_web_design.svg" alt="Web Design">
-      </div>
-      <div class="m-card">
-        <img src="assets/mobile_elements/services_screen/card_ui_ux_design.svg" alt="UI / UX Design">
-      </div>
-      <div class="m-card">
-        <img src="assets/mobile_elements/services_screen/card_branding_solutions.svg" alt="Branding Solutions">
-      </div>
+
+    <div class="m-feature-card">
+      <h3>Graphic Design</h3>
+      <p>Logos, business cards, flyers, and bespoke digital graphics that make your brand stand out.</p>
     </div>
+    <div class="m-feature-card">
+      <h3>Web Design</h3>
+      <p>High-converting, custom layout websites that look great and function perfectly on all devices.</p>
+    </div>
+    <div class="m-feature-card">
+      <h3>UI / UX Design</h3>
+      <p>User-centric interface design for apps and dashboards, focusing on clarity and ease of use.</p>
+    </div>
+    <div class="m-feature-card">
+      <h3>Branding Solutions</h3>
+      <p>Complete visual identities that connect with your audience and grow your business.</p>
+    </div>
+
     <div class="m-cta-link-wrap">
       <a href="#contact-m" class="m-cta-link">Let&#39;s talk &#8594;</a>
     </div>
@@ -294,23 +298,27 @@
     <div class="m-section-title-wrap">
       <img src="assets/website/philosophy_screen/Philosophy Screen - Element - Philosophy.svg" class="m-section-title-img" alt="Philosophy">
     </div>
-    <div class="m-cards-grid">
-      <div class="m-card">
-        <img src="assets/mobile_elements/about_screen/card_client_focused.svg" alt="Client Focused">
-      </div>
-      <div class="m-card">
-        <img src="assets/mobile_elements/about_screen/card_reliable_service.svg" alt="Reliable Service">
-      </div>
-      <div class="m-card">
-        <img src="assets/mobile_elements/about_screen/card_fast_delivery.svg" alt="Fast Delivery">
-      </div>
-      <div class="m-card">
-        <img src="assets/mobile_elements/about_screen/card_simple_and_easy.svg" alt="Simple &amp; Easy">
-      </div>
-      <a href="pricing.html" class="m-card">
-        <img src="assets/mobile_elements/about_screen/card_fair_pricing.svg" alt="Fair Pricing">
-      </a>
+
+    <div class="m-feature-card">
+      <h3>Client Focused</h3>
+      <p>Your goals are my priority. I work closely with you to ensure the final result hits the mark.</p>
     </div>
+    <div class="m-feature-card">
+      <h3>Reliable Service</h3>
+      <p>Professional communication and dependable results, every single time.</p>
+    </div>
+    <div class="m-feature-card">
+      <h3>Fast Delivery</h3>
+      <p>Quick turnaround times without compromising on quality or attention to detail.</p>
+    </div>
+    <div class="m-feature-card">
+      <h3>Simple & Easy</h3>
+      <p>Straightforward project management that takes the stress out of design and development.</p>
+    </div>
+    <a href="pricing.html" class="m-feature-card" style="text-decoration:none;">
+      <h3>Fair Pricing</h3>
+      <p>Professional high-end design at affordable rates. Click to view price list &#8594;</p>
+    </a>
   </section>
 
   <!-- PHILOSOPHY (desktop canvas) -->
@@ -437,8 +445,10 @@
   </footer>
 
   <script>
-    document.getElementById('footer-year').textContent   = new Date().getFullYear();
-    document.getElementById('footer-year-m').textContent = new Date().getFullYear();
+    const footerYear = document.getElementById('footer-year');
+    if (footerYear) footerYear.textContent = new Date().getFullYear();
+    const footerYearM = document.getElementById('footer-year-m');
+    if (footerYearM) footerYearM.textContent = new Date().getFullYear();
   </script>
 
 </body>
