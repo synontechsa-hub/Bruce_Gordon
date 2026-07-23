@@ -1351,11 +1351,23 @@ section { padding: 5rem 2rem; position: relative; }
     background-image: url('assets/website/about_screen/About Screen - Background.jpg');
   }
 
-  .m-about-text-img {
-    width: 90%;
-    max-width: 400px;
-    height: auto;
+  .m-about-content {
+    width: 100%;
+    max-width: 440px;
     margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .m-about-text {
+    font-family: var(--font-hand);
+    font-size: 1.15rem;
+    color: var(--black);
+    line-height: 1.4;
+    margin-bottom: 1.2rem;
+  }
+  .m-about-text strong {
+    color: var(--pink);
+    font-size: 1.3rem;
   }
 
   .m-about-buttons {
@@ -1364,7 +1376,7 @@ section { padding: 5rem 2rem; position: relative; }
     justify-content: center;
     width: 100%;
     max-width: 400px;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2.2rem;
   }
   .m-about-buttons a {
     width: 30%;
@@ -1376,6 +1388,31 @@ section { padding: 5rem 2rem; position: relative; }
   .m-about-buttons img {
     width: 100%;
     height: auto;
+  }
+
+  .m-about-socials {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.7rem;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .m-social-link {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    color: var(--black);
+    background: var(--yellow);
+    text-decoration: none;
+    padding: 0.4rem 0.8rem;
+    border: 2px solid var(--black);
+    box-shadow: 4px 4px 0 var(--black);
+    transition: all 0.15s;
+  }
+  .m-social-link:active {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0 var(--black);
   }
 
   /* ── MOBILE PHILOSOPHY ── */

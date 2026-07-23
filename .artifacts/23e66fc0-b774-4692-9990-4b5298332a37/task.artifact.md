@@ -1,0 +1,5 @@
+- [ ] SEO Text Sync in `index.html`
+- [ ] Refactor Mobile About section to use HTML text
+- [ ] Add Social Links to Mobile About section
+- [ ] Update Mobile Styling in `styles.css`
+- [ ] Verify Mobile Readability and Link Functionality
