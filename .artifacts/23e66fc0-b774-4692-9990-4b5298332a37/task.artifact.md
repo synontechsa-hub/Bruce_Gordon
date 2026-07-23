@@ -2,4 +2,6 @@
 - [x] Refactor `index.html` mobile Services & Philosophy sections
 - [x] Fix and refactor `pricing.html` mobile content
 - [x] Standardize footers across all pages
+- [x] Revamp `projects.html` archive page branding
+- [x] Add mobile socials to all sub-page footers
 - [x] Verify responsiveness and readability
