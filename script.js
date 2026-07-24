@@ -15,15 +15,22 @@ document.addEventListener('DOMContentLoaded', () => {
   revealElements.forEach(el => revealObserver.observe(el));
 
 
-  // --- NAV SCROLL EFFECT ---
+  // --- NAV SCROLL EFFECT (throttled via rAF) ---
   const nav = document.querySelector('nav');
+  let scrollTicking = false;
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-      nav.style.padding = '0.8rem 2rem';
-    } else {
-      nav.style.padding = '1rem 2rem';
+    if (!scrollTicking) {
+      requestAnimationFrame(() => {
+        if (window.scrollY > 50) {
+          nav.style.padding = '0.8rem 2rem';
+        } else {
+          nav.style.padding = '1rem 2rem';
+        }
+        scrollTicking = false;
+      });
+      scrollTicking = true;
     }
-  });
+  }, { passive: true });
 
 
   // --- DYNAMIC YEAR ---

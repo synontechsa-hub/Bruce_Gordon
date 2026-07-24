@@ -11,13 +11,52 @@
   <meta name="keywords" content="Bruce Gordon, designer, developer, branding, UI/UX, Design That Hits" />
   <meta name="author" content="Bruce Gordon" />
   <meta name="theme-color" content="#f4f1ea" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://bruce-gordon.vercel.app/" />
 
   <!-- Open Graph / Facebook / WhatsApp -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://bruce-gordon.vercel.app/" />
   <meta property="og:title" content="Bruce Gordon | DESIGN THAT HITS" />
   <meta property="og:description" content="Visual designer and full-stack developer. Design that connects. Brands that grow." />
-  <meta property="og:image" content="assets/website/social_preview/Social Preview.png" />
+  <meta property="og:image" content="https://bruce-gordon.vercel.app/assets/website/social_preview/Social Preview.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="en_ZA" />
+  <meta property="og:site_name" content="Bruce Gordon" />
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Bruce Gordon | DESIGN THAT HITS" />
+  <meta name="twitter:description" content="Visual designer and full-stack developer. Design that connects. Brands that grow." />
+  <meta name="twitter:image" content="https://bruce-gordon.vercel.app/assets/website/social_preview/Social Preview.png" />
+
+  <!-- Structured Data: Person + WebPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Bruce Gordon",
+    "url": "https://bruce-gordon.vercel.app/",
+    "image": "https://bruce-gordon.vercel.app/assets/website/social_preview/Social Preview.png",
+    "description": "Visual designer and full-stack developer with over 22 years of professional experience. Specializing in branding, UI/UX, web design, and AI automation solutions.",
+    "jobTitle": "Visual Designer & Full-Stack Developer",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Synontech",
+      "url": "https://synontech.vercel.app/"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "ZA"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/in/bruce-gordon-designs/",
+      "https://www.behance.net/bruce-gordon",
+      "https://github.com/synontechsa-hub"
+    ]
+  }
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -100,14 +139,14 @@
   <!-- HERO (desktop canvas) -->
   <section class="hero desktop-only" id="home">
     <div class="hero-canvas">
-      <img src="assets/website/hero_screen/Hero Screen - Element - Bruce Gordon.svg"   class="hero-layer"             alt="Bruce Gordon">
-      <img src="assets/website/hero_screen/Hero Screen - Element - Cloud.svg"           class="hero-layer hero-anim-cloud"  alt="">
-      <img src="assets/website/hero_screen/Hero Screen - Element - Heart.svg"           class="hero-layer hero-anim-heart"  alt="">
-      <img src="assets/website/hero_screen/Hero Screen - Element - Design That Hits.svg" class="hero-layer"            alt="Design That Hits">
-      <img src="assets/website/hero_screen/Hero Screen - Element - Graphic Designer.svg" class="hero-layer"           alt="Graphic and Web Designer">
-      <img src="assets/website/hero_screen/Hero Screen - Button - Hire Me.svg"          class="hero-layer hero-btn-img-hire"   alt="">
-      <img src="assets/website/hero_screen/Hero Screen - Button - View Work.svg"        class="hero-layer hero-btn-img-view"   alt="">
-      <img src="assets/website/hero_screen/Hero Screen - Button - All Work.svg"         class="hero-layer hero-btn-img-all"    alt="">
+      <img src="assets/website/hero_screen/Hero Screen - Element - Bruce Gordon.svg"   class="hero-layer"             alt="Bruce Gordon" fetchpriority="high">
+      <img src="assets/website/hero_screen/Hero Screen - Element - Cloud.svg"           class="hero-layer hero-anim-cloud"  alt="" fetchpriority="high">
+      <img src="assets/website/hero_screen/Hero Screen - Element - Heart.svg"           class="hero-layer hero-anim-heart"  alt="" fetchpriority="high">
+      <img src="assets/website/hero_screen/Hero Screen - Element - Design That Hits.svg" class="hero-layer"            alt="Design That Hits" fetchpriority="high">
+      <img src="assets/website/hero_screen/Hero Screen - Element - Graphic Designer.svg" class="hero-layer"           alt="Graphic and Web Designer" fetchpriority="high">
+      <img src="assets/website/hero_screen/Hero Screen - Button - Hire Me.svg"          class="hero-layer hero-btn-img-hire"   alt="" loading="lazy">
+      <img src="assets/website/hero_screen/Hero Screen - Button - View Work.svg"        class="hero-layer hero-btn-img-view"   alt="" loading="lazy">
+      <img src="assets/website/hero_screen/Hero Screen - Button - All Work.svg"         class="hero-layer hero-btn-img-all"    alt="" loading="lazy">
       <a href="#contact"          class="hero-btn-overlay hero-btn-hire"  aria-label="Hire Me"></a>
       <a href="#work"             class="hero-btn-overlay hero-btn-view"  aria-label="View Work"></a>
       <a href="side-projects.html" class="hero-btn-overlay hero-btn-all"  aria-label="All Work"></a>
@@ -182,22 +221,22 @@
   <!-- ABOUT (desktop canvas) -->
   <section class="about-section desktop-only reveal" id="about">
     <div class="about-canvas">
-      <img src="assets/website/about_screen/About Screen - Element - BG.svg"    class="about-layer" alt="">
-      <img src="assets/website/about_screen/About Screen - Element - Profile.svg" class="about-layer" alt="">
-      <img src="assets/website/about_screen/About Screen - Element - Side Profile.svg" class="about-layer" alt="">
-      <img src="assets/website/about_screen/About Screen - Element - Pencil.svg"  class="about-layer about-anim-pencil" alt="">
-      <img src="assets/website/about_screen/About Screen - Element - Tablet.svg"  class="about-layer about-anim-tablet" alt="">
-      <img src="assets/website/about_screen/About Screen - Element - Code.svg"    class="about-layer about-anim-code"   alt="">
-      <img src="assets/website/about_screen/About Screen - Element - About.svg" class="about-layer" alt="About Bruce Gordon">
-      <img src="assets/website/about_screen/About Screen - Element - Text.svg"  class="about-layer" alt="Bruce Gordon - 22 Years professional graphic design experience specializing in branding, websites, AI, and automation solutions.">
+      <img src="assets/website/about_screen/About Screen - Element - BG.svg"    class="about-layer" alt="" loading="lazy">
+      <img src="assets/website/about_screen/About Screen - Element - Profile.svg" class="about-layer" alt="" loading="lazy">
+      <img src="assets/website/about_screen/About Screen - Element - Side Profile.svg" class="about-layer" alt="" loading="lazy">
+      <img src="assets/website/about_screen/About Screen - Element - Pencil.svg"  class="about-layer about-anim-pencil" alt="" loading="lazy">
+      <img src="assets/website/about_screen/About Screen - Element - Tablet.svg"  class="about-layer about-anim-tablet" alt="" loading="lazy">
+      <img src="assets/website/about_screen/About Screen - Element - Code.svg"    class="about-layer about-anim-code"   alt="" loading="lazy">
+      <img src="assets/website/about_screen/About Screen - Element - About.svg" class="about-layer" alt="About Bruce Gordon" loading="lazy">
+      <img src="assets/website/about_screen/About Screen - Element - Text.svg"  class="about-layer" alt="Bruce Gordon - 22 Years professional graphic design experience specializing in branding, websites, AI, and automation solutions." loading="lazy">
 
       <!-- Buttons -->
-      <img src="assets/website/about_screen/About Screen - Button - Portfolio.svg" class="about-layer about-btn-img-portfolio" alt="">
-      <img src="assets/website/about_screen/About Screen - Button - CNC Work.svg"  class="about-layer about-btn-img-cnc"       alt="">
-      <img src="assets/website/about_screen/About Screen - Button - LinkedIn.svg"  class="about-layer about-btn-img-linkedin"  alt="">
-      <img src="assets/website/about_screen/About Screen - Button - Behance.svg"   class="about-layer about-btn-img-behance"   alt="">
-      <img src="assets/website/about_screen/About Screen - Button - GitHub.svg"    class="about-layer about-btn-img-github"    alt="">
-      <img src="assets/website/about_screen/About Screen - Button - WhatsApp.svg"  class="about-layer about-btn-img-whatsapp"  alt="">
+      <img src="assets/website/about_screen/About Screen - Button - Portfolio.svg" class="about-layer about-btn-img-portfolio" alt="" loading="lazy">
+      <img src="assets/website/about_screen/About Screen - Button - CNC Work.svg"  class="about-layer about-btn-img-cnc"       alt="" loading="lazy">
+      <img src="assets/website/about_screen/About Screen - Button - LinkedIn.svg"  class="about-layer about-btn-img-linkedin"  alt="" loading="lazy">
+      <img src="assets/website/about_screen/About Screen - Button - Behance.svg"   class="about-layer about-btn-img-behance"   alt="" loading="lazy">
+      <img src="assets/website/about_screen/About Screen - Button - GitHub.svg"    class="about-layer about-btn-img-github"    alt="" loading="lazy">
+      <img src="assets/website/about_screen/About Screen - Button - WhatsApp.svg"  class="about-layer about-btn-img-whatsapp"  alt="" loading="lazy">
 
       <!-- Overlays -->
       <a href="side-projects.html" class="about-btn-overlay about-btn-portfolio" aria-label="Portfolio"></a>
@@ -240,11 +279,11 @@
   <!-- SERVICES (desktop canvas) -->
   <section id="services" class="services-section desktop-only">
     <div class="services-canvas">
-      <img src="assets/website/services_screen/Services Screen - Element - Services I Offer.svg" class="services-layer" alt="Services I Offer">
-      <img src="assets/website/services_screen/Services Screen - Card - Graphic Design.svg"       class="services-layer" alt="Graphic Design">
-      <img src="assets/website/services_screen/Services Screen - Card - Web Design.svg"           class="services-layer" alt="Web Design">
-      <img src="assets/website/services_screen/Services Screen - Card - UI-UX Design.svg"         class="services-layer" alt="UI/UX Design">
-      <img src="assets/website/services_screen/Services Screen - Card - Branding Solutions.svg"   class="services-layer" alt="Branding Solutions">
+      <img src="assets/website/services_screen/Services Screen - Element - Services I Offer.svg" class="services-layer" alt="Services I Offer" loading="lazy">
+      <img src="assets/website/services_screen/Services Screen - Card - Graphic Design.svg"       class="services-layer" alt="Graphic Design" loading="lazy">
+      <img src="assets/website/services_screen/Services Screen - Card - Web Design.svg"           class="services-layer" alt="Web Design" loading="lazy">
+      <img src="assets/website/services_screen/Services Screen - Card - UI-UX Design.svg"         class="services-layer" alt="UI/UX Design" loading="lazy">
+      <img src="assets/website/services_screen/Services Screen - Card - Branding Solutions.svg"   class="services-layer" alt="Branding Solutions" loading="lazy">
     </div>
   </section>
 
@@ -277,12 +316,12 @@
   <!-- WORK (desktop canvas) -->
   <section id="work" class="work-section desktop-only">
     <div class="work-canvas">
-      <img src="assets/website/work_screen/Work Screen - Element - Selected Projects.svg" class="work-layer" alt="Selected Projects">
-      <img src="assets/website/work_screen/Work Screen - Card - Solstice Goods.svg" class="work-layer work-card-img-solstice" alt="">
-      <img src="assets/website/work_screen/Work Screen - Card - Cape & Blade.svg"   class="work-layer work-card-img-cape"     alt="">
-      <img src="assets/website/work_screen/Work Screen - Card - Vela Wealth.svg"    class="work-layer work-card-img-vela"     alt="">
-      <img src="assets/website/work_screen/Work Screen - Card - Forma Studio.svg"   class="work-layer work-card-img-forma"    alt="">
-      <img src="assets/website/work_screen/Work Screen - Button - View Full Archive.svg" class="work-layer work-btn-img-archive" alt="">
+      <img src="assets/website/work_screen/Work Screen - Element - Selected Projects.svg" class="work-layer" alt="Selected Projects" loading="lazy">
+      <img src="assets/website/work_screen/Work Screen - Card - Solstice Goods.svg" class="work-layer work-card-img-solstice" alt="" loading="lazy">
+      <img src="assets/website/work_screen/Work Screen - Card - Cape & Blade.svg"   class="work-layer work-card-img-cape"     alt="" loading="lazy">
+      <img src="assets/website/work_screen/Work Screen - Card - Vela Wealth.svg"    class="work-layer work-card-img-vela"     alt="" loading="lazy">
+      <img src="assets/website/work_screen/Work Screen - Card - Forma Studio.svg"   class="work-layer work-card-img-forma"    alt="" loading="lazy">
+      <img src="assets/website/work_screen/Work Screen - Button - View Full Archive.svg" class="work-layer work-btn-img-archive" alt="" loading="lazy">
       <a href="Solstice-website/index.html" class="work-card-overlay work-overlay-solstice" aria-label="Solstice Goods"></a>
       <a href="cape-and-blade/index.html" class="work-card-overlay work-overlay-cape" aria-label="Cape &amp; Blade"></a>
       <a href="Vela-website/index.html" class="work-card-overlay work-overlay-vela" aria-label="Vela Wealth"></a>
@@ -324,12 +363,12 @@
   <!-- PHILOSOPHY (desktop canvas) -->
   <section class="philosophy-section desktop-only" id="philosophy">
     <div class="philosophy-canvas">
-      <img src="assets/website/philosophy_screen/Philosophy Screen - Element - Philosophy.svg" class="philosophy-layer" alt="Philosophy">
-      <img src="assets/website/philosophy_screen/Philosophy Screen - Element - Card 1.svg" class="philosophy-layer" alt="Client Focused">
-      <img src="assets/website/philosophy_screen/Philosophy Screen - Element - Card 2.svg" class="philosophy-layer" alt="Reliable Service">
-      <img src="assets/website/philosophy_screen/Philosophy Screen - Element - Card 3.svg" class="philosophy-layer phil-card-img-pricing" alt="Fair Pricing">
-      <img src="assets/website/philosophy_screen/Philosophy Screen - Element - Card 4.svg" class="philosophy-layer" alt="Fast Delivery">
-      <img src="assets/website/philosophy_screen/Philosophy Screen - Element - Card 5.svg" class="philosophy-layer" alt="Simple & Easy">
+      <img src="assets/website/philosophy_screen/Philosophy Screen - Element - Philosophy.svg" class="philosophy-layer" alt="Philosophy" loading="lazy">
+      <img src="assets/website/philosophy_screen/Philosophy Screen - Element - Card 1.svg" class="philosophy-layer" alt="Client Focused" loading="lazy">
+      <img src="assets/website/philosophy_screen/Philosophy Screen - Element - Card 2.svg" class="philosophy-layer" alt="Reliable Service" loading="lazy">
+      <img src="assets/website/philosophy_screen/Philosophy Screen - Element - Card 3.svg" class="philosophy-layer phil-card-img-pricing" alt="Fair Pricing" loading="lazy">
+      <img src="assets/website/philosophy_screen/Philosophy Screen - Element - Card 4.svg" class="philosophy-layer" alt="Fast Delivery" loading="lazy">
+      <img src="assets/website/philosophy_screen/Philosophy Screen - Element - Card 5.svg" class="philosophy-layer" alt="Simple & Easy" loading="lazy">
       <a href="pricing.html" class="phil-overlay-pricing" aria-label="Fair Pricing"></a>
     </div>
   </section>
@@ -342,7 +381,7 @@
       <a href="mailto:bruce.gordon8403@gmail.com">
         <img src="assets/mobile_elements/cta_screen/btn_email.svg" alt="Email Me">
       </a>
-      <a href="https://wa.me/27621596082" target="_blank">
+      <a href="https://wa.me/27621596082" target="_blank" rel="noopener noreferrer">
         <img src="assets/mobile_elements/cta_screen/btn_whatsapp.svg" alt="WhatsApp Me">
       </a>
     </div>
@@ -374,7 +413,7 @@
       <a href="#services-m">
         <img src="assets/website/footer/Footer - Button - Websites.svg" alt="Websites">
       </a>
-      <a href="https://www.patreon.com/c/BruceGordon" target="_blank">
+      <a href="https://www.patreon.com/c/BruceGordon" target="_blank" rel="noopener noreferrer">
         <img src="assets/website/footer/Footer - Button - Patreon.svg" alt="Patreon">
       </a>
       <a href="pricing.html">
@@ -386,18 +425,18 @@
     </div>
     
     <div class="m-footer-links-row">
-      <a href="https://byte-this-games.vercel.app/" target="_blank">
-        <img src="assets/website/footer/Footer - Link - Byte This Games.svg" alt="Byte This Games">
+      <a href="https://byte-this-games.vercel.app/" target="_blank" rel="noopener noreferrer">
+        <img src="assets/website/footer/Footer - Link - Byte This Games.svg" alt="Byte This Games" loading="lazy">
       </a>
-      <a href="https://synontech.vercel.app/" target="_blank">
-        <img src="assets/website/footer/Footer - Link - Synontech Studio.svg" alt="Synontech Studio">
+      <a href="https://synontech.vercel.app/" target="_blank" rel="noopener noreferrer">
+        <img src="assets/website/footer/Footer - Link - Synontech Studio.svg" alt="Synontech Studio" loading="lazy">
       </a>
-      <a href="https://kerfsuite.vercel.app/" target="_blank">
-        <img src="assets/website/footer/Footer - Link - KerfSuite Website.svg" alt="KerfSuite Website">
+      <a href="https://kerfsuite.vercel.app/" target="_blank" rel="noopener noreferrer">
+        <img src="assets/website/footer/Footer - Link - KerfSuite Website.svg" alt="KerfSuite Website" loading="lazy">
       </a>
     </div>
     
-    <a href="https://github.com/synontechsa-hub" target="_blank" class="m-footer-powered">
+    <a href="https://github.com/synontechsa-hub" target="_blank" rel="noopener noreferrer" class="m-footer-powered">
       <img src="assets/website/footer/Footer - Element - Powered By Synontech.svg" alt="Powered by Synontech">
     </a>
     
@@ -430,15 +469,15 @@
         <a href="#work" class="footer-link-overlay footer-link-work" aria-label="Work"></a>
         <a href="#cnc" class="footer-link-overlay footer-link-cnc" aria-label="CNC Work"></a>
         <a href="#services" class="footer-link-overlay footer-link-websites" aria-label="Websites"></a>
-        <a href="https://www.patreon.com/c/BruceGordon" target="_blank" class="footer-link-overlay footer-link-patreon" aria-label="Patreon"></a>
+        <a href="https://www.patreon.com/c/BruceGordon" target="_blank" rel="noopener noreferrer" class="footer-link-overlay footer-link-patreon" aria-label="Patreon"></a>
         <a href="pricing.html" class="footer-link-overlay footer-link-pricing" aria-label="Pricing"></a>
         <a href="#contact" class="footer-link-overlay footer-link-contact" aria-label="Contact"></a>
 
-        <a href="https://byte-this-games.vercel.app/" target="_blank" class="footer-link-overlay footer-link-bytethis" aria-label="Byte This Games"></a>
-        <a href="https://synontech.vercel.app/" target="_blank" class="footer-link-overlay footer-link-synontech" aria-label="Synontech Studio"></a>
-        <a href="https://kerfsuite.vercel.app/" target="_blank" class="footer-link-overlay footer-link-kerfsuite" aria-label="KerfSuite Website"></a>
+        <a href="https://byte-this-games.vercel.app/" target="_blank" rel="noopener noreferrer" class="footer-link-overlay footer-link-bytethis" aria-label="Byte This Games"></a>
+        <a href="https://synontech.vercel.app/" target="_blank" rel="noopener noreferrer" class="footer-link-overlay footer-link-synontech" aria-label="Synontech Studio"></a>
+        <a href="https://kerfsuite.vercel.app/" target="_blank" rel="noopener noreferrer" class="footer-link-overlay footer-link-kerfsuite" aria-label="KerfSuite Website"></a>
 
-        <a href="https://github.com/synontechsa-hub" target="_blank" class="footer-link-overlay footer-link-poweredby" aria-label="Powered by Synontech"></a>
+        <a href="https://github.com/synontechsa-hub" target="_blank" rel="noopener noreferrer" class="footer-link-overlay footer-link-poweredby" aria-label="Powered by Synontech"></a>
 
         <p class="footer-copyright">&copy; <span id="footer-year"></span> Synontech</p>
       </div>
