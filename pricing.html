@@ -29,9 +29,56 @@
   <meta name="author" content="Bruce Gordon" />
   <meta name="theme-color" content="#f4f1ea" />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://www.bgrafx.co.za/pricing" />
+  <link rel="apple-touch-icon" href="assets/website/favicon/Favicon - Main.png">
+  <link rel="manifest" href="/site.webmanifest">
 
-  <!-- Open Graph -->
+  <!-- Structured Data: Service + OfferCatalog -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Graphic Design & Web Development Services",
+    "provider": {
+      "@type": "Person",
+      "name": "Bruce Gordon",
+      "url": "https://www.bgrafx.co.za/"
+    },
+    "serviceType": "Graphic Design & Web Development",
+    "areaServed": "ZA",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Design & Development Pricing",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Logo Design"
+          },
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "price": "150",
+            "priceCurrency": "ZAR"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Web Design & Landing Pages"
+          },
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "price": "1500",
+            "priceCurrency": "ZAR"
+          }
+        }
+      ]
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.bgrafx.co.za/pricing" />
   <meta property="og:title" content="Pricing | Bruce Gordon" />
