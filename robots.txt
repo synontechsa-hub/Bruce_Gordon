@@ -4,4 +4,4 @@ Allow: /
 # Disallow 404 and any internal/test pages
 Disallow: /404.html
 
-Sitemap: https://bruce-gordon.vercel.app/sitemap.xml
+Sitemap: https://www.bgrafx.co.za/sitemap.xml
