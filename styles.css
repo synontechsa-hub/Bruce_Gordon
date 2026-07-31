@@ -1798,8 +1798,8 @@ section { padding: 5rem 2rem; position: relative; }
   }
   .m-footer-nav a {
     display: block;
-    width: 22%;
-    max-width: 70px;
+    width: 28%;
+    max-width: 90px;
     transition: transform 0.15s;
   }
   .m-footer-nav a:hover {
