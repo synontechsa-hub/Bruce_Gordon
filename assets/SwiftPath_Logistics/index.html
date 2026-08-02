@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwiftPath Logistics | Global Supply Chain Solutions</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header id="header">
+        <nav class="container">
+            <div class="logo">Swift<span>Path</span></div>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#solutions">Solutions</a></li>
+                <li><a href="#tracking">Tracking</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+            <div class="header-cta">
+                <a href="#quote" class="btn btn-primary">Request a Quote</a>
+            </div>
+            <button class="mobile-menu-toggle">☰</button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-overlay"></div>
+            <div class="container hero-content">
+                <h1>Global Logistics <br><span>Simplified.</span></h1>
+                <p>Reliable, efficient, and transparent supply chain management for businesses worldwide.</p>
+                <div class="tracking-box" id="tracking">
+                    <input type="text" id="tracking-input" placeholder="Enter Tracking Number (e.g., SP123456)">
+                    <button id="track-btn" class="btn btn-secondary">Track</button>
+                    <div id="tracking-result" class="result-message"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="services container">
+            <div class="section-header">
+                <h2>Our Core Services</h2>
+                <p>Comprehensive solutions tailored to your business needs.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="icon">✈️</div>
+                    <h3>Air Freight</h3>
+                    <p>Fast and reliable air transport solutions for time-sensitive cargo.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">🚢</div>
+                    <h3>Ocean Freight</h3>
+                    <p>Cost-effective sea shipping for large volume international trade.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">🚛</div>
+                    <h3>Road Transport</h3>
+                    <p>Secure and efficient land logistics across continents.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">🏭</div>
+                    <h3>Warehousing</h3>
+                    <p>State-of-the-art storage and inventory management systems.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats">
+            <div class="container stats-grid">
+                <div class="stat-item">
+                    <div class="number">99.9%</div>
+                    <div class="label">On-Time Delivery</div>
+                </div>
+                <div class="stat-item">
+                    <div class="number">150+</div>
+                    <div class="label">Countries Covered</div>
+                </div>
+                <div class="stat-item">
+                    <div class="number">24/7</div>
+                    <div class="label">Customer Support</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="quote" class="quote-section container">
+            <div class="quote-container">
+                <div class="quote-info">
+                    <h2>Get an Instant Quote</h2>
+                    <p>Fill out the form to receive a preliminary estimate for your shipment.</p>
+                </div>
+                <form id="quote-form" class="quote-form">
+                    <div class="form-group">
+                        <input type="text" id="origin" placeholder="Origin City" required>
+                        <input type="text" id="destination" placeholder="Destination City" required>
+                    </div>
+                    <div class="form-group">
+                        <select id="service-type" required>
+                            <option value="" disabled selected>Select Service</option>
+                            <option value="1.5">Air Freight</option>
+                            <option value="0.8">Ocean Freight</option>
+                            <option value="1.0">Road Transport</option>
+                        </select>
+                        <input type="number" id="weight" placeholder="Weight (kg)" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary full-width">Calculate Estimate</button>
+                    <div id="quote-result" class="result-message"></div>
+                </form>
+            </div>
+        </section>
+
+        <section class="newsletter">
+            <div class="container">
+                <h2>Stay Updated</h2>
+                <p>Subscribe to our newsletter for logistics insights and company news.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your Email Address" required>
+                    <button type="submit" class="btn btn-secondary">Subscribe</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-about">
+                <div class="logo">Swift<span>Path</span></div>
+                <p>Leading the way in global logistics and supply chain innovation since 1998.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Tracking</a></li>
+                    <li><a href="#">Case Studies</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <p>123 Logistics Way, Chicago, IL</p>
+                <p>Phone: +1 (800) SWIFT-PATH</p>
+                <p>Email: info@swiftpath.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom container">
+            <p>&copy; 2026 SwiftPath Logistics. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura & Echo | High-End Audio</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts for a premium look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Sticky Header -->
+    <header id="main-header">
+        <div class="container header-content">
+            <div class="mobile-menu-toggle" id="menu-toggle">
+                <span></span>
+                <span></span>
+            </div>
+            <div class="logo">
+                <a href="#">AURA & ECHO</a>
+            </div>
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#shop">Shop</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-icons">
+                <button class="icon-btn search-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </button>
+                <button class="icon-btn cart-btn" id="cart-toggle">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                    <span id="cart-count">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav-drawer" id="mobile-nav">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#shop">Shop</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-image" style="background-image: url('https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=2070&auto=format&fit=crop');"></div>
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <h1>Sound that breathes.</h1>
+            <p>Experience precision-engineered audio for the discerning ear.</p>
+            <a href="#shop" class="btn btn-primary">Shop Collection</a>
+        </div>
+    </section>
+
+    <!-- Featured Categories Grid -->
+    <section class="featured-categories container">
+        <div class="category-card">
+            <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?q=80&w=2065&auto=format&fit=crop" alt="Over-Ear">
+            <div class="category-info">
+                <h3>Over-Ear</h3>
+                <a href="#" class="link-underlined">Explore</a>
+            </div>
+        </div>
+        <div class="category-card">
+            <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?q=80&w=2070&auto=format&fit=crop" alt="In-Ear">
+            <div class="category-info">
+                <h3>In-Ear</h3>
+                <a href="#" class="link-underlined">Explore</a>
+            </div>
+        </div>
+        <div class="category-card">
+            <img src="https://images.unsplash.com/photo-1528148341665-ed9c59b4698d?q=80&w=2070&auto=format&fit=crop" alt="Accessories">
+            <div class="category-info">
+                <h3>Accessories</h3>
+                <a href="#" class="link-underlined">Explore</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Best Sellers Grid -->
+    <section class="best-sellers container" id="shop">
+        <h2 class="section-title">Best Sellers</h2>
+        <div class="product-grid">
+            <!-- Product 1 -->
+            <div class="product-item">
+                <div class="product-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1484704849700-f032a568e944?q=80&w=2070&auto=format&fit=crop" alt="Aura One" class="primary-img">
+                    <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?q=80&w=1968&auto=format&fit=crop" alt="Aura One Detail" class="hover-img">
+                    <button class="quick-add-btn">Quick Add</button>
+                </div>
+                <div class="product-info">
+                    <h4>Aura One</h4>
+                    <p class="price">$399.00</p>
+                </div>
+            </div>
+            <!-- Product 2 -->
+            <div class="product-item">
+                <div class="product-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1508759073847-9ca702cec7d2?q=80&w=2070&auto=format&fit=crop" alt="Echo Pro" class="primary-img">
+                    <img src="https://images.unsplash.com/photo-1524678606370-a47ad25cb82a?q=80&w=2069&auto=format&fit=crop" alt="Echo Pro Detail" class="hover-img">
+                    <button class="quick-add-btn">Quick Add</button>
+                </div>
+                <div class="product-info">
+                    <h4>Echo Pro</h4>
+                    <p class="price">$249.00</p>
+                </div>
+            </div>
+            <!-- Product 3 -->
+            <div class="product-item">
+                <div class="product-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1572536147248-ad59a8459463?q=80&w=2052&auto=format&fit=crop" alt="Vortex S" class="primary-img">
+                    <img src="https://images.unsplash.com/photo-1618366712277-7417e57d4e7b?q=80&w=2070&auto=format&fit=crop" alt="Vortex S Detail" class="hover-img">
+                    <button class="quick-add-btn">Quick Add</button>
+                </div>
+                <div class="product-info">
+                    <h4>Vortex S</h4>
+                    <p class="price">$599.00</p>
+                </div>
+            </div>
+            <!-- Product 4 -->
+            <div class="product-item">
+                <div class="product-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1599666505327-7758b44a9985?q=80&w=2070&auto=format&fit=crop" alt="Pure Studio" class="primary-img">
+                    <img src="https://images.unsplash.com/photo-1613040809024-b4ef7ba99bc3?q=80&w=2070&auto=format&fit=crop" alt="Pure Studio Detail" class="hover-img">
+                    <button class="quick-add-btn">Quick Add</button>
+                </div>
+                <div class="product-info">
+                    <h4>Pure Studio</h4>
+                    <p class="price">$450.00</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Mission -->
+    <section class="brand-mission">
+        <div class="container mission-content">
+            <h2>Crafting Silence and Soul.</h2>
+            <p>We believe that audio is not just about hearing; it's about feeling. Aura & Echo combines minimalist Nordic design with unparalleled acoustic engineering to create an immersive listening experience that stays with you long after the music stops.</p>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter container">
+        <div class="newsletter-inner">
+            <h3>Join the Echo</h3>
+            <p>Subscribe to receive updates, access to exclusive deals, and more.</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit" class="btn btn-dark">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h5>Shop</h5>
+                <ul>
+                    <li><a href="#">Over-Ear</a></li>
+                    <li><a href="#">In-Ear</a></li>
+                    <li><a href="#">Accessories</a></li>
+                    <li><a href="#">Gift Cards</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Support</h5>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Shipping Policy</a></li>
+                    <li><a href="#">Refunds & Returns</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Aura & Echo</h5>
+                <ul>
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#">Technology</a></li>
+                    <li><a href="#">Sustainability</a></li>
+                    <li><a href="#">Press</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Connect</h5>
+                <div class="social-links">
+                    <a href="#">Instagram</a>
+                    <a href="#">Twitter</a>
+                    <a href="#">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom container">
+            <p>&copy; 2026 Aura & Echo. All rights reserved.</p>
+            <div class="legal-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Drawer Overlay -->
+    <div class="cart-overlay" id="cart-drawer">
+        <div class="cart-drawer-content">
+            <div class="cart-header">
+                <h3>Your Cart</h3>
+                <button class="close-drawer" id="close-cart">&times;</button>
+            </div>
+            <div class="cart-items" id="cart-items-list">
+                <p class="empty-msg">Your cart is currently empty.</p>
+            </div>
+            <div class="cart-footer">
+                <button class="btn btn-primary full-width">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">Added to cart</div>
+
+    <script src="script.js"></script>
+</body>
+</html>

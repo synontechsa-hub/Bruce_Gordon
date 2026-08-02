@@ -1,0 +1,6 @@
+- [x] Create directory `D:\Coding\Synontech\_Development\Websites\Bruce_Gordon\assets\TimberCraft_Wholesale`
+- [x] Implement `index.html` (Earthy B2B structure)
+- [x] Implement `styles.css` (Forest/Walnut organic theme)
+- [x] Implement `script.js` (Volume calculator, species info toggle)
+- [x] Verify responsiveness and layout
+- [x] Final Walkthrough
