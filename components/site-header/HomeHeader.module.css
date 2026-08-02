@@ -32,7 +32,9 @@
   position: relative;
   display: inline-flex;
   align-items: center;
+  min-width: 2.75rem;
   min-height: 2.75rem;
+  padding-inline: 0.35rem;
   font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.07em;

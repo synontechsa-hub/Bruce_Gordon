@@ -33,7 +33,7 @@
 }
 
 .socialRail span { color: var(--signal-dark); }
-.socialRail a { min-height: 2.75rem; line-height: 2.75rem; text-decoration: none; }
+.socialRail a { min-width: 2.75rem; min-height: 2.75rem; line-height: 2.75rem; text-decoration: none; }
 .socialRail a:hover { text-decoration: underline; text-decoration-color: var(--signal); text-underline-offset: 0.35rem; }
 
 .heroCopy { position: relative; z-index: 4; max-width: 42rem; padding-left: clamp(1rem, 2vw, 2.25rem); }

@@ -51,7 +51,7 @@ export default function HomePage() {
                 <BrandMark inverse />
                 <div className={styles.folioDisciplines} aria-hidden="true"><span>Design</span><span>Web</span><span>Automation</span></div>
                 <div className={styles.folioImage}>
-                  <Image src="/media/forma.jpg" alt="Architectural design concept used to demonstrate BGrafX's editorial art direction" fill priority loading="eager" sizes="(max-width: 768px) 76vw, 36vw" />
+                  <Image src="/media/hero-architecture.jpg" alt="Architectural design concept used to demonstrate BGrafX's editorial art direction" fill priority loading="eager" sizes="(max-width: 768px) 76vw, 36vw" />
                 </div>
                 <span className={styles.folioNumber} aria-hidden="true">01—24</span>
               </div>
