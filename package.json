@@ -1,14 +1,34 @@
 {
-  "name": "bruce-gordon",
-  "version": "1.0.0",
-  "description": "Bruce Gordon - Freelance Designer Portfolio",
-  "main": "script.js",
-  "type": "module",
-  "scripts": {},
-  "keywords": [
-    "portfolio",
-    "design"
-  ],
-  "author": "Bruce Gordon",
-  "license": "MIT"
+  "name": "bgrafx-v2",
+  "version": "2.0.0",
+  "description": "BGrafX portfolio and creative studio website",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit"
+  },
+  "private": true,
+  "dependencies": {
+    "@fontsource/barlow-condensed": "^5.3.0",
+    "@fontsource/manrope": "^5.3.0",
+    "lucide-react": "^1.28.0",
+    "motion": "^12.43.0",
+    "next": "^16.2.12",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.2",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.4",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.2.12",
+    "typescript": "^6.0.3"
+  },
+  "overrides": {
+    "postcss": "8.5.25",
+    "sharp": "0.35.3"
+  }
 }
