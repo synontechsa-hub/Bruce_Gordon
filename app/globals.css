@@ -1,0 +1,63 @@
+:root {
+  --paper: #f2eee4;
+  --paper-raised: #faf7ef;
+  --ink: #11110f;
+  --ink-soft: #2f302d;
+  --muted: #6d6b65;
+  --rule: rgba(17, 17, 15, 0.18);
+  --rule-strong: rgba(17, 17, 15, 0.42);
+  --signal: #f3b900;
+  --signal-dark: #c89500;
+  --white: #fffef9;
+  --display: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --body: "Manrope", Arial, sans-serif;
+  --container: 90rem;
+  --gutter: clamp(1rem, 3.5vw, 4rem);
+  --shadow-hard: 0.45rem 0.45rem 0 var(--ink);
+  --fast: 160ms ease;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 22% 18%, rgba(255, 255, 255, 0.72), transparent 32rem),
+    repeating-linear-gradient(0deg, rgba(17, 17, 15, 0.018) 0 1px, transparent 1px 4px),
+    var(--paper);
+  font-family: var(--body);
+  font-size: 1rem;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+}
+
+a { color: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+button, input, textarea, select { font: inherit; }
+::selection { color: var(--ink); background: var(--signal); }
+:focus-visible { outline: 0.2rem solid var(--signal); outline-offset: 0.25rem; }
+
+.skip-link {
+  position: fixed;
+  inset: 0.75rem auto auto 0.75rem;
+  z-index: 100;
+  padding: 0.7rem 1rem;
+  color: var(--white);
+  background: var(--ink);
+  transform: translateY(-180%);
+  transition: transform var(--fast);
+}
+
+.skip-link:focus { transform: translateY(0); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

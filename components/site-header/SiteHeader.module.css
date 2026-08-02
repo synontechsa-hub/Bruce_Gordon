@@ -1,0 +1,75 @@
+.header {
+  position: relative;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 1.5rem;
+  align-items: center;
+  width: min(100%, var(--container));
+  min-height: 7.5rem;
+  margin-inline: auto;
+  padding: 1.5rem var(--gutter);
+  border-bottom: 1px solid var(--rule);
+}
+
+.brandLink { width: max-content; text-decoration: none; }
+.nav { display: flex; gap: clamp(1.25rem, 3vw, 3rem); align-items: center; }
+
+.nav a {
+  position: relative;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.nav a::after {
+  position: absolute;
+  right: 100%;
+  bottom: -0.55rem;
+  left: 0;
+  height: 0.15rem;
+  background: var(--signal);
+  content: "";
+  transition: right var(--fast);
+}
+
+.nav a:hover::after, .nav a:focus-visible::after { right: 0; }
+
+.cta {
+  display: inline-flex;
+  gap: 0.75rem;
+  align-items: center;
+  justify-self: end;
+  min-height: 2.9rem;
+  padding: 0.65rem 1rem;
+  color: var(--white);
+  background: var(--ink);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color var(--fast), background var(--fast);
+}
+
+.cta:hover { color: var(--ink); background: var(--signal); }
+
+@media (max-width: 48rem) {
+  .header { grid-template-columns: 1fr auto; min-height: 6.5rem; }
+  .nav {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-content: space-between;
+    padding-top: 0.85rem;
+    border-top: 1px solid var(--rule);
+  }
+  .cta { align-self: start; }
+}
+
+@media (max-width: 30rem) {
+  .header { min-height: 5.75rem; }
+  .nav { display: none; }
+  .cta { max-width: 8.5rem; min-height: 2.75rem; line-height: 1.2; }
+}
