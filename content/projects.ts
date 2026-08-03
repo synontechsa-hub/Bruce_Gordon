@@ -36,6 +36,7 @@ export const websiteProjects: WebsiteProject[] = [
   { slug: "swiftpath-logistics", title: "SwiftPath Logistics", category: "Logistics / B2B web", summary: "A globally minded logistics concept focused on clear service navigation, operational confidence and straightforward lead generation.", status: "Self-initiated concept", legacyPath: "/assets/SwiftPath_Logistics/index.html" },
   { slug: "timbercraft-wholesale", title: "TimberCraft Wholesale", category: "Wholesale / Trade utility", summary: "An earthy B2B timber website combining product discovery, sustainable sourcing and a practical volume-calculation tool.", status: "Self-initiated concept", legacyPath: "/assets/TimberCraft_Wholesale/index.html" },
   { slug: "aura-and-echo", title: "Aura & Echo", category: "Luxury audio / Product web", summary: "A high-end audio concept built around immersive typography, premium product presentation and a quiet sense of technical precision.", status: "Self-initiated concept", legacyPath: "/assets/Aura_Echo/index.html" },
+  { slug: "lumina-marketing", title: "Lumina Marketing", category: "Marketing / Growth agency", summary: "A performance-led agency concept combining bold branding, paid-media positioning and strategic narrative design.", status: "Self-initiated concept", legacyPath: "/assets/Lumina_Marketing/index.html" },
 ];
 
 export const liveProperties: LiveProperty[] = [

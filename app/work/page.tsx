@@ -19,15 +19,15 @@ export default function WorkPage() {
       <HomeHeader />
       <main id="main-content">
         <section className={styles.hero} aria-labelledby="work-page-title">
-          <div className={styles.heroGrid} aria-hidden="true"><span>WEB / ARCHIVE</span><span>01-11</span></div>
+          <div className={styles.heroGrid} aria-hidden="true"><span>WEB / ARCHIVE</span><span>01-12</span></div>
           <div className={styles.heroCopy}>
             <span className={styles.kicker}>Selected digital practice</span>
             <h1 id="work-page-title">Websites built with a point of view.</h1>
-            <p>Eleven self-initiated builds across distinct industries, each used to explore a different visual language, audience and interface problem.</p>
+            <p>Twelve self-initiated builds across distinct industries, each used to explore a different visual language, audience and interface problem.</p>
             <a href="#archive">Explore the archive <ArrowDownRight aria-hidden="true" size={17} /></a>
           </div>
           <div className={styles.heroIndex}>
-            <strong>11</strong><span>Website concepts</span><i /><strong>03</strong><span>Live properties</span>
+            <strong>12</strong><span>Website concepts</span><i /><strong>03</strong><span>Live properties</span>
           </div>
         </section>
 
