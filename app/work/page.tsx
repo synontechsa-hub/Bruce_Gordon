@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: "Website Portfolio | Bruce Gordon - BGrafX",
   description: "Explore Bruce Gordon's website design and frontend portfolio across architecture, e-commerce, fintech, SaaS, hospitality and independent digital products.",
   alternates: { canonical: "/work" },
-  openGraph: { title: "Website Portfolio | BGrafX", description: "A complete archive of website concepts, product interfaces and live digital properties by Bruce Gordon.", url: "/work", images: ["/og.png"] },
+  openGraph: { title: "Website Portfolio | BGrafX", description: "A complete archive of website concepts, product interfaces and live digital properties by Bruce Gordon.", url: "/work", images: ["/og-bgrafx-v2.png"] },
 };
 
 export default function WorkPage() {
