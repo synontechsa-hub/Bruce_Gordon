@@ -19,7 +19,7 @@
 .projectCard:nth-child(even) { margin-top: clamp(3rem,9vw,9rem); }
 .projectVisual { position:relative; min-height:clamp(24rem,46vw,45rem); overflow:hidden; border:1px solid var(--rule); background:var(--ink); }
 .projectVisual img { object-fit:cover; transition:transform 500ms ease,filter 500ms ease; }
-.projectCard:nth-child(n+6) .projectVisual img { object-fit:contain; padding:15%; background:#e8e2d6; }
+.containedVisual img { object-fit:contain; padding:15%; background:#e8e2d6; }
 .projectCard:hover .projectVisual img { filter:saturate(.8) contrast(1.05); transform:scale(1.025); }
 .projectNumber,.status { position:absolute; z-index:2; top:1rem; display:grid; place-items:center; min-height:2.2rem; padding:.45rem .65rem; background:var(--signal); font-size:.56rem; font-weight:700; letter-spacing:.07em; text-transform:uppercase; }
 .projectNumber { left:1rem; min-width:2.2rem; font-family:var(--display); font-size:1rem; }

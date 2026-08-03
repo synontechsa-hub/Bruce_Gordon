@@ -36,7 +36,7 @@ export default function WorkPage() {
           <div className={styles.projectGrid}>
             {websiteProjects.map((project, index) => (
               <article className={styles.projectCard} key={project.slug}>
-                <div className={`${styles.projectVisual} ${!project.image ? styles.generatedVisual : ""}`}>
+                <div className={`${styles.projectVisual} ${!project.image ? styles.generatedVisual : ""} ${project.imageFit === "contain" ? styles.containedVisual : ""}`}>
                   {project.image ? <Image src={project.image} alt={project.imageAlt ?? ""} fill sizes="(max-width: 720px) 100vw, 50vw" /> : <div className={styles.nexusMark} aria-hidden="true"><Globe2 /><strong>{project.title}</strong><small>{project.category}</small></div>}
                   <span className={styles.projectNumber}>{String(index + 1).padStart(2, "0")}</span>
                   <span className={styles.status}>{project.status}</span>
