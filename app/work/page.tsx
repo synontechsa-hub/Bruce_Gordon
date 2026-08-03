@@ -19,15 +19,15 @@ export default function WorkPage() {
       <HomeHeader />
       <main id="main-content">
         <section className={styles.hero} aria-labelledby="work-page-title">
-          <div className={styles.heroGrid} aria-hidden="true"><span>WEB / ARCHIVE</span><span>01-08</span></div>
+          <div className={styles.heroGrid} aria-hidden="true"><span>WEB / ARCHIVE</span><span>01-11</span></div>
           <div className={styles.heroCopy}>
             <span className={styles.kicker}>Selected digital practice</span>
             <h1 id="work-page-title">Websites built with a point of view.</h1>
-            <p>Eight self-initiated builds across distinct industries, each used to explore a different visual language, audience and interface problem.</p>
+            <p>Eleven self-initiated builds across distinct industries, each used to explore a different visual language, audience and interface problem.</p>
             <a href="#archive">Explore the archive <ArrowDownRight aria-hidden="true" size={17} /></a>
           </div>
           <div className={styles.heroIndex}>
-            <strong>08</strong><span>Website concepts</span><i /><strong>03</strong><span>Live properties</span>
+            <strong>11</strong><span>Website concepts</span><i /><strong>03</strong><span>Live properties</span>
           </div>
         </section>
 
@@ -37,8 +37,8 @@ export default function WorkPage() {
             {websiteProjects.map((project, index) => (
               <article className={styles.projectCard} key={project.slug}>
                 <div className={`${styles.projectVisual} ${!project.image ? styles.generatedVisual : ""}`}>
-                  {project.image ? <Image src={project.image} alt={project.imageAlt ?? ""} fill sizes="(max-width: 720px) 100vw, 50vw" /> : <div className={styles.nexusMark} aria-hidden="true"><Globe2 /><strong>NEXUS<span>AI</span></strong><small>Intelligence, applied.</small></div>}
-                  <span className={styles.projectNumber}>0{index + 1}</span>
+                  {project.image ? <Image src={project.image} alt={project.imageAlt ?? ""} fill sizes="(max-width: 720px) 100vw, 50vw" /> : <div className={styles.nexusMark} aria-hidden="true"><Globe2 /><strong>{project.title}</strong><small>{project.category}</small></div>}
+                  <span className={styles.projectNumber}>{String(index + 1).padStart(2, "0")}</span>
                   <span className={styles.status}>{project.status}</span>
                 </div>
                 <div className={styles.projectCopy}><span>{project.category}</span><h3>{project.title}</h3><p>{project.summary}</p><small>Responsive website exploration</small></div>
