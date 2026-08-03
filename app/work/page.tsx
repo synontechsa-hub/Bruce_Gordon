@@ -35,14 +35,14 @@ export default function WorkPage() {
           <header className={styles.sectionHeader}><div><span>Full archive</span><h2 id="archive-title">Different brands. Different voices.</h2></div><p>The work is self-initiated and labelled honestly. The aim is to demonstrate range: not one house style repeated eight times, but a considered response to each imagined brief.</p></header>
           <div className={styles.projectGrid}>
             {websiteProjects.map((project, index) => (
-              <article className={styles.projectCard} key={project.slug}>
+              <a className={styles.projectCard} key={project.slug} href={project.showcasePath} target="_blank" rel="noopener noreferrer" aria-label={`Open ${project.title} website concept`}>
                 <div className={`${styles.projectVisual} ${!project.image ? styles.generatedVisual : ""} ${project.imageFit === "contain" ? styles.containedVisual : ""}`}>
                   {project.image ? <Image src={project.image} alt={project.imageAlt ?? ""} fill sizes="(max-width: 720px) 100vw, 50vw" /> : <div className={styles.nexusMark} aria-hidden="true"><Globe2 /><strong>{project.title}</strong><small>{project.category}</small></div>}
                   <span className={styles.projectNumber}>{String(index + 1).padStart(2, "0")}</span>
                   <span className={styles.status}>{project.status}</span>
                 </div>
-                <div className={styles.projectCopy}><span>{project.category}</span><h3>{project.title}</h3><p>{project.summary}</p><small>Responsive website exploration</small></div>
-              </article>
+                <div className={styles.projectCopy}><span>{project.category}</span><h3>{project.title}</h3><p>{project.summary}</p><small>Open website <ArrowUpRight aria-hidden="true" size={13} /></small></div>
+              </a>
             ))}
           </div>
         </section>
