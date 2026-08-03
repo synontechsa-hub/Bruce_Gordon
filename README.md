@@ -1,28 +1,45 @@
-# Bruce Gordon | Freelance Designer
+# BGrafX
 
-A high-end, minimal portfolio website for Bruce Gordon, a freelance designer based in South Africa. This site showcases logo design, branding, and mobile-first web development services.
+The portfolio and creative-studio website of Bruce Gordon, a South African graphic designer working across branding, websites, automation, signage and production.
 
-## 🚀 Overview
+## Stack
 
-This is a single-page, responsive website built with modern HTML5 and CSS3. It features:
-- **Sophisticated Design:** A premium dark theme with gold accents and high-end typography.
-- **Performance Optimized:** Minimal assets and clean code for fast loading.
-- **Mobile-First:** Fully responsive layout designed for the modern web.
-- **Scroll Animations:** Custom-built intersection observer reveals for a polished feel.
+- Next.js 16 with the App Router
+- React 19 and TypeScript
+- CSS Modules
+- Motion for interface animation
+- Self-hosted Barlow Condensed and Manrope fonts
+- Vercel deployment
 
-## 🛠️ Tech Stack
+## Local development
 
-- **Frontend:** HTML5, CSS3 (Custom Properties, Flexbox, Grid)
-- **Typography:** Cormorant Garamond & DM Sans via Google Fonts
-- **Deployment:** [Vercel](https://vercel.com)
-- **Analytics:** Vercel Analytics (Planned)
+```bash
+npm install
+npm run dev -- -p 3010
+```
 
-## 📁 Project Structure
+Open `http://localhost:3010`.
 
-- `index.html`: The main entry point.
-- `assets/`: Directory for logos, mock-ups, and project images.
+## Verification
 
-## 📝 License
+```bash
+npm run lint
+npm run typecheck
+npm run build
+```
 
-Copyright © 2024 Bruce Gordon. All rights reserved.
-The code and design are proprietary. Unauthorized copying of any files, via any medium, is strictly prohibited.
+## Project structure
+
+- `app/` — routes, metadata and page-level styles
+- `components/` — shared navigation, footer, motion and Alyssa assistant UI
+- `content/` — typed portfolio and homepage content
+- `public/` — production images, favicons and social-preview assets
+- `PRD.md`, `DESIGN.md`, `CODEX.md` — product, visual and implementation guidance
+
+## Deployment
+
+The GitHub `main` branch deploys to Vercel and serves [bgrafx.co.za](https://www.bgrafx.co.za/).
+
+## License
+
+Copyright © Bruce Gordon. All rights reserved. The code and design are proprietary.

@@ -1,7 +1,0 @@
-User-agent: *
-Allow: /
-
-# Disallow 404 and any internal/test pages
-Disallow: /404.html
-
-Sitemap: https://www.bgrafx.co.za/sitemap.xml
