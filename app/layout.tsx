@@ -7,6 +7,7 @@ import "@fontsource/manrope/500.css";
 import "@fontsource/manrope/600.css";
 import { MotionProvider } from "@/components/motion/MotionProvider";
 import { GoogleTagManager } from "@/components/analytics/GoogleTagManager";
+import { AlyssaAssistant } from "@/components/assistant/AlyssaAssistant";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -51,6 +52,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <GoogleTagManager />
         <a className="skip-link" href="#main-content">Skip to content</a>
         <MotionProvider>{children}</MotionProvider>
+        <AlyssaAssistant />
       </body>
     </html>
   );
