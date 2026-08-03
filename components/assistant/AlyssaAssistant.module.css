@@ -114,3 +114,113 @@
   .blink { animation: none; }
   .window { animation: none; }
 }
+.tourInvite {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + 0.9rem);
+  display: grid;
+  grid-template-columns: 7.5rem 1fr;
+  width: min(23rem, calc(100vw - 2rem));
+  min-height: 11rem;
+  overflow: hidden;
+  background: var(--paper-raised);
+  border: 1px solid var(--ink);
+  box-shadow: 0.5rem 0.5rem 0 var(--signal);
+  animation: reveal 220ms ease-out both;
+}
+
+.inviteClose {
+  position: absolute;
+  z-index: 4;
+  top: 0.45rem;
+  right: 0.45rem;
+  display: grid;
+  place-items: center;
+  width: 1.8rem;
+  height: 1.8rem;
+  padding: 0;
+  color: var(--ink);
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.invitePortrait { position: relative; overflow: hidden; background: var(--paper); border-right: 1px solid var(--rule); }
+.invitePortrait img { object-fit: cover; object-position: 52% 48%; }
+.inviteCopy { align-self: center; padding: 1rem 1rem 1rem 0.9rem; line-height: 1.15; }
+.inviteCopy > span { color: var(--signal-dark); font-size: 0.59rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+.inviteCopy > strong { display: block; max-width: 11rem; margin-top: 0.22rem; font-family: var(--display); font-size: 1.48rem; text-transform: uppercase; }
+.inviteCopy p { margin: 0.55rem 0 0.75rem; color: var(--muted); font-size: 0.66rem; line-height: 1.45; }
+.inviteCopy > div { display: flex; gap: 0.45rem; align-items: center; }
+.inviteCopy > div button { display: flex; gap: 0.35rem; align-items: center; padding: 0.45rem 0.55rem; border: 1px solid var(--ink); font-size: 0.62rem; font-weight: 700; cursor: pointer; }
+.inviteCopy > div button:first-child { color: var(--white); background: var(--ink); }
+.inviteCopy > div button:last-child { color: var(--ink); background: transparent; border-color: transparent; }
+
+.tourOverlay { display: none; }
+
+.tourCard {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: min(22rem, calc(100vw - 2rem));
+  overflow: hidden;
+  background: var(--paper-raised);
+  border: 1px solid var(--ink);
+  box-shadow: 0.55rem 0.55rem 0 var(--signal);
+  animation: reveal 220ms ease-out both;
+}
+
+.tourCard > header {
+  display: grid;
+  grid-template-columns: 3rem 1fr 2rem;
+  gap: 0.65rem;
+  align-items: center;
+  padding: 0.55rem 0.65rem;
+  color: var(--white);
+  background: var(--ink);
+}
+
+.tourAvatar { position: relative; width: 3rem; height: 3rem; overflow: hidden; background: var(--paper); border: 1px solid rgba(255, 255, 255, 0.35); }
+.tourAvatar img { object-fit: cover; object-position: 52% 48%; transform: scale(1.65); }
+.tourCard > header > div:nth-child(2) { display: grid; line-height: 1.1; }
+.tourCard > header span { color: rgba(255, 255, 255, 0.58); font-size: 0.58rem; letter-spacing: 0.08em; text-transform: uppercase; }
+.tourCard > header strong { margin-top: 0.25rem; color: var(--signal); font-family: var(--display); font-size: 1rem; letter-spacing: 0.06em; }
+.tourCard > header button { display: grid; place-items: center; width: 2rem; height: 2rem; padding: 0; color: var(--white); background: transparent; border: 0; cursor: pointer; }
+
+.tourBody { padding: 1.05rem 1rem 1.1rem; border-bottom: 1px solid var(--rule); }
+.tourBody > span { color: var(--signal-dark); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; }
+.tourBody h2 { margin: 0.22rem 0 0.48rem; font-family: var(--display); font-size: 1.65rem; line-height: 1; text-transform: uppercase; }
+.tourBody p { margin: 0; color: var(--ink-soft); font-size: 0.73rem; line-height: 1.55; }
+.tourCard > footer { display: flex; justify-content: space-between; gap: 0.6rem; padding: 0.7rem; }
+.tourCard > footer button { display: flex; gap: 0.35rem; align-items: center; padding: 0.48rem 0.62rem; color: var(--ink); background: transparent; border: 1px solid var(--rule-strong); font-size: 0.65rem; font-weight: 700; cursor: pointer; }
+.tourCard > footer button:last-child { color: var(--white); background: var(--ink); border-color: var(--ink); }
+.tourCard > footer button:disabled { opacity: 0.35; cursor: default; }
+
+.tourRestart {
+  display: flex;
+  gap: 0.45rem;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 0.7rem;
+  padding: 0.58rem 0.65rem;
+  color: var(--ink);
+  background: rgba(243, 185, 0, 0.12);
+  border: 1px solid var(--signal-dark);
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+}
+.tourRestart svg:last-child { margin-left: auto; }
+
+@media (max-width: 520px) {
+  .tourInvite { grid-template-columns: 6.2rem 1fr; width: calc(100vw - 1.6rem); min-height: 10.5rem; }
+  .inviteCopy { padding-right: 0.7rem; }
+  .inviteCopy > strong { font-size: 1.28rem; }
+  .tourCard { width: calc(100vw - 1.6rem); }
+  .tourBody h2 { font-size: 1.45rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tourInvite, .tourCard { animation: none; }
+}

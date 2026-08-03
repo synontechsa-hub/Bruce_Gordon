@@ -64,6 +64,14 @@ button, input, textarea, select { font: inherit; }
   border: 0;
 }
 
+.bgrafx-tour-target {
+  position: relative !important;
+  z-index: 75 !important;
+  outline: 0.2rem solid var(--signal);
+  outline-offset: 0.22rem;
+  box-shadow: 0 0 0 9999px rgba(17, 17, 15, 0.64);
+  scroll-margin-block: 7rem;
+}
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after {
