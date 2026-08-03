@@ -1,9 +1,10 @@
 import Image from "next/image";
 import * as motion from "motion/react-client";
-import { ArrowDownRight, ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowDownRight, ArrowRight, ArrowUpRight, Check, Mail, MessageCircle } from "lucide-react";
 import { BrandMark } from "@/components/brand-mark/BrandMark";
 import { HomeHeader } from "@/components/site-header/HomeHeader";
-import { featuredStudies, services } from "@/content/home";
+import { SiteFooter } from "@/components/site-footer/SiteFooter";
+import { featuredStudies, pricingPaths, processSteps, services } from "@/content/home";
 import styles from "./home.module.css";
 
 const entrance = {
@@ -38,7 +39,7 @@ export default function HomePage() {
               <p className={styles.heroBody}>BGrafX helps businesses stand out, communicate clearly and turn ideas into considered design and practical digital experiences.</p>
 
               <div className={styles.heroActions}>
-                <a className={styles.primaryButton} href="#work">View my work <ArrowRight aria-hidden="true" size={17} /></a>
+                <a className={styles.primaryButton} href="/work">View my work <ArrowRight aria-hidden="true" size={17} /></a>
                 <a className={styles.secondaryButton} href="https://wa.me/27621596082" target="_blank" rel="noopener noreferrer">Request a quote <ArrowUpRight aria-hidden="true" size={16} /></a>
               </div>
             </motion.div>
@@ -53,7 +54,7 @@ export default function HomePage() {
                 <div className={styles.folioImage}>
                   <Image src="/media/hero-architecture.jpg" alt="Architectural design concept used to demonstrate BGrafX's editorial art direction" fill priority loading="eager" sizes="(max-width: 768px) 76vw, 36vw" />
                 </div>
-                <span className={styles.folioNumber} aria-hidden="true">01—24</span>
+                <span className={styles.folioNumber} aria-hidden="true">01â€”24</span>
               </div>
 
               <div className={styles.notebook} aria-hidden="true">
@@ -117,17 +118,69 @@ export default function HomePage() {
           </div>
 
           <div className={styles.workFooter}>
-            <span>More work and full case studies arrive in Phase 4.</span>
-            <a href="/design-system">View the design foundation <ArrowUpRight aria-hidden="true" size={16} /></a>
+            <span>Identity, interface and web direction - built to show the thinking as well as the finish.</span>
+            <a href="/work">View the complete website archive <ArrowUpRight aria-hidden="true" size={16} /></a>
           </div>
+        </section>
+
+        <section className={styles.experienceSection} aria-labelledby="experience-title">
+          <div className={styles.experienceNumber} aria-hidden="true">22<span>+</span></div>
+          <div className={styles.experienceCopy}>
+            <span className={styles.kicker}>Experience, applied</span>
+            <h2 id="experience-title">Good design should do more than look good.</h2>
+            <p>More than two decades across graphic design, web, signage and production have taught me to consider the whole job: the audience, the message, the medium and what happens after approval.</p>
+            <p>That breadth means fewer gaps between the idea and the finished result - and a creative partner who understands both detail and delivery.</p>
+            <a href="#process">See how I work <ArrowDownRight aria-hidden="true" size={16} /></a>
+          </div>
+          <aside className={styles.experienceNote} aria-label="Bruce Gordon's working principles">
+            <span>Built on</span><strong>Curiosity</strong><strong>Craft</strong><strong>Clarity</strong><strong>Follow-through</strong>
+          </aside>
+        </section>
+
+        <section id="process" className={styles.processSection} aria-labelledby="process-title">
+          <header className={styles.processHeader}>
+            <div><span className={styles.kicker}>How it works</span><h2 id="process-title">A clear process. No creative fog.</h2></div>
+            <p>Every engagement is scaled to the job, but the principle stays the same: understand first, make deliberately, and deliver properly.</p>
+          </header>
+          <ol className={styles.processGrid}>
+            {processSteps.map((step) => (
+              <li key={step.number}><span>{step.number}</span><h3>{step.title}</h3><p>{step.description}</p></li>
+            ))}
+          </ol>
+        </section>
+
+        <section id="pricing" className={styles.pricingSection} aria-labelledby="pricing-title">
+          <div className={styles.pricingIntro}>
+            <span className={styles.kicker}>Working together</span>
+            <h2 id="pricing-title">The right scope before the price.</h2>
+            <p>Every business and brief is different. A short conversation lets me understand the requirement and recommend the most sensible way to work - without padding the proposal with things you do not need.</p>
+            <a className={styles.primaryButton} href="mailto:bruce.gordon8403@gmail.com?subject=BGrafX%20project%20enquiry">Request a proposal <ArrowUpRight aria-hidden="true" size={16} /></a>
+          </div>
+          <div className={styles.pricingGrid}>
+            {pricingPaths.map((path, index) => (
+              <article className={styles.pricingCard} key={path.title}>
+                <div><span>0{index + 1}</span><small>{path.label}</small></div>
+                <h3>{path.title}</h3><p>{path.description}</p>
+                <ul>{path.includes.map((item) => <li key={item}><Check aria-hidden="true" size={15} />{item}</li>)}</ul>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section id="contact" className={styles.contactSection} aria-labelledby="contact-title">
+          <div className={styles.contactMark} aria-hidden="true">X</div>
+          <span className={styles.kicker}>Have a project in mind?</span>
+          <h2 id="contact-title">Let&apos;s make something worth noticing.</h2>
+          <p>Tell me what you are building, what is getting in the way, or simply where you would like the business to go next.</p>
+          <div className={styles.contactActions}>
+            <a href="https://wa.me/27621596082" target="_blank" rel="noopener noreferrer"><MessageCircle aria-hidden="true" />WhatsApp me <ArrowUpRight aria-hidden="true" size={17} /></a>
+            <a href="mailto:bruce.gordon8403@gmail.com?subject=BGrafX%20project%20enquiry"><Mail aria-hidden="true" />Send an email <ArrowUpRight aria-hidden="true" size={17} /></a>
+          </div>
+          <small>South Africa - Available for selected freelance and collaborative work</small>
         </section>
       </main>
 
-      <footer className={styles.prototypeFooter}>
-        <BrandMark compact inverse />
-        <p>Independent creative studio · South Africa</p>
-        <a href="mailto:bruce.gordon8403@gmail.com">Start a conversation <ArrowUpRight aria-hidden="true" size={16} /></a>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }

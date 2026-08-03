@@ -15,6 +15,17 @@ export interface FeaturedStudy {
   imageAlt: string;
 }
 
+export interface ProcessStep {
+  number: string;
+  title: string;
+  description: string;
+}
+export interface PricingPath {
+  title: string;
+  label: string;
+  description: string;
+  includes: string[];
+}
 export const services: ServicePreview[] = [
   {
     title: "Graphic design",
@@ -72,4 +83,16 @@ export const featuredStudies: FeaturedStudy[] = [
     image: "/media/cape-and-blade.jpg",
     imageAlt: "Cape and Blade barbershop identity and mobile website concept",
   },
+];
+export const processSteps: ProcessStep[] = [
+  { number: "01", title: "Discover", description: "We clarify the audience, the problem and what success needs to look like before design begins." },
+  { number: "02", title: "Define", description: "The brief becomes a practical direction with agreed priorities, deliverables and boundaries." },
+  { number: "03", title: "Design", description: "Ideas are shaped into a focused visual system, tested against the real communication need." },
+  { number: "04", title: "Build", description: "Approved work is developed for its final medium, from responsive code to production-ready artwork." },
+  { number: "05", title: "Deliver", description: "Everything is checked, organised and handed over clearly, with practical support where needed." },
+];
+export const pricingPaths: PricingPath[] = [
+  { title: "Focused project", label: "Defined scope", description: "For a clear, contained design requirement with a known outcome and a practical deadline.", includes: ["Agreed deliverables", "Defined revision rounds", "Production-ready handover"] },
+  { title: "Website or identity", label: "Project proposal", description: "For strategic work that needs discovery, creative direction and several connected deliverables.", includes: ["Discovery session", "Creative direction", "Responsive or identity system"] },
+  { title: "Ongoing support", label: "Monthly allocation", description: "For teams that need reliable creative or digital capacity without expanding their permanent staff.", includes: ["Reserved studio time", "Prioritised requests", "Consistent brand stewardship"] },
 ];

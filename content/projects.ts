@@ -1,0 +1,50 @@
+export interface WebsiteProject {
+  slug: string;
+  title: string;
+  category: string;
+  summary: string;
+  status: "Self-initiated concept";
+  image?: string;
+  imageAlt?: string;
+  legacyPath: string;
+}
+
+export interface LiveProperty {
+  title: string;
+  category: string;
+  summary: string;
+  url: string;
+}
+
+export interface CladdingProject {
+  title: string;
+  location: string;
+  description: string;
+  image: string;
+  imageAlt: string;
+}
+
+export const websiteProjects: WebsiteProject[] = [
+  { slug: "forma-studio", title: "Forma Studio", category: "Architecture / Editorial web", summary: "A restrained, image-led architecture studio concept built around strong hierarchy, generous space and project storytelling.", status: "Self-initiated concept", image: "/media/forma.jpg", imageAlt: "Forma Studio architecture website concept", legacyPath: "/Forma-website/index.html" },
+  { slug: "solstice-goods", title: "Solstice Goods", category: "E-commerce / UX", summary: "A warm lifestyle-commerce concept exploring product discovery, brand atmosphere and a calm responsive shopping journey.", status: "Self-initiated concept", image: "/media/solstice.jpg", imageAlt: "Solstice Goods e-commerce website concept", legacyPath: "/Solstice-website/index.html" },
+  { slug: "vela-wealth", title: "Vela Wealth", category: "Fintech / Interface", summary: "A financial-services interface study balancing data clarity, trust and a composed premium visual system.", status: "Self-initiated concept", image: "/media/vela.jpg", imageAlt: "Vela Wealth financial website and interface concept", legacyPath: "/Vela-website/index.html" },
+  { slug: "nexus-ai", title: "Nexus AI", category: "SaaS / Product web", summary: "A multi-page AI product website exploring conversion structure, documentation, pricing and a scalable interface language.", status: "Self-initiated concept", legacyPath: "/NexusAI-website/index.html" },
+  { slug: "cape-and-blade", title: "Cape & Blade", category: "Barbershop / Brand web", summary: "A character-led identity and website concept combining local personality with a direct service-booking experience.", status: "Self-initiated concept", image: "/media/cape-and-blade.jpg", imageAlt: "Cape and Blade barbershop identity and website concept", legacyPath: "/cape-and-blade/index.html" },
+  { slug: "onyx-and-ivy", title: "Onyx & Ivy", category: "Floral studio / Identity", summary: "A refined floral-studio concept using a monochrome identity, elegant pacing and an editorial digital presence.", status: "Self-initiated concept", image: "/media/work/onyx-and-ivy.png", imageAlt: "Onyx and Ivy floral studio identity", legacyPath: "/onyx-and-ivy/index.html" },
+  { slug: "veloce-systems", title: "Veloce Systems", category: "SaaS / Fintech UI", summary: "A high-precision technology brand and interface study built around speed, structure and confident technical typography.", status: "Self-initiated concept", image: "/media/work/veloce-systems.png", imageAlt: "Veloce Systems technology identity", legacyPath: "/veloce-systems/index.html" },
+  { slug: "origin-root", title: "Origin Root", category: "Specialty coffee / Brand web", summary: "A coffee brand and website exploration connecting provenance, tactile materials and a distinctive retail personality.", status: "Self-initiated concept", image: "/media/work/origin-root.png", imageAlt: "Origin Root specialty coffee identity", legacyPath: "/origin-root/index.html" },
+];
+
+export const liveProperties: LiveProperty[] = [
+  { title: "KerfSuite", category: "Production software", summary: "A practical software suite for CNC and fabrication workflows, developed as part of the broader Synontech product ecosystem.", url: "https://kerf-suite.com/" },
+  { title: "Synontech", category: "Software studio", summary: "The technology studio behind independent software, automation and digital product work.", url: "https://synontech.vercel.app/" },
+  { title: "Byte This Games", category: "Independent games", summary: "An independent game-development label and creative outlet for interactive projects.", url: "https://byte-this-games.vercel.app/" },
+];
+
+export const claddingProjects: CladdingProject[] = [
+  { title: "Sandton City Tower", location: "Johannesburg, Gauteng", description: "External facade elements formed as lightning-bolt profiles, cut from 2 mm solid aluminium and powder coated across four matched colours.", image: "/media/cladding/sandton-city.webp", imageAlt: "Sandton City Tower facade with coloured aluminium lightning-bolt cladding" },
+  { title: "Telesure Head Office", location: "Steyn City, Johannesburg", description: "Precision-routed composite panels, architectural cladding and illuminated corporate branding within a coordinated facade package.", image: "/media/cladding/telesure.webp", imageAlt: "Telesure Head Office architectural facade and corporate signage" },
+  { title: "15 Alice Lane", location: "Sandton, Johannesburg", description: "Exterior facade panels and custom architectural accents prepared through precision CNC cutting and production-aware detailing.", image: "/media/cladding/15-alice-lane.webp", imageAlt: "15 Alice Lane exterior architectural cladding" },
+  { title: "BCX Headquarters", location: "Midrand, Gauteng", description: "Bespoke three-dimensional metal signage, routed wall features and powder-coated exterior architectural elements.", image: "/media/cladding/bcx-head-office.webp", imageAlt: "BCX headquarters exterior facade and dimensional signage" },
+  { title: "Gateway West & PwC", location: "Waterfall City, Midrand", description: "Large-format exterior cladding and precision sheet-metal fabrication delivered as part of a premium architectural finish.", image: "/media/cladding/gateway-west-pwc.webp", imageAlt: "Gateway West and PwC towers with large-format exterior cladding" },
+];

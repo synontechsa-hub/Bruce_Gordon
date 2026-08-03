@@ -103,7 +103,7 @@
   display: none;
 }
 
-@media (max-width: 48rem) {
+@media (max-width: 68rem) {
   .inner {
     grid-template-columns: 1fr auto;
     min-height: 6.25rem;

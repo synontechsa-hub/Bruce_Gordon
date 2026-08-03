@@ -1,0 +1,10 @@
+.footer { display: grid; grid-template-columns: 1.4fr .6fr .7fr .55fr; gap: clamp(2.5rem, 6vw, 7rem); padding: clamp(4rem, 7vw, 7rem) var(--gutter) 2rem; color: var(--white); background: var(--ink); }
+.lead p { max-width: 28rem; margin: 2rem 0 0; color: #a9a69e; font-size: .74rem; }
+.footer nav, .network, .social { display: flex; flex-direction: column; }
+.footer nav span, .network span, .social span { margin-bottom: 1.2rem; color: var(--signal); font-size: .56rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.footer nav a, .network a, .social a { display: inline-flex; gap: .45rem; align-items: center; width: max-content; min-width: 2.75rem; min-height: 2.75rem; color: #d4d1c8; font-family: var(--display); font-size: 1.22rem; line-height: 1.1; text-decoration: none; text-transform: uppercase; }
+.footer a:hover { color: var(--signal); }
+.bottom { display: flex; grid-column: 1 / -1; gap: 2rem; justify-content: space-between; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,.16); color: #8b8881; font-size: .55rem; letter-spacing: .07em; text-transform: uppercase; }
+@media (max-width: 70rem) { .footer { grid-template-columns: 1.3fr repeat(3,.7fr); gap: 2.5rem; } }
+@media (max-width: 52rem) { .footer { grid-template-columns: 1fr 1fr; } .lead { grid-column: 1 / -1; } }
+@media (max-width: 32rem) { .footer { grid-template-columns: 1fr; } .lead { grid-column: auto; } .bottom { align-items: flex-start; flex-direction: column; } }
