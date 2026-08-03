@@ -4,180 +4,351 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TimberCraft Wholesale | Premium Timber & Sustainable Sourcing</title>
+    <meta name="description" content="Wholesale supplier of architectural hardwoods, softwoods, structural timber, and live edge slabs with FSC-certified sustainable forestry.">
+    <link rel="icon" type="image/png" href="../../assets/website/favicon/Favicon - Main.png">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header id="main-header">
-        <div class="container">
-            <div class="logo">TimberCraft</div>
-            <nav>
-                <a href="#species">Species</a>
+        <div class="container header-content">
+            <div class="logo"><a href="#home">TimberCraft</a></div>
+            <nav class="desktop-nav">
+                <a href="../../side-projects.html" class="portfolio-back-link"><i class="fas fa-arrow-left"></i> Portfolio</a>
+                <a href="#products">Inventory</a>
+                <a href="#calculator">Volume Calculator</a>
+                <a href="#species">Species Specs</a>
                 <a href="#sustainability">Sustainability</a>
-                <a href="#portal">Trade Portal</a>
             </nav>
-            <button class="btn btn-primary">Request a Quote</button>
+            <div class="header-cta">
+                <a href="#quote" class="btn btn-primary">Request Trade Quote</a>
+            </div>
+            <button class="mobile-menu-toggle" id="mobile-toggle-btn" aria-label="Open Navigation Menu">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </header>
 
-    <section class="hero">
-        <div class="hero-overlay"></div>
-        <div class="container hero-content">
-            <h1>Premium Timber. <br>Sustainably Sourced.</h1>
-            <p>Supplying the finest hardwoods and softwoods to the construction and furniture industries since 1992.</p>
-            <div class="hero-cta">
-                <a href="#products" class="btn btn-primary">Explore Inventory</a>
-            </div>
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-nav-overlay" class="mobile-nav-overlay" aria-hidden="true">
+        <div class="mobile-nav-content">
+            <button class="mobile-menu-close" id="mobile-close-btn" aria-label="Close Navigation Menu">&times;</button>
+            <div class="logo">TimberCraft</div>
+            <ul class="mobile-nav-links">
+                <li><a href="../../side-projects.html" class="portfolio-back-link"><i class="fas fa-arrow-left"></i> Return to Portfolio</a></li>
+                <li><a href="#products">Inventory</a></li>
+                <li><a href="#calculator">Volume Calculator</a></li>
+                <li><a href="#species">Species Specs</a></li>
+                <li><a href="#sustainability">Sustainability</a></li>
+                <li><a href="#quote" class="btn btn-primary btn-full">Request Trade Quote</a></li>
+            </ul>
         </div>
-    </section>
+    </div>
 
-    <section id="products" class="products">
-        <div class="container">
-            <h2 class="section-title">Core Selection</h2>
-            <div class="product-grid">
-                <div class="product-card" style="background-image: url('https://images.unsplash.com/photo-1541535650810-10d26f5d2abb?q=80&w=600&auto=format&fit=crop')">
-                    <div class="card-overlay">
-                        <h3>Hardwood</h3>
-                        <p>Durable, elegant, and timeless.</p>
-                    </div>
-                </div>
-                <div class="product-card" style="background-image: url('https://images.unsplash.com/photo-1516455590571-18256e5bb9ff?q=80&w=600&auto=format&fit=crop')">
-                    <div class="card-overlay">
-                        <h3>Softwood</h3>
-                        <p>Versatile and sustainable options.</p>
-                    </div>
-                </div>
-                <div class="product-card" style="background-image: url('https://images.unsplash.com/photo-1623945532050-7117173ba3c7?q=80&w=600&auto=format&fit=crop')">
-                    <div class="card-overlay">
-                        <h3>Structural</h3>
-                        <p>Engineered for strength and stability.</p>
-                    </div>
-                </div>
-                <div class="product-card" style="background-image: url('https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=600&auto=format&fit=crop')">
-                    <div class="card-overlay">
-                        <h3>Live Edge</h3>
-                        <p>Raw beauty in every unique cut.</p>
-                    </div>
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-overlay"></div>
+            <div class="container hero-content">
+                <span class="hero-badge"><i class="fas fa-tree"></i> FSC® Certified Sustainable Sourcing</span>
+                <h1>Premium Architectural Timber. <br><em>Sustainably Harvested.</em></h1>
+                <p>Supplying architects, master woodworkers, and commercial builders with kiln-dried hardwoods, structural glulam, and live edge slabs since 1992.</p>
+                <div class="hero-cta">
+                    <a href="#products" class="btn btn-primary"><i class="fas fa-layer-group"></i> Explore Inventory</a>
+                    <a href="#calculator" class="btn btn-outline"><i class="fas fa-calculator"></i> Volume Calculator</a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="calculator-section">
-        <div class="container">
-            <div class="calc-grid">
-                <div class="calc-info">
-                    <h2>Volume Calculator</h2>
-                    <p>Calculate your order requirements quickly. Enter your dimensions in millimeters to see the total cubic volume.</p>
+        <!-- Core Products Grid -->
+        <section id="products" class="products">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Timber Categories</span>
+                    <h2 class="section-title">Core Lumber Selection</h2>
+                    <p>Precision graded, kiln-dried, and sustainably harvested timber ready for commercial delivery.</p>
                 </div>
-                <div class="calc-form">
-                    <div class="input-group">
-                        <label for="calc-length">Length (mm)</label>
-                        <input type="number" id="calc-length" placeholder="3000">
-                    </div>
-                    <div class="input-group">
-                        <label for="calc-width">Width (mm)</label>
-                        <input type="number" id="calc-width" placeholder="150">
-                    </div>
-                    <div class="input-group">
-                        <label for="calc-thickness">Thickness (mm)</label>
-                        <input type="number" id="calc-thickness" placeholder="25">
-                    </div>
-                    <div class="calc-result">
-                        <span>Total Volume:</span>
-                        <strong id="volume-result">0.0000</strong> m³
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <section id="species" class="species-detail">
-        <div class="container">
-            <h2 class="section-title">Technical Specifications</h2>
-            <div class="species-list">
-                <div class="species-item" data-species="oak">
-                    <div class="species-header">
-                        <h3>White Oak</h3>
-                        <span>+</span>
+                <div class="product-grid">
+                    <div class="product-card" style="background-image: url('https://images.unsplash.com/photo-1541535650810-10d26f5d2abb?q=80&w=600&auto=format&fit=crop')">
+                        <div class="card-overlay">
+                            <span class="card-tag">Hardwood</span>
+                            <h3>Architectural Hardwoods</h3>
+                            <p>White Oak, Black Walnut, Cherry & European Ash for fine joinery.</p>
+                        </div>
                     </div>
-                    <div class="species-content">
-                        <p>A dense, heavy hardwood with a coarse texture and excellent rot resistance. Ideal for flooring and fine furniture.</p>
-                        <p><strong>Density:</strong> 755 kg/m³</p>
-                    </div>
-                </div>
-                <div class="species-item" data-species="walnut">
-                    <div class="species-header">
-                        <h3>Black Walnut</h3>
-                        <span>+</span>
-                    </div>
-                    <div class="species-content">
-                        <p>Prized for its deep, rich color and exceptional finishing qualities. A premium choice for luxury cabinetry.</p>
-                        <p><strong>Density:</strong> 610 kg/m³</p>
-                    </div>
-                </div>
-                <div class="species-item" data-species="cedar">
-                    <div class="species-header">
-                        <h3>Western Red Cedar</h3>
-                        <span>+</span>
-                    </div>
-                    <div class="species-content">
-                        <p>Naturally resistant to decay and insects. Known for its distinct aroma and lightweight, stable properties.</p>
-                        <p><strong>Density:</strong> 370 kg/m³</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <section id="sustainability" class="sustainability">
-        <div class="container">
-            <div class="sustain-content">
-                <h2>Our Commitment to the Future</h2>
-                <p>We believe in the longevity of our forests. All TimberCraft products are FSC® certified, ensuring that our sourcing practices promote environmental responsibility and social benefit.</p>
-                <div class="fsc-badge">FSC® CERTIFIED</div>
+                    <div class="product-card" style="background-image: url('https://images.unsplash.com/photo-1516455590571-18256e5bb9ff?q=80&w=600&auto=format&fit=crop')">
+                        <div class="card-overlay">
+                            <span class="card-tag">Softwood</span>
+                            <h3>Structural Softwoods</h3>
+                            <p>Western Red Cedar, Douglas Fir & Siberian Larch for cladding and frames.</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card" style="background-image: url('https://images.unsplash.com/photo-1623945532050-7117173ba3c7?q=80&w=600&auto=format&fit=crop')">
+                        <div class="card-overlay">
+                            <span class="card-tag">Engineered</span>
+                            <h3>Structural Glulam & CLT</h3>
+                            <p>Engineered mass timber beams for high-span architectural projects.</p>
+                        </div>
+                    </div>
+
+                    <div class="product-card" style="background-image: url('https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=600&auto=format&fit=crop')">
+                        <div class="card-overlay">
+                            <span class="card-tag">Feature Wood</span>
+                            <h3>Live Edge Flitches</h3>
+                            <p>Single-slab bookmatched slabs for statement dining tables & countertops.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- Timber Volume & Board Feet Calculator -->
+        <section class="calculator-section" id="calculator">
+            <div class="container">
+                <div class="calc-grid">
+                    <div class="calc-info">
+                        <span class="section-badge light">Estimator Tool</span>
+                        <h2>Lumber Volume & Board Feet Calculator</h2>
+                        <p>Calculate order volumes instantly for quotes. Input piece dimensions and quantity to compute total cubic volume ($m^3$) and Board Feet (BF).</p>
+                        <div class="calc-features">
+                            <div class="feature-item"><i class="fas fa-check-circle"></i> Automatic Board Feet (BF) conversion</div>
+                            <div class="feature-item"><i class="fas fa-check-circle"></i> Support for metric (mm) dimensions</div>
+                            <div class="feature-item"><i class="fas fa-check-circle"></i> Instant waste allowance factor</div>
+                        </div>
+                    </div>
+
+                    <div class="calc-form">
+                        <div class="input-row">
+                            <div class="input-group">
+                                <label for="calc-length"><i class="fas fa-ruler-horizontal"></i> Length (mm)</label>
+                                <input type="number" id="calc-length" placeholder="3000" value="3000" min="1">
+                            </div>
+                            <div class="input-group">
+                                <label for="calc-width"><i class="fas fa-ruler-vertical"></i> Width (mm)</label>
+                                <input type="number" id="calc-width" placeholder="150" value="150" min="1">
+                            </div>
+                        </div>
+
+                        <div class="input-row">
+                            <div class="input-group">
+                                <label for="calc-thickness"><i class="fas fa-arrows-alt-v"></i> Thickness (mm)</label>
+                                <input type="number" id="calc-thickness" placeholder="25" value="25" min="1">
+                            </div>
+                            <div class="input-group">
+                                <label for="calc-quantity"><i class="fas fa-cubes"></i> Quantity (Pieces)</label>
+                                <input type="number" id="calc-quantity" placeholder="20" value="20" min="1">
+                            </div>
+                        </div>
+
+                        <div class="calc-results-card">
+                            <div class="result-stat">
+                                <span>Cubic Volume:</span>
+                                <div><strong id="volume-result">0.2250</strong> <small>m³</small></div>
+                            </div>
+                            <div class="result-divider"></div>
+                            <div class="result-stat">
+                                <span>Board Feet:</span>
+                                <div><strong id="boardfeet-result">95.34</strong> <small>BF</small></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Specifications Accordion -->
+        <section id="species" class="species-detail">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Technical Data</span>
+                    <h2 class="section-title">Wood Species Specifications</h2>
+                    <p>Density, hardness ratings, and grain characteristics for engineering and architectural specifying.</p>
+                </div>
+
+                <div class="species-list">
+                    <div class="species-item active" data-species="white-oak">
+                        <div class="species-header">
+                            <div>
+                                <h3>American White Oak <em>(Quercus alba)</em></h3>
+                                <span class="species-type-badge hardwood">Hardwood</span>
+                            </div>
+                            <span class="accordion-icon"><i class="fas fa-minus"></i></span>
+                        </div>
+                        <div class="species-content">
+                            <p>A dense, heavy hardwood with a coarse open grain texture and exceptional natural rot resistance. Widely specified for luxury hardwood flooring, cabinetry, and cooperage.</p>
+                            <div class="species-stats-grid">
+                                <div class="stat-box"><i class="fas fa-weight"></i> <strong>Density:</strong> 755 kg/m³</div>
+                                <div class="stat-box"><i class="fas fa-hammer"></i> <strong>Janka Hardness:</strong> 1,360 lbf</div>
+                                <div class="stat-box"><i class="fas fa-shield-alt"></i> <strong>Durability Class:</strong> Class 2 (15-25 yrs)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="species-item" data-species="black-walnut">
+                        <div class="species-header">
+                            <div>
+                                <h3>American Black Walnut <em>(Juglans nigra)</em></h3>
+                                <span class="species-type-badge hardwood">Hardwood</span>
+                            </div>
+                            <span class="accordion-icon"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="species-content">
+                            <p>Prized globally for its rich chocolate hues, intricate grain figure, and outstanding dimensional stability. The gold standard for executive furniture and architectural paneling.</p>
+                            <div class="species-stats-grid">
+                                <div class="stat-box"><i class="fas fa-weight"></i> <strong>Density:</strong> 610 kg/m³</div>
+                                <div class="stat-box"><i class="fas fa-hammer"></i> <strong>Janka Hardness:</strong> 1,010 lbf</div>
+                                <div class="stat-box"><i class="fas fa-shield-alt"></i> <strong>Durability Class:</strong> Class 3 (10-15 yrs)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="species-item" data-species="red-cedar">
+                        <div class="species-header">
+                            <div>
+                                <h3>Western Red Cedar <em>(Thuja plicata)</em></h3>
+                                <span class="species-type-badge softwood">Softwood</span>
+                            </div>
+                            <span class="accordion-icon"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="species-content">
+                            <p>Naturally resistant to decay, moisture, and insect damage due to organic thujaplicin extractives. Highly stable and ideal for exterior rainscreen cladding and saunas.</p>
+                            <div class="species-stats-grid">
+                                <div class="stat-box"><i class="fas fa-weight"></i> <strong>Density:</strong> 370 kg/m³</div>
+                                <div class="stat-box"><i class="fas fa-hammer"></i> <strong>Janka Hardness:</strong> 350 lbf</div>
+                                <div class="stat-box"><i class="fas fa-shield-alt"></i> <strong>Durability Class:</strong> Class 2 (15-25 yrs)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="species-item" data-species="burmese-teak">
+                        <div class="species-header">
+                            <div>
+                                <h3>Burmese Teak <em>(Tectona grandis)</em></h3>
+                                <span class="species-type-badge hardwood">Exotic Hardwood</span>
+                            </div>
+                            <span class="accordion-icon"><i class="fas fa-plus"></i></span>
+                        </div>
+                        <div class="species-content">
+                            <p>Rich in natural silica and essential oils, making it imperious to salt water weathering. Premier timber choice for luxury yacht decking and outdoor architectural millwork.</p>
+                            <div class="species-stats-grid">
+                                <div class="stat-box"><i class="fas fa-weight"></i> <strong>Density:</strong> 665 kg/m³</div>
+                                <div class="stat-box"><i class="fas fa-hammer"></i> <strong>Janka Hardness:</strong> 1,150 lbf</div>
+                                <div class="stat-box"><i class="fas fa-shield-alt"></i> <strong>Durability Class:</strong> Class 1 (25+ yrs)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sustainability Commitment -->
+        <section id="sustainability" class="sustainability">
+            <div class="container">
+                <div class="sustain-content">
+                    <span class="section-badge light">Environmental Stewardship</span>
+                    <h2>FSC® Certified Responsible Forestry</h2>
+                    <p>We believe in preserving the longevity of our global forest canopies. 100% of TimberCraft lumber is sourced from FSC® chain-of-custody certified forests with zero clear-cutting practices.</p>
+                    <div class="fsc-badge"><i class="fas fa-leaf"></i> FSC® C014920 CERTIFIED YARD</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trade Quote Form -->
+        <section id="quote" class="quote-section">
+            <div class="container">
+                <div class="quote-card">
+                    <div class="section-header">
+                        <span class="section-badge">Commercial Accounts</span>
+                        <h2>Request a Wholesale Trade Quote</h2>
+                        <p>Submit your lumber schedule or project dimensions for a volume-discounted price estimate.</p>
+                    </div>
+
+                    <form class="quote-form" id="trade-quote-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="company-name"><i class="fas fa-building"></i> Company / Trade Name</label>
+                                <input type="text" id="company-name" placeholder="e.g. Apex Joinery Ltd" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-email"><i class="fas fa-envelope"></i> Business Email</label>
+                                <input type="email" id="contact-email" placeholder="trade@company.com" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="wood-type"><i class="fas fa-tree"></i> Timber Species</label>
+                                <select id="wood-type" required class="form-select">
+                                    <option value="" disabled selected>Select Wood Species</option>
+                                    <option value="white-oak">White Oak (Kiln Dried)</option>
+                                    <option value="black-walnut">Black Walnut (Select Grade)</option>
+                                    <option value="red-cedar">Western Red Cedar (Clear Vertical Grain)</option>
+                                    <option value="glulam">Structural Glulam Beams</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="target-volume"><i class="fas fa-cubes"></i> Estimated Volume</label>
+                                <select id="target-volume" required class="form-select">
+                                    <option value="small">Pack Quantity (1 - 5 m³)</option>
+                                    <option value="medium">Lumber Bundle (5 - 20 m³)</option>
+                                    <option value="large">Full Container / Truckload (20+ m³)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="project-notes"><i class="fas fa-sticky-note"></i> Cutting Schedule & Delivery Notes</label>
+                            <textarea id="project-notes" rows="4" placeholder="Specify required thicknesses, surfacing (rough sawn vs. S4S), or delivery location..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-full"><i class="fas fa-paper-plane"></i> Submit Quote Request</button>
+                        <div id="quote-feedback" class="form-feedback" style="display: none;"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer>
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
                     <div class="logo">TimberCraft</div>
-                    <p>Premium Timber Wholesale<br>Established 1992</p>
+                    <p>Premium Architectural Timber Wholesale<br>FSC® Chain of Custody &bull; Est. 1992</p>
                 </div>
                 <div class="footer-col">
-                    <h4>Yard Locations</h4>
+                    <h4>Distribution Yards</h4>
                     <ul>
-                        <li>North Coast Yard</li>
-                        <li>Highlands Depot</li>
-                        <li>Central Distribution</li>
+                        <li>North Coast Timber Yard</li>
+                        <li>Highlands Kiln Depot</li>
+                        <li>Central Port Distribution</li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Species</h4>
+                    <h4>Quick Navigation</h4>
                     <ul>
-                        <li>Hardwoods</li>
-                        <li>Softwoods</li>
-                        <li>Exotics</li>
-                        <li>Structural</li>
+                        <li><a href="#products">Inventory Selection</a></li>
+                        <li><a href="#calculator">Volume Calculator</a></li>
+                        <li><a href="#species">Species Specs</a></li>
+                        <li><a href="../../side-projects.html">Return to Portfolio</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Company</h4>
-                    <ul>
-                        <li>About Us</li>
-                        <li>Sustainability</li>
-                        <li>Contact</li>
-                        <li>Trade Login</li>
-                    </ul>
+                    <h4>Trade Support</h4>
+                    <p><i class="fas fa-phone"></i> +1 (800) 555-WOOD</p>
+                    <p><i class="fas fa-envelope"></i> orders@timbercraft-wholesale.com</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 TimberCraft Wholesale. All rights reserved.</p>
+                <p>&copy; 2026 TimberCraft Wholesale. Created as part of the <a href="../../side-projects.html" style="color: var(--amber); text-decoration: none; font-weight: 600;">Bruce Gordon Portfolio</a>.</p>
             </div>
         </div>
     </footer>

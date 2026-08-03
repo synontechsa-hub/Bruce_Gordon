@@ -1,34 +1,34 @@
-# TimberCraft Wholesale Website Implementation Plan
+# Lumina Marketing Agency Implementation Plan
 
-Design and implement a warm, professional, and grounded B2B landing page for "TimberCraft Wholesale." This piece will showcase your ability to design for natural materials and sustainable industries, balancing a rustic aesthetic with high-scale commercial functionality.
+Design and implement a vibrant, high-energy marketing site for "Lumina Marketing," a boutique agency specializing in digital growth and brand storytelling. This piece will showcase your ability to design "buzzy," high-conversion marketing layouts with bold typography and modern motion cues.
 
 ## Proposed Changes
 
 ### [Portfolio Integration]
 
-#### [NEW] [TimberCraft Wholesale storefront](file:///D:/Coding/Synontech/_Development/Websites/Bruce_Gordon/assets/TimberCraft_Wholesale/)
-A new directory containing the full wood wholesale site code.
+#### [NEW] [Lumina Marketing storefront](file:///D:/Coding/Synontech/_Development/Websites/Bruce_Gordon/assets/Lumina_Marketing/)
+A new directory containing the full marketing site code.
 
-- **[index.html](file:///D:/Coding/Synontech/_Development/Websites/Bruce_Gordon/assets/TimberCraft_Wholesale/index.html)**: The main landing page featuring:
-    - **Header**: Minimalist logo and navigation focusing on "Species," "Sustainability," and "Trade Portal."
-    - **Hero Section**: High-impact imagery of premium raw timber with a "View Full Inventory" CTA.
-    - **Product Categories**: A tactile 4-column grid (Hardwood, Softwood, Structural, Live Edge) using rich textures.
-    - **Bulk Request Tool**: A specialized trade form for cubic meter calculations and species selection.
-    - **Sustainability & Origin**: A section highlighting FSC certification and responsible sourcing.
-    - **Trade Partner Logos**: Trust-building section for construction and furniture brand partners.
-    - **Footer**: Earthy, detailed footer with yard locations and technical specification links.
-- **[styles.css](file:///D:/Coding/Synontech/_Development/Websites/Bruce_Gordon/assets/TimberCraft_Wholesale/styles.css)**:
-    - **Palette**: Forest Green (#2D3E2F), Deep Walnut (#4E342E), and Warm Cream (#FDF5E6).
-    - **Typography**: A grounded serif for headings (e.g., *Lora* or *Playfair Display*) to feel established, paired with a clean sans-serif (e.g., *Inter*) for readability.
-    - **Layout**: Organic but structured, using soft shadows and rounded corners to reflect natural materials.
-- **[script.js](file:///D:/Coding/Synontech/_Development/Websites/Bruce_Gordon/assets/TimberCraft_Wholesale/script.js)**:
-    - **Volume Calculator**: A "Cubic Meter Calculator" simulation for trade orders.
-    - **Species Filter**: A simple interactive filter to show details for different wood types (Oak, Maple, Pine, etc.).
-    - **Smooth Parallax**: Subtle scroll effects on timber texture backgrounds.
+- **[index.html](file:///D:/Coding/Synontech/_Development/Websites/Bruce_Gordon/assets/Lumina_Marketing/index.html)**: The main landing page featuring:
+    - **Dynamic Header**: Glassmorphic navigation with a "Get Started" CTA.
+    - **Hero Section**: Bold, oversized typography ("We Scale What Matters.") with a vibrant gradient background or abstract motion placeholder.
+    - **Social Proof**: A "Trusted by" logo strip for established brands.
+    - **Service Cards**: 3-column grid (Content Strategy, Paid Media, Brand Identity) with playful hover interactions.
+    - **Results/Stats Section**: High-impact numbers (e.g., "+300% Growth", "50M+ Reach").
+    - **Lead Gen Form**: A modern "Let's Talk" section with a clean, minimal contact form.
+    - **Footer**: Creative agency style with social links and "Office Hours."
+- **[styles.css](file:///D:/Coding/Synontech/_Development/Websites/Bruce_Gordon/assets/Lumina_Marketing/styles.css)**:
+    - **Palette**: Electric Purple (#6C63FF), Sunset Orange (#FF6584), and Deep Midnight (#1A1A1A).
+    - **Typography**: Ultra-bold sans-serif (e.g., *Syne* or *Archivo Black*) for impact.
+    - **Effects**: Gradients, mesh backgrounds (CSS only), and subtle entrance animations.
+- **[script.js](file:///D:/Coding/Synontech/_Development/Websites/Bruce_Gordon/assets/Lumina_Marketing/script.js)**:
+    - **Scroll Reveal**: Elements fade and slide into place as the user scrolls.
+    - **Counter Animation**: Numbers in the stats section animate from zero when in view.
+    - **Form Validation**: Simple client-side feedback for the contact form.
 
 ## Verification Plan
 
 ### Manual Verification
-- Review the aesthetic to ensure it feels "earthy" yet premium and professional.
-- Test the Volume Calculator for logical feedback and UI responsiveness.
-- Ensure the image placeholders (Unsplash) reflect the quality of a high-end wholesale yard.
+- Review the aesthetic for "vibrancy" and modern marketing appeal.
+- Test the responsive layout (ensuring the bold typography scales well on mobile).
+- Verify the scroll reveal and counter animations for smooth execution.

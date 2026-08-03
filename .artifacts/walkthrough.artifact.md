@@ -1,35 +1,36 @@
-# TimberCraft Wholesale: Earthy B2B Portfolio Piece
+# Lumina Marketing: Vibrant Agency Portfolio Piece
 
-I've completed the design and implementation of **TimberCraft Wholesale**, a professional, grounded landing page for a premium wood wholesaler. This piece showcases your ability to design for natural materials and sustainable industries, balancing a rustic aesthetic with high-scale commercial functionality.
+I've designed and implemented the **Lumina Marketing** landing page, a high-energy, conversion-focused site for a boutique marketing agency. This piece adds a vibrant, "buzzy" aesthetic to your portfolio, showcasing your ability to design for brand growth and digital engagement.
 
 ## Project Structure
-The project is located at: `D:\Coding\Synontech\_Development\Websites\Bruce_Gordon\assets\TimberCraft_Wholesale/`
+The project is located at: `D:\Coding\Synontech\_Development\Websites\Bruce_Gordon\assets\Lumina_Marketing/`
 
-- **[index.html](file:///D:/Coding/Synontech/_Development/Websites/Bruce_Gordon/assets/TimberCraft_Wholesale/index.html)**: Earthy, professional structure with a focus on species and trade tools.
-- **[styles.css](file:///D:/Coding/Synontech/_Development/Websites/Bruce_Gordon/assets/TimberCraft_Wholesale/styles.css)**: A warm Forest Green and Walnut palette with sophisticated serif typography.
-- **[script.js](file:///D:/Coding/Synontech/_Development/Websites/Bruce_Gordon/assets/TimberCraft_Wholesale/script.js)**: Interactive features including a volume calculator and species detail toggles.
+- **[index.html](file:///D:/Coding/Synontech/_Development/Websites/Bruce_Gordon/assets/Lumina_Marketing/index.html)**: Bold, modern structure with high-impact sections.
+- **[styles.css](file:///D:/Coding/Synontech/_Development/Websites/Bruce_Gordon/assets/Lumina_Marketing/styles.css)**: Vibrant "Electric Purple" and "Sunset Orange" theme with glassmorphism and gradients.
+- **[script.js](file:///D:/Coding/Synontech/_Development/Websites/Bruce_Gordon/assets/Lumina_Marketing/script.js)**: Smooth scroll-reveal animations and interactive stats counters.
 
 ## Key Features
 
-### 1. Tactile & Organic Aesthetic
-Designed to feel established and high-end.
-- **Hero Section**: High-impact raw timber visuals with warm, sophisticated overlays.
-- **Species Selection**: A rich 4-column grid highlighting Hardwood, Softwood, Structural, and Live Edge categories.
-- **Grounded Palette**: Uses Forest Green (#2D3E2F) and Deep Walnut (#4E342E) to evoke reliability and quality.
+### 1. High-Energy Aesthetic
+Designed to grab attention and signal growth.
+- **Hero Section**: Oversized typography with a bold gradient text effect against a high-tech midnight background.
+- **Glassmorphic Navigation**: A modern, translucent header that adapts as you scroll.
+- **Vibrant Palette**: Uses Electric Purple (#6C63FF) and Sunset Orange (#FF6584) for a contemporary agency feel.
 
-### 2. Trade-Focused Utility
-- **Cubic Meter Calculator**: A functional tool for trade professionals to calculate order volumes in real-time.
-- **Species Details**: Interactive section allowing users to explore technical stats like density and common uses for different wood types.
-- **Sustainability Focus**: Integrated FSC certification and ethical sourcing messaging.
+### 2. Interactive Motion & Engagement
+- **Scroll Reveal Animations**: Elements fade and slide into place as the user explores the site, creating a dynamic user experience.
+- **Live Stats Counters**: Numbers in the results section animate from zero when they enter the viewport, emphasizing data-driven success.
+- **Modern Service Grid**: 3-column layout for Content Strategy, Paid Media, and Brand Identity with playful hover interactions.
 
-### 3. Professional Polish
-- **Typography**: Paired 'Playfair Display' (serif) for headings with 'Inter' (sans-serif) for body text to balance tradition and modernity.
-- **Responsive Design**: The entire layout, including the technical calculator, is optimized for both desktop and mobile trade use.
+### 3. Conversion-Focused UI
+- **Social Proof**: A dedicated "Trusted by" section to build immediate credibility.
+- **Lead Generation**: A clean, minimal "Let's Talk" contact form designed to maximize inquiries.
+- **Bold Typography**: Leveraging the 'Syne' font family for a unique, trend-forward look.
 
 > [!TIP]
-> This piece is perfect for demonstrating your versatility in handling different "vibes"—from tech-forward logistics to tactile, natural wholesale.
+> This piece is ideal for showing potential clients your ability to create "buzzy" marketing sites that feel both professional and energetic.
 
 ## Verification
-- Checked calculator logic for accuracy.
-- Verified responsive grid flow.
-- Audited accessibility and typography scales.
+- Verified Intersection Observer implementation for smooth animations.
+- Tested responsive scaling of bold typography on mobile.
+- Audited color contrast for accessibility while maintaining vibrancy.
