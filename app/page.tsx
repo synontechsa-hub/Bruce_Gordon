@@ -55,7 +55,7 @@ export default function HomePage() {
                 <div className={styles.folioImage}>
                   <Image src="/media/hero-architecture.jpg" alt="Architectural design concept used to demonstrate BGrafX's editorial art direction" fill priority loading="eager" sizes="(max-width: 768px) 76vw, 36vw" />
                 </div>
-                <span className={styles.folioNumber} aria-hidden="true">01â€”24</span>
+                <span className={styles.folioNumber} aria-hidden="true">01 | 24</span>
               </div>
 
               <div className={styles.notebook} aria-hidden="true">

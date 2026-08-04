@@ -26,7 +26,7 @@ export default function DesignFoundationPage() {
             <div className={styles.eyebrow}><span>Phase 01</span>Visual foundation</div>
             <h1 id="foundation-title">Crafted to<span>get noticed.</span></h1>
             <p className={styles.heroStatement}>A premium editorial system built from paper, ink, signal yellow and more than two decades of creative experience.</p>
-            <p className={styles.heroBody}>This specimen turns the approved concept into reusable rules for typography, layout, interaction and workshop detail—before the full homepage is built.</p>
+            <p className={styles.heroBody}>This specimen turns the approved concept into reusable rules for typography, layout, interaction and workshop detail | before the full homepage is built.</p>
             <div className={styles.actions}>
               <a className={styles.primaryButton} href="#components">Explore the system <ArrowRight aria-hidden="true" size={17} /></a>
               <a className={styles.secondaryButton} href="#principles">Read the principles</a>
@@ -65,7 +65,7 @@ export default function DesignFoundationPage() {
           </header>
           <div className={styles.typeGrid}>
             <div className={styles.displaySpecimen}><span>Display / 72–128</span><strong>Design<br />that hits.</strong><small>ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789</small></div>
-            <div className={styles.bodySpecimen}><span>Body / 16–20</span><h3>Clear thinking, beautifully delivered.</h3><p>Good design does more than decorate. It gives a business confidence, makes information easier to understand, and helps the right people take action.</p><small>Manrope — Regular, Medium and Semibold</small></div>
+            <div className={styles.bodySpecimen}><span>Body / 16–20</span><h3>Clear thinking, beautifully delivered.</h3><p>Good design does more than decorate. It gives a business confidence, makes information easier to understand, and helps the right people take action.</p><small>Manrope | Regular, Medium and Semibold</small></div>
           </div>
           <div className={styles.palette} aria-label="Proposed BGrafX colour palette">
             <div className={styles.inkSwatch}><span>Ink</span><small>#11110F</small></div>
@@ -99,7 +99,7 @@ export default function DesignFoundationPage() {
           <div className={styles.iconNote}><Palette aria-hidden="true" /><Printer aria-hidden="true" /><p>Lucide is reserved for functional icons. Brand texture comes from typography, layout and crafted details.</p></div>
         </section>
       </main>
-      <footer className={styles.footer}><BrandMark compact inverse /><p>Phase 01 — visual foundation for architect review.</p><a href="#top">Back to top ↑</a></footer>
+      <footer className={styles.footer}><BrandMark compact inverse /><p>Phase 01 | visual foundation for architect review.</p><a href="#top">Back to top ↑</a></footer>
     </div>
   );
 }

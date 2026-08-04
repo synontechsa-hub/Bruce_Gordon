@@ -1,6 +1,6 @@
 .header {
   position: relative;
-  z-index: 30;
+  z-index: 78;
   border-bottom: 1px solid var(--rule);
   background: rgba(242, 238, 228, 0.92);
   backdrop-filter: blur(0.75rem);
