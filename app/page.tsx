@@ -21,6 +21,7 @@ export default function HomePage() {
         <section id="home" className={styles.hero} aria-labelledby="hero-title">
           <div className={styles.socialRail} aria-label="Social profiles">
             <span>Follow</span>
+            <a href="https://www.facebook.com/Synonimity1984" target="_blank" rel="noopener noreferrer">Facebook</a>
             <a href="https://www.linkedin.com/in/bruce-gordon-designs/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             <a href="https://www.behance.net/bruce-gordon" target="_blank" rel="noopener noreferrer">Behance</a>
             <a href="https://github.com/synontechsa-hub" target="_blank" rel="noopener noreferrer">GitHub</a>
@@ -95,10 +96,29 @@ export default function HomePage() {
           </div>
         </section>
 
+        <section id="kerfsuite" className={styles.kerfFeature} aria-labelledby="kerf-feature-title">
+          <div className={styles.kerfVisual}>
+            <div className={styles.kerfGrid} aria-hidden="true" />
+            <span className={styles.kerfIndex}>Featured / 01</span>
+            <div className={styles.kerfScreen}><Image src="/media/kerfsuite/kerfsuite-website.png" alt="KerfSuite workshop operating system website interface" fill sizes="(max-width: 900px) 100vw, 56vw" /></div>
+            <div className={styles.kerfStamp} aria-hidden="true"><span>Built for</span><strong>Production</strong></div>
+          </div>
+          <div className={styles.kerfCopy}>
+            <span className={styles.kicker}>Featured product case study</span>
+            <p className={styles.kerfOverline}>KerfSuite / Synontech + Feed Rate</p>
+            <h2 id="kerf-feature-title">From workshop problem to working product.</h2>
+            <p>KerfSuite is a real production-software ecosystem shaped around CNC, fabrication and workshop workflows. It brings brand direction, product thinking, interface design, web development and practical industry knowledge into one live product.</p>
+            <ul className={styles.kerfDisciplines} aria-label="KerfSuite disciplines"><li>Product strategy</li><li>Brand system</li><li>UX / UI</li><li>Web development</li><li>Automation thinking</li></ul>
+            <div className={styles.kerfActions}>
+              <a className={styles.primaryButton} href="/work/kerfsuite">Read the case study <ArrowRight aria-hidden="true" size={17} /></a>
+              <a className={styles.kerfExternal} href="https://kerf-suite.com/" target="_blank" rel="noopener noreferrer">Explore KerfSuite <ArrowUpRight aria-hidden="true" size={16} /></a>
+            </div>
+          </div>
+        </section>
         <section id="work" className={styles.workSection} aria-labelledby="work-title">
           <header className={styles.sectionHeader}>
             <div><span>Selected studies</span><h2 id="work-title">A selection of recent creative work.</h2></div>
-            <p>These self-initiated concepts demonstrate range across identity, interface and digital art direction. Confirmed client case studies will replace or complement them during the portfolio phase.</p>
+            <p>These self-initiated concepts demonstrate range across identity, interface and digital art direction. The KerfSuite case study above shows how that thinking carries through into a live product.</p>
           </header>
 
           <div className={styles.workGrid}>

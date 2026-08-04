@@ -238,6 +238,23 @@
 .serviceCard a { display: inline-flex; gap: 0.65rem; align-items: center; min-height: 2.75rem; margin-top: 1.5rem; font-size: 0.58rem; font-weight: 700; letter-spacing: 0.07em; text-decoration: none; text-transform: uppercase; }
 .serviceCard:hover { color: var(--white); background: var(--ink); }
 .serviceCard:hover p { color: #c5c2b9; }
+.kerfFeature { display:grid; grid-template-columns:1.15fr .85fr; min-height:46rem; border-bottom:1px solid var(--rule); }
+.kerfVisual { position:relative; min-height:100%; overflow:hidden; background:#1c201b; }
+.kerfGrid { position:absolute; inset:0; background:linear-gradient(90deg,transparent 49.85%,rgba(255,255,255,.08) 50%,transparent 50.15%),linear-gradient(transparent 49.85%,rgba(255,255,255,.08) 50%,transparent 50.15%); background-size:3rem 3rem; opacity:.35; }
+.kerfIndex { position:absolute; top:1.25rem; left:var(--gutter); z-index:2; color:var(--signal); font-size:.6rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; }
+.kerfScreen { position:absolute; top:13%; right:7%; bottom:9%; left:7%; z-index:1; overflow:hidden; border:1px solid rgba(255,255,255,.32); box-shadow:1rem 1rem 0 rgba(0,0,0,.36); transform:rotate(-1.2deg); }
+.kerfScreen img { object-fit:cover; object-position:center; }
+.kerfStamp { position:absolute; right:4%; bottom:5%; z-index:3; display:flex; flex-direction:column; gap:.15rem; padding:1.15rem; color:var(--ink); background:var(--signal); box-shadow:.35rem .35rem 0 var(--ink); transform:rotate(3deg); }
+.kerfStamp span { font-size:.52rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; }
+.kerfStamp strong { font-family:var(--display); font-size:clamp(1.7rem,3vw,2.7rem); font-weight:600; line-height:.85; text-transform:uppercase; }
+.kerfCopy { display:flex; flex-direction:column; justify-content:center; padding:clamp(4rem,8vw,8rem) var(--gutter); }
+.kerfOverline { margin:0 0 1.5rem; color:var(--muted); font-size:.62rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; }
+.kerfCopy h2 { max-width:9ch; margin:0; font-family:var(--display); font-size:clamp(4rem,6.8vw,7rem); font-weight:600; letter-spacing:-.045em; line-height:.8; text-transform:uppercase; }
+.kerfCopy > p:not(.kerfOverline) { max-width:37rem; margin:2rem 0; color:var(--muted); font-size:.82rem; }
+.kerfDisciplines { display:flex; flex-wrap:wrap; gap:.5rem; max-width:38rem; margin:0; padding:0; list-style:none; }
+.kerfDisciplines li { padding:.45rem .6rem; border:1px solid var(--rule-strong); font-size:.55rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; }
+.kerfActions { display:flex; flex-wrap:wrap; gap:1rem; align-items:center; margin-top:2.25rem; }
+.kerfExternal { display:inline-flex; gap:.6rem; align-items:center; min-height:2.75rem; font-size:.6rem; font-weight:700; letter-spacing:.08em; text-decoration:none; text-transform:uppercase; }
 
 .workSection { width: min(100%, var(--container)); margin-inline: auto; padding: clamp(5rem, 9vw, 9rem) var(--gutter) clamp(4rem, 8vw, 8rem); }
 .sectionHeader { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 3rem; align-items: end; margin-bottom: clamp(3rem, 6vw, 5.5rem); }
@@ -268,6 +285,8 @@
   .serviceCard { min-height: 24rem; border-bottom: 1px solid var(--rule); }
   .serviceCard:nth-child(3) { border-right: 0; }
   .serviceCard:nth-child(n+4) { border-bottom: 0; }
+  .kerfFeature { grid-template-columns:1fr; }
+  .kerfVisual { min-height:38rem; }
   .workGrid { grid-template-columns: repeat(2, 1fr); row-gap: 3rem; }
   .workImage { min-height: clamp(22rem, 45vw, 34rem); }
 }
@@ -316,6 +335,11 @@
   .serviceCard, .serviceCard:nth-child(3), .serviceCard:nth-child(even) { min-height: auto; padding-block: 2rem; border-right: 0; border-bottom: 1px solid var(--rule); }
   .serviceCard h3 { margin-top: 3rem; }
   .serviceCard p { min-height: 0; }
+  .kerfVisual { min-height:28rem; }
+  .kerfScreen { top:16%; right:4%; bottom:12%; left:4%; }
+  .kerfStamp { right:6%; bottom:6%; }
+  .kerfActions { align-items:stretch; flex-direction:column; }
+  .kerfActions a { width:100%; }
   .workGrid { grid-template-columns: 1fr; }
   .workImage { min-height: 25rem; }
   .workFooter { align-items: flex-start; flex-direction: column; }

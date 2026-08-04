@@ -22,7 +22,7 @@ const startingMessages: Message[] = [
   {
     id: 1,
     author: "alyssa",
-    text: "Hi, I’m Alyssa — the BGrafX virtual receptionist. What are you hoping to create?",
+    text: "Hi, I’m Alyssa, the BGrafX virtual receptionist. What are you hoping to create?",
   },
 ];
 
@@ -40,13 +40,19 @@ const tourSteps: TourStep[] = [
     target: "#home",
     eyebrow: "Welcome to BGrafX",
     title: "Design with practical purpose.",
-    text: "This is Bruce’s independent creative studio — combining graphic design, websites and automation with more than 22 years of hands-on experience.",
+    text: "This is Bruce’s independent creative studio, combining graphic design, websites and automation with more than 22 years of hands-on experience.",
   },
   {
     target: "#services",
     eyebrow: "What Bruce does",
     title: "One studio. Connected skills.",
-    text: "Branding, web design, automation, signage and production are treated as parts of the same communication problem — not isolated services.",
+    text: "Branding, web design, automation, signage and production are treated as parts of the same communication problem, not isolated services.",
+  },
+  {
+    target: "#kerfsuite",
+    eyebrow: "Featured real-world product",
+    title: "A product built for the workshop.",
+    text: "KerfSuite brings together product strategy, brand direction, interface design and web development, grounded in real CNC and fabrication experience. It is a working product, not a concept.",
   },
   {
     target: "#work",
@@ -58,7 +64,7 @@ const tourSteps: TourStep[] = [
     target: "#process",
     eyebrow: "A clear process",
     title: "No creative fog.",
-    text: "Every project moves through discovery, definition, design, build and delivery — scaled to suit the actual job rather than a rigid package.",
+    text: "Every project moves through discovery, definition, design, build and delivery, scaled to suit the actual job rather than a rigid package.",
   },
   {
     target: "#contact",
@@ -68,7 +74,7 @@ const tourSteps: TourStep[] = [
   },
 ];
 
-const tourStorageKey = "bgrafx-site-tour-v3";
+const tourStorageKey = "bgrafx-site-tour-v4";
 
 export function AlyssaAssistant() {
   const [open, setOpen] = useState(false);
@@ -122,7 +128,7 @@ export function AlyssaAssistant() {
     const alyssa: Message = {
       id: nextId + 1,
       author: "alyssa",
-      text: reply ?? "Thank you — that gives me a useful starting point. For now, I can take you straight to Bruce.",
+      text: reply ?? "Thank you, that gives me a useful starting point. For now, I can take you straight to Bruce.",
     };
 
     setMessages((current) => [...current, visitor]);
@@ -174,7 +180,7 @@ export function AlyssaAssistant() {
           <div className={styles.inviteCopy}>
             <span>First time here?</span>
             <strong>Let me show you around.</strong>
-            <p>A quick guided introduction to BGrafX — no sign-up required.</p>
+            <p>A quick guided introduction to BGrafX, no sign-up required.</p>
             <div><button type="button" onClick={startTour}>Start the tour <ArrowRight aria-hidden="true" size={14} /></button><button type="button" onClick={dismissTourInvite}>Not now</button></div>
           </div>
         </section>
