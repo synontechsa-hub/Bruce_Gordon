@@ -1,7 +1,7 @@
 "use client";
 
 import Script from "next/script";
-import { FormEvent, useEffect, useRef, useState } from "react";
+import { FormEvent, useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { ArrowUpRight, MessageCircle, Send } from "lucide-react";
 import styles from "./ContactForm.module.css";
 
@@ -9,6 +9,16 @@ type SubmissionState = "idle" | "submitting" | "success" | "error";
 
 const services = ["Graphic design", "Website", "Automation", "Branding", "Signage or production", "Not sure yet"];
 const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
+
+function subscribeToLocation(callback: () => void) {
+  window.addEventListener("popstate", callback);
+  return () => window.removeEventListener("popstate", callback);
+}
+
+function serviceFromLocation() {
+  const selectedService = new URLSearchParams(window.location.search).get("service");
+  return selectedService && services.includes(selectedService) ? selectedService : "";
+}
 
 type TurnstileOptions = {
   sitekey: string;
@@ -34,12 +44,10 @@ export function ContactForm() {
   const [message, setMessage] = useState("");
   const [turnstileReady, setTurnstileReady] = useState(false);
   const [turnstileToken, setTurnstileToken] = useState("");
-  const [service, setService] = useState(() => {
-    if (typeof window === "undefined") return "";
-
-    const selectedService = new URLSearchParams(window.location.search).get("service");
-    return selectedService && services.includes(selectedService) ? selectedService : "";
-  });
+  const serviceFromUrl = useSyncExternalStore(subscribeToLocation, serviceFromLocation, () => "");
+  const [selectedService, setSelectedService] = useState("");
+  const [hasManualServiceSelection, setHasManualServiceSelection] = useState(false);
+  const service = hasManualServiceSelection ? selectedService : serviceFromUrl;
   const turnstileContainerRef = useRef<HTMLDivElement>(null);
   const turnstileWidgetIdRef = useRef<string | undefined>(undefined);
 
@@ -88,7 +96,8 @@ export function ContactForm() {
       if (!response.ok) throw new Error(result.error ?? "Your message could not be sent right now.");
 
       form.reset();
-      setService("");
+      setSelectedService("");
+      setHasManualServiceSelection(true);
       setState("success");
       setMessage("Thank you. Your message is on its way to Bruce.");
     } catch (error) {
@@ -122,7 +131,15 @@ export function ContactForm() {
         </label>
         <label className={styles.fullWidth}>
           <span>What can BGrafX help with?</span>
-          <select name="service" value={service} onChange={(event) => setService(event.target.value)} required>
+          <select
+            name="service"
+            value={service}
+            onChange={(event) => {
+              setSelectedService(event.target.value);
+              setHasManualServiceSelection(true);
+            }}
+            required
+          >
             <option value="" disabled>Select a starting point</option>
             {services.map((service) => <option key={service} value={service}>{service}</option>)}
           </select>

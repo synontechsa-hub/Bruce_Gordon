@@ -299,7 +299,16 @@ export function AlyssaAssistant() {
                 <span>Ready when you are</span>
                 <p>Share the brief with Bruce and he&apos;ll come back to you directly.</p>
                 <div>
-                  <a href={handoffService ? `/#contact?service=${encodeURIComponent(handoffService)}` : "/#contact"} onClick={() => setOpen(false)}>Start an enquiry <ArrowRight aria-hidden="true" size={13} /></a>
+                  <a
+                    href={handoffService ? `/?service=${encodeURIComponent(handoffService)}#contact` : "/#contact"}
+                    onClick={(event) => {
+                      event.preventDefault();
+                      setOpen(false);
+                      window.location.assign(handoffService ? `/?service=${encodeURIComponent(handoffService)}#contact` : "/#contact");
+                    }}
+                  >
+                    Start an enquiry <ArrowRight aria-hidden="true" size={13} />
+                  </a>
                   <a href="https://wa.me/27621596082" target="_blank" rel="noopener noreferrer">WhatsApp Bruce <ArrowRight aria-hidden="true" size={13} /></a>
                 </div>
               </div>
