@@ -79,6 +79,7 @@ const tourStorageKey = "bgrafx-site-tour-v4";
 export function AlyssaAssistant() {
   const [open, setOpen] = useState(false);
   const [launcherExpanded, setLauncherExpanded] = useState(false);
+  const [launcherVisible, setLauncherVisible] = useState(false);
   const [messages, setMessages] = useState<Message[]>(startingMessages);
   const [draft, setDraft] = useState("");
   const [showPrompts, setShowPrompts] = useState(true);
@@ -115,7 +116,11 @@ export function AlyssaAssistant() {
     const updateLauncher = () => {
       const pageHeight = document.documentElement.scrollHeight;
       const hasReachedLowerPage = window.scrollY + window.innerHeight >= pageHeight * 0.55;
+      const isPhoneViewport = window.matchMedia("(max-width: 520px)").matches;
+      const hasMovedBeyondHero = window.scrollY > window.innerHeight * 0.65;
+
       setLauncherExpanded(hasReachedLowerPage);
+      setLauncherVisible(open || !isPhoneViewport || hasMovedBeyondHero);
     };
 
     updateLauncher();
@@ -126,7 +131,7 @@ export function AlyssaAssistant() {
       window.removeEventListener("scroll", updateLauncher);
       window.removeEventListener("resize", updateLauncher);
     };
-  }, []);
+  }, [open]);
 
   useEffect(() => {
     document.querySelectorAll(".bgrafx-tour-target").forEach((element) => element.classList.remove("bgrafx-tour-target"));
@@ -295,7 +300,7 @@ export function AlyssaAssistant() {
       )}
 
       {tourStep === null && (
-        <button className={`${styles.launcher} ${launcherExpanded ? styles.launcherExpanded : ""}`} type="button" onClick={() => { setTourInvite(false); setOpen((current) => !current); }} aria-expanded={open} aria-label={open ? "Close Alyssa chat" : "Open Alyssa chat"}>
+        <button className={`${styles.launcher} ${launcherExpanded ? styles.launcherExpanded : ""} ${!open && !launcherVisible ? styles.launcherHidden : ""}`} type="button" onClick={() => { setTourInvite(false); setOpen((current) => !current); }} aria-expanded={open} aria-label={open ? "Close Alyssa chat" : "Open Alyssa chat"}>
           <span className={styles.launcherPortrait} aria-hidden="true">
             <Image className={styles.idle} src="/media/assistant/alyssa-idle-v2.webp" alt="" fill sizes="58px" />
             <Image className={styles.blink} src="/media/assistant/alyssa-blink-v2.webp" alt="" fill sizes="58px" />

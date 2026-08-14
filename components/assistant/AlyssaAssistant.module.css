@@ -21,7 +21,7 @@
   box-shadow: 0.35rem 0.35rem 0 var(--signal);
   cursor: pointer;
   text-align: left;
-  transition: transform var(--fast), box-shadow var(--fast), width var(--fast), height var(--fast);
+  transition: transform var(--fast), box-shadow var(--fast), width var(--fast), height var(--fast), opacity var(--fast);
 }
 
 .launcher:hover { transform: translate(-0.12rem, -0.12rem); box-shadow: 0.47rem 0.47rem 0 var(--signal); }
@@ -126,6 +126,13 @@
 .footer a { display: flex; gap: 0.3rem; align-items: center; color: var(--ink); font-weight: 700; text-decoration: none; text-transform: uppercase; }
 
 @media (max-width: 520px) {
+  .launcherHidden {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(0.75rem);
+  }
+
   .assistant { right: 0.8rem; bottom: 0.8rem; }
   .launcherExpanded { grid-template-columns: 1fr; width: 3.6rem; min-width: 0; height: 3.6rem; padding: 0.24rem; }
   .launcherExpanded::after { display: block; }
