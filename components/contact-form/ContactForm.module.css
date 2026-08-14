@@ -8,6 +8,8 @@
 .fields input:focus, .fields select:focus, .fields textarea:focus { border-color: var(--ink); box-shadow: 0 0 0 .18rem rgba(243, 185, 0, .38); }
 .fullWidth { grid-column: 1 / -1; }
 .honeypot { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.turnstile { width: min(100%, 19rem); min-height: 4.1rem; margin-top: 1rem; }
+.securityNote { margin: 1rem 0 0; color: var(--muted); font-size: .72rem; line-height: 1.45; }
 .actions { display: flex; flex-wrap: wrap; gap: .8rem 1.1rem; align-items: center; margin-top: 1rem; }
 .actions button, .actions a { display: inline-flex; gap: .7rem; align-items: center; justify-content: center; min-height: 3.25rem; padding: .8rem 1.1rem; border: 1px solid var(--ink); font-size: .62rem; font-weight: 700; letter-spacing: .07em; text-decoration: none; text-transform: uppercase; cursor: pointer; transition: background var(--fast), color var(--fast), transform var(--fast); }
 .actions button { color: var(--white); background: var(--ink); }

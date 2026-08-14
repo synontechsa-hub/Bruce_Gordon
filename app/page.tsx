@@ -82,7 +82,7 @@ export default function HomePage() {
             <span>What I do</span>
             <h2 id="services-title">Creative solutions that work.</h2>
             <p>From first impression to final production, each discipline is connected by clear thinking and careful execution.</p>
-            <a href="mailto:bruce.gordon8403@gmail.com">Discuss a project <ArrowUpRight aria-hidden="true" size={16} /></a>
+            <a href="#contact">Discuss a project <ArrowUpRight aria-hidden="true" size={16} /></a>
           </div>
 
           <div className={styles.serviceGrid}>
@@ -175,7 +175,7 @@ export default function HomePage() {
             <span className={styles.kicker}>Working together</span>
             <h2 id="pricing-title">The right scope before the price.</h2>
             <p>Every business and brief is different. A short conversation lets me understand the requirement and recommend the most sensible way to work - without padding the proposal with things you do not need.</p>
-            <a className={styles.primaryButton} href="mailto:bruce.gordon8403@gmail.com?subject=BGrafX%20project%20enquiry">Request a proposal <ArrowUpRight aria-hidden="true" size={16} /></a>
+            <a className={styles.primaryButton} href="#contact">Request a proposal <ArrowUpRight aria-hidden="true" size={16} /></a>
           </div>
           <div className={styles.pricingGrid}>
             {pricingPaths.map((path, index) => (

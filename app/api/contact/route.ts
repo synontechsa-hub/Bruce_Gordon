@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
 const recipient = "bruce.gordon8403@gmail.com";
+const turnstileVerificationUrl = "https://challenges.cloudflare.com/turnstile/v0/siteverify";
 const maxLength = {
   name: 80,
   email: 120,
@@ -24,6 +25,9 @@ export async function POST(request: Request) {
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) return NextResponse.json({ error: "The contact form is being configured. Please use WhatsApp or email for now." }, { status: 503 });
 
+  const turnstileSecret = process.env.TURNSTILE_SECRET_KEY;
+  if (!turnstileSecret) return NextResponse.json({ error: "The contact form security check is being configured. Please use WhatsApp for now." }, { status: 503 });
+
   let payload: unknown;
   try {
     payload = await request.json();
@@ -45,6 +49,7 @@ export async function POST(request: Request) {
     message: valueOf(data, "message"),
   };
   const website = typeof data.website === "string" ? data.website.trim() : "";
+  const turnstileToken = typeof data.turnstileToken === "string" ? data.turnstileToken.trim() : "";
 
   if (website) return NextResponse.json({ ok: true });
   if (!values.name || !values.email || !values.service || !values.message || !/^\S+@\S+\.\S+$/.test(values.email)) {
@@ -52,6 +57,26 @@ export async function POST(request: Request) {
   }
   if (Object.entries(values).some(([key, value]) => value.length > maxLength[key as keyof typeof maxLength])) {
     return NextResponse.json({ error: "Please shorten your message and try again." }, { status: 400 });
+  }
+  if (!turnstileToken || turnstileToken.length > 2048) {
+    return NextResponse.json({ error: "Please complete the quick security check before sending your enquiry." }, { status: 400 });
+  }
+
+  let verification: { success?: boolean };
+  try {
+    const response = await fetch(turnstileVerificationUrl, {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams({ secret: turnstileSecret, response: turnstileToken }),
+      cache: "no-store",
+    });
+    verification = await response.json() as { success?: boolean };
+  } catch {
+    return NextResponse.json({ error: "The security check is temporarily unavailable. Please try again or use WhatsApp." }, { status: 503 });
+  }
+
+  if (!verification.success) {
+    return NextResponse.json({ error: "The security check expired. Please try again." }, { status: 400 });
   }
 
   const details = [

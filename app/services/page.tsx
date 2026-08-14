@@ -40,7 +40,7 @@ export default function ServicesPage() {
             <h1 id="services-page-title">Creative and digital work built to hold up in the real world.</h1>
             <p>BGrafX combines design experience, technical capability and production knowledge across print, digital and interactive work. Projects can be handled as focused standalone briefs or as part of a broader visual or digital system.</p>
             <div className={styles.heroActions}>
-              <a className={styles.primaryButton} href="mailto:bruce.gordon8403@gmail.com?subject=BGrafX%20project%20enquiry">Discuss a project <ArrowUpRight aria-hidden="true" size={16} /></a>
+              <Link className={styles.primaryButton} href="/#contact">Discuss a project <ArrowUpRight aria-hidden="true" size={16} /></Link>
               <a className={styles.textLink} href="#service-list">Explore services <ArrowDownRight aria-hidden="true" size={16} /></a>
             </div>
           </motion.div>
@@ -97,7 +97,7 @@ export default function ServicesPage() {
           <p>Some projects cross several disciplines. A new brand may need a website. A production workflow may need both interface design and automation. A campaign may need digital, print and signage applications.</p>
           <p>Start with what you need to achieve and we can determine the most sensible scope from there.</p>
           <div className={styles.enquiryActions}>
-            <a href="mailto:bruce.gordon8403@gmail.com?subject=BGrafX%20project%20enquiry">Request a proposal <ArrowUpRight aria-hidden="true" size={17} /></a>
+            <Link href="/#contact">Request a proposal <ArrowUpRight aria-hidden="true" size={17} /></Link>
             <a href="https://wa.me/27621596082" target="_blank" rel="noopener noreferrer"><MessageCircle aria-hidden="true" size={18} />WhatsApp me <ArrowUpRight aria-hidden="true" size={17} /></a>
           </div>
         </section>
