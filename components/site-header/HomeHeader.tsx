@@ -13,7 +13,7 @@ const baseLinks = [
   { href: "/", hash: null, label: "Home" },
   { href: "/work", hash: null, label: "Websites" },
   { href: "/cladding", hash: null, label: "Cladding" },
-  { href: "/#services", hash: "#services", label: "Services" },
+  { href: "/services", hash: null, label: "Services" },
   { href: "/#process", hash: "#process", label: "Process" },
   { href: "/#contact", hash: "#contact", label: "Contact" },
 ];

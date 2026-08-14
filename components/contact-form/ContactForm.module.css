@@ -1,0 +1,26 @@
+.form { position: relative; z-index: 1; width: min(100%, 52rem); margin-top: 1rem; text-align: left; }
+.fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .9rem; }
+.fields label { display: grid; gap: .4rem; }
+.fields span { color: var(--ink); font-size: .62rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+.fields em { color: var(--muted); font-style: normal; font-weight: 500; }
+.fields input, .fields select, .fields textarea { width: 100%; padding: .8rem .85rem; color: var(--ink); background: var(--paper-raised); border: 1px solid var(--rule-strong); border-radius: 0; font: inherit; font-size: .78rem; line-height: 1.45; outline: none; }
+.fields textarea { min-height: 8rem; resize: vertical; }
+.fields input:focus, .fields select:focus, .fields textarea:focus { border-color: var(--ink); box-shadow: 0 0 0 .18rem rgba(243, 185, 0, .38); }
+.fullWidth { grid-column: 1 / -1; }
+.honeypot { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.actions { display: flex; flex-wrap: wrap; gap: .8rem 1.1rem; align-items: center; margin-top: 1rem; }
+.actions button, .actions a { display: inline-flex; gap: .7rem; align-items: center; justify-content: center; min-height: 3.25rem; padding: .8rem 1.1rem; border: 1px solid var(--ink); font-size: .62rem; font-weight: 700; letter-spacing: .07em; text-decoration: none; text-transform: uppercase; cursor: pointer; transition: background var(--fast), color var(--fast), transform var(--fast); }
+.actions button { color: var(--white); background: var(--ink); }
+.actions a { color: var(--ink); background: transparent; }
+.actions button:hover:not(:disabled), .actions a:hover { color: var(--ink); background: var(--signal); transform: translateY(-.15rem); }
+.actions button:disabled { cursor: wait; opacity: .68; }
+.status { margin: .9rem 0 0; padding: .72rem .85rem; border: 1px solid var(--rule-strong); font-size: .74rem; line-height: 1.4; }
+.success { border-color: var(--signal-dark); background: rgba(243, 185, 0, .14); }
+.error { color: #8c2500; border-color: currentColor; background: #fff0e8; }
+
+@media (max-width: 36rem) {
+  .fields { grid-template-columns: 1fr; }
+  .fullWidth { grid-column: auto; }
+  .actions { align-items: stretch; flex-direction: column; }
+  .actions button, .actions a { width: 100%; }
+}

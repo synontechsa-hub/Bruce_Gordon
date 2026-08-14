@@ -1,7 +1,8 @@
 import Image from "next/image";
 import * as motion from "motion/react-client";
-import { ArrowDownRight, ArrowRight, ArrowUpRight, Check, Mail, MessageCircle } from "lucide-react";
+import { ArrowDownRight, ArrowRight, ArrowUpRight, Check } from "lucide-react";
 import { BrandMark } from "@/components/brand-mark/BrandMark";
+import { ContactForm } from "@/components/contact-form/ContactForm";
 import { HomeHeader } from "@/components/site-header/HomeHeader";
 import { SiteFooter } from "@/components/site-footer/SiteFooter";
 import { featuredStudies, pricingPaths, processSteps, services } from "@/content/home";
@@ -31,7 +32,7 @@ export default function HomePage() {
             <motion.div className={styles.heroCopy} {...entrance} transition={{ duration: 0.45, ease: "easeOut" }}>
               <div className={styles.heroEyebrow}>
                 <span>22+ years</span>
-                <strong>Graphic design studio</strong>
+                <strong>Design, production + digital</strong>
               </div>
 
               <h1 id="hero-title">Design that<br /><span>gets noticed.</span></h1>
@@ -71,7 +72,7 @@ export default function HomePage() {
 
         <section className={styles.credibility} aria-label="BGrafX credentials">
           <div><strong>22+</strong><span>Years of professional experience</span></div>
-          <div><strong>ZA</strong><span>Based in South Africa</span></div>
+          <div><strong>14</strong><span>Years leading CNC production workflows</span></div>
           <div><strong>Design + code</strong><span>Creative and technical execution</span></div>
           <div><strong>Freelance</strong><span>Available for selected projects</span></div>
         </section>
@@ -85,12 +86,12 @@ export default function HomePage() {
           </div>
 
           <div className={styles.serviceGrid}>
-            {services.map(({ icon: Icon, title, description }, index) => (
+            {services.map(({ icon: Icon, title, description, href }, index) => (
               <article className={styles.serviceCard} key={title}>
                 <div className={styles.serviceTop}><span>0{index + 1}</span><Icon aria-hidden="true" size={30} strokeWidth={1.5} /></div>
                 <h3>{title}</h3>
                 <p>{description}</p>
-                <a href="mailto:bruce.gordon8403@gmail.com">Learn more <ArrowRight aria-hidden="true" size={14} /></a>
+                <a href={href}>Learn more <ArrowRight aria-hidden="true" size={14} /></a>
               </article>
             ))}
           </div>
@@ -148,8 +149,8 @@ export default function HomePage() {
           <div className={styles.experienceCopy}>
             <span className={styles.kicker}>Experience, applied</span>
             <h2 id="experience-title">Good design should do more than look good.</h2>
-            <p>More than two decades across graphic design, web, signage and production have taught me to consider the whole job: the audience, the message, the medium and what happens after approval.</p>
-            <p>That breadth means fewer gaps between the idea and the finished result - and a creative partner who understands both detail and delivery.</p>
+            <p>More than two decades across graphic design, web, signage and production - including 14 years leading CNC workflows - have taught me to consider the whole job: the audience, the message, the medium and what happens after approval.</p>
+            <p>That breadth means fewer gaps between the idea and the finished result - from production-ready artwork to responsive websites and practical digital tools.</p>
             <a href="#process">See how I work <ArrowDownRight aria-hidden="true" size={16} /></a>
           </div>
           <aside className={styles.experienceNote} aria-label="Bruce Gordon's working principles">
@@ -192,10 +193,7 @@ export default function HomePage() {
           <span className={styles.kicker}>Have a project in mind?</span>
           <h2 id="contact-title">Let&apos;s make something worth noticing.</h2>
           <p>Tell me what you are building, what is getting in the way, or simply where you would like the business to go next.</p>
-          <div className={styles.contactActions}>
-            <a href="https://wa.me/27621596082" target="_blank" rel="noopener noreferrer"><MessageCircle aria-hidden="true" />WhatsApp me <ArrowUpRight aria-hidden="true" size={17} /></a>
-            <a href="mailto:bruce.gordon8403@gmail.com?subject=BGrafX%20project%20enquiry"><Mail aria-hidden="true" />Send an email <ArrowUpRight aria-hidden="true" size={17} /></a>
-          </div>
+          <ContactForm />
           <small>South Africa - Available for selected freelance and collaborative work</small>
         </section>
       </main>

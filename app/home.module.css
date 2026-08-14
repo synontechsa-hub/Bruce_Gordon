@@ -200,7 +200,7 @@
 }
 .notebook i { width: 0.8rem; height: 0.8rem; border-right: 0.12rem solid; border-bottom: 0.12rem solid; transform: rotate(45deg); }
 .notebook strong { padding: 0.2rem 0.65rem; border: 0.1rem solid; border-radius: 50%; font-weight: 500; }
-.tape { position: absolute; top: 5%; right: 1%; z-index: 4; width: 7rem; height: 2rem; background: rgba(222, 185, 90, 0.66); clip-path: polygon(4% 8%, 98% 0, 94% 94%, 0 100%); transform: rotate(7deg); }
+.tape { position: absolute; top: 9%; right: 1%; z-index: 4; width: 7rem; height: 2rem; background: rgba(222, 185, 90, 0.66); clip-path: polygon(4% 8%, 98% 0, 94% 94%, 0 100%); transform: rotate(7deg); }
 .registrationMark { position: absolute; top: 1%; left: 2%; z-index: 5; width: 2rem; height: 2rem; border: 1px solid var(--ink); border-radius: 50%; }
 .registrationMark::before, .registrationMark::after { position: absolute; top: 50%; left: 50%; background: var(--ink); content: ""; transform: translate(-50%, -50%); }
 .registrationMark::before { width: 3rem; height: 1px; }
@@ -242,8 +242,8 @@
 .kerfVisual { position:relative; min-height:100%; overflow:hidden; background:#1c201b; }
 .kerfGrid { position:absolute; inset:0; background:linear-gradient(90deg,transparent 49.85%,rgba(255,255,255,.08) 50%,transparent 50.15%),linear-gradient(transparent 49.85%,rgba(255,255,255,.08) 50%,transparent 50.15%); background-size:3rem 3rem; opacity:.35; }
 .kerfIndex { position:absolute; top:1.25rem; left:var(--gutter); z-index:2; color:var(--signal); font-size:.6rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; }
-.kerfScreen { position:absolute; top:13%; right:7%; bottom:9%; left:7%; z-index:1; overflow:hidden; border:1px solid rgba(255,255,255,.32); box-shadow:1rem 1rem 0 rgba(0,0,0,.36); transform:rotate(-1.2deg); }
-.kerfScreen img { object-fit:cover; object-position:center; }
+.kerfScreen { position:absolute; top:50%; right:7%; left:7%; z-index:1; aspect-ratio:1.92 / 1; overflow:hidden; background:#101310; border:1px solid rgba(255,255,255,.32); box-shadow:1rem 1rem 0 rgba(0,0,0,.36); transform:translateY(-50%) rotate(-1.2deg); }
+.kerfScreen img { object-fit:contain; object-position:center; }
 .kerfStamp { position:absolute; right:4%; bottom:5%; z-index:3; display:flex; flex-direction:column; gap:.15rem; padding:1.15rem; color:var(--ink); background:var(--signal); box-shadow:.35rem .35rem 0 var(--ink); transform:rotate(3deg); }
 .kerfStamp span { font-size:.52rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; }
 .kerfStamp strong { font-family:var(--display); font-size:clamp(1.7rem,3vw,2.7rem); font-weight:600; line-height:.85; text-transform:uppercase; }
@@ -326,7 +326,7 @@
   .folio { inset: 8% 17% 4% 0; }
   .folioDisciplines { margin-top: 1.5rem; }
   .notebook { top: 13%; width: 34%; min-height: 45%; padding-inline: 0.35rem; font-size: 1.1rem; }
-  .tape { width: 5rem; }
+  .tape { top: 12%; width: 5rem; }
   .credibility { grid-template-columns: 1fr; }
   .credibility div { min-height: 5.75rem; border-right: 0; border-bottom: 1px solid var(--rule); }
   .credibility div:last-child { border-bottom: 0; }
@@ -336,7 +336,7 @@
   .serviceCard h3 { margin-top: 3rem; }
   .serviceCard p { min-height: 0; }
   .kerfVisual { min-height:28rem; }
-  .kerfScreen { top:16%; right:4%; bottom:12%; left:4%; }
+  .kerfScreen { right:4%; left:4%; }
   .kerfStamp { right:6%; bottom:6%; }
   .kerfActions { align-items:stretch; flex-direction:column; }
   .kerfActions a { width:100%; }

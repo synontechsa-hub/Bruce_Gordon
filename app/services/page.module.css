@@ -1,0 +1,310 @@
+.page {
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(18rem, 0.55fr);
+  gap: clamp(3rem, 8vw, 9rem);
+  align-items: end;
+  min-height: clamp(44rem, 82vh, 58rem);
+  padding: clamp(8rem, 12vw, 12rem) var(--gutter) clamp(5rem, 8vw, 8rem);
+  border-bottom: 1px solid var(--rule);
+}
+
+.heroGrid {
+  position: absolute;
+  inset: 2rem var(--gutter);
+  display: flex;
+  justify-content: space-between;
+  color: var(--muted);
+  background: repeating-linear-gradient(90deg, transparent 0 7.95rem, rgba(17, 17, 15, 0.035) 8rem);
+  border-top: 1px solid var(--rule);
+  font-size: 0.52rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+
+.heroGrid span { padding-top: 0.6rem; }
+.heroCopy { position: relative; max-width: 68rem; }
+
+.kicker {
+  display: block;
+  margin-bottom: 1rem;
+  color: var(--signal-dark);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.hero h1,
+.serviceCopy h2,
+.enquiry h2 {
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(4.7rem, 9.4vw, 9.8rem);
+  font-weight: 600;
+  letter-spacing: -0.055em;
+  line-height: 0.79;
+  text-transform: uppercase;
+}
+
+.heroCopy > p {
+  max-width: 48rem;
+  margin: 2.25rem 0 0;
+  color: var(--muted);
+  font-size: clamp(0.86rem, 1.3vw, 1rem);
+}
+
+.heroActions,
+.serviceActions,
+.enquiryActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 2.2rem;
+}
+
+.primaryButton,
+.enquiryActions a {
+  display: inline-flex;
+  gap: 0.7rem;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.35rem;
+  padding: 0.8rem 1.15rem;
+  color: var(--white);
+  background: var(--ink);
+  border: 1px solid var(--ink);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color var(--fast), background var(--fast);
+}
+
+.primaryButton:hover,
+.enquiryActions a:hover { color: var(--ink); background: var(--signal); }
+
+.textLink {
+  display: inline-flex;
+  gap: 0.55rem;
+  align-items: center;
+  min-height: 2.75rem;
+  font-size: 0.61rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.serviceIndex {
+  position: relative;
+  display: grid;
+  align-self: end;
+  background: var(--paper-raised);
+  border: 1px solid var(--ink);
+  box-shadow: var(--shadow-hard);
+  transform: rotate(0.65deg);
+}
+
+.serviceIndex > span {
+  padding: 1rem 1.2rem;
+  color: var(--signal-dark);
+  border-bottom: 1px solid var(--ink);
+  font-size: 0.57rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.serviceIndex a {
+  display: grid;
+  grid-template-columns: 2rem 1fr auto;
+  gap: 0.7rem;
+  align-items: center;
+  min-height: 3.6rem;
+  padding: 0.6rem 1rem;
+  border-bottom: 1px solid var(--rule);
+  font-family: var(--display);
+  font-size: 1.35rem;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color var(--fast), background var(--fast);
+}
+
+.serviceIndex a:last-child { border-bottom: 0; }
+.serviceIndex a:hover { color: var(--white); background: var(--ink); }
+.serviceIndex small { color: var(--signal-dark); font-family: var(--body); font-size: 0.56rem; letter-spacing: 0.08em; }
+
+.disciplineBand {
+  display: flex;
+  gap: clamp(1.5rem, 5vw, 5rem);
+  align-items: center;
+  justify-content: center;
+  min-height: 6.5rem;
+  padding-inline: var(--gutter);
+  color: var(--white);
+  background: var(--ink);
+  font-family: var(--display);
+  font-size: clamp(1.3rem, 2.2vw, 2.2rem);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.disciplineBand i { width: 0.42rem; height: 0.42rem; background: var(--signal); }
+
+.serviceList {
+  width: min(100%, var(--container));
+  margin-inline: auto;
+}
+
+.service {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(20rem, 0.95fr);
+  grid-template-areas: "header header" "visual copy" "visual capabilities";
+  column-gap: clamp(2rem, 7vw, 8rem);
+  padding: clamp(5rem, 10vw, 10rem) var(--gutter);
+  border-bottom: 1px solid var(--rule);
+  scroll-margin-top: 2rem;
+}
+
+.service:nth-child(even) {
+  grid-template-columns: minmax(20rem, 0.95fr) minmax(0, 1.05fr);
+  grid-template-areas: "header header" "copy visual" "capabilities visual";
+}
+
+.serviceHeader {
+  grid-area: header;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: clamp(2.5rem, 5vw, 5rem);
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid var(--ink);
+}
+
+.serviceHeader > div { display: flex; gap: 1rem; align-items: center; }
+.serviceHeader span { color: var(--signal-dark); font-family: var(--display); font-size: 1.3rem; font-weight: 600; }
+.serviceHeader small { font-size: 0.58rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; }
+
+.serviceVisual {
+  position: relative;
+  grid-area: visual;
+  min-height: clamp(32rem, 55vw, 52rem);
+  overflow: hidden;
+  background: var(--ink);
+  border: 1px solid var(--ink);
+  box-shadow: var(--shadow-hard);
+}
+
+.serviceVisual img { object-fit: cover; }
+.serviceVisual > span {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  padding: 0.55rem 0.7rem;
+  color: var(--ink);
+  background: var(--signal);
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.service[data-service="graphic-design"] .serviceVisual img,
+.service[data-service="branding"] .serviceVisual img { object-fit: contain; padding: 8%; background: #e8e2d6; }
+.service[data-service="web-design"] .serviceVisual { background: #090a10; }
+.service[data-service="web-design"] .serviceVisual img { object-fit: contain; object-position: center; }
+.service[data-service="automation"] .serviceVisual img { object-position: 58% center; }
+.service[data-service="signage-production"] .serviceVisual img { object-position: center 42%; }
+
+.serviceCopy { grid-area: copy; align-self: start; }
+.serviceCopy h2 { max-width: 11ch; font-size: clamp(3.4rem, 6vw, 6.6rem); }
+.serviceCopy p { max-width: 39rem; margin: 1.35rem 0 0; color: var(--muted); font-size: 0.8rem; }
+
+.capabilities {
+  grid-area: capabilities;
+  align-self: end;
+  margin-top: clamp(3rem, 7vw, 7rem);
+  padding-top: 1rem;
+  border-top: 1px solid var(--ink);
+}
+
+.capabilities > span { color: var(--signal-dark); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; }
+.capabilities ul { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; margin: 1rem 0 0; padding: 0; list-style: none; }
+.capabilities li { display: flex; gap: 0.55rem; align-items: center; min-height: 2.8rem; padding: 0.5rem 0.4rem 0.5rem 0; border-bottom: 1px solid var(--rule); font-size: 0.68rem; }
+.capabilities svg { flex: none; color: var(--signal-dark); }
+
+.enquiry {
+  position: relative;
+  padding: clamp(6rem, 11vw, 11rem) var(--gutter);
+  overflow: hidden;
+  color: var(--white);
+  background: var(--ink);
+}
+
+.enquiry::after {
+  position: absolute;
+  right: -7vw;
+  bottom: -18vw;
+  color: rgba(255, 255, 255, 0.035);
+  font-family: var(--display);
+  font-size: clamp(24rem, 55vw, 58rem);
+  font-weight: 700;
+  line-height: 0.7;
+  content: "X";
+  pointer-events: none;
+}
+
+.enquiry > * { position: relative; z-index: 1; }
+.enquiry h2 { max-width: 9ch; font-size: clamp(5rem, 11vw, 11rem); }
+.enquiry p { max-width: 48rem; margin: 1.5rem 0 0; color: #b8b4ab; font-size: 0.82rem; }
+.enquiryActions a:first-child { color: var(--ink); background: var(--signal); border-color: var(--signal); }
+.enquiryActions a:nth-child(2) { background: transparent; border-color: rgba(255, 255, 255, 0.45); }
+.enquiryActions a:hover { color: var(--ink); background: var(--white); }
+
+@media (max-width: 68rem) {
+  .hero { grid-template-columns: 1fr; min-height: 0; }
+  .serviceIndex { width: min(100%, 34rem); }
+}
+
+@media (max-width: 52rem) {
+  .hero { padding-top: 8rem; }
+  .service,
+  .service:nth-child(even) {
+    grid-template-columns: 1fr;
+    grid-template-areas: "header" "copy" "visual" "capabilities";
+  }
+  .serviceVisual { min-height: clamp(24rem, 112vw, 43rem); margin-top: 3rem; box-shadow: 0.3rem 0.3rem 0 var(--ink); }
+  .capabilities { margin-top: 3rem; }
+  .disciplineBand { justify-content: flex-start; overflow: hidden; }
+}
+
+@media (max-width: 32rem) {
+  .hero h1 { font-size: clamp(4rem, 19vw, 5.7rem); }
+  .heroActions,
+  .serviceActions,
+  .enquiryActions { align-items: stretch; flex-direction: column; }
+  .primaryButton,
+  .textLink,
+  .enquiryActions a { width: 100%; }
+  .textLink { justify-content: center; }
+  .serviceIndex { box-shadow: 0.3rem 0.3rem 0 var(--ink); }
+  .serviceCopy h2 { font-size: clamp(3.2rem, 16vw, 4.8rem); }
+  .capabilities ul { grid-template-columns: 1fr; }
+  .enquiry h2 { font-size: clamp(4.5rem, 22vw, 7rem); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .primaryButton,
+  .enquiryActions a,
+  .serviceIndex a { transition: none; }
+}

@@ -78,6 +78,7 @@ const tourStorageKey = "bgrafx-site-tour-v4";
 
 export function AlyssaAssistant() {
   const [open, setOpen] = useState(false);
+  const [launcherExpanded, setLauncherExpanded] = useState(false);
   const [messages, setMessages] = useState<Message[]>(startingMessages);
   const [draft, setDraft] = useState("");
   const [showPrompts, setShowPrompts] = useState(true);
@@ -96,17 +97,35 @@ export function AlyssaAssistant() {
     const requestedTour = searchParams.get("tour") === "1";
     const requestedInvite = searchParams.get("invite") === "1";
     const hasSeenTour = window.localStorage.getItem(tourStorageKey) === "seen";
+    const compactViewport = window.matchMedia("(max-width: 520px)").matches;
     const timer = window.setTimeout(() => {
       if (requestedTour) {
         setOpen(false);
         setTourStep(0);
         window.localStorage.setItem(tourStorageKey, "seen");
-      } else if (requestedInvite || !hasSeenTour) {
+      } else if (requestedInvite || (!hasSeenTour && !compactViewport)) {
         setTourInvite(true);
       }
     }, requestedTour ? 250 : 1100);
 
     return () => window.clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    const updateLauncher = () => {
+      const pageHeight = document.documentElement.scrollHeight;
+      const hasReachedLowerPage = window.scrollY + window.innerHeight >= pageHeight * 0.55;
+      setLauncherExpanded(hasReachedLowerPage);
+    };
+
+    updateLauncher();
+    window.addEventListener("scroll", updateLauncher, { passive: true });
+    window.addEventListener("resize", updateLauncher);
+
+    return () => {
+      window.removeEventListener("scroll", updateLauncher);
+      window.removeEventListener("resize", updateLauncher);
+    };
   }, []);
 
   useEffect(() => {
@@ -276,7 +295,7 @@ export function AlyssaAssistant() {
       )}
 
       {tourStep === null && (
-        <button className={styles.launcher} type="button" onClick={() => { setTourInvite(false); setOpen((current) => !current); }} aria-expanded={open} aria-label={open ? "Close Alyssa chat" : "Open Alyssa chat"}>
+        <button className={`${styles.launcher} ${launcherExpanded ? styles.launcherExpanded : ""}`} type="button" onClick={() => { setTourInvite(false); setOpen((current) => !current); }} aria-expanded={open} aria-label={open ? "Close Alyssa chat" : "Open Alyssa chat"}>
           <span className={styles.launcherPortrait} aria-hidden="true">
             <Image className={styles.idle} src="/media/assistant/alyssa-idle-v2.webp" alt="" fill sizes="58px" />
             <Image className={styles.blink} src="/media/assistant/alyssa-blink-v2.webp" alt="" fill sizes="58px" />

@@ -7,36 +7,62 @@
 }
 
 .launcher {
+  position: relative;
   display: grid;
-  grid-template-columns: 3.65rem auto 1.25rem;
+  grid-template-columns: 1fr;
   align-items: center;
-  min-width: 15.5rem;
-  padding: 0.28rem 0.75rem 0.28rem 0.28rem;
+  width: 3.6rem;
+  min-width: 0;
+  height: 3.6rem;
+  padding: 0.24rem;
   color: var(--white);
   background: var(--ink);
   border: 1px solid var(--ink);
   box-shadow: 0.35rem 0.35rem 0 var(--signal);
   cursor: pointer;
   text-align: left;
-  transition: transform var(--fast), box-shadow var(--fast);
+  transition: transform var(--fast), box-shadow var(--fast), width var(--fast), height var(--fast);
 }
 
 .launcher:hover { transform: translate(-0.12rem, -0.12rem); box-shadow: 0.47rem 0.47rem 0 var(--signal); }
-.launcher > svg { color: var(--signal); justify-self: end; }
+.launcher::after {
+  position: absolute;
+  top: -0.2rem;
+  right: -0.2rem;
+  width: 0.72rem;
+  height: 0.72rem;
+  background: var(--signal);
+  border: 0.12rem solid var(--ink);
+  border-radius: 50%;
+  content: "";
+}
+.launcher > svg { display: none; }
 
 .launcherPortrait {
   position: relative;
-  width: 3.25rem;
-  height: 3.25rem;
+  width: 3rem;
+  height: 3rem;
   overflow: hidden;
   background: var(--paper);
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .launcherPortrait img { object-fit: cover; object-position: 50% 15%; transform: scale(1.75); }
-.launcherCopy { display: flex; flex-direction: column; padding-inline: 0.72rem; line-height: 1.15; }
+.launcherCopy { display: none; flex-direction: column; padding-inline: 0.72rem; line-height: 1.15; }
 .launcherCopy small { color: rgba(255, 255, 255, 0.65); font-size: 0.64rem; }
 .launcherCopy strong { margin-top: 0.16rem; font-family: var(--display); font-size: 1.17rem; letter-spacing: 0.035em; text-transform: uppercase; }
+
+.launcherExpanded {
+  grid-template-columns: 3.65rem auto 1.25rem;
+  width: auto;
+  min-width: 15.5rem;
+  height: auto;
+  padding: 0.28rem 0.75rem 0.28rem 0.28rem;
+}
+.launcherExpanded::after { display: none; }
+.launcherExpanded > svg { display: block; color: var(--signal); justify-self: end; }
+.launcherExpanded .launcherCopy { display: flex; }
+.launcherExpanded .launcherPortrait { width: 3.25rem; height: 3.25rem; }
 
 .window {
   position: absolute;
@@ -101,9 +127,10 @@
 
 @media (max-width: 520px) {
   .assistant { right: 0.8rem; bottom: 0.8rem; }
-  .launcher { grid-template-columns: 3.25rem auto 1.2rem; min-width: 13.6rem; }
-  .launcherPortrait { width: 2.9rem; height: 2.9rem; }
-  .launcherCopy small { display: none; }
+  .launcherExpanded { grid-template-columns: 1fr; width: 3.6rem; min-width: 0; height: 3.6rem; padding: 0.24rem; }
+  .launcherExpanded::after { display: block; }
+  .launcherExpanded .launcherPortrait { width: 3rem; height: 3rem; }
+  .launcherExpanded .launcherCopy, .launcherExpanded > svg { display: none; }
   .window { width: calc(100vw - 1.6rem); max-height: calc(100dvh - 6rem); grid-template-rows: auto 8rem minmax(8rem, 1fr) auto auto; }
   .portrait img { width: 56% !important; }
   .intro { right: 0.7rem; width: 48%; }

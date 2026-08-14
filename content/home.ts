@@ -1,10 +1,11 @@
 import type { LucideIcon } from "lucide-react";
-import { Bot, Brush, MonitorUp, Palette, Printer } from "lucide-react";
+import { serviceDetails } from "@/content/services";
 
 export interface ServicePreview {
   title: string;
   description: string;
   icon: LucideIcon;
+  href: string;
 }
 
 export interface FeaturedStudy {
@@ -26,33 +27,12 @@ export interface PricingPath {
   description: string;
   includes: string[];
 }
-export const services: ServicePreview[] = [
-  {
-    title: "Graphic design",
-    description: "Branding, print, campaign artwork and everyday design that makes the message easier to notice.",
-    icon: Brush,
-  },
-  {
-    title: "Web design",
-    description: "Responsive websites shaped around clear communication, strong presentation and straightforward action.",
-    icon: MonitorUp,
-  },
-  {
-    title: "Automation",
-    description: "Practical workflows and digital tools designed to reduce repetitive work and improve consistency.",
-    icon: Bot,
-  },
-  {
-    title: "Branding",
-    description: "Identity systems, logos and visual direction built to give a business a confident, cohesive presence.",
-    icon: Palette,
-  },
-  {
-    title: "Signage & production",
-    description: "Production-aware design for signage, displays, large-format graphics and fabrication handoff.",
-    icon: Printer,
-  },
-];
+export const services: ServicePreview[] = serviceDetails.map(({ title, shortDescription, icon, id }) => ({
+  title,
+  description: shortDescription,
+  icon,
+  href: `/services#${id}`,
+}));
 
 export const featuredStudies: FeaturedStudy[] = [
   {
