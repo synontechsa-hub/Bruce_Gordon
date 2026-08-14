@@ -35,6 +35,13 @@ const replies: Record<string, string> = {
   "I’m not sure yet": "That’s perfectly fine. Tell me what your business needs to achieve, and we’ll work backwards from there.",
 };
 
+const enquiryServices: Record<string, string> = {
+  "A new website": "Website",
+  "Branding or design": "Branding",
+  Automation: "Automation",
+  "I’m not sure yet": "Not sure yet",
+};
+
 const tourSteps: TourStep[] = [
   {
     target: "#home",
@@ -83,13 +90,14 @@ export function AlyssaAssistant() {
   const [messages, setMessages] = useState<Message[]>(startingMessages);
   const [draft, setDraft] = useState("");
   const [showPrompts, setShowPrompts] = useState(true);
+  const [handoffService, setHandoffService] = useState<string | null>(null);
   const [tourInvite, setTourInvite] = useState(false);
   const [tourStep, setTourStep] = useState<number | null>(null);
   const logRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     logRef.current?.scrollTo({ top: logRef.current.scrollHeight, behavior: "smooth" });
-  }, [messages]);
+  }, [handoffService, messages]);
 
   useEffect(() => {
     if (window.location.pathname !== "/") return;
@@ -146,7 +154,7 @@ export function AlyssaAssistant() {
     return () => target.classList.remove("bgrafx-tour-target");
   }, [tourStep]);
 
-  function addExchange(text: string, reply?: string) {
+  function addExchange(text: string, reply?: string, service?: string) {
     const nextId = messages.length + 1;
     const visitor: Message = { id: nextId, author: "visitor", text };
     const alyssa: Message = {
@@ -157,6 +165,7 @@ export function AlyssaAssistant() {
 
     setMessages((current) => [...current, visitor]);
     setShowPrompts(false);
+    setHandoffService(service ?? "");
     window.setTimeout(() => setMessages((current) => [...current, alyssa]), 380);
   }
 
@@ -277,12 +286,23 @@ export function AlyssaAssistant() {
                 <button className={styles.tourRestart} type="button" onClick={startTour}><Map aria-hidden="true" size={15} /> Take the 60-second site tour <ArrowRight aria-hidden="true" size={13} /></button>
                 <div className={styles.prompts} aria-label="Suggested answers">
                   {prompts.map((prompt) => (
-                    <button type="button" key={prompt} onClick={() => addExchange(prompt, replies[prompt])}>
+                    <button type="button" key={prompt} onClick={() => addExchange(prompt, replies[prompt], enquiryServices[prompt])}>
                       {prompt}<ArrowRight aria-hidden="true" size={13} />
                     </button>
                   ))}
                 </div>
               </>
+            )}
+
+            {handoffService !== null && (
+              <div className={styles.handoff}>
+                <span>Ready when you are</span>
+                <p>Share the brief with Bruce and he&apos;ll come back to you directly.</p>
+                <div>
+                  <a href={handoffService ? `/#contact?service=${encodeURIComponent(handoffService)}` : "/#contact"} onClick={() => setOpen(false)}>Start an enquiry <ArrowRight aria-hidden="true" size={13} /></a>
+                  <a href="https://wa.me/27621596082" target="_blank" rel="noopener noreferrer">WhatsApp Bruce <ArrowRight aria-hidden="true" size={13} /></a>
+                </div>
+              </div>
             )}
           </div>
 

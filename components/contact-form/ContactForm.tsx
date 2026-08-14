@@ -11,6 +11,12 @@ const services = ["Graphic design", "Website", "Automation", "Branding", "Signag
 export function ContactForm() {
   const [state, setState] = useState<SubmissionState>("idle");
   const [message, setMessage] = useState("");
+  const [service, setService] = useState(() => {
+    if (typeof window === "undefined") return "";
+
+    const selectedService = new URLSearchParams(window.location.search).get("service");
+    return selectedService && services.includes(selectedService) ? selectedService : "";
+  });
 
   async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -60,7 +66,7 @@ export function ContactForm() {
         </label>
         <label className={styles.fullWidth}>
           <span>What can BGrafX help with?</span>
-          <select name="service" defaultValue="" required>
+          <select name="service" value={service} onChange={(event) => setService(event.target.value)} required>
             <option value="" disabled>Select a starting point</option>
             {services.map((service) => <option key={service} value={service}>{service}</option>)}
           </select>
