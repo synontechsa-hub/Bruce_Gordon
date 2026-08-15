@@ -1,5 +1,7 @@
 # Phase 4 - Final Archives and Production Links
 
+> Archived implementation brief. This phase is complete; current requirements live in [`../../PRD.md`](../../PRD.md) and [`../../BGRAFX_V2_PLAN.md`](../../BGRAFX_V2_PLAN.md).
+
 ## Goal
 
 Complete the final pre-production content expansion with a full website archive, a dedicated architectural cladding career page, and verified links to Bruce's wider product and studio ecosystem.

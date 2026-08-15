@@ -1,5 +1,7 @@
 # Phase 1 Task Brief — Foundation and Design Specimen
 
+> Archived implementation brief. This phase is complete; current requirements live in [`../../PRD.md`](../../PRD.md) and [`../../BGRAFX_V2_PLAN.md`](../../BGRAFX_V2_PLAN.md).
+
 ## Goal
 
 Establish the production Next.js foundation and a responsive design-system specimen that converts the approved BGrafX reference into reusable visual rules.

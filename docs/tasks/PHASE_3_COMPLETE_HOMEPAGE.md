@@ -1,5 +1,7 @@
 # Phase 3 - Complete Homepage
 
+> Archived implementation brief. This phase is complete; current requirements live in [`../../PRD.md`](../../PRD.md) and [`../../BGRAFX_V2_PLAN.md`](../../BGRAFX_V2_PLAN.md).
+
 ## Goal
 
 Carry the approved BGrafX visual language through a complete, production-quality homepage before Bruce provides detailed visual feedback.

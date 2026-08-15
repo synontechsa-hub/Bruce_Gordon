@@ -1,5 +1,7 @@
 # Phase 2 Task Brief — Homepage Prototype and Visual Lock
 
+> Archived implementation brief. This phase is complete; current requirements live in [`../../PRD.md`](../../PRD.md) and [`../../BGRAFX_V2_PLAN.md`](../../BGRAFX_V2_PLAN.md).
+
 ## Goal
 
 Turn the approved BGrafX design foundation into the real homepage header, hero, service preview, and featured-work treatment, ready for architect visual approval.

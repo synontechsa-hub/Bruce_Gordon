@@ -1,5 +1,8 @@
 # BGrafX v2 - Design System & Creative Direction
 
+Status: Active visual guidance
+Last updated: 2026-08-14
+
 ## Design Philosophy
 
 BGrafX v2 is a premium creative portfolio.
@@ -255,6 +258,16 @@ Strong typography
 Rounded corners should be subtle.
 
 Avoid exaggerated border radius.
+
+## Alyssa assistant
+
+Alyssa is a lightweight virtual receptionist, not a competing feature or a generic chat widget. Her visual language belongs to the same workshop/editorial system: compact black panels, controlled yellow accent, clear type, and a deliberately small footprint.
+
+- Keep her launcher clear of primary calls to action, especially on phones.
+- On compact phone viewports, defer the launcher until the visitor has moved beyond the hero.
+- Use concise, human-sounding scripted guidance and a direct hand-off into the enquiry form or WhatsApp.
+- Tour overlays should help orientation, not obscure the page indefinitely; every tour state needs a clear close or finish action.
+- Avoid adding conversational complexity, data collection or decorative motion that distracts from the work.
 
 ---
 

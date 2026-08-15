@@ -2,6 +2,15 @@
 
 # BGrafX v2 Development Guidelines
 
+> Current product scope is defined by [`PRD.md`](./PRD.md) and [`BGRAFX_V2_PLAN.md`](./BGRAFX_V2_PLAN.md). This document retains the engineering-quality rules that govern future changes.
+
+## Current approved product boundaries
+
+- Alyssa is a scripted virtual receptionist and site-tour guide; she is not a generative-AI service and does not persist conversation data.
+- The same-origin contact route, Resend delivery, Cloudflare Turnstile verification and honeypot protection are approved parts of the current product.
+- Environment-variable names may be documented; their values must never be read, printed, committed or added to Markdown.
+- New backend services, databases, CMSs, authentication, or assistant capabilities remain out of scope until Bruce approves them.
+
 ## Your Role
 
 You are the Lead Frontend Engineer responsible for rebuilding the BGrafX portfolio website.
