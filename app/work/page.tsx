@@ -24,11 +24,18 @@ export default function WorkPage() {
           <div className={styles.heroCopy}>
             <span className={styles.kicker}>Selected digital practice</span>
             <h1 id="work-page-title">Websites built with a point of view.</h1>
-            <p>Twelve self-initiated builds across distinct industries, each used to explore a different visual language, audience and interface problem.</p>
-            <a href="#archive">Explore the archive <ArrowDownRight aria-hidden="true" size={17} /></a>
+            <p>Released products, live creative properties and twelve self-initiated builds—showing how brand, interface and engineering come together across very different briefs.</p>
+            <a href="#live-products">See the live work <ArrowDownRight aria-hidden="true" size={17} /></a>
           </div>
           <div className={styles.heroIndex}>
             <strong>12</strong><span>Website concepts</span><i /><strong>04</strong><span>Live products / studios</span>
+          </div>
+        </section>
+
+        <section id="live-products" className={styles.liveSection} aria-labelledby="live-title">
+          <header><span>Beyond concepts</span><h2 id="live-title">Live products and studios.</h2><p>Released software and independent properties connected to Bruce&apos;s product, creative and interactive work.</p></header>
+          <div className={styles.liveGrid}>
+            {liveProperties.map((property, index) => <Link key={property.href} href={property.href} target={property.external ? "_blank" : undefined} rel={property.external ? "noopener noreferrer" : undefined}><span>0{index + 1}</span><small>{property.category}</small><h3>{property.title}</h3><p>{property.summary}</p><strong>{property.cta} {property.external ? <ArrowUpRight aria-hidden="true" size={16} /> : <ArrowRight aria-hidden="true" size={16} />}</strong></Link>)}
           </div>
         </section>
 
@@ -45,13 +52,6 @@ export default function WorkPage() {
                 <div className={styles.projectCopy}><span>{project.category}</span><h3>{project.title}</h3><p>{project.summary}</p><small>Open website <ArrowUpRight aria-hidden="true" size={13} /></small></div>
               </a>
             ))}
-          </div>
-        </section>
-
-        <section className={styles.liveSection} aria-labelledby="live-title">
-          <header><span>Beyond concepts</span><h2 id="live-title">Live products and studios.</h2><p>Independent properties connected to Bruce&apos;s software, product and interactive work.</p></header>
-          <div className={styles.liveGrid}>
-            {liveProperties.map((property, index) => <Link key={property.href} href={property.href} target={property.external ? "_blank" : undefined} rel={property.external ? "noopener noreferrer" : undefined}><span>0{index + 1}</span><small>{property.category}</small><h3>{property.title}</h3><p>{property.summary}</p><strong>{property.cta} {property.external ? <ArrowUpRight aria-hidden="true" size={16} /> : <ArrowRight aria-hidden="true" size={16} />}</strong></Link>)}
           </div>
         </section>
 
