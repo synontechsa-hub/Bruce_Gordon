@@ -14,6 +14,7 @@ const baseLinks = [
   { href: "/work", hash: null, label: "Websites" },
   { href: "/cladding", hash: null, label: "Cladding" },
   { href: "/services", hash: null, label: "Services" },
+  { href: "/tools/fontforge", hash: null, label: "FontForge" },
   { href: "/#process", hash: "#process", label: "Process" },
   { href: "/#contact", hash: "#contact", label: "Contact" },
 ];

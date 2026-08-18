@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import * as motion from "motion/react-client";
 import { ArrowDownRight, ArrowRight, ArrowUpRight, Check } from "lucide-react";
 import { BrandMark } from "@/components/brand-mark/BrandMark";
@@ -150,8 +151,10 @@ export default function HomePage() {
             <span className={styles.kicker}>Experience, applied</span>
             <h2 id="experience-title">Good design should do more than look good.</h2>
             <p>More than two decades across graphic design, web, signage and production - including 14 years leading CNC workflows - have taught me to consider the whole job: the audience, the message, the medium and what happens after approval.</p>
-            <p>That breadth means fewer gaps between the idea and the finished result - from production-ready artwork to responsive websites and practical digital tools.</p>
-            <a href="#process">See how I work <ArrowDownRight aria-hidden="true" size={16} /></a>
+            <div style={{ display: "flex", gap: "1.5rem", flexWrap: "wrap", alignItems: "center" }}>
+              <a href="#process">See how I work <ArrowDownRight aria-hidden="true" size={16} /></a>
+              <Link href="/tools/fontforge" style={{ display: "inline-flex", gap: "0.5rem", alignItems: "center", color: "var(--signal)", fontSize: "0.62rem", fontWeight: 700, letterSpacing: "0.08em", textDecoration: "none", textTransform: "uppercase" }}>Try FontForge tool <ArrowUpRight aria-hidden="true" size={16} /></Link>
+            </div>
           </div>
           <aside className={styles.experienceNote} aria-label="Bruce Gordon's working principles">
             <span>Built on</span><strong>Curiosity</strong><strong>Craft</strong><strong>Clarity</strong><strong>Follow-through</strong>
