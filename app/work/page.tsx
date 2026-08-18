@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowDownRight, ArrowRight, ArrowUpRight, Globe2 } from "lucide-react";
 import { HomeHeader } from "@/components/site-header/HomeHeader";
 import { SiteFooter } from "@/components/site-footer/SiteFooter";
@@ -27,7 +28,7 @@ export default function WorkPage() {
             <a href="#archive">Explore the archive <ArrowDownRight aria-hidden="true" size={17} /></a>
           </div>
           <div className={styles.heroIndex}>
-            <strong>12</strong><span>Website concepts</span><i /><strong>03</strong><span>Live properties</span>
+            <strong>12</strong><span>Website concepts</span><i /><strong>04</strong><span>Live products / studios</span>
           </div>
         </section>
 
@@ -50,7 +51,7 @@ export default function WorkPage() {
         <section className={styles.liveSection} aria-labelledby="live-title">
           <header><span>Beyond concepts</span><h2 id="live-title">Live products and studios.</h2><p>Independent properties connected to Bruce&apos;s software, product and interactive work.</p></header>
           <div className={styles.liveGrid}>
-            {liveProperties.map((property, index) => <a key={property.url} href={property.url} target="_blank" rel="noopener noreferrer"><span>0{index + 1}</span><small>{property.category}</small><h3>{property.title}</h3><p>{property.summary}</p><strong>Visit website <ArrowUpRight aria-hidden="true" size={16} /></strong></a>)}
+            {liveProperties.map((property, index) => <Link key={property.href} href={property.href} target={property.external ? "_blank" : undefined} rel={property.external ? "noopener noreferrer" : undefined}><span>0{index + 1}</span><small>{property.category}</small><h3>{property.title}</h3><p>{property.summary}</p><strong>{property.cta} {property.external ? <ArrowUpRight aria-hidden="true" size={16} /> : <ArrowRight aria-hidden="true" size={16} />}</strong></Link>)}
           </div>
         </section>
 

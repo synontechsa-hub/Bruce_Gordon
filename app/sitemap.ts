@@ -7,6 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: "https://www.bgrafx.co.za/work", lastModified, changeFrequency: "monthly", priority: 0.9 },
     { url: "https://www.bgrafx.co.za/services", lastModified, changeFrequency: "monthly", priority: 0.9 },
     { url: "https://www.bgrafx.co.za/work/kerfsuite", lastModified, changeFrequency: "monthly", priority: 0.9 },
+    { url: "https://www.bgrafx.co.za/work/mkvoodoo", lastModified, changeFrequency: "monthly", priority: 0.9 },
     { url: "https://www.bgrafx.co.za/cladding", lastModified, changeFrequency: "yearly", priority: 0.8 },
   ];
 }

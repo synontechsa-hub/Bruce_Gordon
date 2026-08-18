@@ -14,7 +14,9 @@ export interface LiveProperty {
   title: string;
   category: string;
   summary: string;
-  url: string;
+  href: string;
+  cta: string;
+  external?: boolean;
 }
 
 export interface CladdingProject {
@@ -41,9 +43,10 @@ export const websiteProjects: WebsiteProject[] = [
 ];
 
 export const liveProperties: LiveProperty[] = [
-  { title: "KerfSuite", category: "Production software", summary: "A practical software suite for CNC and fabrication workflows, developed as part of the broader Synontech product ecosystem.", url: "https://kerf-suite.com/" },
-  { title: "Synontech", category: "Software studio", summary: "The technology studio behind independent software, automation and digital product work.", url: "https://synontech.vercel.app/" },
-  { title: "Byte This Games", category: "Independent games", summary: "An independent game-development label and creative outlet for interactive projects.", url: "https://byte-this-games.vercel.app/" },
+  { title: "KerfSuite", category: "Production software", summary: "A practical software suite for CNC and fabrication workflows, developed as part of the broader Synontech product ecosystem.", href: "https://kerf-suite.com/", cta: "Visit website", external: true },
+  { title: "MKVoodoo", category: "Desktop media utility", summary: "A released Windows batch video transcoder combining product identity, Flutter interface design and a Python/FFmpeg processing engine.", href: "/work/mkvoodoo", cta: "View product story" },
+  { title: "Synontech", category: "Software studio", summary: "The technology studio behind independent software, automation and digital product work.", href: "https://synontech.vercel.app/", cta: "Visit website", external: true },
+  { title: "Byte This Games", category: "Independent games", summary: "An independent game-development label and creative outlet for interactive projects.", href: "https://byte-this-games.vercel.app/", cta: "Visit website", external: true },
 ];
 
 export const claddingProjects: CladdingProject[] = [

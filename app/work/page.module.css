@@ -41,7 +41,7 @@
 .liveSection { display:grid; grid-template-columns:minmax(20rem,.75fr) 1.5fr; border-block:1px solid var(--rule); }
 .liveSection > header { padding:clamp(4rem,8vw,8rem) var(--gutter); color:var(--white); background:var(--ink); }
 .liveSection header p { max-width:32rem; color:#aaa69d; font-size:.78rem; }
-.liveGrid { display:grid; grid-template-columns:repeat(3,1fr); }
+.liveGrid { display:grid; grid-template-columns:repeat(2,1fr); }
 .liveGrid > a { display:flex; flex-direction:column; min-height:36rem; padding:clamp(1.5rem,3vw,3rem); border-right:1px solid var(--rule); text-decoration:none; transition:color var(--fast),background var(--fast); }
 .liveGrid > a:last-child { border-right:0; }
 .liveGrid > a:hover { color:var(--white); background:var(--ink); }

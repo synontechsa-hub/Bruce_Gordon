@@ -18,7 +18,11 @@ const baseLinks = [
   { href: "/#contact", hash: "#contact", label: "Contact" },
 ];
 
-export function HomeHeader() {
+interface HomeHeaderProps {
+  theme?: "default" | "mkvoodoo";
+}
+
+export function HomeHeader({ theme = "default" }: HomeHeaderProps) {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
   const isHome = pathname === "/";
@@ -46,9 +50,9 @@ export function HomeHeader() {
   }));
 
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header} ${theme === "mkvoodoo" ? styles.mkvoodoo : ""}`}>
       <div className={styles.inner}>
-        <Link className={styles.brand} href="/" aria-label="BGrafX home"><BrandMark /></Link>
+        <Link className={styles.brand} href="/" aria-label="BGrafX home"><BrandMark inverse={theme === "mkvoodoo"} /></Link>
         <nav className={styles.desktopNav} aria-label="Primary navigation">
           {links.map((link) => <Link key={link.href} href={link.resolvedHref}>{link.label}</Link>)}
         </nav>

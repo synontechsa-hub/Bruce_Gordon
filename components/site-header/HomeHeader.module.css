@@ -103,6 +103,32 @@
   display: none;
 }
 
+.mkvoodoo {
+  color: #fff;
+  background: rgba(3, 3, 5, 0.94);
+  border-color: rgba(185, 0, 255, 0.42);
+}
+
+.mkvoodoo .desktopNav a::after {
+  background: #39ff14;
+}
+
+.mkvoodoo .quote {
+  color: #030305;
+  background: #39ff14;
+}
+
+.mkvoodoo .quote:hover,
+.mkvoodoo .quote:focus-visible {
+  color: #fff;
+  background: #b900ff;
+}
+
+.mkvoodoo .menuButton {
+  color: #030305;
+  background: #39ff14;
+}
+
 @media (max-width: 68rem) {
   .inner {
     grid-template-columns: 1fr auto;
@@ -140,6 +166,25 @@
     opacity: 1;
     transform: translateY(0);
     pointer-events: auto;
+  }
+
+  .mkvoodoo .mobileNav {
+    color: #fff;
+    background: #07070b;
+    border-color: #b900ff;
+  }
+
+  .mkvoodoo .mobileNav > a:not(.mobileQuote) {
+    border-color: rgba(255, 255, 255, 0.14);
+  }
+
+  .mkvoodoo .mobileNav > a span {
+    color: #39ff14;
+  }
+
+  .mkvoodoo .mobileQuote {
+    color: #030305;
+    background: #39ff14;
   }
 
   .mobileNav > a:not(.mobileQuote) {
