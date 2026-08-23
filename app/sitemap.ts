@@ -6,6 +6,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: "https://www.bgrafx.co.za", lastModified, changeFrequency: "monthly", priority: 1 },
     { url: "https://www.bgrafx.co.za/work", lastModified, changeFrequency: "monthly", priority: 0.9 },
     { url: "https://www.bgrafx.co.za/services", lastModified, changeFrequency: "monthly", priority: 0.9 },
+    { url: "https://www.bgrafx.co.za/bruce-gordon", lastModified, changeFrequency: "monthly", priority: 0.9 },
     { url: "https://www.bgrafx.co.za/work/kerfsuite", lastModified, changeFrequency: "monthly", priority: 0.9 },
     { url: "https://www.bgrafx.co.za/work/mkvoodoo", lastModified, changeFrequency: "monthly", priority: 0.9 },
     { url: "https://www.bgrafx.co.za/tools", lastModified, changeFrequency: "monthly", priority: 0.8 },

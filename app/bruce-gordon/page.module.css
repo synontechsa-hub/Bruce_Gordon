@@ -1,0 +1,77 @@
+.page { overflow: clip; }
+
+.hero, .summary, .disciplines, .projects, .timeline, .education, .contact { width: min(100%, var(--container)); margin-inline: auto; padding-inline: var(--gutter); }
+
+.hero { display: grid; gap: 2rem; padding-top: clamp(4rem, 10vw, 9rem); padding-bottom: clamp(4rem, 9vw, 8rem); }
+.eyebrow, .sectionLabel { margin: 0 0 1rem; color: var(--signal-dark); font-size: .66rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.hero h1, .hero h2, .summary h2, .disciplines h2, .projects h2, .timeline h2, .education h2, .contact h2 { margin: 0; font-family: var(--display); font-weight: 700; text-transform: uppercase; }
+.hero h1 { font-size: clamp(4.8rem, 15vw, 11rem); line-height: .77; }
+.identity { margin: 1.25rem 0 0; font-family: var(--display); font-size: clamp(1.4rem, 4vw, 2.65rem); font-weight: 600; line-height: .95; text-transform: uppercase; }
+.identity span { color: var(--signal-dark); }
+.heroCopy { max-width: 38rem; }
+.heroCopy > p { margin: 0; color: var(--muted); font-size: clamp(1.05rem, 2.2vw, 1.35rem); line-height: 1.75; }
+.actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 2rem; }
+.actions a, .summary a, .contact a { display: inline-flex; gap: .6rem; align-items: center; min-height: 3rem; padding: .75rem 1rem; color: var(--white); background: var(--ink); font-size: .68rem; font-weight: 700; letter-spacing: .06em; text-decoration: none; text-transform: uppercase; }
+.actions a + a { color: var(--ink); background: transparent; border: 1px solid var(--ink); }
+.actions a:hover, .summary a:hover, .contact a:hover { color: var(--ink); background: var(--signal); }
+.actions a + a:hover { border-color: var(--signal); }
+
+.signals { display: grid; width: min(100%, var(--container)); margin-inline: auto; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); }
+.signals article { display: grid; grid-template-columns: auto 1fr; gap: .3rem .75rem; align-items: center; padding: 1.5rem var(--gutter); border-bottom: 1px solid var(--rule); }
+.signals article:last-child { border-bottom: 0; }
+.signals svg { grid-row: span 2; color: var(--signal-dark); }
+.signals strong { font-family: var(--display); font-size: 1.5rem; line-height: .9; text-transform: uppercase; }
+.signals span { color: var(--muted); font-size: .75rem; }
+
+.summary, .disciplines, .projects, .timeline { display: grid; gap: 2rem; padding-top: clamp(4rem, 9vw, 8rem); padding-bottom: clamp(4rem, 9vw, 8rem); }
+.summary { background: var(--ink); color: var(--white); width: 100%; padding-inline: max(var(--gutter), calc((100vw - var(--container)) / 2 + var(--gutter))); }
+.summary h2, .disciplines h2, .projects h2, .timeline h2, .education h2, .contact h2 { font-size: clamp(2.75rem, 7vw, 5.5rem); line-height: .88; }
+.summary > div:last-child { max-width: 42rem; }
+.summary p:not(.sectionLabel) { margin: 0 0 1.25rem; color: #d4d1c8; line-height: 1.75; }
+.summary a { margin-top: .75rem; color: var(--ink); background: var(--signal); }
+
+.disciplines header, .projects header, .timeline header { max-width: 43rem; }
+.disciplineGrid, .projectGrid { display: grid; gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
+.disciplineGrid article { min-height: 15rem; padding: 1.5rem; background: var(--paper); }
+.disciplineGrid article > span { color: var(--signal-dark); font-size: .68rem; font-weight: 700; letter-spacing: .1em; }
+.disciplineGrid h3, .projectGrid h3, .timeline h3 { margin: 1.5rem 0 1rem; font-family: var(--display); font-size: 2rem; line-height: .9; text-transform: uppercase; }
+.disciplineGrid ul { display: flex; flex-wrap: wrap; gap: .5rem; padding: 0; margin: 0; list-style: none; }
+.disciplineGrid li { padding: .3rem .45rem; border: 1px solid var(--rule); color: var(--muted); font-size: .7rem; }
+
+.projects { width: 100%; background: #ded9cd; padding-inline: max(var(--gutter), calc((100vw - var(--container)) / 2 + var(--gutter))); }
+.projectGrid a { display: flex; flex-direction: column; min-height: 17rem; padding: 1.5rem; color: inherit; background: var(--paper); text-decoration: none; transition: background var(--fast); }
+.projectGrid a:hover, .projectGrid a:focus-visible { background: var(--signal); }
+.projectGrid span { color: var(--signal-dark); font-size: .66rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.projectGrid p { margin: 0; color: var(--muted); line-height: 1.65; }
+.projectGrid b { display: inline-flex; gap: .45rem; align-items: center; margin-top: auto; padding-top: 1.5rem; font-size: .67rem; letter-spacing: .07em; text-transform: uppercase; }
+.projectGrid a:hover p, .projectGrid a:focus-visible p { color: currentColor; }
+
+.timeline ol { padding: 0; margin: 0; list-style: none; border-top: 1px solid var(--ink); }
+.timeline li { display: grid; gap: .75rem; padding: 1.5rem 0; border-bottom: 1px solid var(--rule); }
+.timeline li > span { color: var(--signal-dark); font-size: .7rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.timeline h3 { margin: 0; font-size: clamp(1.7rem, 4vw, 2.5rem); }
+.organisation { margin: .5rem 0; font-size: .78rem; font-weight: 700; text-transform: uppercase; }
+.timeline p:last-child { max-width: 40rem; margin: 0; color: var(--muted); line-height: 1.65; }
+
+.education { display: grid; gap: 1.5rem; padding-top: clamp(4rem, 8vw, 7rem); padding-bottom: clamp(4rem, 8vw, 7rem); color: var(--white); background: var(--ink); width: 100%; padding-inline: max(var(--gutter), calc((100vw - var(--container)) / 2 + var(--gutter))); }
+.education svg { color: var(--signal); }
+.education p:not(.sectionLabel) { max-width: 45rem; color: #d4d1c8; line-height: 1.7; }
+.education strong { color: var(--white); }
+
+.contact { display: grid; gap: 2rem; padding-top: clamp(4rem, 9vw, 8rem); padding-bottom: clamp(4rem, 9vw, 8rem); }
+.contact > div:last-child { max-width: 34rem; }
+.contact > div:last-child > p { margin: 0 0 1.5rem; color: var(--muted); line-height: 1.7; }
+
+@media (min-width: 48rem) {
+  .hero, .summary, .contact { grid-template-columns: minmax(0, 1.15fr) minmax(20rem, .85fr); align-items: end; }
+  .signals { grid-template-columns: repeat(3, 1fr); }
+  .signals article { border-right: 1px solid var(--rule); border-bottom: 0; }
+  .signals article:last-child { border-right: 0; }
+  .disciplineGrid, .projectGrid { grid-template-columns: repeat(2, 1fr); }
+  .timeline li { grid-template-columns: minmax(10rem, .25fr) 1fr; gap: 2rem; }
+  .education { grid-template-columns: 3rem minmax(0, 1fr); }
+}
+
+@media (min-width: 70rem) {
+  .disciplineGrid, .projectGrid { grid-template-columns: repeat(4, 1fr); }
+}

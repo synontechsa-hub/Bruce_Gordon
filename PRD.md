@@ -8,7 +8,7 @@ Last updated: 2026-08-14
 
 BGrafX is Bruce Gordon's independent South African creative practice. The website presents his work across graphic design, branding, responsive websites, practical automation, signage and production-aware design, and turns suitable interest into direct enquiries.
 
-The site should make three things clear quickly: Bruce brings more than 22 years of creative experience, he combines design judgment with technical and production knowledge, and a visitor can start a practical conversation without navigating a sales funnel.
+The site should make three things clear quickly: Bruce brings more than 23 years of creative experience, he combines design judgment with technical and production knowledge, and a visitor can start a practical conversation without navigating a sales funnel.
 
 ## Audience
 
@@ -41,7 +41,7 @@ Primary audiences are small and medium businesses, startups, manufacturers, sign
 - KerfSuite is presented as a real product connected to Synontech and Feed Rate.
 - Cladding work credits Alania Building Systems as the collaborating principal business; Bruce's responsibility varied by project.
 - Do not invent clients, outcomes, testimonials, awards, dates, statistics or business metrics.
-- Experience claims currently used on the site are 22+ years of professional experience and 14 years leading CNC production workflows.
+- Experience claims currently used on the site are 23+ years of professional experience and 14 years leading CNC production workflows.
 
 ## Enquiry and assistant experience
 
