@@ -7,9 +7,10 @@ import styles from "./FontForgeApp.module.css";
 
 interface FontInspectorProps {
   metadata: FontMetadata;
+  warning?: string | null;
 }
 
-export function FontInspector({ metadata }: FontInspectorProps) {
+export function FontInspector({ metadata, warning }: FontInspectorProps) {
   return (
     <div className={styles.inspectorCard} aria-labelledby="font-details-heading">
       <div className={styles.inspectorHeader}>
@@ -41,6 +42,15 @@ export function FontInspector({ metadata }: FontInspectorProps) {
           )}
         </div>
       </div>
+
+      {warning && <p className={styles.inspectorWarning} role="status">{warning}</p>}
+
+      {(metadata.variableStatus === "unknown" || metadata.cffOutlineStatus === "unknown") && (
+        <p className={styles.inspectorWarning} role="status">
+          Advanced variable-font and outline-table inspection is unavailable for compressed web-font
+          sources. Conversion notices remain conservative.
+        </p>
+      )}
 
       <div className={styles.metadataGrid}>
         <div className={styles.metaItem}>

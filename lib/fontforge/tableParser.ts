@@ -1,4 +1,4 @@
-import type { FontFormat, FontMetadata, VariableAxis } from "./types";
+import type { FeatureDetectionStatus, FontFormat, FontMetadata, VariableAxis } from "./types";
 import { formatBytes } from "./detector";
 
 interface SFNTTableRecord {
@@ -111,7 +111,9 @@ export function extractMetadataFromTTFObject(
 ): FontMetadata {
   let isVariable = false;
   let variableAxes: VariableAxis[] = [];
-  let hasCffOutlines = originalFormat === "otf";
+  let variableStatus: FeatureDetectionStatus = "unknown";
+  let hasCffOutlines = false;
+  let cffOutlineStatus: FeatureDetectionStatus = "unknown";
 
   // If raw SFNT buffer is available (for TTF / OTF), parse SFNT directory for exact tables
   if (rawBuffer && (originalFormat === "ttf" || originalFormat === "otf")) {
@@ -121,11 +123,16 @@ export function extractMetadataFromTTFObject(
       const varInfo = detectVariableFontAxes(rawBuffer, tableMap);
       isVariable = varInfo.isVariable;
       variableAxes = varInfo.axes;
+      variableStatus = isVariable ? "detected" : "not_detected";
       if (tableMap.has("CFF ") || tableMap.has("CFF2")) {
         hasCffOutlines = true;
+        cffOutlineStatus = "detected";
+      } else {
+        cffOutlineStatus = "not_detected";
       }
     } catch {
-      // Non-blocking fallback
+      variableStatus = "unknown";
+      cffOutlineStatus = "unknown";
     }
   }
 
@@ -177,7 +184,9 @@ export function extractMetadataFromTTFObject(
     widthClass,
     isVariable,
     variableAxes,
+    variableStatus,
     hasCffOutlines,
+    cffOutlineStatus,
     version: nameTable.version || "1.0",
     copyright: nameTable.copyright,
   };

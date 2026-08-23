@@ -34,7 +34,7 @@ interface FormatSelectorProps {
   errorMessage: string | null;
 }
 
-const AVAILABLE_FORMATS: TargetFormat[] = ["woff2", "woff", "ttf", "otf"];
+const AVAILABLE_FORMATS: TargetFormat[] = ["woff2", "woff", "ttf"];
 
 export function FormatSelector({
   sourceFormat,

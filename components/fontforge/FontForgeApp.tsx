@@ -29,6 +29,7 @@ export function FontForgeApp() {
   const [convertedResult, setConvertedResult] = useState<ConvertedResult | null>(null);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [dropzoneError, setDropzoneError] = useState<string | null>(null);
+  const [fileWarning, setFileWarning] = useState<string | null>(null);
   const [previewFamily, setPreviewFamily] = useState<string | null>(null);
 
   // References to keep in memory for cleanup
@@ -67,6 +68,7 @@ export function FontForgeApp() {
   // Handle file selection
   const handleFileSelect = async (selectedFile: File) => {
     setDropzoneError(null);
+    setFileWarning(null);
     setErrorMessage(null);
 
     // 1. Enforce 20MB file size limit
@@ -87,6 +89,11 @@ export function FontForgeApp() {
 
       // 3. Detect format from magic bytes
       const detection = detectFontFormat(buffer, selectedFile.name);
+      if (detection.isExtensionMismatch) {
+        setFileWarning(
+          `File extension mismatch: this file is named .${detection.fileExtension || "unknown"}, but its header identifies it as ${detection.detectedExtension.toUpperCase()}. FontForge will use the file header.`
+        );
+      }
 
       // 4. Parse font and extract metadata
       const { fontInstance, metadata } = await parseFontBuffer(
@@ -173,6 +180,7 @@ export function FontForgeApp() {
     setConvertedResult(null);
     setErrorMessage(null);
     setDropzoneError(null);
+    setFileWarning(null);
     setSelectedTarget("woff2");
   };
 
@@ -208,7 +216,7 @@ export function FontForgeApp() {
         ) : (
           <div className={styles.workspaceLayout}>
             {/* Font Inspector */}
-            <FontInspector metadata={fontMetadata} />
+            <FontInspector metadata={fontMetadata} warning={fileWarning} />
 
             {/* Live Specimen Preview */}
             <FontPreview previewFamily={previewFamily} fontName={fontMetadata.familyName} />

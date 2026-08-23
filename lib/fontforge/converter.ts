@@ -1,4 +1,5 @@
 import { Font, woff2 } from "fonteditor-core";
+import { deflate, inflate } from "pako";
 import type {
   FontFormat,
   TargetFormat,
@@ -6,13 +7,18 @@ import type {
   CompatibilityCheck,
   ConvertedResult,
 } from "./types";
-import { formatBytes } from "./detector";
+import { detectFontFormat, formatBytes } from "./detector";
 import { extractMetadataFromTTFObject } from "./tableParser";
 import { initWoff2Wasm, getWasmStatus } from "./wasmLoader";
 
+const inflateWoff = (compressedData: number[]): number[] =>
+  Array.from(inflate(Uint8Array.from(compressedData)));
+
+const deflateWoff = (rawData: number[]): number[] =>
+  Array.from(deflate(Uint8Array.from(rawData)));
+
 export const MIME_TYPES: Record<TargetFormat, string> = {
   ttf: "font/ttf",
-  otf: "font/otf",
   woff: "font/woff",
   woff2: "font/woff2",
 };
@@ -36,11 +42,6 @@ export const FORMAT_DESCRIPTIONS: Record<
     tag: "Desktop & Mobile",
     description: "Universal TrueType vector font for macOS, Windows, Linux, and design apps.",
   },
-  otf: {
-    label: "OTF",
-    tag: "Desktop OpenType",
-    description: "OpenType vector font container with TrueType outline tables.",
-  },
 };
 
 export function evaluateCompatibility(
@@ -62,7 +63,11 @@ export function evaluateCompatibility(
   // Variable font warning
   if (metadata?.isVariable) {
     warnings.push(
-      "Variable Font: Font contains variation axes. In-browser conversion will flatten the font into a static instance; variable axes will not be preserved."
+      "Variable Font: Variation axes and related variable-font data may be altered, lost, or unsupported during conversion. The converted font may no longer remain variable."
+    );
+  } else if (metadata?.variableStatus === "unknown") {
+    warnings.push(
+      "Variable Font Inspection: Variation-table inspection is unavailable for this compressed source. Variable-font data may be altered or unsupported during conversion."
     );
   }
 
@@ -86,13 +91,6 @@ export function evaluateCompatibility(
     }
   }
 
-  // General OpenType table notice
-  if (sourceFormat !== "woff2" && targetFormat === "otf") {
-    warnings.push(
-      "OTF Output Note: Resulting file uses TrueType glyph outlines wrapped inside an OpenType container."
-    );
-  }
-
   if (warnings.length > 0) {
     return {
       status: "warning",
@@ -105,8 +103,8 @@ export function evaluateCompatibility(
 
   return {
     status: "supported",
-    label: "Fully Supported",
-    description: "Standard outline conversion with near-lossless fidelity.",
+    label: "Supported",
+    description: "Standard conversion path with broad compatibility.",
     warnings: [],
   };
 }
@@ -133,6 +131,7 @@ export async function parseFontBuffer(
       hinting: false,
       kerning: true,
       compound2simple: true,
+      inflate: inflateWoff,
     });
 
     const ttfObject = fontInstance.get();
@@ -201,11 +200,11 @@ export async function convertFontInstance(
       // 2. Compress with Google WOFF2 WASM
       uint8Data = woff2.encode(ttfOutput as unknown as ArrayBuffer);
     } else {
-      const writeType = targetFormat === "otf" ? "ttf" : targetFormat;
       const outputData = fontInstance.write({
-        type: writeType,
+        type: targetFormat,
         hinting: false,
         kerning: true,
+        ...(targetFormat === "woff" ? { deflate: deflateWoff } : {}),
       });
 
       if (!outputData) {
@@ -235,12 +234,23 @@ export async function convertFontInstance(
     throw new Error(`Font conversion to ${targetFormat.toUpperCase()} failed: ${msg}`);
   }
 
+  const fileName = sanitizeFontFileName(originalFileName, targetFormat);
+  const outputBuffer = new Uint8Array(uint8Data.byteLength);
+  outputBuffer.set(uint8Data);
+  const detectedOutput = detectFontFormat(
+    outputBuffer.buffer,
+    fileName
+  );
+  if (detectedOutput.format !== targetFormat) {
+    throw new Error(
+      `Conversion produced ${detectedOutput.format.toUpperCase()} data instead of the requested ${targetFormat.toUpperCase()} output.`
+    );
+  }
+
   const mimeType = MIME_TYPES[targetFormat];
   const blob = new Blob([uint8Data as unknown as BlobPart], { type: mimeType });
   const fileSizeBytes = uint8Data ? (uint8Data.byteLength || uint8Data.length || blob.size) : 0;
   const downloadUrl = typeof URL.createObjectURL === "function" ? URL.createObjectURL(blob) : "";
-  const fileName = sanitizeFontFileName(originalFileName, targetFormat);
-
   return {
     blob,
     downloadUrl,

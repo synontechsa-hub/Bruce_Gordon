@@ -32,10 +32,13 @@ export function FontForgeGuide() {
             <br />
             <strong>WOFF:</strong> Legacy web font container.
             <br />
-            <strong>TTF & OTF:</strong> Universal vector formats for desktop publishing, UI design,
-            and mobile apps.
+            <strong>TTF:</strong> Universal vector format for desktop publishing, UI design, and
+            mobile apps.
+            <br />
+            <strong>OTF:</strong> Accepted as an input format and converted to the supported output
+            formats below.
           </p>
-          <span className={styles.guideTag}>TTF • OTF • WOFF • WOFF2</span>
+          <span className={styles.guideTag}>Output: TTF • WOFF • WOFF2</span>
         </div>
 
         {/* Licensing Card */}

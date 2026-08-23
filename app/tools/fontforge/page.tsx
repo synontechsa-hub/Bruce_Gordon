@@ -4,14 +4,14 @@ import { SiteFooter } from "@/components/site-footer/SiteFooter";
 import { FontForgeApp } from "@/components/fontforge/FontForgeApp";
 
 export const metadata: Metadata = {
-  title: "FontForge | In-Browser Font Converter (TTF, OTF, WOFF, WOFF2) | BGrafX",
+  title: "FontForge | In-Browser Font Converter | BGrafX",
   description:
-    "Convert fonts directly inside your browser with BGrafX FontForge. 100% private client-side font conversion between TTF, OTF, WOFF, and WOFF2 with live specimen preview.",
+    "Convert TTF, OTF, WOFF, and WOFF2 inputs to TTF, WOFF, or WOFF2 directly inside your browser, with a live specimen preview.",
   alternates: { canonical: "/tools/fontforge" },
   openGraph: {
     title: "FontForge — Free In-Browser Font Converter | BGrafX",
     description:
-      "Fast, client-side font conversion between TTF, OTF, WOFF, and WOFF2. Your font files stay on your device.",
+      "Client-side conversion from TTF, OTF, WOFF, and WOFF2 inputs to TTF, WOFF, or WOFF2. Your font files stay on your device.",
     url: "/tools/fontforge",
     images: ["/og-bgrafx-v2.png"],
   },
@@ -24,7 +24,7 @@ export default function FontForgePage() {
     name: "BGrafX FontForge",
     url: "https://www.bgrafx.co.za/tools/fontforge",
     description:
-      "A fast, 100% client-side web font converter supporting TTF, OTF, WOFF, and WOFF2 formats with live specimen testing and zero server uploads.",
+      "A client-side font converter accepting TTF, OTF, WOFF, and WOFF2 inputs and producing TTF, WOFF, or WOFF2 downloads with live specimen testing and zero server uploads.",
     applicationCategory: "DesignApplication",
     operatingSystem: "Any",
     browserRequirements: "Requires a modern browser with WebAssembly support",

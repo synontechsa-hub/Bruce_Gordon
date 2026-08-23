@@ -5,6 +5,25 @@ import { parseFontBuffer, convertFontInstance, evaluateCompatibility } from "../
 import { initWoff2Wasm, getWasmStatus } from "../lib/fontforge/wasmLoader";
 import type { FontFormat, TargetFormat } from "../lib/fontforge/types";
 
+const outputDirectory = process.env.FONTFORGE_OUTPUT_DIR;
+const outputRunDirectory = outputDirectory
+  ? path.join(outputDirectory, `run-${new Date().toISOString().replace(/[:.]/g, "-")}`)
+  : undefined;
+
+async function saveConvertedFixture(
+  result: Awaited<ReturnType<typeof convertFontInstance>>,
+  sourceFilePath: string
+) {
+  if (!outputRunDirectory) return;
+
+  fs.mkdirSync(outputRunDirectory, { recursive: true });
+  const sourceFile = path.parse(sourceFilePath);
+  const outputFileName = `${sourceFile.name}-${sourceFile.ext.slice(1)}-to-${result.targetFormat}.${result.targetFormat}`;
+  const outputPath = path.join(outputRunDirectory, outputFileName);
+  fs.writeFileSync(outputPath, Buffer.from(await result.blob.arrayBuffer()));
+  console.log(`   --> Saved validation output: ${outputPath}`);
+}
+
 async function testFont(filePath: string, expectedFormat: FontFormat, expectedVariable = false) {
   console.log(`\n======================================================`);
   console.log(`TESTING FONT: ${path.basename(filePath)} (${filePath})`);
@@ -41,7 +60,7 @@ async function testFont(filePath: string, expectedFormat: FontFormat, expectedVa
   }
 
   // 3. Test Compatibility Warnings
-  const targetFormats: TargetFormat[] = ["woff2", "woff", "ttf", "otf"];
+  const targetFormats: TargetFormat[] = ["woff2", "woff", "ttf"];
   for (const target of targetFormats) {
     if (target === detection.format) continue;
     const check = evaluateCompatibility(detection.format, target, metadata);
@@ -61,12 +80,13 @@ async function testFont(filePath: string, expectedFormat: FontFormat, expectedVa
       throw new Error(`Conversion produced empty output for target ${target}`);
     }
 
+    await saveConvertedFixture(result, filePath);
+
     // Verify converted output can be re-parsed
     const convertedBuffer = await result.blob.arrayBuffer();
     const subDetect = detectFontFormat(convertedBuffer, result.fileName);
     console.log(`   --> Verified converted file header: ${subDetect.format.toUpperCase()}`);
-    const validHeader = target === "otf" ? (subDetect.format === "ttf" || subDetect.format === "otf") : subDetect.format === target;
-    if (!validHeader) {
+    if (subDetect.format !== target) {
       throw new Error(`Converted file header mismatch: expected ${target}, got ${subDetect.format}`);
     }
   }
@@ -79,21 +99,28 @@ async function runSuite() {
   await initWoff2Wasm();
   console.log("WASM status:", getWasmStatus());
 
-  // Test 1: Real OTF file with CFF outlines
-  await testFont("D:\\Fonts\\Quinn-Bold.otf", "otf", false);
+  // Fontsource packages are already installed for the site and make this suite portable.
+  const fixtureDirectory = path.resolve("node_modules/@fontsource/barlow-condensed/files");
+  const woffPath = path.join(fixtureDirectory, "barlow-condensed-latin-400-normal.woff");
+  const woff2Path = path.join(fixtureDirectory, "barlow-condensed-latin-400-normal.woff2");
 
-  // Test 2: Real Variable Font
-  await testFont("D:\\Fonts\\Outfit\\Outfit-VariableFont_wght.ttf", "ttf", true);
-
-  // Test 3: Real Static TTF
-  await testFont("D:\\Fonts\\Permanent_Marker\\PermanentMarker-Regular.ttf", "ttf", false);
-
-  // Test 4: Another Variable Font (Playfair Display)
-  await testFont("D:\\Fonts\\Playfair_Display\\PlayfairDisplay-VariableFont_wght.ttf", "ttf", true);
-
-  // Test 5: Real WOFF2 from fontsource
-  const woff2Path = path.resolve("node_modules/@fontsource/barlow-condensed/files/barlow-condensed-latin-100-normal.woff2");
+  await testFont(woffPath, "woff", false);
   await testFont(woff2Path, "woff2", false);
+
+  const externalFixtureRoot = process.env.FONTFORGE_EXTERNAL_FIXTURE_ROOT;
+  if (externalFixtureRoot) {
+    await testFont(
+      path.join(externalFixtureRoot, "Outfit", "static", "Outfit-Regular.ttf"),
+      "ttf",
+      false
+    );
+    await testFont(
+      path.join(externalFixtureRoot, "Outfit", "Outfit-VariableFont_wght.ttf"),
+      "ttf",
+      true
+    );
+    await testFont(path.join(externalFixtureRoot, "Quinn-Bold.otf"), "otf", false);
+  }
 
   console.log("\n======================================================");
   console.log("🎉 ALL REAL FONT VERIFICATION TESTS PASSED 100%!");

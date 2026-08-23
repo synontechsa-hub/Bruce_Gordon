@@ -1,6 +1,10 @@
 export type FontFormat = "ttf" | "otf" | "woff" | "woff2";
 
-export type TargetFormat = "ttf" | "otf" | "woff" | "woff2";
+// fonteditor-core cannot produce a distinct, valid OTF/CFF output. Keep OTF as
+// an input format, but do not offer it as a download target.
+export type TargetFormat = "ttf" | "woff" | "woff2";
+
+export type FeatureDetectionStatus = "detected" | "not_detected" | "unknown";
 
 export type CompatibilityStatus = "supported" | "warning" | "unsupported";
 
@@ -27,7 +31,9 @@ export interface FontMetadata {
   widthClass: number;
   isVariable: boolean;
   variableAxes: VariableAxis[];
+  variableStatus: FeatureDetectionStatus;
   hasCffOutlines: boolean;
+  cffOutlineStatus: FeatureDetectionStatus;
   version?: string;
   copyright?: string;
 }

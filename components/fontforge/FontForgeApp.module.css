@@ -247,6 +247,16 @@
   gap: 0.5rem;
 }
 
+.inspectorWarning {
+  margin: 0 0 1.25rem;
+  padding: 0.75rem 0.9rem;
+  border-left: 4px solid #f59e0b;
+  background: #fffbeb;
+  color: #92400e;
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
 .formatBadge {
   padding: 0.35rem 0.75rem;
   background: var(--ink);
