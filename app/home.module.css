@@ -165,7 +165,7 @@
   position: absolute;
   top: 0;
   right: 0;
-  width: 1.1rem;
+  width: 0.55rem;
   height: 100%;
   background: repeating-linear-gradient(0deg, transparent 0 1.2rem, var(--paper) 1.25rem 1.5rem, transparent 1.55rem 2.75rem);
   content: "";
