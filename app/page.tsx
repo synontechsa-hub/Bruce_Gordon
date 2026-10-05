@@ -60,10 +60,6 @@ export default function HomePage() {
                 <span className={styles.folioNumber} aria-hidden="true">01 | 24</span>
               </div>
 
-              <div className={styles.notebook} aria-hidden="true">
-                <span>Ideas</span><i /><span>Design</span><i /><strong>Impact</strong>
-              </div>
-              <div className={styles.tape} aria-hidden="true" />
               <div className={styles.colourStrip} aria-hidden="true"><i /><i /><i /><i /><i /></div>
             </motion.div>
           </div>
