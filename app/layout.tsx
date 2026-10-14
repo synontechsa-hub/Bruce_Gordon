@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     url: "/",
     siteName: "BGrafX",
     title: "Bruce Gordon | Design That Gets Noticed",
-    description: "Graphic design, websites and practical digital systems - built with 22+ years of creative experience.",
+    description: "Graphic design, websites and practical digital systems - built with 23+ years of creative experience.",
     images: [{ url: "/og-bgrafx-v2.png", width: 1200, height: 630, alt: "BGrafX - Design that gets noticed" }],
   },
   twitter: {

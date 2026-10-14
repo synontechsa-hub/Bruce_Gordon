@@ -34,8 +34,10 @@ export function FontForgeApp() {
 
   // References to keep in memory for cleanup
   const activeFontInstanceRef = useRef<InstanceType<typeof Font> | null>(null);
+  const activeSourceBufferRef = useRef<ArrayBuffer | null>(null);
   const activePreviewRef = useRef<FontPreviewInstance | null>(null);
   const activeDownloadUrlRef = useRef<string | null>(null);
+  const sessionRef = useRef(0);
 
   // Pre-initialize WASM runtime silently in background on client mount
   useEffect(() => {
@@ -55,18 +57,21 @@ export function FontForgeApp() {
       activeDownloadUrlRef.current = null;
     }
     activeFontInstanceRef.current = null;
+    activeSourceBufferRef.current = null;
     setPreviewFamily(null);
   }, []);
 
   // Cleanup on unmount
   useEffect(() => {
     return () => {
+      sessionRef.current += 1;
       cleanupResources();
     };
   }, [cleanupResources]);
 
   // Handle file selection
   const handleFileSelect = async (selectedFile: File) => {
+    const session = ++sessionRef.current;
     setDropzoneError(null);
     setFileWarning(null);
     setErrorMessage(null);
@@ -86,6 +91,7 @@ export function FontForgeApp() {
     try {
       // 2. Read ArrayBuffer
       const buffer = await selectedFile.arrayBuffer();
+      if (session !== sessionRef.current) return;
 
       // 3. Detect format from magic bytes
       const detection = detectFontFormat(buffer, selectedFile.name);
@@ -101,8 +107,10 @@ export function FontForgeApp() {
         selectedFile.name,
         detection.format
       );
+      if (session !== sessionRef.current) return;
 
       activeFontInstanceRef.current = fontInstance;
+      activeSourceBufferRef.current = buffer;
       setFile(selectedFile);
       setFontMetadata(metadata);
 
@@ -119,11 +127,16 @@ export function FontForgeApp() {
 
       // 5. Mount isolated in-memory FontFace for live preview
       const previewInstance = await createFontPreview(buffer, metadata.familyName);
+      if (session !== sessionRef.current) {
+        previewInstance?.dispose();
+        return;
+      }
       if (previewInstance) {
         activePreviewRef.current = previewInstance;
         setPreviewFamily(previewInstance.family);
       }
     } catch (err: unknown) {
+      if (session !== sessionRef.current) return;
       const msg = err instanceof Error ? err.message : String(err);
       cleanupResources();
       setDropzoneError(msg);
@@ -134,7 +147,8 @@ export function FontForgeApp() {
 
   // Handle Conversion
   const handleConvert = async () => {
-    if (!activeFontInstanceRef.current || !fontMetadata || !file) {
+    const session = sessionRef.current;
+    if (!activeFontInstanceRef.current || !activeSourceBufferRef.current || !fontMetadata || !file) {
       setErrorMessage("No font loaded to convert.");
       return;
     }
@@ -158,21 +172,42 @@ export function FontForgeApp() {
         activeFontInstanceRef.current,
         fontMetadata.format,
         selectedTarget,
-        file.name
+        file.name,
+        fontMetadata,
+        activeSourceBufferRef.current
       );
+
+      if (session !== sessionRef.current) {
+        if (result.downloadUrl) URL.revokeObjectURL(result.downloadUrl);
+        return;
+      }
 
       activeDownloadUrlRef.current = result.downloadUrl;
       setConvertedResult(result);
       setConversionStatus("success");
     } catch (err: unknown) {
+      if (session !== sessionRef.current) return;
       const msg = err instanceof Error ? err.message : String(err);
       setErrorMessage(msg);
       setConversionStatus("error");
     }
   };
 
+  const handleTargetSelect = (target: TargetFormat) => {
+    if (target === selectedTarget) return;
+    if (activeDownloadUrlRef.current) {
+      URL.revokeObjectURL(activeDownloadUrlRef.current);
+      activeDownloadUrlRef.current = null;
+    }
+    setSelectedTarget(target);
+    setConvertedResult(null);
+    setConversionStatus("idle");
+    setErrorMessage(null);
+  };
+
   // Reset entire state
   const handleReset = () => {
+    sessionRef.current += 1;
     cleanupResources();
     setFile(null);
     setFontMetadata(null);
@@ -201,12 +236,12 @@ export function FontForgeApp() {
         <div className={styles.privacyBadge}>
           <span className={styles.privacyDot} aria-hidden="true" />
           <ShieldCheck size={16} aria-hidden="true" />
-          <span>Local Device Processing Guarantee — 100% Private</span>
+          <span>Font conversion runs in your browser</span>
         </div>
       </header>
 
       {/* Main App Workflow */}
-      <main id="fontforge-workbench">
+      <main id="main-content">
         {!fontMetadata ? (
           <Dropzone
             onFileSelect={handleFileSelect}
@@ -225,7 +260,7 @@ export function FontForgeApp() {
             <FormatSelector
               sourceFormat={fontMetadata.format}
               selectedTarget={selectedTarget}
-              onSelectTarget={setSelectedTarget}
+              onSelectTarget={handleTargetSelect}
               onConvert={handleConvert}
               onReset={handleReset}
               metadata={fontMetadata}

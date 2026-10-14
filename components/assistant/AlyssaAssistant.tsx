@@ -47,7 +47,7 @@ const tourSteps: TourStep[] = [
     target: "#home",
     eyebrow: "Welcome to BGrafX",
     title: "Design with practical purpose.",
-    text: "This is Bruce’s independent creative studio, combining graphic design, websites and automation with more than 22 years of hands-on experience.",
+    text: "This is Bruce’s independent creative studio, combining graphic design, websites and automation with 23+ years of hands-on experience.",
   },
   {
     target: "#services",

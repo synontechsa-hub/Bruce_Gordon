@@ -6,7 +6,6 @@ import {
   CheckCircle,
   ArrowRight,
   Loader2,
-  RefreshCw,
   Download,
 } from "lucide-react";
 import type {
@@ -56,9 +55,9 @@ export function FormatSelector({
     <div className={styles.conversionPanel} aria-labelledby="conversion-options-heading">
       <div className={styles.conversionHeader}>
         <span className={styles.inspectorKicker}>Target Format</span>
-        <h3 id="conversion-options-heading" className={styles.conversionHeading}>
+        <h2 id="conversion-options-heading" className={styles.conversionHeading}>
           Choose Output Format
-        </h3>
+        </h2>
       </div>
 
       <div
@@ -126,6 +125,19 @@ export function FormatSelector({
         </div>
       )}
 
+      {isSuccess && convertedResult && convertedResult.lostLayoutTables.length > 0 && (
+        <div className={styles.warningBox} role="status">
+          <div className={styles.warningTitle}>
+            <AlertTriangle size={16} aria-hidden="true" />
+            <strong>Converted Font Limitation</strong>
+          </div>
+          <p className={styles.outputWarningText}>
+            The download no longer contains {convertedResult.lostLayoutTables.join(", ")}.
+            Test ligatures, kerning, and shaping before using it in production.
+          </p>
+        </div>
+      )}
+
       {/* Conversion Error */}
       {errorMessage && (
         <div className={styles.conversionError} role="alert">
@@ -167,15 +179,6 @@ export function FormatSelector({
               Download {convertedResult?.fileName} ({convertedResult?.formattedSize})
             </a>
 
-            <button
-              type="button"
-              className={styles.convertAgainButton}
-              onClick={onConvert}
-              disabled={isConverting}
-            >
-              <RefreshCw size={15} aria-hidden="true" />
-              Convert to another format
-            </button>
           </div>
         )}
 

@@ -1,4 +1,4 @@
-import { Font, woff2 } from "fonteditor-core";
+import fonteditorCore, { Font, woff2 } from "fonteditor-core";
 import { deflate, inflate } from "pako";
 import type {
   FontFormat,
@@ -17,6 +17,11 @@ const inflateWoff = (compressedData: number[]): number[] =>
 const deflateWoff = (rawData: number[]): number[] =>
   Array.from(deflate(Uint8Array.from(rawData)));
 
+function toArrayBuffer(data: ArrayBuffer | ArrayBufferView): ArrayBuffer {
+  if (data instanceof ArrayBuffer) return data;
+  return new Uint8Array(data.buffer, data.byteOffset, data.byteLength).slice().buffer as ArrayBuffer;
+}
+
 export const MIME_TYPES: Record<TargetFormat, string> = {
   ttf: "font/ttf",
   woff: "font/woff",
@@ -30,7 +35,7 @@ export const FORMAT_DESCRIPTIONS: Record<
   woff2: {
     label: "WOFF2",
     tag: "Recommended for Web",
-    description: "Modern standard web font with maximum Brotli compression (30%+ smaller).",
+    description: "Modern web font format with Brotli compression. File size depends on the font.",
   },
   woff: {
     label: "WOFF",
@@ -71,10 +76,21 @@ export function evaluateCompatibility(
     );
   }
 
-  // OTF / CFF conversion warnings
-  if (sourceFormat === "otf" || metadata?.hasCffOutlines) {
+  // Only a TTF target requires rebuilding CFF outlines as TrueType curves.
+  if (targetFormat === "ttf" && (sourceFormat === "otf" || metadata?.hasCffOutlines)) {
     warnings.push(
-      "PostScript CFF Outlines: Converting CFF outlines to TrueType curves will approximate bezier splines. Advanced OpenType layout features, hinting, or specialized tables may be dropped."
+      "PostScript CFF Outlines: Conversion approximates the original curves as TrueType outlines. Original CFF data and hinting are not preserved."
+    );
+  }
+
+  const rebuildsCff = targetFormat === "ttf" && (sourceFormat === "otf" || metadata?.hasCffOutlines);
+  if (rebuildsCff && metadata?.layoutStatus === "detected") {
+    warnings.push(
+      `OpenType Layout: This font contains ${metadata.layoutTables.join(", ")} tables. Some may be omitted during conversion, changing ligatures, kerning, or complex-script shaping.`
+    );
+  } else if (rebuildsCff && metadata?.layoutStatus === "unknown") {
+    warnings.push(
+      "OpenType Layout: Layout tables cannot be inspected for this source. Ligatures, kerning, or shaping may be lost during conversion."
     );
   }
 
@@ -114,7 +130,7 @@ export async function parseFontBuffer(
   fileName: string,
   detectedFormat: FontFormat
 ): Promise<{ fontInstance: InstanceType<typeof Font>; metadata: FontMetadata }> {
-  // If reading WOFF2, ensure WASM is ready
+  // Decompress web containers before parsing so CFF-based WOFF/WOFF2 fonts work too.
   if (detectedFormat === "woff2") {
     const wasmReady = await initWoff2Wasm();
     if (!wasmReady) {
@@ -125,9 +141,18 @@ export async function parseFontBuffer(
   }
 
   try {
+    const parseBuffer = detectedFormat === "woff2"
+      ? toArrayBuffer(woff2.decode(buffer))
+      : detectedFormat === "woff"
+        ? fonteditorCore.woff2ttf(buffer, { inflate: inflateWoff })
+        : buffer;
+    const parseFormat = detectedFormat === "woff" || detectedFormat === "woff2"
+      ? detectFontFormat(parseBuffer, fileName).format
+      : detectedFormat;
+
     // Read font through fonteditor-core
-    const fontInstance = Font.create(buffer, {
-      type: detectedFormat,
+    const fontInstance = Font.create(parseBuffer, {
+      type: parseFormat,
       hinting: false,
       kerning: true,
       compound2simple: true,
@@ -144,7 +169,8 @@ export async function parseFontBuffer(
       detectedFormat,
       fileName,
       buffer.byteLength,
-      buffer
+      buffer,
+      parseBuffer
     );
 
     return { fontInstance, metadata };
@@ -170,14 +196,18 @@ export async function convertFontInstance(
   fontInstance: InstanceType<typeof Font>,
   sourceFormat: FontFormat,
   targetFormat: TargetFormat,
-  originalFileName: string
+  originalFileName: string,
+  sourceMetadata: FontMetadata,
+  sourceBuffer: ArrayBuffer
 ): Promise<ConvertedResult> {
   if (sourceFormat === targetFormat) {
     throw new Error("Cannot convert font to the same format.");
   }
 
-  // If writing WOFF2, ensure WASM is initialized
-  if (targetFormat === "woff2") {
+  const sourceGlyphCount = fontInstance.get().maxp?.numGlyphs ?? 0;
+
+  // WOFF2 input and output both require WASM.
+  if (sourceFormat === "woff2" || targetFormat === "woff2") {
     const wasmReady = await initWoff2Wasm();
     if (!wasmReady) {
       throw new Error(
@@ -189,22 +219,32 @@ export async function convertFontInstance(
   let uint8Data: Uint8Array;
 
   try {
-    if (targetFormat === "woff2") {
-      // 1. Generate standard TTF representation first
-      const ttfOutput = fontInstance.write({
-        type: "ttf",
-        hinting: false,
-        kerning: true,
-      });
+    const sourceSfnt = sourceFormat === "woff"
+      ? fonteditorCore.woff2ttf(sourceBuffer, { inflate: inflateWoff })
+      : sourceFormat === "woff2"
+        ? toArrayBuffer(woff2.decode(sourceBuffer))
+        : sourceBuffer;
 
-      // 2. Compress with Google WOFF2 WASM
-      uint8Data = woff2.encode(ttfOutput as unknown as ArrayBuffer);
+    const isCffSfnt = new DataView(sourceSfnt).getUint32(0, false) === 0x4f54544f;
+    if (!(targetFormat === "ttf" && isCffSfnt)) {
+      if (targetFormat === "ttf") {
+        uint8Data = new Uint8Array(sourceSfnt);
+      } else if (targetFormat === "woff2") {
+        uint8Data = woff2.encode(sourceSfnt);
+      } else {
+        const woffBuffer = fonteditorCore.ttf2woff(sourceSfnt, {
+          metadata: undefined,
+          deflate: deflateWoff,
+        });
+        if (isCffSfnt) new DataView(woffBuffer).setUint32(4, 0x4f54544f, false);
+        uint8Data = new Uint8Array(woffBuffer);
+      }
     } else {
+      // CFF to TTF changes outline technology; the compatibility notice covers this loss.
       const outputData = fontInstance.write({
         type: targetFormat,
         hinting: false,
         kerning: true,
-        ...(targetFormat === "woff" ? { deflate: deflateWoff } : {}),
       });
 
       if (!outputData) {
@@ -247,6 +287,24 @@ export async function convertFontInstance(
     );
   }
 
+  let lostLayoutTables: string[] = [];
+  try {
+    const { metadata } = await parseFontBuffer(outputBuffer.buffer, fileName, targetFormat);
+    if (metadata.glyphCount < 1) {
+      throw new Error("The generated font contains no glyphs.");
+    }
+    if (sourceGlyphCount > 0 && metadata.glyphCount !== sourceGlyphCount) {
+      throw new Error(`Glyph count changed from ${sourceGlyphCount} to ${metadata.glyphCount}.`);
+    }
+    const outputTables = metadata.layoutStatus === "unknown" ? null : metadata.layoutTables;
+    if (sourceMetadata.layoutStatus === "detected" && outputTables) {
+      lostLayoutTables = sourceMetadata.layoutTables.filter((tag) => !outputTables.includes(tag));
+    }
+  } catch (err: unknown) {
+    const message = err instanceof Error ? err.message : String(err);
+    throw new Error(`Generated ${targetFormat.toUpperCase()} font failed validation: ${message}`);
+  }
+
   const mimeType = MIME_TYPES[targetFormat];
   const blob = new Blob([uint8Data as unknown as BlobPart], { type: mimeType });
   const fileSizeBytes = uint8Data ? (uint8Data.byteLength || uint8Data.length || blob.size) : 0;
@@ -259,5 +317,6 @@ export async function convertFontInstance(
     fileSizeBytes,
     formattedSize: formatBytes(fileSizeBytes),
     convertedAt: new Date(),
+    lostLayoutTables,
   };
 }

@@ -8,7 +8,7 @@ import styles from "./page.module.css";
 
 export const metadata: Metadata = {
   title: "Bruce Gordon | Creator, Designer & Developer | BGrafX",
-  description: "Professional profile of Bruce Gordon: a multidisciplinary creator, designer and developer with 23 years of experience across design, production, CNC, web, software and automation.",
+  description: "Professional profile of Bruce Gordon: a multidisciplinary creator, designer and developer with 23+ years of experience across design, production, CNC, web, software and automation.",
   alternates: { canonical: "/bruce-gordon" },
   openGraph: {
     title: "Bruce Gordon | Creator, Designer & Developer | BGrafX",
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 };
 
 const profileSignals = [
-  { icon: Sparkles, label: "23 years", detail: "Professional design experience" },
+  { icon: Sparkles, label: "23+ years", detail: "Professional design experience" },
   { icon: Ruler, label: "14 years", detail: "Leading CNC production workflows" },
   { icon: Code2, label: "Current focus", detail: "Software, web & practical automation" },
 ];

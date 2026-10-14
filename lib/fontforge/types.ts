@@ -34,6 +34,8 @@ export interface FontMetadata {
   variableStatus: FeatureDetectionStatus;
   hasCffOutlines: boolean;
   cffOutlineStatus: FeatureDetectionStatus;
+  layoutTables: string[];
+  layoutStatus: FeatureDetectionStatus;
   version?: string;
   copyright?: string;
 }
@@ -57,4 +59,5 @@ export interface ConvertedResult {
   fileSizeBytes: number;
   formattedSize: string;
   convertedAt: Date;
+  lostLayoutTables: string[];
 }

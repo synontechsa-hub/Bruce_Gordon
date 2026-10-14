@@ -32,7 +32,7 @@ export default function HomePage() {
           <div className={styles.heroInner}>
             <motion.div className={styles.heroCopy} {...entrance} transition={{ duration: 0.45, ease: "easeOut" }}>
               <div className={styles.heroEyebrow}>
-                <span>22+ years</span>
+                <span>23+ years</span>
                 <strong>Design, production + digital</strong>
               </div>
 
@@ -60,6 +60,23 @@ export default function HomePage() {
                 <span className={styles.folioNumber} aria-hidden="true">01 | 24</span>
               </div>
 
+              <div className={styles.heroDrawing} aria-hidden="true">
+                <span className={styles.heroDrawingHeader}>BG / Working drawing 01</span>
+                <Image
+                  src="/media/hero-elevation-study.svg"
+                  alt=""
+                  width={280}
+                  height={200}
+                  className={styles.heroDrawingImage}
+                />
+                <span className={styles.heroDrawingFooter}>Facade / concept</span>
+              </div>
+
+              <div className={styles.heroSheetLine}>
+                <span>BG / Studio</span>
+                <strong>From<br />sketch<br />to site.</strong>
+              </div>
+
               <div className={styles.colourStrip} aria-hidden="true"><i /><i /><i /><i /><i /></div>
             </motion.div>
           </div>
@@ -68,7 +85,7 @@ export default function HomePage() {
         </section>
 
         <section className={styles.credibility} aria-label="BGrafX credentials">
-          <div><strong>22+</strong><span>Years of professional experience</span></div>
+          <div><strong>23+</strong><span>Years of professional experience</span></div>
           <div><strong>14</strong><span>Years leading CNC production workflows</span></div>
           <div><strong>Design + code</strong><span>Creative and technical execution</span></div>
           <div><strong>Freelance</strong><span>Available for selected projects</span></div>
@@ -142,7 +159,7 @@ export default function HomePage() {
         </section>
 
         <section className={styles.experienceSection} aria-labelledby="experience-title">
-          <div className={styles.experienceNumber} aria-hidden="true">22<span>+</span></div>
+          <div className={styles.experienceNumber} aria-hidden="true">23<span>+</span></div>
           <div className={styles.experienceCopy}>
             <span className={styles.kicker}>Experience, applied</span>
             <h2 id="experience-title">Good design should do more than look good.</h2>

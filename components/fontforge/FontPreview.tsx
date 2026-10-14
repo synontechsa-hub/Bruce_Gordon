@@ -27,9 +27,9 @@ export function FontPreview({ previewFamily, fontName }: FontPreviewProps) {
       <div className={styles.previewHeader}>
         <div className={styles.previewTitleGroup}>
           <span className={styles.inspectorKicker}>Specimen Preview</span>
-          <h3 id="preview-section-title" className={styles.previewHeading}>
+          <h2 id="preview-section-title" className={styles.previewHeading}>
             {fontName} — Live Type Tester
-          </h3>
+          </h2>
         </div>
 
         <div className={styles.previewControls}>

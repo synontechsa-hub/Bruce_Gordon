@@ -16,9 +16,9 @@ export function FontInspector({ metadata, warning }: FontInspectorProps) {
       <div className={styles.inspectorHeader}>
         <div className={styles.inspectorTitleGroup}>
           <span className={styles.inspectorKicker}>Detected Font File</span>
-          <h3 id="font-details-heading" className={styles.inspectorFontName}>
+          <h2 id="font-details-heading" className={styles.inspectorFontName}>
             {metadata.fullName || metadata.familyName}
-          </h3>
+          </h2>
           <span className={styles.inspectorFileName}>{metadata.fileName}</span>
         </div>
 
@@ -103,7 +103,7 @@ export function FontInspector({ metadata, warning }: FontInspectorProps) {
 
       <div className={styles.privacyNote}>
         <CheckCircle2 size={15} aria-hidden="true" />
-        <span>100% In-Browser Inspection — File never leaves your local machine.</span>
+        <span>Font inspection runs in your browser without a font upload endpoint.</span>
       </div>
     </div>
   );

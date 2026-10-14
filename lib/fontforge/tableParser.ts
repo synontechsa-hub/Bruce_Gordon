@@ -34,6 +34,22 @@ export function parseSFNTTableDirectory(view: DataView): Map<string, SFNTTableRe
   return tables;
 }
 
+export function parseWoffTableTags(view: DataView): Set<string> {
+  const tags = new Set<string>();
+  if (view.byteLength < 44 || view.getUint32(0, false) !== 0x774f4646) return tags;
+
+  const numTables = view.getUint16(12, false);
+  if (numTables < 1 || 44 + numTables * 20 > view.byteLength) return tags;
+
+  for (let pos = 44; pos < 44 + numTables * 20; pos += 20) {
+    tags.add(String.fromCharCode(
+      view.getUint8(pos), view.getUint8(pos + 1),
+      view.getUint8(pos + 2), view.getUint8(pos + 3)
+    ));
+  }
+  return tags;
+}
+
 function readFixed16_16(view: DataView, offset: number): number {
   const raw = view.getInt32(offset, false);
   return Number((raw / 65536).toFixed(2));
@@ -107,20 +123,27 @@ export function extractMetadataFromTTFObject(
   originalFormat: FontFormat,
   fileName: string,
   fileSizeBytes: number,
-  rawBuffer?: ArrayBuffer
+  rawBuffer?: ArrayBuffer,
+  inspectionBuffer?: ArrayBuffer
 ): FontMetadata {
   let isVariable = false;
   let variableAxes: VariableAxis[] = [];
   let variableStatus: FeatureDetectionStatus = "unknown";
   let hasCffOutlines = false;
   let cffOutlineStatus: FeatureDetectionStatus = "unknown";
+  let layoutTables: string[] = [];
+  let layoutStatus: FeatureDetectionStatus = "unknown";
 
-  // If raw SFNT buffer is available (for TTF / OTF), parse SFNT directory for exact tables
-  if (rawBuffer && (originalFormat === "ttf" || originalFormat === "otf")) {
+  // Inspect decompressed SFNT data when a web container was the source.
+  const sfntBuffer = inspectionBuffer ?? ((originalFormat === "ttf" || originalFormat === "otf") ? rawBuffer : undefined);
+  if (sfntBuffer) {
     try {
-      const view = new DataView(rawBuffer);
+      const view = new DataView(sfntBuffer);
       const tableMap = parseSFNTTableDirectory(view);
-      const varInfo = detectVariableFontAxes(rawBuffer, tableMap);
+      if (tableMap.size === 0) throw new Error("Font table directory is empty.");
+      layoutTables = ["GSUB", "GPOS", "GDEF", "BASE", "JSTF", "MATH"].filter((tag) => tableMap.has(tag));
+      layoutStatus = layoutTables.length > 0 ? "detected" : "not_detected";
+      const varInfo = detectVariableFontAxes(sfntBuffer, tableMap);
       isVariable = varInfo.isVariable;
       variableAxes = varInfo.axes;
       variableStatus = isVariable ? "detected" : "not_detected";
@@ -133,6 +156,17 @@ export function extractMetadataFromTTFObject(
     } catch {
       variableStatus = "unknown";
       cffOutlineStatus = "unknown";
+      layoutStatus = "unknown";
+    }
+  } else if (rawBuffer && originalFormat === "woff") {
+    const tags = parseWoffTableTags(new DataView(rawBuffer));
+    if (tags.size > 0) {
+      layoutTables = ["GSUB", "GPOS", "GDEF", "BASE", "JSTF", "MATH"].filter((tag) => tags.has(tag));
+      layoutStatus = layoutTables.length > 0 ? "detected" : "not_detected";
+      isVariable = ["fvar", "gvar", "HVAR", "VVAR"].some((tag) => tags.has(tag));
+      variableStatus = isVariable ? "detected" : "not_detected";
+      hasCffOutlines = tags.has("CFF ") || tags.has("CFF2");
+      cffOutlineStatus = hasCffOutlines ? "detected" : "not_detected";
     }
   }
 
@@ -187,6 +221,8 @@ export function extractMetadataFromTTFObject(
     variableStatus,
     hasCffOutlines,
     cffOutlineStatus,
+    layoutTables,
+    layoutStatus,
     version: nameTable.version || "1.0",
     copyright: nameTable.copyright,
   };

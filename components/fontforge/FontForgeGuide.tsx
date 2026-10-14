@@ -6,19 +6,19 @@ import styles from "./FontForgeApp.module.css";
 export function FontForgeGuide() {
   return (
     <section className={styles.guideSection} aria-labelledby="guide-heading">
+      <h2 id="guide-heading" className="sr-only">About FontForge conversion</h2>
       <div className={styles.guideGrid}>
         {/* Privacy Card */}
         <div className={styles.guideCard}>
           <div className={styles.guideCardHeader}>
             <ShieldCheck size={24} className={styles.guideIcon} aria-hidden="true" />
-            <h3 className={styles.guideCardTitle}>100% Client-Side Privacy</h3>
+            <h3 className={styles.guideCardTitle}>Local Font Processing</h3>
           </div>
           <p>
-            Your fonts never leave your device. All decompression, table extraction, glyph
-            transcoding, and compression happen directly inside your browser’s JavaScript and
-            WebAssembly runtime.
+            Font inspection, preview, and conversion run in your browser. Font files are not sent
+            to a BGrafX server for processing. This page still uses the site’s standard analytics.
           </p>
-          <span className={styles.guideTag}>Zero uploads • Zero logs • Zero tracking</span>
+          <span className={styles.guideTag}>No server-side font conversion</span>
         </div>
 
         {/* Formats Card */}

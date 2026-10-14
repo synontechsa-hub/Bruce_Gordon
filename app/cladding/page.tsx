@@ -26,7 +26,7 @@ export default function CladdingPage() {
         </section>
 
         <section className={styles.context} aria-labelledby="context-title">
-          <div className={styles.contextNumber}>22<span>+</span></div>
+          <div className={styles.contextNumber}>23<span>+</span></div>
           <div><span className={styles.kicker}>A substantial part of the story</span><h2 id="context-title">Experience beyond the screen.</h2><p>Long before software and modern web systems became part of the practice, Bruce&apos;s work lived at building scale. That environment demanded precision, material awareness, production discipline and close coordination between drawings, machinery, fabrication and installation.</p><p>The projects shown here record work Bruce was involved in while collaborating with <a href="https://www.alania.co.za/" target="_blank" rel="noopener noreferrer">Alania Building Systems</a>. Responsibilities varied by project; BGrafX does not present itself as the principal cladding contractor.</p></div>
           <ul aria-label="Cladding capabilities"><li><Ruler aria-hidden="true" />Production-aware detailing</li><li><ScanLine aria-hidden="true" />CNC preparation and routing</li><li><Wrench aria-hidden="true" />Fabrication coordination</li></ul>
         </section>
